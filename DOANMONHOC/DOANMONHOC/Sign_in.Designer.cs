@@ -29,176 +29,184 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sign_in));
-            textBox1 = new TextBox();
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            textBox2 = new TextBox();
-            pictureBox2 = new PictureBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            checkBox1 = new CheckBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            SuspendLayout();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.SuspendLayout();
             // 
             // textBox1
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(456, 186);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(256, 20);
-            textBox1.TabIndex = 0;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(741, 298);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(416, 32);
+            this.textBox1.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(46, 77);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(236, 269);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(75, 123);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(384, 430);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.MidnightBlue;
-            label1.Location = new Point(365, 77);
-            label1.Name = "label1";
-            label1.Size = new Size(284, 41);
-            label1.TabIndex = 2;
-            label1.Text = "Chào mừng trở lại!";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label1.Location = new System.Drawing.Point(593, 123);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(454, 65);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Chào mừng trở lại!";
             // 
             // textBox2
             // 
-            textBox2.BackColor = SystemColors.ControlLightLight;
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.ForeColor = Color.MidnightBlue;
-            textBox2.Location = new Point(365, 123);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(383, 57);
-            textBox2.TabIndex = 3;
-            textBox2.Text = "Đăng nhập và thực hiện bỏ phiếu trên hệ thống cho ứng cử viên mà bạn muốn.";
+            this.textBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.textBox2.Location = new System.Drawing.Point(593, 197);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(622, 91);
+            this.textBox2.TabIndex = 3;
+            this.textBox2.Text = "Đăng nhập và thực hiện bỏ phiếu trên hệ thống cho ứng cử viên mà bạn muốn.";
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(15, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(67, 71);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 4;
-            pictureBox2.TabStop = false;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(24, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(109, 114);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
             // 
             // textBox3
             // 
-            textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.ForeColor = Color.MidnightBlue;
-            textBox3.Location = new Point(365, 201);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(365, 27);
-            textBox3.TabIndex = 5;
-            textBox3.TextChanged += textBox3_TextChanged;
-            textBox3.Enter += textBox3_Enter;
-            textBox3.Leave += textBox3_Leave;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.textBox3.Location = new System.Drawing.Point(593, 322);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(592, 39);
+            this.textBox3.TabIndex = 5;
             // 
             // textBox4
             // 
-            textBox4.BorderStyle = BorderStyle.FixedSingle;
-            textBox4.ForeColor = Color.MidnightBlue;
-            textBox4.Location = new Point(365, 253);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(365, 27);
-            textBox4.TabIndex = 6;
-            textBox4.TextChanged += textBox4_TextChanged;
-            textBox4.Enter += textBox4_Enter;
-            textBox4.Leave += textBox4_Leave;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox4.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.textBox4.Location = new System.Drawing.Point(593, 405);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(592, 39);
+            this.textBox4.TabIndex = 6;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged_1);
             // 
             // checkBox1
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(365, 303);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(147, 24);
-            checkBox1.TabIndex = 7;
-            checkBox1.Text = "Ghi nhớ mật khẩu";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(593, 485);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(238, 36);
+            this.checkBox1.TabIndex = 7;
+            this.checkBox1.Text = "Ghi nhớ mật khẩu";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            button1.FlatAppearance.BorderColor = SystemColors.Control;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseDownBackColor = SystemColors.ControlText;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.MidnightBlue;
-            button1.Location = new Point(600, 298);
-            button1.Name = "button1";
-            button1.Size = new Size(152, 29);
-            button1.TabIndex = 8;
-            button1.Text = "Quên mật khẩu ?";
-            button1.UseVisualStyleBackColor = true;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.button1.Location = new System.Drawing.Point(975, 477);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(247, 46);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Quên mật khẩu ?";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.BackColor = Color.MidnightBlue;
-            button2.FlatAppearance.BorderColor = SystemColors.Control;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(368, 345);
-            button2.Name = "button2";
-            button2.Size = new Size(362, 31);
-            button2.TabIndex = 9;
-            button2.Text = "Đăng nhập";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            this.button2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(598, 552);
+            this.button2.Margin = new System.Windows.Forms.Padding(5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(588, 50);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Đăng nhập";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button3
             // 
-            button3.FlatAppearance.BorderColor = SystemColors.Control;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.MidnightBlue;
-            button3.Location = new Point(368, 391);
-            button3.Name = "button3";
-            button3.Size = new Size(362, 29);
-            button3.TabIndex = 10;
-            button3.Text = "Đăng nhập với tư cách Admin";
-            button3.UseVisualStyleBackColor = true;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.button3.Location = new System.Drawing.Point(598, 626);
+            this.button3.Margin = new System.Windows.Forms.Padding(5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(588, 46);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Đăng nhập với tư cách Admin";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // DangNhap
+            // Sign_in
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(checkBox1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(pictureBox2);
-            Controls.Add(textBox2);
-            Controls.Add(label1);
-            Controls.Add(pictureBox1);
-            Controls.Add(textBox1);
-            Name = "DangNhap";
-            Text = "Sign in";
-            Load += DangNhap_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1300, 720);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.textBox1);
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Name = "Sign_in";
+            this.Text = "Sign in";
+            this.Load += new System.EventHandler(this.Sign_in_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

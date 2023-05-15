@@ -20,8 +20,8 @@ namespace DOANMONHOC
     {
         IFirebaseConfig config = new FirebaseConfig
         {
-            AuthSecret = "8L1GpfNiXCp0XrV8Klz7TJlyXGzoEdIPAoMOOF6M",
-            BasePath = "https://voting-app-test-default-rtdb.asia-southeast1.firebasedatabase.app/"
+            AuthSecret = "FoBk4yXguU4VoMkIe5M7M2ylsGymwUsld8cS2Td1",
+            BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
         public Sign_in_as_Admin()
@@ -124,10 +124,15 @@ namespace DOANMONHOC
         private void Sign_in_as_Admin_Load(object sender, EventArgs e)
         {
             client = new FireSharp.FirebaseClient(config);
-            if (client != null)
+            /*if (client != null)
             {
                 MessageBox.Show("Connection is established");
-            }
+            }*/
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

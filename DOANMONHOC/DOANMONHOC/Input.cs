@@ -69,5 +69,10 @@ namespace DOANMONHOC
             textBox2.Text = obj.Pw;
             MessageBox.Show("Truy xuất thành công");
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

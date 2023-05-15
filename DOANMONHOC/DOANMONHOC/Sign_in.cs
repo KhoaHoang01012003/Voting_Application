@@ -9,8 +9,8 @@ namespace DOANMONHOC
     {
         IFirebaseConfig config = new FirebaseConfig
         {
-            AuthSecret = "8L1GpfNiXCp0XrV8Klz7TJlyXGzoEdIPAoMOOF6M",
-            BasePath = "https://voting-app-test-default-rtdb.asia-southeast1.firebasedatabase.app/"
+            AuthSecret = "FoBk4yXguU4VoMkIe5M7M2ylsGymwUsld8cS2Td1",
+            BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
         public Sign_in()
@@ -121,6 +121,28 @@ namespace DOANMONHOC
                 }
             }
            
+        }
+
+        private void Sign_in_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form AdminForm = new Sign_in_as_Admin();
+            AdminForm.Show();
+            this.Close();
+        }
+
+        private void textBox4_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
