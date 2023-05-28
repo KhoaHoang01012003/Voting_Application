@@ -51,3 +51,6 @@ D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Applic
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Register.resources
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Index.resources
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\BCrypt.Net-Next.dll
+D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.CreateVote1.resources
+D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.CreateVote2.resources
+D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.CreateVote3.resources
