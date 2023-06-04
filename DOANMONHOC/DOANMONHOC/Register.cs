@@ -134,7 +134,7 @@ namespace DOANMONHOC
 
         private async void guna2Button1_Click_1(object sender, EventArgs e)
         {
-            if (IsValidEmail(usernameBox.Text) && IsStrongPassword(passwordBox.Text))
+            if (IsValidEmail(guna2TextBox1.Text) && IsStrongPassword(guna2TextBox2.Text))
             {
                 Task<int> id = id_index();
                 int tmp = await id;
@@ -143,13 +143,13 @@ namespace DOANMONHOC
                 var data = new Data
                 {
                     ID = tmp.ToString(),
-                    Email = usernameBox.Text,
-                    Pw = HashPassword(passwordBox.Text),
+                    Email = guna2TextBox1.Text,
+                    Pw = HashPassword(guna2TextBox2.Text),
                     User_role = "student",
                     Fullname = "",
                     Avt_ID = "",
                     Is_Admin = "",
-                    Student_ID = usernameBox.Text.Substring(0, 8),
+                    Student_ID = guna2TextBox1.Text.Substring(0, 8),
                     Faculty_ID = "",
                     Class_ID = ""
                 };
@@ -161,7 +161,7 @@ namespace DOANMONHOC
                 MessageBox.Show("Data... inserted " + result.Email);
                 label4.Text = "";
             }
-            else if (!IsValidEmail(usernameBox.Text))
+            else if (!IsValidEmail(guna2TextBox1.Text))
             {
                 label4.Text = "Email không đúng! Hãy dùng email trường cung cấp";
             }
