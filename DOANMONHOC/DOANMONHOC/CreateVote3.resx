@@ -298,4 +298,10 @@
         gSe7R93Ak92jbuDJ7lE38GT3qBt4snvUCUT+HxmWR6AShDaeAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="guna2AnimateWindow1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="guna2AnimateWindow2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>234, 17</value>
+  </metadata>
 </root>

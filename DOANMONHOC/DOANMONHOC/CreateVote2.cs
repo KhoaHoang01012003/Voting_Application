@@ -24,8 +24,19 @@ namespace DOANMONHOC
 
         private void button5_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
             var open = new CreateVote3();
-            open.ShowDialog();
+            open.Show();
+            this.Hide();
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
