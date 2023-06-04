@@ -61,7 +61,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
             this.label1.Location = new System.Drawing.Point(835, 138);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(241, 58);

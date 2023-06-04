@@ -57,3 +57,4 @@ D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Applic
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\Guna.UI2.dll
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\System.Management.dll
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll
+D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.VerifyEmail.resources

@@ -138,7 +138,6 @@ namespace DOANMONHOC
             {
                 Task<int> id = id_index();
                 int tmp = await id;
-                tmp++;
 
                 var data = new Data
                 {
@@ -155,7 +154,7 @@ namespace DOANMONHOC
                 };
 
 
-                SetResponse response = await client.SetTaskAsync("User/" + tmp.ToString(), data);
+                SetResponse response = await client.SetTaskAsync("Users/" + tmp.ToString(), data);
                 Data result = response.ResultAs<Data>();
 
                 MessageBox.Show("Data... inserted " + result.Email);
