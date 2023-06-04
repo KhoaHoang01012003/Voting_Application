@@ -190,12 +190,15 @@
             this.guna2Button1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(236)))), ((int)(((byte)(241)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(236)))), ((int)(((byte)(241)))));
+            this.guna2Button1.HoverState.Image = global::DOANMONHOC.Properties.Resources.home_line;
             this.guna2Button1.Image = global::DOANMONHOC.Properties.Resources.home_line;
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.ImageOffset = new System.Drawing.Point(57, 0);
             this.guna2Button1.Location = new System.Drawing.Point(0, 271);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(236)))), ((int)(((byte)(241)))));
+            this.guna2Button1.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(228)))), ((int)(((byte)(236)))));
+            this.guna2Button1.PressedDepth = 100;
             this.guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.guna2Button1.Size = new System.Drawing.Size(272, 64);
             this.guna2Button1.TabIndex = 12;
