@@ -38,6 +38,17 @@
           }
         }
       },
+      "Guna.UI2.WinForms/2.0.4.4": {
+        "dependencies": {
+          "System.Management": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/Guna.UI2.dll": {
+            "assemblyVersion": "2.0.4.4",
+            "fileVersion": "2.0.4.4"
+          }
+        }
+      },
       "Newtonsoft.Json/6.0.4": {
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {
@@ -51,6 +62,33 @@
           "lib/net4/RestSharp.dll": {
             "assemblyVersion": "104.4.0.0",
             "fileVersion": "104.4.0.0"
+          }
+        }
+      },
+      "System.CodeDom/6.0.0": {
+        "runtime": {
+          "lib/net6.0/System.CodeDom.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "System.Management/6.0.0": {
+        "dependencies": {
+          "System.CodeDom": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Management.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Management.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.21.52210"
           }
         }
       }
@@ -78,6 +116,13 @@
       "path": "firesharp.serialization.jsonnet/1.1.0",
       "hashPath": "firesharp.serialization.jsonnet.1.1.0.nupkg.sha512"
     },
+    "Guna.UI2.WinForms/2.0.4.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PAteiG4zIquxHEhRJR4q69d0+U97U4XZuiwCFueXkh8hsw7IpkgPL41A/iyIx6bRFWiyEZ8tBzWqRrq7blrfnA==",
+      "path": "guna.ui2.winforms/2.0.4.4",
+      "hashPath": "guna.ui2.winforms.2.0.4.4.nupkg.sha512"
+    },
     "Newtonsoft.Json/6.0.4": {
       "type": "package",
       "serviceable": true,
@@ -91,6 +136,20 @@
       "sha512": "sha512-noACbS/gvceWlZO4kaV6AepG1cTLtHRhHZftdve+lytX6AIFDk5bdzsq4FfJ2/byAH3Y04I92wlH/z95lb7UwQ==",
       "path": "restsharp/104.4.0",
       "hashPath": "restsharp.104.4.0.nupkg.sha512"
+    },
+    "System.CodeDom/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CPc6tWO1LAer3IzfZufDBRL+UZQcj5uS207NHALQzP84Vp/z6wF0Aa0YZImOQY8iStY0A2zI/e3ihKNPfUm8XA==",
+      "path": "system.codedom/6.0.0",
+      "hashPath": "system.codedom.6.0.0.nupkg.sha512"
+    },
+    "System.Management/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sHsESYMmPDhQuOC66h6AEOs/XowzKsbT9srMbX71TCXP58hkpn1BqBjdmKj1+DCA/WlBETX1K5WjQHwmV0Txrg==",
+      "path": "system.management/6.0.0",
+      "hashPath": "system.management.6.0.0.nupkg.sha512"
     }
   }
 }

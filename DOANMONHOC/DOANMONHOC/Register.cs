@@ -111,7 +111,28 @@ namespace DOANMONHOC
             }
         }
 
-        private async void button_register_Click(object sender, EventArgs e)
+        private void button_register_Click(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void guna2Button1_Click_1(object sender, EventArgs e)
         {
             if (IsValidEmail(usernameBox.Text) && IsStrongPassword(passwordBox.Text))
             {
@@ -148,17 +169,6 @@ namespace DOANMONHOC
             {
                 label4.Text += "\nMật khẩu yếu!";
             }
-            
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
