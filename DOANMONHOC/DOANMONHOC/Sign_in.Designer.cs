@@ -29,184 +29,213 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sign_in));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.SuspendLayout();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            textBox1 = new TextBox();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
+            textBox2 = new TextBox();
+            pictureBox2 = new PictureBox();
+            checkBox1 = new CheckBox();
+            button1 = new Button();
+            username = new Guna.UI2.WinForms.Guna2TextBox();
+            password = new Guna.UI2.WinForms.Guna2TextBox();
+            sign_in_button = new Guna.UI2.WinForms.Guna2Button();
+            Sign_in_as_Admin_button = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(741, 298);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(416, 32);
-            this.textBox1.TabIndex = 0;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Location = new Point(456, 186);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(256, 20);
+            textBox1.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(75, 123);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(384, 430);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(100, 208);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(660, 660);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(593, 123);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(454, 65);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Chào mừng trở lại!";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 28F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(835, 154);
+            label1.Name = "label1";
+            label1.Size = new Size(441, 62);
+            label1.TabIndex = 2;
+            label1.Text = "Chào mừng trở lại!";
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.textBox2.Location = new System.Drawing.Point(593, 197);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(622, 91);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "Đăng nhập và thực hiện bỏ phiếu trên hệ thống cho ứng cử viên mà bạn muốn.";
+            textBox2.BackColor = SystemColors.ControlLightLight;
+            textBox2.BorderStyle = BorderStyle.None;
+            textBox2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox2.ForeColor = Color.Black;
+            textBox2.Location = new Point(847, 234);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(383, 57);
+            textBox2.TabIndex = 3;
+            textBox2.Text = "Đăng nhập và thực hiện bỏ phiếu trên hệ thống cho ứng cử viên mà bạn muốn.";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(24, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(109, 114);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.textBox3.Location = new System.Drawing.Point(593, 322);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(592, 39);
-            this.textBox3.TabIndex = 5;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.textBox4.Location = new System.Drawing.Point(593, 405);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(592, 39);
-            this.textBox4.TabIndex = 6;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged_1);
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(55, 32);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(129, 154);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 4;
+            pictureBox2.TabStop = false;
             // 
             // checkBox1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(593, 485);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(238, 36);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "Ghi nhớ mật khẩu";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(867, 564);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(147, 24);
+            checkBox1.TabIndex = 7;
+            checkBox1.Text = "Ghi nhớ mật khẩu";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.button1.Location = new System.Drawing.Point(975, 477);
-            this.button1.Margin = new System.Windows.Forms.Padding(5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(247, 46);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Quên mật khẩu ?";
-            this.button1.UseVisualStyleBackColor = true;
+            button1.FlatAppearance.BorderColor = SystemColors.Control;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = SystemColors.ControlText;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.FromArgb(37, 83, 140);
+            button1.Location = new Point(1185, 559);
+            button1.Name = "button1";
+            button1.Size = new Size(152, 29);
+            button1.TabIndex = 8;
+            button1.Text = "Quên mật khẩu ?";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // button2
+            // username
             // 
-            this.button2.BackColor = System.Drawing.Color.MidnightBlue;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(598, 552);
-            this.button2.Margin = new System.Windows.Forms.Padding(5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(588, 50);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Đăng nhập";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            username.BorderColor = Color.FromArgb(37, 83, 140);
+            username.BorderRadius = 30;
+            username.CustomizableEdges = customizableEdges1;
+            username.DefaultText = "";
+            username.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            username.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            username.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            username.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            username.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            username.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            username.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            username.Location = new Point(847, 354);
+            username.Name = "username";
+            username.PasswordChar = '\0';
+            username.PlaceholderText = "";
+            username.SelectedText = "";
+            username.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            username.Size = new Size(505, 64);
+            username.TabIndex = 11;
+            username.Enter += username_Enter;
+            username.Leave += username_Leave;
             // 
-            // button3
+            // password
             // 
-            this.button3.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.button3.Location = new System.Drawing.Point(598, 626);
-            this.button3.Margin = new System.Windows.Forms.Padding(5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(588, 46);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Đăng nhập với tư cách Admin";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            password.BorderColor = Color.FromArgb(37, 83, 140);
+            password.BorderRadius = 30;
+            password.CustomizableEdges = customizableEdges3;
+            password.DefaultText = "";
+            password.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            password.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            password.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            password.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            password.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            password.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            password.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            password.Location = new Point(847, 468);
+            password.Name = "password";
+            password.PasswordChar = '\0';
+            password.PlaceholderText = "";
+            password.SelectedText = "";
+            password.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            password.Size = new Size(505, 64);
+            password.TabIndex = 12;
+            password.Enter += password_Enter;
+            password.Leave += password_Leave;
+            // 
+            // sign_in_button
+            // 
+            sign_in_button.BorderRadius = 30;
+            sign_in_button.CustomizableEdges = customizableEdges5;
+            sign_in_button.DisabledState.BorderColor = Color.DarkGray;
+            sign_in_button.DisabledState.CustomBorderColor = Color.DarkGray;
+            sign_in_button.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            sign_in_button.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            sign_in_button.FillColor = Color.FromArgb(37, 83, 140);
+            sign_in_button.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            sign_in_button.ForeColor = Color.White;
+            sign_in_button.Location = new Point(847, 689);
+            sign_in_button.Name = "sign_in_button";
+            sign_in_button.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            sign_in_button.Size = new Size(505, 60);
+            sign_in_button.TabIndex = 13;
+            sign_in_button.Text = "Đăng nhập";
+            sign_in_button.Click += sign_in_button_Click;
+            // 
+            // Sign_in_as_Admin_button
+            // 
+            Sign_in_as_Admin_button.BackColor = Color.Transparent;
+            Sign_in_as_Admin_button.FlatAppearance.BorderColor = Color.White;
+            Sign_in_as_Admin_button.FlatAppearance.BorderSize = 0;
+            Sign_in_as_Admin_button.FlatAppearance.MouseDownBackColor = SystemColors.ControlText;
+            Sign_in_as_Admin_button.FlatStyle = FlatStyle.Flat;
+            Sign_in_as_Admin_button.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            Sign_in_as_Admin_button.ForeColor = Color.FromArgb(37, 83, 140);
+            Sign_in_as_Admin_button.Location = new Point(922, 755);
+            Sign_in_as_Admin_button.Name = "Sign_in_as_Admin_button";
+            Sign_in_as_Admin_button.Size = new Size(354, 36);
+            Sign_in_as_Admin_button.TabIndex = 14;
+            Sign_in_as_Admin_button.Text = "Đăng nhập với tư cách Admin";
+            Sign_in_as_Admin_button.UseVisualStyleBackColor = true;
+            Sign_in_as_Admin_button.Click += Sign_in_as_Admin_button_Click;
             // 
             // Sign_in
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1300, 720);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "Sign_in";
-            this.Text = "Sign in";
-            this.Load += new System.EventHandler(this.Sign_in_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(1422, 977);
+            Controls.Add(Sign_in_as_Admin_button);
+            Controls.Add(sign_in_button);
+            Controls.Add(password);
+            Controls.Add(username);
+            Controls.Add(button1);
+            Controls.Add(checkBox1);
+            Controls.Add(pictureBox2);
+            Controls.Add(textBox2);
+            Controls.Add(label1);
+            Controls.Add(pictureBox1);
+            Controls.Add(textBox1);
+            Name = "Sign_in";
+            Text = "Sign in";
+            Load += Sign_in_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -216,11 +245,11 @@
         private Label label1;
         private TextBox textBox2;
         private PictureBox pictureBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
         private CheckBox checkBox1;
         private Button button1;
-        private Button button2;
-        private Button button3;
+        private Guna.UI2.WinForms.Guna2TextBox username;
+        private Guna.UI2.WinForms.Guna2TextBox password;
+        private Guna.UI2.WinForms.Guna2Button sign_in_button;
+        private Button Sign_in_as_Admin_button;
     }
 }

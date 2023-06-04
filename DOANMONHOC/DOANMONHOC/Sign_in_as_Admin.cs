@@ -28,43 +28,34 @@ namespace DOANMONHOC
         {
             InitializeComponent();
             //tên textbox email
-            textBox1.Text = "School email addess";
-            textBox1.ForeColor = SystemColors.GrayText;
-            textBox1.Enter += textBox1_Enter;
-            textBox1.Leave += textBox1_Leave;
+            username_admin.Text = "School email addess";
+            username_admin.ForeColor = SystemColors.GrayText;
+            username_admin.Enter += username_admin_Enter;
+            username_admin.Leave += username_admin_Leave;
             //tên textbox pass
-            textBox2.Text = "Password";
-            textBox2.ForeColor = SystemColors.GrayText;
-            textBox2.Enter += textBox2_Enter;
-            textBox2.Leave += textBox2_Leave;
+            password_admin.Text = "Password";
+            password_admin.ForeColor = SystemColors.GrayText;
+            password_admin.Enter += password_admin_Enter;
+            password_admin.Leave += password_admin_Leave;
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            if (textBox1.Text == "School email addess")
+            if (username.Text == "School email addess")
             {
-                textBox1.Clear();
-                textBox1.ForeColor = SystemColors.ControlText;
+                username.Clear();
+                username.ForeColor = SystemColors.ControlText;
             }
 
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            if (string.IsNullOrWhiteSpace(username.Text))
             {
-                textBox1.Text = "School email addess";
-                textBox1.ForeColor = SystemColors.GrayText;
+                username.Text = "School email addess";
+                username.ForeColor = SystemColors.GrayText;
             }
         }
 
@@ -99,7 +90,7 @@ namespace DOANMONHOC
         }
         private async void button2_Click(object sender, EventArgs e)
         {
-            if (!textBox1.Text.Contains("@admin")) MessageBox.Show("You are not Admin!");
+            if (!username.Text.Contains("@admin")) MessageBox.Show("You are not Admin!");
             else
             {
                 Task<int> task = id_index();
@@ -108,13 +99,13 @@ namespace DOANMONHOC
                 {
                     FirebaseResponse response = await client.GetTaskAsync("Users/" + i.ToString());
                     Data sel = response.ResultAs<Data>();
-                    if (sel.Email == textBox1.Text && sel.Pw == textBox2.Text && sel.Is_Admin=="1")
+                    if (sel.Email == username.Text && sel.Pw == textBox2.Text && sel.Is_Admin == "1")
                     {
                         MessageBox.Show("Success");
                         break;
                     }
-                    else if (i == (limit - 1) && sel.Email != textBox1.Text && sel.Pw != textBox2.Text) MessageBox.Show("Email hoặc mật khẩu không đúng, vui lòng nhập lại.");
-                    else if (sel.Email == textBox1.Text && sel.Pw == textBox2.Text && sel.Is_Admin != "1") MessageBox.Show("You are not Admin!");
+                    else if (i == (limit - 1) && sel.Email != username.Text && sel.Pw != textBox2.Text) MessageBox.Show("Email hoặc mật khẩu không đúng, vui lòng nhập lại.");
+                    else if (sel.Email == username.Text && sel.Pw == textBox2.Text && sel.Is_Admin != "1") MessageBox.Show("You are not Admin!");
 
                 }
             }
@@ -136,6 +127,31 @@ namespace DOANMONHOC
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Sign_in_as_Admin_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void username_admin_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void username_admin_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void password_admin_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void password_admin_Leave(object sender, EventArgs e)
         {
 
         }

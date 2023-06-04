@@ -17,81 +17,17 @@ namespace DOANMONHOC
         {
             InitializeComponent();
             //tên textbox email
-            textBox3.Text = "School email addess";
-            textBox3.ForeColor = SystemColors.GrayText;
-            textBox3.Enter += textBox3_Enter;
-            textBox3.Leave += textBox3_Leave;
+            username.Text = "School email addess";
+            username.ForeColor = SystemColors.GrayText;
+            username.Enter += username_Enter;
+            username.Leave += username_Leave;
             //tên textbox pass
-            textBox4.Text = "Password";
-            textBox4.ForeColor = SystemColors.GrayText;
-            textBox4.Enter += textBox4_Enter;
-            textBox4.Leave += textBox4_Leave;
+            password.Text = "Password";
+            password.ForeColor = SystemColors.GrayText;
+            password.Enter += password_Enter;
+            password.Leave += password_Leave;
         }
 
-
-        private void textBox3_Enter(object sender, EventArgs e)
-        {
-            if (textBox3.Text == "School email addess")
-            {
-                textBox3.Clear();
-                textBox3.ForeColor = SystemColors.ControlText;
-            }
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(textBox3.Text))
-            {
-                textBox3.Text = "School email addess";
-                textBox3.ForeColor = SystemColors.GrayText;
-            }
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(textBox4.Text))
-            {
-                textBox4.Text = "Password";
-                textBox4.UseSystemPasswordChar = false;
-                textBox4.ForeColor = SystemColors.GrayText;
-            }
-
-        }
-
-        private void textBox4_Enter(object sender, EventArgs e)
-        {
-            if (textBox4.Text == "Password")
-            {
-                textBox4.Clear();
-                textBox4.UseSystemPasswordChar = true;
-                textBox4.ForeColor = SystemColors.ControlText;
-            }
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DangNhap_Load(object sender, EventArgs e)
-        {
-            client = new FireSharp.FirebaseClient(config);
-            if (client != null)
-            {
-                MessageBox.Show("Connection is established");
-            }
-        }
         private async Task<int> id_index()
         {
             for (int i = 1; ; i++)
@@ -100,9 +36,72 @@ namespace DOANMONHOC
                 if (response.Body == "null") return i;
             }
         }
-        private async void button2_Click(object sender, EventArgs e)
+
+        private void Sign_in_Load(object sender, EventArgs e)
         {
-            if (textBox3.Text.Contains("@admin")) MessageBox.Show("Please sign in as Admin!");
+            client = new FireSharp.FirebaseClient(config);
+            if (client != null)
+            {
+                MessageBox.Show("Connection is established");
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void username_Enter(object sender, EventArgs e)
+        {
+            if (username.Text == "School email addess")
+            {
+                username.Clear();
+                username.ForeColor = SystemColors.ControlText;
+            }
+        }
+
+        private void username_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(username.Text))
+            {
+                username.Text = "School email addess";
+                username.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void password_Enter(object sender, EventArgs e)
+        {
+            if (password.Text == "Password")
+            {
+                password.Clear();
+                password.UseSystemPasswordChar = true;
+                password.ForeColor = SystemColors.ControlText;
+            }
+        }
+
+        private void password_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(password.Text))
+            {
+                password.Text = "Password";
+                password.UseSystemPasswordChar = false;
+                password.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void Sign_in_as_Admin_button_Click(object sender, EventArgs e)
+        {
+            Form AdminForm = new Sign_in_as_Admin();
+            AdminForm.Show();
+            this.Close();
+        }
+        public static bool VerifyPassword(string password, string hashedPassword)
+        {
+            return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
+        }
+        private async void sign_in_button_Click(object sender, EventArgs e)
+        {
+            if (username.Text.Contains("@admin")) MessageBox.Show("Please sign in as Admin!");
             else
             {
                 Task<int> task = id_index();
@@ -111,36 +110,18 @@ namespace DOANMONHOC
                 {
                     FirebaseResponse response = await client.GetTaskAsync("Users/" + i.ToString());
                     Data sel = response.ResultAs<Data>();
-                    if (sel.Email == textBox3.Text && sel.Pw == textBox4.Text)
+                    if (sel.Email == username.Text && VerifyPassword(password.Text, sel.Pw))
                     {
                         MessageBox.Show("Success");
                         break;
                     }
-                    else if (i == (limit - 1) && sel.Email != textBox3.Text && sel.Pw != textBox4.Text) MessageBox.Show("Email hoặc mật khẩu không đúng, vui lòng nhập lại.");
+                    else if (i == (limit - 1) && sel.Email != username.Text && sel.Pw != password.Text) MessageBox.Show("Email hoặc mật khẩu không đúng, vui lòng nhập lại.");
 
                 }
             }
-           
         }
 
-        private void Sign_in_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Form AdminForm = new Sign_in_as_Admin();
-            AdminForm.Show();
-            this.Close();
-        }
-
-        private void textBox4_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

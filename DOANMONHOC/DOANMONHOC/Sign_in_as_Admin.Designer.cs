@@ -29,139 +29,220 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sign_in_as_Admin));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.SuspendLayout();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            label1 = new Label();
+            label2 = new Label();
+            username = new TextBox();
+            textBox2 = new TextBox();
+            checkBox1 = new CheckBox();
+            button1 = new Button();
+            button2 = new Button();
+            username_admin = new Guna.UI2.WinForms.Guna2TextBox();
+            password_admin = new Guna.UI2.WinForms.Guna2TextBox();
+            admin_sign_in = new Guna.UI2.WinForms.Guna2Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(67, 71);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(55, 32);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(129, 154);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(89, 81);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(300, 330);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(99, 207);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(660, 660);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(424, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 41);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Admin Login!";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 28F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(835, 207);
+            label1.Name = "label1";
+            label1.Size = new Size(324, 62);
+            label1.TabIndex = 2;
+            label1.Text = "Admin Login!";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(424, 132);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(319, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Chào mừng bạn đến với nền tảng bỏ phiếu UIT";
+            label2.AutoSize = true;
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(847, 287);
+            label2.Name = "label2";
+            label2.Size = new Size(319, 20);
+            label2.TabIndex = 3;
+            label2.Text = "Chào mừng bạn đến với nền tảng bỏ phiếu UIT";
             // 
-            // textBox1
+            // username
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(424, 184);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(334, 27);
-            this.textBox1.TabIndex = 4;
+            username.BorderStyle = BorderStyle.FixedSingle;
+            username.Location = new Point(424, 184);
+            username.Name = "username";
+            username.Size = new Size(334, 27);
+            username.TabIndex = 4;
             // 
             // textBox2
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(424, 261);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(334, 27);
-            this.textBox2.TabIndex = 4;
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
+            textBox2.Location = new Point(424, 261);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(334, 27);
+            textBox2.TabIndex = 4;
             // 
             // checkBox1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(424, 317);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(147, 24);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Ghi nhớ mật khẩu";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(867, 614);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(147, 24);
+            checkBox1.TabIndex = 8;
+            checkBox1.Text = "Ghi nhớ mật khẩu";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlText;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.button1.Location = new System.Drawing.Point(621, 312);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 29);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Quên mật khẩu ?";
-            this.button1.UseVisualStyleBackColor = true;
+            button1.FlatAppearance.BorderColor = SystemColors.Control;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = SystemColors.ControlText;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.MidnightBlue;
+            button1.Location = new Point(1185, 611);
+            button1.Name = "button1";
+            button1.Size = new Size(152, 29);
+            button1.TabIndex = 9;
+            button1.Text = "Quên mật khẩu ?";
+            button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.MidnightBlue;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(424, 380);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(334, 31);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Đăng nhập";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            button2.BackColor = Color.MidnightBlue;
+            button2.FlatAppearance.BorderColor = SystemColors.Control;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(424, 380);
+            button2.Name = "button2";
+            button2.Size = new Size(334, 31);
+            button2.TabIndex = 10;
+            button2.Text = "Đăng nhập";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click_1;
+            // 
+            // username_admin
+            // 
+            username_admin.BorderColor = Color.FromArgb(37, 83, 140);
+            username_admin.BorderRadius = 30;
+            username_admin.CustomizableEdges = customizableEdges1;
+            username_admin.DefaultText = "";
+            username_admin.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            username_admin.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            username_admin.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            username_admin.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            username_admin.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            username_admin.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            username_admin.ForeColor = Color.FromArgb(37, 83, 140);
+            username_admin.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            username_admin.Location = new Point(847, 407);
+            username_admin.Name = "username_admin";
+            username_admin.PasswordChar = '\0';
+            username_admin.PlaceholderForeColor = Color.FromArgb(37, 83, 140);
+            username_admin.PlaceholderText = "";
+            username_admin.SelectedText = "";
+            username_admin.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            username_admin.Size = new Size(505, 64);
+            username_admin.TabIndex = 11;
+            username_admin.Enter += username_admin_Enter;
+            username_admin.Leave += username_admin_Leave;
+            // 
+            // password_admin
+            // 
+            password_admin.BorderColor = Color.FromArgb(37, 83, 140);
+            password_admin.BorderRadius = 30;
+            password_admin.CustomizableEdges = customizableEdges3;
+            password_admin.DefaultText = "";
+            password_admin.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            password_admin.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            password_admin.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            password_admin.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            password_admin.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            password_admin.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            password_admin.ForeColor = Color.FromArgb(37, 83, 140);
+            password_admin.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            password_admin.Location = new Point(847, 521);
+            password_admin.Name = "password_admin";
+            password_admin.PasswordChar = '\0';
+            password_admin.PlaceholderText = "";
+            password_admin.SelectedText = "";
+            password_admin.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            password_admin.Size = new Size(505, 64);
+            password_admin.TabIndex = 11;
+            password_admin.Enter += password_admin_Enter;
+            password_admin.Leave += password_admin_Leave;
+            // 
+            // admin_sign_in
+            // 
+            admin_sign_in.BorderRadius = 30;
+            admin_sign_in.CustomizableEdges = customizableEdges5;
+            admin_sign_in.DisabledState.BorderColor = Color.DarkGray;
+            admin_sign_in.DisabledState.CustomBorderColor = Color.DarkGray;
+            admin_sign_in.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            admin_sign_in.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            admin_sign_in.FillColor = Color.FromArgb(37, 83, 140);
+            admin_sign_in.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            admin_sign_in.ForeColor = Color.White;
+            admin_sign_in.Location = new Point(847, 741);
+            admin_sign_in.Name = "admin_sign_in";
+            admin_sign_in.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            admin_sign_in.Size = new Size(505, 60);
+            admin_sign_in.TabIndex = 12;
+            admin_sign_in.Text = "Đăng nhập";
             // 
             // Sign_in_as_Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(802, 453);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "Sign_in_as_Admin";
-            this.Text = "Sign_in_as_Admin";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(1422, 977);
+            Controls.Add(admin_sign_in);
+            Controls.Add(password_admin);
+            Controls.Add(username_admin);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(checkBox1);
+            Controls.Add(textBox2);
+            Controls.Add(username);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
+            Name = "Sign_in_as_Admin";
+            Text = "Sign_in_as_Admin";
+            Load += Sign_in_as_Admin_Load_1;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -170,10 +251,13 @@
         private PictureBox pictureBox2;
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox username;
         private TextBox textBox2;
         private CheckBox checkBox1;
         private Button button1;
         private Button button2;
+        private Guna.UI2.WinForms.Guna2TextBox username_admin;
+        private Guna.UI2.WinForms.Guna2TextBox password_admin;
+        private Guna.UI2.WinForms.Guna2Button admin_sign_in;
     }
 }
