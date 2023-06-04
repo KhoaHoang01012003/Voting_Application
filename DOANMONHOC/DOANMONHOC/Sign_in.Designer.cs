@@ -46,8 +46,10 @@
             password = new Guna.UI2.WinForms.Guna2TextBox();
             sign_in_button = new Guna.UI2.WinForms.Guna2Button();
             Sign_in_as_Admin_button = new Button();
+            pictureBox3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -212,12 +214,23 @@
             Sign_in_as_Admin_button.UseVisualStyleBackColor = true;
             Sign_in_as_Admin_button.Click += Sign_in_as_Admin_button_Click;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(485, 53);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(115, 76);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 15;
+            pictureBox3.TabStop = false;
+            // 
             // Sign_in
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1422, 977);
+            Controls.Add(pictureBox3);
             Controls.Add(Sign_in_as_Admin_button);
             Controls.Add(sign_in_button);
             Controls.Add(password);
@@ -234,6 +247,7 @@
             Load += Sign_in_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -251,5 +265,6 @@
         private Guna.UI2.WinForms.Guna2TextBox password;
         private Guna.UI2.WinForms.Guna2Button sign_in_button;
         private Button Sign_in_as_Admin_button;
+        private PictureBox pictureBox3;
     }
 }
