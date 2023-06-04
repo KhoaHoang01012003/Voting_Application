@@ -39,8 +39,6 @@
             pictureBox2 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
-            username = new TextBox();
-            textBox2 = new TextBox();
             checkBox1 = new CheckBox();
             button1 = new Button();
             button2 = new Button();
@@ -81,7 +79,6 @@
             label1.Size = new Size(324, 62);
             label1.TabIndex = 2;
             label1.Text = "Admin Login!";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -92,22 +89,6 @@
             label2.Size = new Size(319, 20);
             label2.TabIndex = 3;
             label2.Text = "Chào mừng bạn đến với nền tảng bỏ phiếu UIT";
-            // 
-            // username
-            // 
-            username.BorderStyle = BorderStyle.FixedSingle;
-            username.Location = new Point(424, 184);
-            username.Name = "username";
-            username.Size = new Size(334, 27);
-            username.TabIndex = 4;
-            // 
-            // textBox2
-            // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Location = new Point(424, 261);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(334, 27);
-            textBox2.TabIndex = 4;
             // 
             // checkBox1
             // 
@@ -135,19 +116,10 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.MidnightBlue;
-            button2.FlatAppearance.BorderColor = SystemColors.Control;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(424, 380);
+            button2.Location = new Point(0, 0);
             button2.Name = "button2";
-            button2.Size = new Size(334, 31);
-            button2.TabIndex = 10;
-            button2.Text = "Đăng nhập";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click_1;
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 13;
             // 
             // username_admin
             // 
@@ -172,6 +144,7 @@
             username_admin.ShadowDecoration.CustomizableEdges = customizableEdges2;
             username_admin.Size = new Size(505, 64);
             username_admin.TabIndex = 11;
+            username_admin.TextChanged += username_admin_TextChanged;
             username_admin.Enter += username_admin_Enter;
             username_admin.Leave += username_admin_Leave;
             // 
@@ -217,6 +190,7 @@
             admin_sign_in.Size = new Size(505, 60);
             admin_sign_in.TabIndex = 12;
             admin_sign_in.Text = "Đăng nhập";
+            admin_sign_in.Click += admin_sign_in_Click;
             // 
             // Sign_in_as_Admin
             // 
@@ -230,15 +204,13 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(checkBox1);
-            Controls.Add(textBox2);
-            Controls.Add(username);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Name = "Sign_in_as_Admin";
             Text = "Sign_in_as_Admin";
-            Load += Sign_in_as_Admin_Load_1;
+            Load += Sign_in_as_Admin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
@@ -251,8 +223,6 @@
         private PictureBox pictureBox2;
         private Label label1;
         private Label label2;
-        private TextBox username;
-        private TextBox textBox2;
         private CheckBox checkBox1;
         private Button button1;
         private Button button2;

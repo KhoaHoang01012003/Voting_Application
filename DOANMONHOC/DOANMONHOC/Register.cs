@@ -32,12 +32,12 @@ namespace DOANMONHOC
         public Register()
         {
             InitializeComponent();
-        }   
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             client = new FireSharp.FirebaseClient(config);
-            
+
             /*if (client != null)
             {
                 MessageBox.Show("Connection is established");
@@ -113,8 +113,8 @@ namespace DOANMONHOC
 
         private void button_register_Click(object sender, EventArgs e)
         {
-            
-            
+
+
         }
 
         private void label3_Click(object sender, EventArgs e)

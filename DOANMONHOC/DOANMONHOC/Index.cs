@@ -24,16 +24,22 @@ namespace DOANMONHOC
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            var RegisterForm = new Register();
+            RegisterForm.Show();
+            //this.Hide();
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
             var LoginForm = new Sign_in();
             LoginForm.Show();
             //this.Hide();
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void Index_Load(object sender, EventArgs e)
         {
-            var RegisterForm = new Register();
-            RegisterForm.Show();
-            //this.Hide();
+
         }
     }
 }

@@ -29,55 +29,14 @@ namespace DOANMONHOC
             InitializeComponent();
             //tên textbox email
             username_admin.Text = "School email addess";
-            username_admin.ForeColor = SystemColors.GrayText;
+            username_admin.ForeColor = Color.FromArgb(37, 83, 140);
             username_admin.Enter += username_admin_Enter;
             username_admin.Leave += username_admin_Leave;
             //tên textbox pass
             password_admin.Text = "Password";
-            password_admin.ForeColor = SystemColors.GrayText;
+            password_admin.ForeColor = Color.FromArgb(37, 83, 140);
             password_admin.Enter += password_admin_Enter;
             password_admin.Leave += password_admin_Leave;
-        }
-
-
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-            if (username.Text == "School email addess")
-            {
-                username.Clear();
-                username.ForeColor = SystemColors.ControlText;
-            }
-
-        }
-
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(username.Text))
-            {
-                username.Text = "School email addess";
-                username.ForeColor = SystemColors.GrayText;
-            }
-        }
-
-        private void textBox2_Enter(object sender, EventArgs e)
-        {
-            if (textBox2.Text == "Password")
-            {
-                textBox2.Clear();
-                textBox2.UseSystemPasswordChar = true;
-                textBox2.ForeColor = SystemColors.ControlText;
-            }
-        }
-
-        private void textBox2_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(textBox2.Text))
-            {
-                textBox2.Text = "Password";
-                textBox2.UseSystemPasswordChar = false;
-                textBox2.ForeColor = SystemColors.GrayText;
-            }
-
         }
 
         private async Task<int> id_index()
@@ -88,29 +47,7 @@ namespace DOANMONHOC
                 if (response.Body == "null") return i;
             }
         }
-        private async void button2_Click(object sender, EventArgs e)
-        {
-            if (!username.Text.Contains("@admin")) MessageBox.Show("You are not Admin!");
-            else
-            {
-                Task<int> task = id_index();
-                int limit = await task;
-                for (int i = 1; i < limit; i++)
-                {
-                    FirebaseResponse response = await client.GetTaskAsync("Users/" + i.ToString());
-                    Data sel = response.ResultAs<Data>();
-                    if (sel.Email == username.Text && sel.Pw == textBox2.Text && sel.Is_Admin == "1")
-                    {
-                        MessageBox.Show("Success");
-                        break;
-                    }
-                    else if (i == (limit - 1) && sel.Email != username.Text && sel.Pw != textBox2.Text) MessageBox.Show("Email hoặc mật khẩu không đúng, vui lòng nhập lại.");
-                    else if (sel.Email == username.Text && sel.Pw == textBox2.Text && sel.Is_Admin != "1") MessageBox.Show("You are not Admin!");
 
-                }
-            }
-
-        }
 
         private void Sign_in_as_Admin_Load(object sender, EventArgs e)
         {
@@ -121,37 +58,72 @@ namespace DOANMONHOC
             }*/
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Sign_in_as_Admin_Load_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void username_admin_Enter(object sender, EventArgs e)
         {
-
+            if (username_admin.Text == "School email addess")
+            {
+                username_admin.Clear();
+                username_admin.ForeColor = Color.FromArgb(37, 83, 140);
+            }
         }
 
         private void username_admin_Leave(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrWhiteSpace(username_admin.Text))
+            {
+                username_admin.Text = "School email addess";
+                username_admin.ForeColor = Color.FromArgb(37, 83, 140);
+            }
         }
 
         private void password_admin_Enter(object sender, EventArgs e)
         {
-
+            if (password_admin.Text == "Password")
+            {
+                password_admin.Clear();
+                password_admin.UseSystemPasswordChar = true;
+                password_admin.ForeColor = Color.FromArgb(37, 83, 140);
+            }
         }
 
         private void password_admin_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(password_admin.Text))
+            {
+                password_admin.Text = "Password";
+                password_admin.UseSystemPasswordChar = false;
+                password_admin.ForeColor = Color.FromArgb(37, 83, 140);
+            }
+        }
+        public static bool VerifyPassword(string password, string hashedPassword)
+        {
+            return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
+        }
+        private async void admin_sign_in_Click(object sender, EventArgs e)
+        {
+            if (!username_admin.Text.Contains("@admin")) MessageBox.Show("You are not Admin!");
+            else
+            {
+                Task<int> task = id_index();
+                int limit = await task;
+                for (int i = 1; i < limit; i++)
+                {
+                    FirebaseResponse response = await client.GetTaskAsync("Users/" + i.ToString());
+                    Data sel = response.ResultAs<Data>();
+                    if (sel.Email == username_admin.Text && VerifyPassword(password_admin.Text, sel.Pw) && sel.Is_Admin == "1")
+                    {
+                        MessageBox.Show("Success");
+                        break;
+                    }
+                    else if (i == (limit - 1) && sel.Email != username_admin.Text && !VerifyPassword(password_admin.Text, sel.Pw)) MessageBox.Show("Email hoặc mật khẩu không đúng, vui lòng nhập lại.");
+                    else if (sel.Is_Admin != "1") MessageBox.Show("You are not Admin!");
+
+                }
+            }
+        }
+
+        private void username_admin_TextChanged(object sender, EventArgs e)
         {
 
         }
