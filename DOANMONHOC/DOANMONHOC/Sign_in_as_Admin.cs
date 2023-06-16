@@ -43,7 +43,7 @@ namespace DOANMONHOC
         {
             for (int i = 1; ; i++)
             {
-                FirebaseResponse response = await client.GetTaskAsync("Users/" + i.ToString());
+                FirebaseResponse response = await client.GetTaskAsync("Admins/" + i.ToString());
                 if (response.Body == "null") return i;
             }
         }
@@ -98,28 +98,24 @@ namespace DOANMONHOC
         }
         public static bool VerifyPassword(string password, string hashedPassword)
         {
-            return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
+            return password == hashedPassword;
+            //return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
         private async void admin_sign_in_Click(object sender, EventArgs e)
         {
-            if (!username_admin.Text.Contains("@admin")) MessageBox.Show("You are not Admin!");
-            else
+            Task<int> task = id_index();
+            int limit = await task;
+            for (int i = 1; i < limit; i++)
             {
-                Task<int> task = id_index();
-                int limit = await task;
-                for (int i = 1; i < limit; i++)
+                FirebaseResponse response = await client.GetTaskAsync("Admins/" + i.ToString());
+                ADMIN sel = response.ResultAs<ADMIN>();
+                if (sel.Email == username_admin.Text && VerifyPassword(password_admin.Text, sel.Password))
                 {
-                    FirebaseResponse response = await client.GetTaskAsync("Users/" + i.ToString());
-                    Users sel = response.ResultAs<Users>();
-                    if (sel.Email == username_admin.Text && VerifyPassword(password_admin.Text, sel.Pw) && sel.Is_Admin == "1")
-                    {
-                        MessageBox.Show("Success");
-                        break;
-                    }
-                    else if (i == (limit - 1) && sel.Email != username_admin.Text && !VerifyPassword(password_admin.Text, sel.Pw)) MessageBox.Show("Email hoặc mật khẩu không đúng, vui lòng nhập lại.");
-                    else if (sel.Is_Admin != "1") MessageBox.Show("You are not Admin!");
-
+                    MessageBox.Show("Success");
+                    break;
                 }
+                else if (i == (limit - 1) && !VerifyPassword(password_admin.Text, sel.Password))MessageBox.Show("Email hoặc mật khẩu không đúng, vui lòng nhập lại.");
+                else MessageBox.Show("You are not Admin!");
             }
         }
 
@@ -128,4 +124,4 @@ namespace DOANMONHOC
 
         }
     }
-}
+    }
