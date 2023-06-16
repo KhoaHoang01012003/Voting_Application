@@ -63,7 +63,6 @@ D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.
 D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.CreateVote2.resources
 D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.CreateVote3.resources
 D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Index.resources
-D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Input.resources
 D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Properties.Resources.resources
 D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Register.resources
 D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Sign_in.resources

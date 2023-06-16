@@ -40,9 +40,6 @@
     <Compile Update="Sign_in_as_voter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Input.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Sign_in_as_Admin.cs">
       <SubType>Form</SubType>
     </Compile>

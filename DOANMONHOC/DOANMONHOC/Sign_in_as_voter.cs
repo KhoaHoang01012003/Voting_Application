@@ -17,7 +17,7 @@ namespace DOANMONHOC
         {
             InitializeComponent();
             //tên textbox email
-            username.Text = "School email addess";
+            username.Text = "Username";
             username.ForeColor = Color.FromArgb(37, 83, 140);
             username.Enter += username_Enter;
             username.Leave += username_Leave;
@@ -32,7 +32,7 @@ namespace DOANMONHOC
         {
             for (int i = 1; ; i++)
             {
-                FirebaseResponse response = await client.GetTaskAsync("Users/" + i.ToString());
+                FirebaseResponse response = await client.GetTaskAsync("Users/" + "User " + i.ToString());
                 if (response.Body == "null") return i;
             }
         }
@@ -48,7 +48,7 @@ namespace DOANMONHOC
 
         private void username_Enter(object sender, EventArgs e)
         {
-            if (username.Text == "School email addess")
+            if (username.Text == "Username")
             {
                 username.Clear();
                 username.ForeColor = Color.FromArgb(37, 83, 140);
@@ -59,7 +59,7 @@ namespace DOANMONHOC
         {
             if (string.IsNullOrWhiteSpace(username.Text))
             {
-                username.Text = "School email addess";
+                username.Text = "Username";
                 username.ForeColor = Color.FromArgb(37, 83, 140);
             }
         }
@@ -95,23 +95,19 @@ namespace DOANMONHOC
         }
         private async void sign_in_button_Click(object sender, EventArgs e)
         {
-            if (username.Text.Contains("@admin")) MessageBox.Show("Please sign in as Admin!");
-            else
+            Task<int> task = id_index();
+            int limit = await task;
+            for (int i = 1; i < limit; i++)
             {
-                Task<int> task = id_index();
-                int limit = await task;
-                for (int i = 1; i < limit; i++)
+                FirebaseResponse response = await client.GetTaskAsync("Users/" + "User " + i.ToString());
+                USER sel = response.ResultAs<USER>();
+                if (sel.UserName == username.Text && VerifyPassword(password.Text, sel.Password))
                 {
-                    FirebaseResponse response = await client.GetTaskAsync("Users/" + i.ToString());
-                    Users sel = response.ResultAs<Users>();
-                    if (sel.UserName == username.Text && VerifyPassword(password.Text, sel.Pw))
-                    {
-                        MessageBox.Show("Success");
-                        break;
-                    }
-                    else if (i == (limit - 1) && sel.UserName != username.Text && !VerifyPassword(password.Text, sel.Pw)) MessageBox.Show("Username hoặc mật khẩu không đúng, vui lòng nhập lại.");
-
+                    MessageBox.Show("Success");
+                    break;
                 }
+                else if (i == (limit - 1) && sel.UserName != username.Text && !VerifyPassword(password.Text, sel.Password)) MessageBox.Show("Username hoặc mật khẩu không đúng, vui lòng nhập lại.");
+
             }
         }
 

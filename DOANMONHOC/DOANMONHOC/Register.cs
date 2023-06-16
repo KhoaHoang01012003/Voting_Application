@@ -101,7 +101,7 @@ namespace DOANMONHOC
             }
         }
 
-  
+
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -115,24 +115,20 @@ namespace DOANMONHOC
                 Task<int> id = id_index();
                 int tmp = await id;
 
-                var data = new Users
+                var data = new USER
                 {
-                    ID = tmp.ToString(),
                     Email = guna2TextBox1.Text,
-                    Pw = HashPassword(guna2TextBox2.Text),
-                    User_role = "student",
-                    Fullname = "",
-                    Avt_ID = "",
-                    Is_Admin = "",
-                    Student_ID = guna2TextBox1.Text.Substring(0, 8),
+                    Password = HashPassword(guna2TextBox2.Text),
+                    Fullname = guna2TextBox3.Text,
+                    Student_ID = guna2TextBox4.Text,
                     Faculty_ID = "",
                     Class_ID = "",
                     UserName = guna2TextBox1.Text
                 };
 
 
-                SetResponse response = await client.SetTaskAsync("Users/" + tmp.ToString(), data);
-                Users result = response.ResultAs<Users>();
+                SetResponse response = await client.SetTaskAsync("Users/" + "User " + tmp.ToString(), data);
+                USER result = response.ResultAs<USER>();
 
                 MessageBox.Show("Data... inserted " + result.Email);
                 label4.Text = "";
@@ -146,5 +142,6 @@ namespace DOANMONHOC
                 label4.Text += "\nMật khẩu yếu!";
             }
         }
+
     }
 }
