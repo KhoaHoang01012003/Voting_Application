@@ -110,7 +110,7 @@ namespace DOANMONHOC
                 for (int i = 1; i < limit; i++)
                 {
                     FirebaseResponse response = await client.GetTaskAsync("Users/" + i.ToString());
-                    Data sel = response.ResultAs<Data>();
+                    Users sel = response.ResultAs<Users>();
                     if (sel.Email == username_admin.Text && VerifyPassword(password_admin.Text, sel.Pw) && sel.Is_Admin == "1")
                     {
                         MessageBox.Show("Success");

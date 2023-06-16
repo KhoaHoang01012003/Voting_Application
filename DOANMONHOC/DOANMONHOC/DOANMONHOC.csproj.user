@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="add_candidate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="change_user_info.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="CreateVote1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -10,7 +16,19 @@
     <Compile Update="CreateVote3.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Denied.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Homepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Index.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Info_Candidate.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Register.cs">
@@ -19,19 +37,25 @@
     <Compile Update="RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Sign_in.cs">
+    <Compile Update="Sign_in_as_voter.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Input.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="RoundedTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Update="Sign_in_as_Admin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Success.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Verify.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="VerifyEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vote_view_candidate_details.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -103,13 +103,13 @@ namespace DOANMONHOC
                 for (int i = 1; i < limit; i++)
                 {
                     FirebaseResponse response = await client.GetTaskAsync("Users/" + i.ToString());
-                    Data sel = response.ResultAs<Data>();
-                    if (sel.Email == username.Text && VerifyPassword(password.Text, sel.Pw))
+                    Users sel = response.ResultAs<Users>();
+                    if (sel.UserName == username.Text && VerifyPassword(password.Text, sel.Pw))
                     {
                         MessageBox.Show("Success");
                         break;
                     }
-                    else if (i == (limit - 1) && sel.Email != username.Text && !VerifyPassword(password.Text, sel.Pw)) MessageBox.Show("Email hoặc mật khẩu không đúng, vui lòng nhập lại.");
+                    else if (i == (limit - 1) && sel.UserName != username.Text && !VerifyPassword(password.Text, sel.Pw)) MessageBox.Show("Username hoặc mật khẩu không đúng, vui lòng nhập lại.");
 
                 }
             }

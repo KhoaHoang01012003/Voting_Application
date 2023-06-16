@@ -44,16 +44,6 @@ namespace DOANMONHOC
             }*/
         }
 
-        private void username_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -111,26 +101,12 @@ namespace DOANMONHOC
             }
         }
 
-        private void button_register_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
+  
         private void label4_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private async void guna2Button1_Click_1(object sender, EventArgs e)
         {
@@ -139,7 +115,7 @@ namespace DOANMONHOC
                 Task<int> id = id_index();
                 int tmp = await id;
 
-                var data = new Data
+                var data = new Users
                 {
                     ID = tmp.ToString(),
                     Email = guna2TextBox1.Text,
@@ -150,12 +126,13 @@ namespace DOANMONHOC
                     Is_Admin = "",
                     Student_ID = guna2TextBox1.Text.Substring(0, 8),
                     Faculty_ID = "",
-                    Class_ID = ""
+                    Class_ID = "",
+                    UserName = guna2TextBox1.Text
                 };
 
 
                 SetResponse response = await client.SetTaskAsync("Users/" + tmp.ToString(), data);
-                Data result = response.ResultAs<Data>();
+                Users result = response.ResultAs<Users>();
 
                 MessageBox.Show("Data... inserted " + result.Email);
                 label4.Text = "";

@@ -43,7 +43,7 @@ namespace DOANMONHOC
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            var data = new Data
+            var data = new Users
             {
                 ID = textBox10.Text,
                 Email = textBox1.Text,
@@ -57,14 +57,14 @@ namespace DOANMONHOC
                 Class_ID = textBox9.Text
             };
             SetResponse response = await client.SetTaskAsync("Users/" + textBox10.Text, data);
-            Data result = response.ResultAs<Data>();
+            Users result = response.ResultAs<Users>();
             MessageBox.Show("Data inserted" + result.ID);
         }
 
         private async void button2_Click(object sender, EventArgs e)
         {
             FirebaseResponse response = await client.GetTaskAsync("Users/"+textBox10.Text);
-            Data obj = response.ResultAs<Data>();
+            Users obj = response.ResultAs<Users>();
             textBox1.Text= obj.Email;
             textBox2.Text = obj.Pw;
             MessageBox.Show("Truy xuất thành công");

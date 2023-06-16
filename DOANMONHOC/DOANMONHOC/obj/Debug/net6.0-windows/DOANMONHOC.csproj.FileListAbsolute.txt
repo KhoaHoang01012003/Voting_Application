@@ -58,3 +58,47 @@ D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Applic
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\System.Management.dll
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.VerifyEmail.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.csproj.AssemblyReference.cache
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.CreateVote1.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.CreateVote2.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.CreateVote3.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Index.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Input.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Properties.Resources.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Register.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Sign_in.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Sign_in_as_Admin.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.VerifyEmail.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.csproj.GenerateResource.cache
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.GeneratedMSBuildEditorConfig.editorconfig
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.AssemblyInfoInputs.cache
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.AssemblyInfo.cs
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.csproj.CoreCompileInputs.cache
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.dll
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\refint\DOANMONHOC.dll
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.pdb
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\DOANMONHOC.exe
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\DOANMONHOC.deps.json
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\DOANMONHOC.runtimeconfig.json
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\DOANMONHOC.dll
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\DOANMONHOC.pdb
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\BCrypt.Net-Next.dll
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\FireSharp.dll
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\FireSharp.Serialization.JsonNet.dll
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\Guna.UI2.dll
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\RestSharp.dll
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\System.Management.dll
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.csproj.CopyComplete
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.genruntimeconfig.cache
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\ref\DOANMONHOC.dll
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.vote_view_candidate_details.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Verify.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Denied.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Success.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Homepage.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.add_candidate.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.change_user_info.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Dashboard.resources
+D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Info_Candidate.resources
