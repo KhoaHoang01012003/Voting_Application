@@ -27,6 +27,7 @@
         public string Description { get; set; }
         public string Faculty_ID { get; set; }
         public string Class_ID { get; set; }
+        public string Promise { get; set; }
     }
     internal class CAMPAIGN
     {

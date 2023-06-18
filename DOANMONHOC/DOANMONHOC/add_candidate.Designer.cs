@@ -50,6 +50,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel3 = new Panel();
             label7 = new Label();
             guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -74,6 +76,8 @@
             label9 = new Label();
             guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
+            label10 = new Label();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
@@ -251,7 +255,6 @@
             label1.Size = new Size(292, 37);
             label1.TabIndex = 5;
             label1.Text = "Thêm ứng cử viên mới";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -262,7 +265,6 @@
             label2.Size = new Size(323, 23);
             label2.TabIndex = 5;
             label2.Text = "Thêm và chỉnh sửa thông tin ứng cử viên";
-            label2.Click += label1_Click;
             // 
             // guna2Shapes1
             // 
@@ -361,7 +363,7 @@
             guna2TextBox2.PlaceholderText = "";
             guna2TextBox2.SelectedText = "";
             guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            guna2TextBox2.Size = new Size(993, 64);
+            guna2TextBox2.Size = new Size(469, 64);
             guna2TextBox2.TabIndex = 11;
             // 
             // label8
@@ -445,6 +447,39 @@
             guna2Button4.Size = new Size(164, 56);
             guna2Button4.TabIndex = 12;
             guna2Button4.Text = "Cập nhật";
+            guna2Button4.Click += guna2Button4_Click;
+            // 
+            // guna2TextBox5
+            // 
+            guna2TextBox5.BorderColor = Color.FromArgb(37, 83, 140);
+            guna2TextBox5.BorderRadius = 10;
+            guna2TextBox5.CustomizableEdges = customizableEdges22;
+            guna2TextBox5.DefaultText = "";
+            guna2TextBox5.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            guna2TextBox5.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            guna2TextBox5.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox5.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox5.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2TextBox5.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox5.Location = new Point(866, 736);
+            guna2TextBox5.Name = "guna2TextBox5";
+            guna2TextBox5.PasswordChar = '\0';
+            guna2TextBox5.PlaceholderText = "";
+            guna2TextBox5.SelectedText = "";
+            guna2TextBox5.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            guna2TextBox5.Size = new Size(469, 64);
+            guna2TextBox5.TabIndex = 13;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(866, 707);
+            label10.Name = "label10";
+            label10.Size = new Size(38, 23);
+            label10.TabIndex = 14;
+            label10.Text = "Lớp";
             // 
             // add_candidate
             // 
@@ -454,6 +489,8 @@
             AutoScrollMargin = new Size(100, 100);
             BackColor = Color.White;
             ClientSize = new Size(1422, 977);
+            Controls.Add(label10);
+            Controls.Add(guna2TextBox5);
             Controls.Add(guna2Button4);
             Controls.Add(guna2TextBox4);
             Controls.Add(label9);
@@ -472,6 +509,7 @@
             Controls.Add(panel1);
             Name = "add_candidate";
             Text = "add_candidate";
+            Load += add_candidate_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).EndInit();
@@ -508,5 +546,7 @@
         private Label label9;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
+        private Label label10;
     }
 }
