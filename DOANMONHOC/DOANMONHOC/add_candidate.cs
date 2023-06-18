@@ -1,7 +1,6 @@
 ﻿using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
-using Guna.UI2.WinForms;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -27,14 +26,6 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient candidate;
-        private async Task<int> id_index()
-        {
-            for (int i = 1; ; i++)
-            {
-                FirebaseResponse response = await candidate.GetTaskAsync("Candidates/" + "Candidates " + i.ToString());
-                if (response.Body == "null") return i;
-            }
-        }
         private async Task<int> id_class()
         {
             for (int i = 1; ; i++)
@@ -81,7 +72,7 @@ namespace DOANMONHOC
         private async void guna2Button4_Click(object sender, EventArgs e)
         {
             ClassAndFaculty tmp_class = await SearchClass(guna2TextBox5.Text);
-
+           
             if (guna2TextBox1.Text == "")
             {
                 MessageBox.Show("Please enter a value for Candidate Name.");
@@ -92,7 +83,7 @@ namespace DOANMONHOC
                 MessageBox.Show("Please enter a value for Birthday.");
                 guna2TextBox2.Focus();
             }
-
+            
             else if (guna2TextBox4.Text == "")
             {
                 MessageBox.Show("Please enter a value for Promise.");
@@ -106,12 +97,21 @@ namespace DOANMONHOC
             }
             else
             {
-                Task<int> id = id_index();
-                int tmp = await id;
+                int cnt;
+                try
+                {
+                    FirebaseResponse response = await candidate.GetTaskAsync("Candidates/");
+                    Dictionary<string, CANDIDATE> users = response.ResultAs<Dictionary<string, CANDIDATE>>();
+                    cnt = users.Count() + 1;
+                }
+                catch {
+                    cnt = 1;
+                }
+                
 
                 var data = new CANDIDATE
                 {
-                    Candidate_ID = tmp.ToString(),
+                    Candidate_ID = cnt.ToString(),
                     CandidateName = guna2TextBox1.Text,
                     Birthday = guna2TextBox2.Text,
                     Description = guna2TextBox3.Text,
@@ -120,17 +120,11 @@ namespace DOANMONHOC
                     Promise = guna2TextBox4.Text,
                 };
 
-
-                SetResponse response = await candidate.SetTaskAsync("Candidates/" + "Candidates " + tmp.ToString(), data);
-                USER result = response.ResultAs<USER>();
+                PushResponse response_result = await candidate.PushTaskAsync("Candidates/", data);
+                USER result = response_result.ResultAs<USER>();
 
                 MessageBox.Show("Data... inserted " + result.Email);
             }
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
