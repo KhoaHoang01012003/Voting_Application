@@ -13,9 +13,12 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
-        public Sign_in()
+        private Index indexForm;
+
+        public Sign_in(Index indexForm)
         {
             InitializeComponent();
+            this.indexForm = indexForm;
             //tên textbox email
             username.Text = "Username";
             username.ForeColor = Color.FromArgb(37, 83, 140);
@@ -86,34 +89,45 @@ namespace DOANMONHOC
 
         private void Sign_in_as_Admin_button_Click(object sender, EventArgs e)
         {
-            Form AdminForm = new Sign_in_as_Admin();
+            Form AdminForm = new Sign_in_as_Admin(indexForm);
             AdminForm.Show();
+            this.Close();
         }
+
         public static bool VerifyPassword(string password, string hashedPassword)
         {
             return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
         private async void sign_in_button_Click(object sender, EventArgs e)
         {
-            Task<int> task = id_index();
-            int limit = await task;
-            for (int i = 1; i < limit; i++)
+            FirebaseResponse response = await client.GetTaskAsync("Users/");
+
+            Dictionary<string, USER> users = response.ResultAs<Dictionary<string, USER>>();
+            bool check = false;
+            foreach (var user in users)
             {
-                FirebaseResponse response = await client.GetTaskAsync("Users/" + "User " + i.ToString());
-                USER sel = response.ResultAs<USER>();
-                if (sel.UserName == username.Text && VerifyPassword(password.Text, sel.Password))
+                if (user.Value.UserName == username.Text && VerifyPassword(password.Text, user.Value.Password))
                 {
-                    MessageBox.Show("Success");
+                    Properties.Settings.Default.Username = username.Text;
+                    Properties.Settings.Default.Save();
+
+                    var openForm = new Dashboard(indexForm);
+                    openForm.Show();
+                    this.Close();
+                    check = true;
                     break;
                 }
-                else if (i == (limit - 1) && sel.UserName != username.Text && !VerifyPassword(password.Text, sel.Password)) MessageBox.Show("Username hoặc mật khẩu không đúng, vui lòng nhập lại.");
-
+            }
+            if (!check)
+            {
+                MessageBox.Show("Username hoặc mật khẩu không đúng, vui lòng nhập lại.");
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-
+            indexForm.Show();
+            this.Close();
         }
     }
 }

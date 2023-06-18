@@ -28,26 +28,19 @@ namespace DOANMONHOC
         };
 
         IFirebaseClient client;
+        private Index indexForm;
 
-        public Register()
+        public Register(Index indexForm)
         {
             InitializeComponent();
+            this.indexForm = indexForm;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Register_Load(object sender, EventArgs e)
         {
             client = new FireSharp.FirebaseClient(config);
-
-            /*if (client != null)
-            {
-                MessageBox.Show("Connection is established");
-            }*/
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
         private bool IsValidEmail(string email)
         {
             // Regular expression for a valid email
@@ -92,45 +85,37 @@ namespace DOANMONHOC
             return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
 
-        private async Task<int> id_index()
-        {
-            for (int i = 1; ; i++)
-            {
-                FirebaseResponse response = await client.GetTaskAsync("Users/" + i.ToString());
-                if (response.Body == "null") return i;
-            }
-        }
-
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private async void guna2Button1_Click_1(object sender, EventArgs e)
+        private async void guna2Button1_Click(object sender, EventArgs e)
         {
             if (IsValidEmail(guna2TextBox1.Text) && IsStrongPassword(guna2TextBox2.Text))
             {
-                Task<int> id = id_index();
-                int tmp = await id;
+                FirebaseResponse emailCheckResponse = await client.GetTaskAsync("Users/");
+                var emailCheckData = emailCheckResponse.ResultAs<Dictionary<string, USER>>();
+
+                bool emailExists = emailCheckData.Values.Any(u => u.Email == guna2TextBox1.Text);
+
+                if (emailExists)
+                {
+                    label4.Text = "Email đã được đăng ký. Vui lòng sử dụng email khác.";
+                    return;
+                }
 
                 var data = new USER
                 {
                     Email = guna2TextBox1.Text,
                     Password = HashPassword(guna2TextBox2.Text),
-                    Fullname = guna2TextBox3.Text,
-                    Student_ID = guna2TextBox4.Text,
+                    Fullname = "",
+                    Student_ID = guna2TextBox1.Text.Substring(0,8),
                     Faculty_ID = "",
                     Class_ID = "",
                     UserName = guna2TextBox1.Text
                 };
 
 
-                SetResponse response = await client.SetTaskAsync("Users/" + "User " + tmp.ToString(), data);
+                PushResponse response = await client.PushTaskAsync("Users/", data);
                 USER result = response.ResultAs<USER>();
 
-                MessageBox.Show("Data... inserted " + result.Email);
+                MessageBox.Show("DK THANH CONG " + result.Email);
                 label4.Text = "";
             }
             else if (!IsValidEmail(guna2TextBox1.Text))
@@ -143,5 +128,10 @@ namespace DOANMONHOC
             }
         }
 
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            indexForm.Show();
+            this.Close();
+        }
     }
 }

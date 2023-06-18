@@ -605,6 +605,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "CreateVote3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateVote3";
             this.Load += new System.EventHandler(this.CreateVote3_Load);
             this.panel1.ResumeLayout(false);

@@ -31,14 +31,15 @@
     }
     internal class CAMPAIGN
     {
-        public string Campaign_ID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string CampaignName { get; set; }
-        public string StartTime { get; set; }
-        public string EndTime { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+        public string Category { get; set; }
+        public int Status { get; set; }
     }
-    internal class CAMPAIGN_CLASSE
+    internal class CAMPAIGN_CLASS
     {
         public string Campaign_ID { get; set; }
         public string Class_ID { get; set; }

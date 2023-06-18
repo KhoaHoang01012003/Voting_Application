@@ -67,10 +67,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.category = new Guna.UI2.WinForms.Guna2TextBox();
+            this.endTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.startTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.campaignName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -118,6 +118,7 @@
             this.guna2Button5.TabIndex = 10;
             this.guna2Button5.Text = "Đăng xuất";
             this.guna2Button5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
             // guna2Button3
             // 
@@ -236,7 +237,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1044, 28);
+            this.label7.Location = new System.Drawing.Point(1026, 28);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 20);
             this.label7.TabIndex = 1;
@@ -247,7 +248,7 @@
             // 
             this.guna2CirclePictureBox1.Image = global::DOANMONHOC.Properties.Resources.admin_img__Custom___2_;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(976, 24);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(958, 24);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges9;
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -270,10 +271,10 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.panel4.Controls.Add(this.guna2Button4);
-            this.panel4.Controls.Add(this.guna2TextBox2);
-            this.panel4.Controls.Add(this.guna2DateTimePicker2);
-            this.panel4.Controls.Add(this.guna2DateTimePicker1);
-            this.panel4.Controls.Add(this.guna2TextBox1);
+            this.panel4.Controls.Add(this.category);
+            this.panel4.Controls.Add(this.endTime);
+            this.panel4.Controls.Add(this.startTime);
+            this.panel4.Controls.Add(this.campaignName);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label4);
@@ -304,91 +305,91 @@
             this.guna2Button4.Text = "Đăng ký";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
-            // guna2TextBox2
+            // category
             // 
-            this.guna2TextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
-            this.guna2TextBox2.BorderRadius = 8;
-            this.guna2TextBox2.CustomizableEdges = customizableEdges12;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(37, 354);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            this.guna2TextBox2.Size = new System.Drawing.Size(993, 64);
-            this.guna2TextBox2.TabIndex = 19;
-            this.guna2TextBox2.TextOffset = new System.Drawing.Point(15, 0);
+            this.category.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.category.BorderRadius = 8;
+            this.category.CustomizableEdges = customizableEdges12;
+            this.category.DefaultText = "";
+            this.category.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.category.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.category.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.category.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.category.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.category.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.category.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.category.Location = new System.Drawing.Point(37, 354);
+            this.category.Name = "category";
+            this.category.PasswordChar = '\0';
+            this.category.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.category.PlaceholderText = "";
+            this.category.SelectedText = "";
+            this.category.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            this.category.Size = new System.Drawing.Size(993, 64);
+            this.category.TabIndex = 19;
+            this.category.TextOffset = new System.Drawing.Point(15, 0);
             // 
-            // guna2DateTimePicker2
+            // endTime
             // 
-            this.guna2DateTimePicker2.BackColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.guna2DateTimePicker2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
-            this.guna2DateTimePicker2.BorderRadius = 8;
-            this.guna2DateTimePicker2.Checked = true;
-            this.guna2DateTimePicker2.CustomizableEdges = customizableEdges14;
-            this.guna2DateTimePicker2.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(555, 221);
-            this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            this.guna2DateTimePicker2.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            this.guna2DateTimePicker2.Size = new System.Drawing.Size(473, 64);
-            this.guna2DateTimePicker2.TabIndex = 18;
-            this.guna2DateTimePicker2.Value = new System.DateTime(2023, 6, 4, 11, 41, 56, 50);
+            this.endTime.BackColor = System.Drawing.Color.White;
+            this.endTime.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.endTime.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.endTime.BorderRadius = 8;
+            this.endTime.Checked = true;
+            this.endTime.CustomizableEdges = customizableEdges14;
+            this.endTime.FillColor = System.Drawing.Color.White;
+            this.endTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.endTime.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.endTime.Location = new System.Drawing.Point(555, 221);
+            this.endTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.endTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.endTime.Name = "endTime";
+            this.endTime.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            this.endTime.Size = new System.Drawing.Size(473, 64);
+            this.endTime.TabIndex = 18;
+            this.endTime.Value = new System.DateTime(2023, 6, 4, 11, 41, 56, 50);
             // 
-            // guna2DateTimePicker1
+            // startTime
             // 
-            this.guna2DateTimePicker1.BackColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.BorderRadius = 8;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.CustomizableEdges = customizableEdges16;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(35, 221);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(473, 64);
-            this.guna2DateTimePicker1.TabIndex = 17;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2023, 6, 4, 11, 41, 56, 50);
+            this.startTime.BackColor = System.Drawing.Color.White;
+            this.startTime.BorderRadius = 8;
+            this.startTime.Checked = true;
+            this.startTime.CustomizableEdges = customizableEdges16;
+            this.startTime.FillColor = System.Drawing.Color.White;
+            this.startTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.startTime.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.startTime.Location = new System.Drawing.Point(35, 221);
+            this.startTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.startTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.startTime.Name = "startTime";
+            this.startTime.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            this.startTime.Size = new System.Drawing.Size(473, 64);
+            this.startTime.TabIndex = 17;
+            this.startTime.Value = new System.DateTime(2023, 6, 4, 11, 41, 56, 50);
             // 
-            // guna2TextBox1
+            // campaignName
             // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
-            this.guna2TextBox1.BorderRadius = 8;
-            this.guna2TextBox1.CustomizableEdges = customizableEdges18;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(43, 82);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges19;
-            this.guna2TextBox1.Size = new System.Drawing.Size(993, 64);
-            this.guna2TextBox1.TabIndex = 16;
-            this.guna2TextBox1.TextOffset = new System.Drawing.Point(15, 0);
+            this.campaignName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.campaignName.BorderRadius = 8;
+            this.campaignName.CustomizableEdges = customizableEdges18;
+            this.campaignName.DefaultText = "";
+            this.campaignName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.campaignName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.campaignName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.campaignName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.campaignName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.campaignName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.campaignName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.campaignName.Location = new System.Drawing.Point(43, 82);
+            this.campaignName.Name = "campaignName";
+            this.campaignName.PasswordChar = '\0';
+            this.campaignName.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.campaignName.PlaceholderText = "";
+            this.campaignName.SelectedText = "";
+            this.campaignName.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            this.campaignName.Size = new System.Drawing.Size(993, 64);
+            this.campaignName.TabIndex = 16;
+            this.campaignName.TextOffset = new System.Drawing.Point(15, 0);
             // 
             // label6
             // 
@@ -422,9 +423,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(37, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 20);
+            this.label3.Size = new System.Drawing.Size(105, 20);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Tiêu đề";
+            this.label3.Text = "Tên hoạt động";
             // 
             // label1
             // 
@@ -493,10 +494,10 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2DateTimePicker startTime;
+        private Guna.UI2.WinForms.Guna2TextBox campaignName;
+        private Guna.UI2.WinForms.Guna2DateTimePicker endTime;
+        private Guna.UI2.WinForms.Guna2TextBox category;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private Label label7;

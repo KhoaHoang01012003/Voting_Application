@@ -19,9 +19,9 @@ namespace DOANMONHOC
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            var open = new CreateVote2();
+            /*var open = new CreateVote2();
             open.Show();
-            this.Hide();
+            this.Hide();*/
         }
 
         private void guna2DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -54,9 +54,9 @@ namespace DOANMONHOC
 
         private void guna2Button14_Click(object sender, EventArgs e)
         {
-            var open = new CreateVote2();
+            /*var open = new CreateVote2();
             open.Show();
-            this.Hide();
+            this.Hide();*/
         }
     }
 }

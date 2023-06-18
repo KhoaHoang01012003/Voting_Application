@@ -59,22 +59,22 @@
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel6 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label17 = new System.Windows.Forms.Label();
+            this.category = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.guna2ShadowPanel5 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label20 = new System.Windows.Forms.Label();
+            this.cntCandidates = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.endTime = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.guna2ShadowPanel4 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label13 = new System.Windows.Forms.Label();
+            this.startTime = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.campaignName = new System.Windows.Forms.Label();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -192,7 +192,7 @@
             this.panel4.Controls.Add(this.guna2ShadowPanel5);
             this.panel4.Controls.Add(this.guna2ShadowPanel3);
             this.panel4.Controls.Add(this.guna2ShadowPanel4);
-            this.panel4.Controls.Add(this.label19);
+            this.panel4.Controls.Add(this.campaignName);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
@@ -329,7 +329,7 @@
             // guna2ShadowPanel6
             // 
             this.guna2ShadowPanel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel6.Controls.Add(this.label17);
+            this.guna2ShadowPanel6.Controls.Add(this.category);
             this.guna2ShadowPanel6.Controls.Add(this.label18);
             this.guna2ShadowPanel6.Controls.Add(this.pictureBox9);
             this.guna2ShadowPanel6.FillColor = System.Drawing.Color.White;
@@ -340,13 +340,12 @@
             this.guna2ShadowPanel6.Size = new System.Drawing.Size(351, 157);
             this.guna2ShadowPanel6.TabIndex = 18;
             // 
-            // label17
+            // category
             // 
-            this.label17.Location = new System.Drawing.Point(88, 105);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(180, 20);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "<GET TYPE>";
+            this.category.Location = new System.Drawing.Point(88, 105);
+            this.category.Name = "category";
+            this.category.Size = new System.Drawing.Size(180, 20);
+            this.category.TabIndex = 6;
             // 
             // label18
             // 
@@ -370,7 +369,7 @@
             // guna2ShadowPanel5
             // 
             this.guna2ShadowPanel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel5.Controls.Add(this.label20);
+            this.guna2ShadowPanel5.Controls.Add(this.cntCandidates);
             this.guna2ShadowPanel5.Controls.Add(this.label21);
             this.guna2ShadowPanel5.Controls.Add(this.pictureBox10);
             this.guna2ShadowPanel5.FillColor = System.Drawing.Color.White;
@@ -381,13 +380,12 @@
             this.guna2ShadowPanel5.Size = new System.Drawing.Size(351, 157);
             this.guna2ShadowPanel5.TabIndex = 17;
             // 
-            // label20
+            // cntCandidates
             // 
-            this.label20.Location = new System.Drawing.Point(88, 105);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(180, 20);
-            this.label20.TabIndex = 6;
-            this.label20.Text = "<GET NUM CANDIDATE>";
+            this.cntCandidates.Location = new System.Drawing.Point(88, 105);
+            this.cntCandidates.Name = "cntCandidates";
+            this.cntCandidates.Size = new System.Drawing.Size(180, 20);
+            this.cntCandidates.TabIndex = 6;
             // 
             // label21
             // 
@@ -411,7 +409,7 @@
             // guna2ShadowPanel3
             // 
             this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel3.Controls.Add(this.label4);
+            this.guna2ShadowPanel3.Controls.Add(this.endTime);
             this.guna2ShadowPanel3.Controls.Add(this.label5);
             this.guna2ShadowPanel3.Controls.Add(this.pictureBox3);
             this.guna2ShadowPanel3.FillColor = System.Drawing.Color.White;
@@ -422,13 +420,13 @@
             this.guna2ShadowPanel3.Size = new System.Drawing.Size(351, 157);
             this.guna2ShadowPanel3.TabIndex = 16;
             // 
-            // label4
+            // endTime
             // 
-            this.label4.Location = new System.Drawing.Point(88, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(180, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "<GET DATE TIME HERE>";
+            this.endTime.Location = new System.Drawing.Point(88, 105);
+            this.endTime.Name = "endTime";
+            this.endTime.Size = new System.Drawing.Size(180, 20);
+            this.endTime.TabIndex = 6;
+            this.endTime.Click += new System.EventHandler(this.endTime_Click);
             // 
             // label5
             // 
@@ -452,7 +450,7 @@
             // guna2ShadowPanel4
             // 
             this.guna2ShadowPanel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel4.Controls.Add(this.label13);
+            this.guna2ShadowPanel4.Controls.Add(this.startTime);
             this.guna2ShadowPanel4.Controls.Add(this.label14);
             this.guna2ShadowPanel4.Controls.Add(this.pictureBox7);
             this.guna2ShadowPanel4.FillColor = System.Drawing.Color.White;
@@ -463,13 +461,12 @@
             this.guna2ShadowPanel4.Size = new System.Drawing.Size(351, 157);
             this.guna2ShadowPanel4.TabIndex = 15;
             // 
-            // label13
+            // startTime
             // 
-            this.label13.Location = new System.Drawing.Point(88, 105);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(180, 20);
-            this.label13.TabIndex = 6;
-            this.label13.Text = "<GET DATE TIME HERE>";
+            this.startTime.Location = new System.Drawing.Point(88, 105);
+            this.startTime.Name = "startTime";
+            this.startTime.Size = new System.Drawing.Size(180, 20);
+            this.startTime.TabIndex = 6;
             // 
             // label14
             // 
@@ -490,15 +487,14 @@
             this.pictureBox7.TabIndex = 4;
             this.pictureBox7.TabStop = false;
             // 
-            // label19
+            // campaignName
             // 
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(25, 35);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(508, 48);
-            this.label19.TabIndex = 5;
-            this.label19.Text = "Bầu <get data>";
+            this.campaignName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.campaignName.Location = new System.Drawing.Point(25, 35);
+            this.campaignName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.campaignName.Name = "campaignName";
+            this.campaignName.Size = new System.Drawing.Size(508, 48);
+            this.campaignName.TabIndex = 5;
             // 
             // guna2ShadowPanel2
             // 
@@ -777,6 +773,7 @@
             this.guna2Button5.TabIndex = 10;
             this.guna2Button5.Text = "Đăng xuất";
             this.guna2Button5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
             // guna2Button3
             // 
@@ -843,6 +840,7 @@
             this.guna2Button1.Text = "Dashboard";
             this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.TextOffset = new System.Drawing.Point(67, 0);
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // pictureBox1
             // 
@@ -864,7 +862,9 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "CreateVote2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateVote2";
+            this.Load += new System.EventHandler(this.CreateVote2_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
@@ -929,22 +929,22 @@
         private PictureBox pictureBox6;
         private Panel panel4;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel6;
-        private Label label17;
+        private Label category;
         private Label label18;
         private PictureBox pictureBox9;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel5;
-        private Label label20;
+        private Label cntCandidates;
         private Label label21;
         private PictureBox pictureBox10;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel3;
-        private Label label4;
+        private Label endTime;
         private Label label5;
         private PictureBox pictureBox3;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel4;
-        private Label label13;
+        private Label startTime;
         private Label label14;
         private PictureBox pictureBox7;
-        private Label label19;
+        private Label campaignName;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
         private Label label1;
         private Label label3;

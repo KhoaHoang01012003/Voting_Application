@@ -12,6 +12,7 @@ using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace DOANMONHOC
@@ -24,9 +25,12 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
-        public Sign_in_as_Admin()
+        private Index indexForm;
+
+        public Sign_in_as_Admin(Index indexForm)
         {
             InitializeComponent();
+            this.indexForm = indexForm;
             //tên textbox email
             username_admin.Text = "School email addess";
             username_admin.ForeColor = Color.FromArgb(37, 83, 140);
@@ -52,10 +56,6 @@ namespace DOANMONHOC
         private void Sign_in_as_Admin_Load(object sender, EventArgs e)
         {
             client = new FireSharp.FirebaseClient(config);
-            /*if (client != null)
-            {
-                MessageBox.Show("Connection is established");
-            }*/
         }
 
 
@@ -105,23 +105,33 @@ namespace DOANMONHOC
         {
             Task<int> task = id_index();
             int limit = await task;
+            bool check = false;
             for (int i = 1; i < limit; i++)
             {
                 FirebaseResponse response = await client.GetTaskAsync("Admins/" + i.ToString());
-                ADMIN sel = response.ResultAs<ADMIN>();
-                if (sel.Email == username_admin.Text && VerifyPassword(password_admin.Text, sel.Password))
+                ADMIN admin = response.ResultAs<ADMIN>();
+                if (admin.UserName == username_admin.Text && VerifyPassword(password_admin.Text, admin.Password))
                 {
-                    MessageBox.Show("Success");
+                    Properties.Settings.Default.Username = username_admin.Text;
+                    Properties.Settings.Default.Save();
+
+                    var openForm = new Admin_Dashboard(indexForm);
+                    openForm.Show();
+                    this.Close();
+                    check = true;
                     break;
                 }
-                else if (i == (limit - 1) && !VerifyPassword(password_admin.Text, sel.Password))MessageBox.Show("Email hoặc mật khẩu không đúng, vui lòng nhập lại.");
-                else MessageBox.Show("You are not Admin!");
+            }
+            if (!check)
+            {
+                MessageBox.Show("Username hoặc mật khẩu không đúng, vui lòng nhập lại.");
             }
         }
 
-        private void username_admin_TextChanged(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-
+            indexForm.Show();
+            this.Close();
         }
     }
-    }
+}
