@@ -1,17 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "0IVT8SyUmkNwtl7MGHB88Y7iSqX8vO1QsMfWuFs+t7BdnjFstekIunbjH5kQ/IFF1eMWoi0UV1YFjRaIl70RAw==",
+  "dgSpecHash": "eOMbfj9I0MJnYEI1B3LGkowNJnDLKEgndC+79KSCk/goRidiI9GYNA+1KnpXXAX49gGJbFyBZVj3tK1mjo92Xw==",
   "success": true,
-  "projectFilePath": "D:\\Voting_Application\\DOANMONHOC\\DOANMONHOC\\DOANMONHOC.csproj",
+  "projectFilePath": "D:\\Documents\\Learning materials\\HK4\\Lap trinh mang can ban\\Project\\Voting_Application\\DOANMONHOC\\DOANMONHOC\\DOANMONHOC.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ADMIN\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\firesharp\\1.1.0\\firesharp.1.1.0.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\firesharp.serialization.jsonnet\\1.1.0\\firesharp.serialization.jsonnet.1.1.0.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.4\\guna.ui2.winforms.2.0.4.4.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\newtonsoft.json\\6.0.4\\newtonsoft.json.6.0.4.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\restsharp\\104.4.0\\restsharp.104.4.0.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\system.management\\6.0.0\\system.management.6.0.0.nupkg.sha512"
+    "C:\\Users\\gado123\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\gado123\\.nuget\\packages\\firesharp\\1.1.0\\firesharp.1.1.0.nupkg.sha512",
+    "C:\\Users\\gado123\\.nuget\\packages\\firesharp.serialization.jsonnet\\1.1.0\\firesharp.serialization.jsonnet.1.1.0.nupkg.sha512",
+    "C:\\Users\\gado123\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.4\\guna.ui2.winforms.2.0.4.4.nupkg.sha512",
+    "C:\\Users\\gado123\\.nuget\\packages\\newtonsoft.json\\6.0.4\\newtonsoft.json.6.0.4.nupkg.sha512",
+    "C:\\Users\\gado123\\.nuget\\packages\\restsharp\\104.4.0\\restsharp.104.4.0.nupkg.sha512",
+    "C:\\Users\\gado123\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
+    "C:\\Users\\gado123\\.nuget\\packages\\system.management\\6.0.0\\system.management.6.0.0.nupkg.sha512"
   ],
   "logs": [
     {

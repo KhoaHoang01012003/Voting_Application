@@ -1,6 +1,7 @@
 ﻿using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using Guna.UI2.WinForms;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -80,7 +81,7 @@ namespace DOANMONHOC
         private async void guna2Button4_Click(object sender, EventArgs e)
         {
             ClassAndFaculty tmp_class = await SearchClass(guna2TextBox5.Text);
-           
+
             if (guna2TextBox1.Text == "")
             {
                 MessageBox.Show("Please enter a value for Candidate Name.");
@@ -91,7 +92,7 @@ namespace DOANMONHOC
                 MessageBox.Show("Please enter a value for Birthday.");
                 guna2TextBox2.Focus();
             }
-            
+
             else if (guna2TextBox4.Text == "")
             {
                 MessageBox.Show("Please enter a value for Promise.");
@@ -125,6 +126,11 @@ namespace DOANMONHOC
 
                 MessageBox.Show("Data... inserted " + result.Email);
             }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

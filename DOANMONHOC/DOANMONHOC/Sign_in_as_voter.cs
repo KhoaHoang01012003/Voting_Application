@@ -103,8 +103,9 @@ namespace DOANMONHOC
             FirebaseResponse response = await client.GetTaskAsync("Users/");
 
             Dictionary<string, USER> users = response.ResultAs<Dictionary<string, USER>>();
+            int cnt = users.Count();
             bool check = false;
-            foreach (var user in users)
+            foreach (var user in users) 
             {
                 if (user.Value.UserName == username.Text && VerifyPassword(password.Text, user.Value.Password))
                 {

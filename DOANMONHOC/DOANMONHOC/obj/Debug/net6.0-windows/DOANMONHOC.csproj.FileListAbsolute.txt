@@ -33,7 +33,6 @@ D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Applic
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\RestSharp.dll
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.csproj.AssemblyReference.cache
-D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Input.resources
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Properties.Resources.resources
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Sign_in.resources
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Sign_in_as_Admin.resources
@@ -101,3 +100,13 @@ D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.
 D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.change_user_info.resources
 D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Dashboard.resources
 D:\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Info_Candidate.resources
+D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.add_candidate.resources
+D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.change_user_info.resources
+D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Dashboard.resources
+D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Denied.resources
+D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Homepage.resources
+D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Info_Candidate.resources
+D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Success.resources
+D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Verify.resources
+D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.vote_view_candidate_details.resources
+D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Admin_Dashboard.resources
