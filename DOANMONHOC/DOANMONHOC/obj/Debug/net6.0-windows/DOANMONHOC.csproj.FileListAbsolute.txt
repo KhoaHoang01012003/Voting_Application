@@ -110,3 +110,47 @@ D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Applic
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Verify.resources
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.vote_view_candidate_details.resources
 D:\Documents\Learning materials\HK4\Lap trinh mang can ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Admin_Dashboard.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\DOANMONHOC.exe
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\DOANMONHOC.deps.json
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\DOANMONHOC.runtimeconfig.json
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\DOANMONHOC.dll
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\DOANMONHOC.pdb
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\BCrypt.Net-Next.dll
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\FireSharp.dll
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\FireSharp.Serialization.JsonNet.dll
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\Guna.UI2.dll
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\RestSharp.dll
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\System.Management.dll
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.csproj.AssemblyReference.cache
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.add_candidate.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Admin_Dashboard.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.change_user_info.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.CreateVote1.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.CreateVote2.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.CreateVote3.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Dashboard.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Denied.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Homepage.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Index.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Info_Candidate.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Properties.Resources.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Register.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Sign_in_as_Admin.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Sign_in.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Success.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.Verify.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.VerifyEmail.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.vote_view_candidate_details.resources
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.csproj.GenerateResource.cache
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.GeneratedMSBuildEditorConfig.editorconfig
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.AssemblyInfoInputs.cache
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.AssemblyInfo.cs
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.csproj.CoreCompileInputs.cache
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.csproj.CopyComplete
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.dll
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\refint\DOANMONHOC.dll
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.pdb
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\DOANMONHOC.genruntimeconfig.cache
+E:\HocKi4\Lap_trinh_mang_can_ban\Project\Voting_Application\DOANMONHOC\DOANMONHOC\obj\Debug\net6.0-windows\ref\DOANMONHOC.dll
