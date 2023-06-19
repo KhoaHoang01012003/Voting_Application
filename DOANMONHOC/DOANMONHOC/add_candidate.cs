@@ -71,7 +71,7 @@ namespace DOANMONHOC
 
         private async void guna2Button4_Click(object sender, EventArgs e)
         {
-            ClassAndFaculty tmp_class = await SearchClass(guna2TextBox5.Text);
+            ClassAndFaculty tmp_class = await SearchClass(guna2TextBox5.Text.ToUpper());
            
             if (guna2TextBox1.Text == "")
             {
