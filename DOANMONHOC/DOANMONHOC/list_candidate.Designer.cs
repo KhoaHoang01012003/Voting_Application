@@ -41,9 +41,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -56,10 +58,11 @@
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             label1 = new Label();
             samplePanel = new Guna.UI2.WinForms.Guna2Panel();
-            sampleAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            candidateName = new Label();
-            className = new Label();
             viewButton = new Guna.UI2.WinForms.Guna2Button();
+            className = new Label();
+            candidateName = new Label();
+            sampleAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
@@ -254,39 +257,6 @@
             samplePanel.ShadowDecoration.CustomizableEdges = customizableEdges15;
             samplePanel.Size = new Size(315, 334);
             samplePanel.TabIndex = 36;
-            samplePanel.Paint += samplePanel_Paint;
-            // 
-            // sampleAvatar
-            // 
-            sampleAvatar.Image = (Image)resources.GetObject("sampleAvatar.Image");
-            sampleAvatar.ImageRotate = 0F;
-            sampleAvatar.Location = new Point(118, 39);
-            sampleAvatar.Name = "sampleAvatar";
-            sampleAvatar.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            sampleAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            sampleAvatar.Size = new Size(80, 80);
-            sampleAvatar.TabIndex = 0;
-            sampleAvatar.TabStop = false;
-            // 
-            // candidateName
-            // 
-            candidateName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            candidateName.AutoSize = true;
-            candidateName.Location = new Point(96, 136);
-            candidateName.Name = "candidateName";
-            candidateName.Size = new Size(121, 20);
-            candidateName.TabIndex = 1;
-            candidateName.Text = "Candidate Name";
-            // 
-            // className
-            // 
-            className.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            className.AutoSize = true;
-            className.Location = new Point(96, 180);
-            className.Name = "className";
-            className.Size = new Size(42, 20);
-            className.TabIndex = 2;
-            className.Text = "Class";
             // 
             // viewButton
             // 
@@ -306,7 +276,59 @@
             viewButton.ShadowDecoration.CustomizableEdges = customizableEdges12;
             viewButton.Size = new Size(242, 50);
             viewButton.TabIndex = 14;
-            viewButton.Text = "Xem chi tiết";
+            viewButton.Text = "Chỉnh sửa";
+            // 
+            // className
+            // 
+            className.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            className.AutoSize = true;
+            className.Location = new Point(96, 180);
+            className.Name = "className";
+            className.Size = new Size(42, 20);
+            className.TabIndex = 2;
+            className.Text = "Class";
+            // 
+            // candidateName
+            // 
+            candidateName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            candidateName.AutoSize = true;
+            candidateName.Location = new Point(96, 136);
+            candidateName.Name = "candidateName";
+            candidateName.Size = new Size(121, 20);
+            candidateName.TabIndex = 1;
+            candidateName.Text = "Candidate Name";
+            // 
+            // sampleAvatar
+            // 
+            sampleAvatar.Image = (Image)resources.GetObject("sampleAvatar.Image");
+            sampleAvatar.ImageRotate = 0F;
+            sampleAvatar.Location = new Point(118, 39);
+            sampleAvatar.Name = "sampleAvatar";
+            sampleAvatar.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            sampleAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            sampleAvatar.Size = new Size(80, 80);
+            sampleAvatar.TabIndex = 0;
+            sampleAvatar.TabStop = false;
+            // 
+            // guna2Button4
+            // 
+            guna2Button4.BorderRadius = 10;
+            guna2Button4.CustomizableEdges = customizableEdges16;
+            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button4.FillColor = Color.FromArgb(11, 84, 144);
+            guna2Button4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button4.ForeColor = Color.White;
+            guna2Button4.Location = new Point(667, 132);
+            guna2Button4.Name = "guna2Button4";
+            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            guna2Button4.ShadowDecoration.Shadow = new Padding(50);
+            guna2Button4.Size = new Size(225, 56);
+            guna2Button4.TabIndex = 37;
+            guna2Button4.Text = "THÊM MỚI ỨNG CỬ VIÊN";
+            guna2Button4.Click += guna2Button4_Click;
             // 
             // list_candidate
             // 
@@ -315,6 +337,7 @@
             AutoScroll = true;
             AutoScrollMargin = new Size(0, 100);
             ClientSize = new Size(1422, 903);
+            Controls.Add(guna2Button4);
             Controls.Add(samplePanel);
             Controls.Add(label1);
             Controls.Add(panel3);
@@ -353,5 +376,6 @@
         private Label className;
         private Label candidateName;
         private Guna.UI2.WinForms.Guna2CirclePictureBox sampleAvatar;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
     }
 }

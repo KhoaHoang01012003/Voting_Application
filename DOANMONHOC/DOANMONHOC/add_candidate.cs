@@ -18,9 +18,11 @@ namespace DOANMONHOC
 {
     public partial class add_candidate : Form
     {
-        public add_candidate()
+        CANDIDATE tempCandidate;
+        public add_candidate(CANDIDATE u = null)
         {
             InitializeComponent();
+            tempCandidate = u;
         }
         IFirebaseConfig config = new FirebaseConfig
         {
@@ -52,12 +54,28 @@ namespace DOANMONHOC
             return null;
         }
 
-        private void add_candidate_Load(object sender, EventArgs e)
+        private async void add_candidate_Load(object sender, EventArgs e)
         {
             candidate = new FireSharp.FirebaseClient(config);
             if (candidate != null)
             {
                 //MessageBox.Show("Connection is established");
+            }
+            guna2TextBox1.Text = tempCandidate.CandidateName;
+            guna2TextBox2.Text = tempCandidate.Birthday;
+            guna2TextBox3.Text = tempCandidate.Description;
+            guna2TextBox4.Text = tempCandidate.Promise;
+
+            FirebaseResponse response1 = await candidate.GetTaskAsync("Classes/");
+            Dictionary<string, CLASS> classes = response1.ResultAs<Dictionary<string, CLASS>>();
+            int index = classes.Count() + 1;
+            foreach (var user in classes)
+            {
+                if (user.Value.Class_ID == tempCandidate.Class_ID)
+                {
+                    guna2TextBox5.Text = user.Value.Class_ID.ToString();
+                    break;
+                }
             }
         }
 
@@ -75,11 +93,15 @@ namespace DOANMONHOC
                 MessageBox.Show("Please enter a value for Birthday.");
                 guna2TextBox2.Focus();
             }
-
+            else if (guna2TextBox3.Text == "")
+            {
+                MessageBox.Show("Please enter a value for Description.");
+                guna2TextBox3.Focus();
+            }
             else if (guna2TextBox4.Text == "")
             {
                 MessageBox.Show("Please enter a value for Promise.");
-                guna2TextBox3.Focus();
+                guna2TextBox4.Focus();
             }
             // Kiểm tra tên lớp có tồn tại trong cơ sở dữ liệu hay không
             else if (tmp_class == null)

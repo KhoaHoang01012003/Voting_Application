@@ -109,7 +109,7 @@ namespace DOANMONHOC
 
                 void view_Click(object sender, EventArgs e)
                 {
-                    var openForm = new Info_Candidate(candidate);
+                    var openForm = new add_candidate(candidate);
                     openForm.ShowDialog();
                 }
 
@@ -148,6 +148,12 @@ namespace DOANMONHOC
         private void samplePanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            var openForm = new add_candidate();
+            openForm.ShowDialog();
         }
     }
 }
