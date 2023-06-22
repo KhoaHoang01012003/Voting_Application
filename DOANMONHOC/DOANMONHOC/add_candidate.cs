@@ -1,6 +1,7 @@
 ﻿using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using Microsoft.VisualBasic.ApplicationServices;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace DOANMONHOC
 {
@@ -36,25 +38,22 @@ namespace DOANMONHOC
         }
         public class ClassAndFaculty
         {
-            public string ClassId { get; set; }
-            public string FacultyId { get; set; }
+            public int ClassId { get; set; }
+            public int FacultyId { get; set; }
         }
         private async Task<ClassAndFaculty> SearchClass(string className)
         {
-            int index = await id_class();
-            for (int i = 1; i < index; i++)
+            FirebaseResponse response1 = await candidate.GetTaskAsync("Classes/");
+            Dictionary<string, CLASS> classes = response1.ResultAs<Dictionary<string, CLASS>>();
+            int index = classes.Count() + 1;
+            foreach (var user in classes)
             {
-                FirebaseResponse response = await candidate.GetTaskAsync("Classes/" + i.ToString());
-                if (response.Body != "null")
+                if (user.Value.ClassName == className)
                 {
-                    JObject user = JObject.Parse(response.Body);
-                    if (user["ClassName"].ToString() == className)
-                    {
-                        ClassAndFaculty result = new ClassAndFaculty();
-                        result.ClassId = user["Class_ID"].ToString();
-                        result.FacultyId = user["Faculty_ID"].ToString();
-                        return result;
-                    }
+                    ClassAndFaculty result = new ClassAndFaculty();
+                    result.ClassId = user.Value.Class_ID;
+                    result.FacultyId = user.Value.Faculty_ID;
+                    return result;
                 }
             }
             return null;
@@ -72,7 +71,7 @@ namespace DOANMONHOC
         private async void guna2Button4_Click(object sender, EventArgs e)
         {
             ClassAndFaculty tmp_class = await SearchClass(guna2TextBox5.Text.ToUpper());
-           
+
             if (guna2TextBox1.Text == "")
             {
                 MessageBox.Show("Please enter a value for Candidate Name.");
@@ -83,7 +82,7 @@ namespace DOANMONHOC
                 MessageBox.Show("Please enter a value for Birthday.");
                 guna2TextBox2.Focus();
             }
-            
+
             else if (guna2TextBox4.Text == "")
             {
                 MessageBox.Show("Please enter a value for Promise.");
@@ -104,14 +103,15 @@ namespace DOANMONHOC
                     Dictionary<string, CANDIDATE> users = response.ResultAs<Dictionary<string, CANDIDATE>>();
                     cnt = users.Count() + 1;
                 }
-                catch {
+                catch
+                {
                     cnt = 1;
                 }
-                
+
 
                 var data = new CANDIDATE
                 {
-                    Candidate_ID = cnt.ToString(),
+                    Candidate_ID = cnt,
                     CandidateName = guna2TextBox1.Text,
                     Birthday = guna2TextBox2.Text,
                     Description = guna2TextBox3.Text,

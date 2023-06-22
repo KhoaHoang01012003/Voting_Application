@@ -94,7 +94,7 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(272, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1163, 80);
+            panel3.Size = new Size(1129, 80);
             panel3.TabIndex = 4;
             // 
             // label7
@@ -486,7 +486,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            AutoScrollMargin = new Size(100, 100);
+            AutoScrollMargin = new Size(0, 100);
             BackColor = Color.White;
             ClientSize = new Size(1422, 977);
             Controls.Add(label10);
