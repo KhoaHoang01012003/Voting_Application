@@ -11,7 +11,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using ObjectCloner.Extensions;
 using Guna.UI2.WinForms;
 using Guna.UI2.WinForms.Suite;
 using Newtonsoft.Json.Linq;
@@ -175,7 +174,7 @@ namespace DOANMONHOC
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            Form vote = new vote_view_candidate_details(indexForm);
+            Form vote = new vote_view_candidate_details();
             vote.Show();
             this.Close();
         }
