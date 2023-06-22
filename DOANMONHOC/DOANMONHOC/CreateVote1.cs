@@ -2,6 +2,7 @@
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Guna.UI2.WinForms;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -126,7 +127,8 @@ namespace DOANMONHOC
             if (DateTime.Compare(startTime.Value, endTime.Value) < 0)
             {
                 FirebaseResponse titleCheckResponse = await client.GetTaskAsync("Campaigns/");
-                var campaigns = titleCheckResponse.ResultAs<Dictionary<string, CAMPAIGN>>();
+                JObject campaignsJson = JObject.Parse(titleCheckResponse.Body);
+                var campaigns = campaignsJson.ToObject<Dictionary<string, CAMPAIGN>>();
 
                 bool titleExists = campaigns.Values.Any(u => u.CampaignName == campaignName.Text);
 
@@ -152,9 +154,6 @@ namespace DOANMONHOC
                 openForm.Data = data;
                 openForm.Show();
                 this.Close();
-
-                //PushResponse response = await client.PushTaskAsync("Campaigns/", data);
-                var open = new CreateVote2(indexForm);
             }
             else
             {

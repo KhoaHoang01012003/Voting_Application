@@ -87,7 +87,7 @@ namespace DOANMONHOC
                 classLabel.Location = className.Location;
 
                 foreach (var Class in classes) {
-                    if (Class.Value.Class_ID == candidate.Class_ID)
+                    if (Class.Value.Class_ID == int.Parse(candidate.Class_ID))
                     {
                         classLabel.Text = Class.Value.ClassName;
                         break;
@@ -142,7 +142,7 @@ namespace DOANMONHOC
 
                 void view_Click(object sender, EventArgs e)
                 {
-                    var openForm = new Info_Candidate(candidate);
+                    var openForm = new Info_Candidate();
                     openForm.ShowDialog();
                 }
 
@@ -197,7 +197,10 @@ namespace DOANMONHOC
 
         private async void guna2Button4_Click_1(object sender, EventArgs e)
         {
-            PushResponse response = await client.PushTaskAsync("Campaigns/", Data);
+            var openForm = new CreateVote13(indexForm);
+            openForm.Data = Data;
+            openForm.Show();
+            this.Close();
         }
     }
 }

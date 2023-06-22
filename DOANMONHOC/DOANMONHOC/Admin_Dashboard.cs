@@ -66,7 +66,7 @@ namespace DOANMONHOC
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            var openForm = new CreateVote1(indexForm);
+            var openForm = new adminElectionActivities(indexForm);
             openForm.Show();
             this.Close();
         }
