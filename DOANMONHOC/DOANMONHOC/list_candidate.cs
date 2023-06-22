@@ -2,7 +2,6 @@
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Guna.UI2.WinForms;
-using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,31 +14,26 @@ using System.Windows.Forms;
 
 namespace DOANMONHOC
 {
-    public partial class CreateVote12 : Form
+    public partial class list_candidate : Form
     {
-        FirebaseConfig config = new FirebaseConfig
+        public list_candidate()
+        {
+            InitializeComponent();
+        }
+        IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "FoBk4yXguU4VoMkIe5M7M2ylsGymwUsld8cS2Td1",
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
-        IFirebaseClient client;
-        private Index indexForm;
-        public CAMPAIGN Data { get; set; }
+        IFirebaseClient candidate;
 
-        public CreateVote12(Index indexForm)
+        private async void list_candidate_Load(object sender, EventArgs e)
         {
-            InitializeComponent();
-            this.indexForm = indexForm;
-        }
-
-        private async void CreateVote12_Load(object sender, EventArgs e)
-        {
-            client = new FireSharp.FirebaseClient(config);
-
-            FirebaseResponse response = await client.GetTaskAsync("Candidates/");
+            candidate = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = await candidate.GetTaskAsync("Candidates/");
             Dictionary<string, CANDIDATE> candidates = response.ResultAs<Dictionary<string, CANDIDATE>>();
 
-            response = await client.GetTaskAsync("Classes/");
+            response = await candidate.GetTaskAsync("Classes/");
             Dictionary<string, CLASS> classes = response.ResultAs<Dictionary<string, CLASS>>();
 
             int totalCandidates = candidates.Count;
@@ -49,8 +43,8 @@ namespace DOANMONHOC
             int currentPage = 1;
             int startIndex = (currentPage - 1) * candidatesPerPage;
 
-            int xOffset = 25;
-            int yOffset = 148;
+            int xOffset = 312;
+            int yOffset = 213;
             int itemWidth = 315;
             int itemHeight = 334;
             int spacing = 52;
@@ -67,7 +61,7 @@ namespace DOANMONHOC
                 panel.BorderRadius = 2;
                 panel.CustomizableEdges = samplePanel.CustomizableEdges;
                 panel.ShadowDecoration.CustomizableEdges = samplePanel.ShadowDecoration.CustomizableEdges;
-               
+
 
                 // Tạo Label để hiển thị thông tin tên candidate
                 Label nameLabel = new Label();
@@ -86,40 +80,13 @@ namespace DOANMONHOC
                 classLabel.AutoSize = className.AutoSize;
                 classLabel.Location = className.Location;
 
-                foreach (var Class in classes) {
+                foreach (var Class in classes)
+                {
                     if (Class.Value.Class_ID == candidate.Class_ID)
                     {
                         classLabel.Text = Class.Value.ClassName;
                         break;
                     }
-                }
-
-                // Tạo Button "Add"
-                Guna2Button add = new Guna2Button();
-                add.BorderRadius = addButton.BorderRadius;
-                add.Text = "Thêm";
-                add.Location = addButton.Location;
-                add.CustomizableEdges = addButton.CustomizableEdges;
-                add.DisabledState.BorderColor = addButton.DisabledState.BorderColor;
-                add.DisabledState.CustomBorderColor = addButton.DisabledState.CustomBorderColor;
-                add.DisabledState.FillColor = addButton.DisabledState.FillColor;
-                add.DisabledState.ForeColor = addButton.DisabledState.ForeColor;
-                add.FillColor = addButton.FillColor;
-                add.ForeColor = addButton.ForeColor;
-                add.Location = addButton.Location;
-                add.Font = addButton.Font;
-                add.ShadowDecoration.CustomizableEdges = addButton.ShadowDecoration.CustomizableEdges;
-                add.Size = addButton.Size;
-                add.Click += add_Click;
-
-                void add_Click(object sender, EventArgs e)
-                {
-                    int[] newCandidate_ID = new int[Data.Candidate_ID.Length + 1];
-                    Array.Copy(Data.Candidate_ID, newCandidate_ID, Data.Candidate_ID.Length);
-                    newCandidate_ID[newCandidate_ID.Length - 1] = candidate.Candidate_ID;
-                    Data.Candidate_ID = newCandidate_ID;
-                    Guna2Button clickedButton = (Guna2Button)sender;
-                    clickedButton.Enabled = false;
                 }
 
                 // Tạo Button "View"
@@ -147,7 +114,7 @@ namespace DOANMONHOC
                 }
 
                 Guna2CirclePictureBox avatar = new Guna2CirclePictureBox();
-                avatar.Image = sampleAvatar.Image; 
+                avatar.Image = sampleAvatar.Image;
                 avatar.Size = sampleAvatar.Size;
                 avatar.ImageRotate = sampleAvatar.ImageRotate;
                 avatar.Location = sampleAvatar.Location;
@@ -159,7 +126,6 @@ namespace DOANMONHOC
                 // Thêm các thành phần vào Panel
                 panel.Controls.Add(nameLabel);
                 panel.Controls.Add(classLabel);
-                panel.Controls.Add(add);
                 panel.Controls.Add(view);
                 panel.Controls.Add(avatar);
 
@@ -173,31 +139,15 @@ namespace DOANMONHOC
                 // Nếu đã hiển thị đủ số lượng ô thông tin trên một hàng, xuống hàng tiếp theo
                 if ((i + 1) % 3 == 0)
                 {
-                    xOffset = 25;
+                    xOffset = 312;
                     yOffset += itemHeight + 79;
                 }
             }
-
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void samplePanel_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void guna2Button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private async void guna2Button4_Click_1(object sender, EventArgs e)
-        {
-            PushResponse response = await client.PushTaskAsync("Campaigns/", Data);
         }
     }
 }
