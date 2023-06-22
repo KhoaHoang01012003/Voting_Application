@@ -87,7 +87,6 @@
             // 
             // panel3
             // 
-<<<<<<< HEAD
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(label7);
             panel3.Controls.Add(guna2CirclePictureBox2);
@@ -97,7 +96,7 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1129, 80);
             panel3.TabIndex = 4;
-=======
+
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.guna2CirclePictureBox2);
@@ -107,7 +106,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1163, 80);
             this.panel3.TabIndex = 4;
->>>>>>> 55f462cc904cb28f934d449f1fdc1b9a765ad933
+
             // 
             // label7
             // 
@@ -495,7 +494,6 @@
             // 
             // add_candidate
             // 
-<<<<<<< HEAD
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
@@ -531,7 +529,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
-=======
+
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
@@ -567,7 +565,7 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
->>>>>>> 55f462cc904cb28f934d449f1fdc1b9a765ad933
+
         }
 
         #endregion
