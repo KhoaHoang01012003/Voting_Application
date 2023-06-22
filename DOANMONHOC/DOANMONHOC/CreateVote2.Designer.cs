@@ -818,6 +818,7 @@
             this.guna2Button2.Text = "Hoạt động bỏ phiếu";
             this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.TextOffset = new System.Drawing.Point(67, 0);
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button1
             // 

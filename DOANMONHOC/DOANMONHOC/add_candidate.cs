@@ -26,6 +26,7 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient candidate;
+
         private async Task<int> id_class()
         {
             for (int i = 1; ; i++)
@@ -111,7 +112,7 @@ namespace DOANMONHOC
 
                 var data = new CANDIDATE
                 {
-                    Candidate_ID = cnt.ToString(),
+                    Candidate_ID = cnt,
                     CandidateName = guna2TextBox1.Text,
                     Birthday = guna2TextBox2.Text,
                     Description = guna2TextBox3.Text,
