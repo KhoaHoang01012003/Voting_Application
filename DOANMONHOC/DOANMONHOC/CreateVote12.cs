@@ -87,7 +87,7 @@ namespace DOANMONHOC
                 classLabel.Location = className.Location;
 
                 foreach (var Class in classes) {
-                    if (Class.Value.Class_ID == int.Parse(candidate.Class_ID))
+                    if (Class.Value.Class_ID == candidate.Class_ID)
                     {
                         classLabel.Text = Class.Value.ClassName;
                         break;
