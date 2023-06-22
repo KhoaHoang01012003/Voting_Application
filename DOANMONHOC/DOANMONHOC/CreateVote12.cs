@@ -55,7 +55,7 @@ namespace DOANMONHOC
             int itemHeight = 334;
             int spacing = 52;
 
-            for (int i = startIndex; i < startIndex + candidatesPerPage && i < totalCandidates; i++)
+            for (int i = startIndex; i < totalCandidates; i++)
             {
                 CANDIDATE candidate = candidates.ElementAt(i).Value;
 
@@ -87,7 +87,7 @@ namespace DOANMONHOC
                 classLabel.Location = className.Location;
 
                 foreach (var Class in classes) {
-                    if (Class.Value.Class_ID == int.Parse(candidate.Class_ID))
+                    if (Class.Value.Class_ID == candidate.Class_ID)
                     {
                         classLabel.Text = Class.Value.ClassName;
                         break;
@@ -118,6 +118,8 @@ namespace DOANMONHOC
                     Array.Copy(Data.Candidate_ID, newCandidate_ID, Data.Candidate_ID.Length);
                     newCandidate_ID[newCandidate_ID.Length - 1] = candidate.Candidate_ID;
                     Data.Candidate_ID = newCandidate_ID;
+                    Guna2Button clickedButton = (Guna2Button)sender;
+                    clickedButton.Enabled = false;
                 }
 
                 // Tạo Button "View"
