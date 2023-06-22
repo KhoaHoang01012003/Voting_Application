@@ -1,6 +1,6 @@
 ﻿namespace DOANMONHOC
 {
-    internal class USER
+    public class USER
     {
         public string Student_ID { get; set; }
         public string UserName { get; set; }
@@ -11,17 +11,17 @@
         public string Class_ID { get; set; }
 
     }
-    internal class ADMIN
+    public class ADMIN
     {
-        public string Adim_ID { get; set; }
+        public string Admin_ID { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
         public string AdminName { get; set; }
     }
-    internal class CANDIDATE
+    public class CANDIDATE
     {
-        public string Candidate_ID { get; set; }
+        public int Candidate_ID { get; set; }
         public string CandidateName { get; set; }
         public string Birthday { get; set; }
         public string Description { get; set; }
@@ -29,27 +29,28 @@
         public string Class_ID { get; set; }
         public string Promise { get; set; }
     }
-    internal class CAMPAIGN
+    public class CAMPAIGN
     {
-        public string Title { get; set; }
-        public string Description { get; set; }
+        public int Campaint_ID { get; set; }
         public string CampaignName { get; set; }
+        public string Description { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public string Category { get; set; }
+        public int[] Candidate_ID { get; set; }
         public int Status { get; set; }
     }
-    internal class CAMPAIGN_CLASS
+    public class CAMPAIGN_CLASS
     {
         public string Campaign_ID { get; set; }
         public string Class_ID { get; set; }
     }
-    internal class CAMPAIGN_CANDIDATE
+    public class CAMPAIGN_CANDIDATE
     {
         public string Campaign_ID { get; set; }
         public string Candidate_ID { get; set; }
     }
-    internal class VOTE
+    public class VOTE
     {
         public string Student_ID { get; set; }
         public string Campaign_ID { get; set; }
@@ -58,13 +59,13 @@
     }
     internal class FACULTY
     {
-        public string Faculty_ID { get; set; }
+        public int Faculty_ID { get; set; }
         public string FacultyName { get; set; }
     }
-    internal class CLASS
+    public class CLASS
     {
-        public string Class_ID { get; set; }
-        public string Faculty_ID { get; set; }
+        public int Class_ID { get; set; }
+        public int Faculty_ID { get; set; }
         public string ClassName { get; set; }
     }
 }
