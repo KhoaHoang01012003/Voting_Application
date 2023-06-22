@@ -28,14 +28,7 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient candidate;
-        private async Task<int> id_class()
-        {
-            for (int i = 1; ; i++)
-            {
-                FirebaseResponse response = await candidate.GetTaskAsync("Classes/" + i.ToString());
-                if (response.Body == "null") return i;
-            }
-        }
+
         public class ClassAndFaculty
         {
             public int ClassId { get; set; }
