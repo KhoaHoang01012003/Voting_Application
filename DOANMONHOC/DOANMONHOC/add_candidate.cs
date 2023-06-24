@@ -1,6 +1,7 @@
 ﻿using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using Guna.UI2.WinForms.Suite;
 using Microsoft.VisualBasic.ApplicationServices;
 using Newtonsoft.Json.Linq;
 using System;
@@ -18,7 +19,10 @@ namespace DOANMONHOC
 {
     public partial class add_candidate : Form
     {
+        private Index indexForm;
+
         CANDIDATE tempCandidate;
+        bool flag = false;
         public add_candidate(CANDIDATE u = null)
         {
             InitializeComponent();
@@ -36,7 +40,7 @@ namespace DOANMONHOC
             public int ClassId { get; set; }
             public int FacultyId { get; set; }
         }
-        private async Task<ClassAndFaculty> SearchClass(string className)
+        private async Task<ClassAndFaculty> SearchClassID(string className)
         {
             FirebaseResponse response1 = await candidate.GetTaskAsync("Classes/");
             Dictionary<string, CLASS> classes = response1.ResultAs<Dictionary<string, CLASS>>();
@@ -61,27 +65,31 @@ namespace DOANMONHOC
             {
                 //MessageBox.Show("Connection is established");
             }
-            guna2TextBox1.Text = tempCandidate.CandidateName;
-            guna2TextBox2.Text = tempCandidate.Birthday;
-            guna2TextBox3.Text = tempCandidate.Description;
-            guna2TextBox4.Text = tempCandidate.Promise;
-
-            FirebaseResponse response1 = await candidate.GetTaskAsync("Classes/");
-            Dictionary<string, CLASS> classes = response1.ResultAs<Dictionary<string, CLASS>>();
-            int index = classes.Count() + 1;
-            foreach (var user in classes)
+            if (tempCandidate != null)
             {
-                if (user.Value.Class_ID == tempCandidate.Class_ID)
+
+                guna2TextBox1.Text = tempCandidate.CandidateName;
+                guna2TextBox2.Text = tempCandidate.Birthday;
+                guna2TextBox3.Text = tempCandidate.Description;
+                guna2TextBox4.Text = tempCandidate.Promise;
+                FirebaseResponse response1 = await candidate.GetTaskAsync("Classes/");
+                Dictionary<string, CLASS> classes = response1.ResultAs<Dictionary<string, CLASS>>();
+                int index = classes.Count() + 1;
+                foreach (var user in classes)
                 {
-                    guna2TextBox5.Text = user.Value.Class_ID.ToString();
-                    break;
+                    if (user.Value.Class_ID == tempCandidate.Class_ID)
+                    {
+                        guna2TextBox5.Text = user.Value.ClassName;
+                        break;
+                    }
                 }
+                flag = true;
             }
         }
 
         private async void guna2Button4_Click(object sender, EventArgs e)
         {
-            ClassAndFaculty tmp_class = await SearchClass(guna2TextBox5.Text.ToUpper());
+            ClassAndFaculty tmp_class = await SearchClassID(guna2TextBox5.Text.ToUpper());
 
             if (guna2TextBox1.Text == "")
             {
@@ -111,35 +119,79 @@ namespace DOANMONHOC
             }
             else
             {
-                int cnt;
-                try
+                if (!flag)
+                {
+                    int cnt;
+                    try
+                    {
+                        FirebaseResponse response = await candidate.GetTaskAsync("Candidates/");
+                        Dictionary<string, CANDIDATE> users = response.ResultAs<Dictionary<string, CANDIDATE>>();
+                        cnt = users.Count() + 1;
+                    }
+                    catch
+                    {
+                        cnt = 1;
+                    }
+
+
+                    var data = new CANDIDATE
+                    {
+                        Candidate_ID = cnt,
+                        CandidateName = guna2TextBox1.Text,
+                        Birthday = guna2TextBox2.Text,
+                        Description = guna2TextBox3.Text,
+                        Faculty_ID = tmp_class.FacultyId,
+                        Class_ID = tmp_class.ClassId,
+                        Promise = guna2TextBox4.Text,
+                    };
+
+                    PushResponse response_result = await candidate.PushTaskAsync("Candidates/", data);
+                    USER result = response_result.ResultAs<USER>();
+
+                    MessageBox.Show("Data... inserted " + result.Email);
+                }
+                else
                 {
                     FirebaseResponse response = await candidate.GetTaskAsync("Candidates/");
-                    Dictionary<string, CANDIDATE> users = response.ResultAs<Dictionary<string, CANDIDATE>>();
-                    cnt = users.Count() + 1;
+                    Dictionary<string, CANDIDATE> candidates = response.ResultAs<Dictionary<string, CANDIDATE>>();
+                    foreach (var user in candidates)
+                    {
+                        if (user.Value.Candidate_ID == tempCandidate.Candidate_ID)
+                        {
+                            user.Value.CandidateName = guna2TextBox1.Text;
+                            user.Value.Birthday = guna2TextBox2.Text;
+                            user.Value.Description = guna2TextBox3.Text;
+                            user.Value.Faculty_ID = tmp_class.FacultyId;
+                            user.Value.Class_ID = tmp_class.ClassId;
+                            user.Value.Promise = guna2TextBox4.Text;
+                            var updateResponse = await candidate.SetTaskAsync("Candidates/" + user.Key, user.Value);
+                            MessageBox.Show("Update!");
+                            break;
+                        }
+                    }
                 }
-                catch
-                {
-                    cnt = 1;
-                }
-
-
-                var data = new CANDIDATE
-                {
-                    Candidate_ID = cnt,
-                    CandidateName = guna2TextBox1.Text,
-                    Birthday = guna2TextBox2.Text,
-                    Description = guna2TextBox3.Text,
-                    Faculty_ID = tmp_class.FacultyId,
-                    Class_ID = tmp_class.ClassId,
-                    Promise = guna2TextBox4.Text,
-                };
-
-                PushResponse response_result = await candidate.PushTaskAsync("Candidates/", data);
-                USER result = response_result.ResultAs<USER>();
-
-                MessageBox.Show("Data... inserted " + result.Email);
             }
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            var openForm = new list_candidate();
+            openForm.Show();
+            this.Close();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            var openForm = new adminElectionActivities(indexForm);
+            openForm.Show();
+            this.Close();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            var openForm = new adminDashboard(indexForm);
+            openForm.Show();
+            this.Close();
         }
     }
 }

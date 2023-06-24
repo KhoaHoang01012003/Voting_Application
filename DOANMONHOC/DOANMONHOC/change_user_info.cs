@@ -90,7 +90,7 @@ namespace DOANMONHOC
                         if (user.Value.UserName == Properties.Settings.Default.Username.ToString() && VerifyPassword(guna2TextBox2.Text, user.Value.Password))
                         {
                             user.Value.Password = HashPassword(guna2TextBox3.Text);
-                            user.Value.Fullname = guna2TextBox2.Text;
+                            user.Value.Fullname = guna2TextBox1.Text;
                             var updateResponse = await User.SetTaskAsync("Users/" + user.Key, user.Value);
                             MessageBox.Show("Update!");
                             break;

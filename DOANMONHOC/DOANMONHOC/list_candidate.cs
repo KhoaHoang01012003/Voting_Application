@@ -16,6 +16,7 @@ namespace DOANMONHOC
 {
     public partial class list_candidate : Form
     {
+        private Index indexForm;
         public list_candidate()
         {
             InitializeComponent();
@@ -91,7 +92,7 @@ namespace DOANMONHOC
 
                 // Tạo Button "View"
                 Guna2Button view = new Guna2Button();
-                view.Text = "Xem chi tiết";
+                view.Text = "Chỉnh sửa";
                 view.Location = viewButton.Location;
                 view.Font = viewButton.Font;
                 view.BorderRadius = viewButton.BorderRadius;
@@ -145,15 +146,30 @@ namespace DOANMONHOC
             }
         }
 
-        private void samplePanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void guna2Button4_Click(object sender, EventArgs e)
         {
             var openForm = new add_candidate();
             openForm.ShowDialog();
+            this.Close();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            var openForm = new adminElectionActivities(indexForm);
+            openForm.Show();
+            this.Close();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            list_candidate_Load(sender, e);
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            var openForm = new adminDashboard(indexForm);
+            openForm.Show();
+            this.Close();
         }
     }
 }
