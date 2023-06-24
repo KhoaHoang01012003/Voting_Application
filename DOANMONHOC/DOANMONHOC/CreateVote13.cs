@@ -65,7 +65,7 @@ namespace DOANMONHOC
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            var openForm = new Admin_Dashboard(indexForm);
+            var openForm = new adminDashboard(indexForm);
             openForm.Show();
             this.Close();
         }

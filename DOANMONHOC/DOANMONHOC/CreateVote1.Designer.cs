@@ -405,11 +405,11 @@
             this.endTime.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
             this.endTime.BorderRadius = 8;
             this.endTime.Checked = true;
+            this.endTime.CustomFormat = "dd/MM/yyyy HH:mm";
             this.endTime.CustomizableEdges = customizableEdges16;
             this.endTime.FillColor = System.Drawing.Color.White;
             this.endTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.endTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endTime.CustomFormat = "dd/MM/yyyy HH:mm";
             this.endTime.Location = new System.Drawing.Point(550, 486);
             this.endTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.endTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -425,11 +425,11 @@
             this.startTime.BackColor = System.Drawing.Color.White;
             this.startTime.BorderRadius = 8;
             this.startTime.Checked = true;
+            this.startTime.CustomFormat = "dd/MM/yyyy HH:mm";
             this.startTime.CustomizableEdges = customizableEdges18;
             this.startTime.FillColor = System.Drawing.Color.White;
             this.startTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.startTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startTime.CustomFormat = "dd/MM/yyyy HH:mm";
             this.startTime.Location = new System.Drawing.Point(30, 486);
             this.startTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.startTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -478,7 +478,7 @@
             this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(463, 920);
+            this.guna2Button4.Location = new System.Drawing.Point(452, 920);
             this.guna2Button4.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges21;

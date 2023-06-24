@@ -115,7 +115,7 @@ namespace DOANMONHOC
                     Properties.Settings.Default.Username = username_admin.Text;
                     Properties.Settings.Default.Save();
 
-                    var openForm = new Admin_Dashboard(indexForm);
+                    var openForm = new adminDashboard(indexForm);
                     openForm.Show();
                     this.Close();
                     check = true;
