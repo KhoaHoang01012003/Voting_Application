@@ -112,6 +112,7 @@ namespace DOANMONHOC
                 {
                     var openForm = new add_candidate(candidate);
                     openForm.ShowDialog();
+                    this.Close();
                 }
 
                 Guna2CirclePictureBox avatar = new Guna2CirclePictureBox();

@@ -106,8 +106,8 @@ namespace DOANMONHOC
                     Password = HashPassword(guna2TextBox2.Text),
                     Fullname = "",
                     Student_ID = guna2TextBox1.Text.Substring(0,8),
-                    Faculty_ID = "",
-                    Class_ID = "",
+                    Faculty_ID = 0,
+                    Class_ID = 0,
                     UserName = guna2TextBox1.Text
                 };
 

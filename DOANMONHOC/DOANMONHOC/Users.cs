@@ -7,8 +7,8 @@
         public string Password { get; set; }
         public string Email { get; set; }
         public string Fullname { get; set; }
-        public string Faculty_ID { get; set; }
-        public string Class_ID { get; set; }
+        public int Faculty_ID { get; set; }
+        public int Class_ID { get; set; }
 
     }
     public class ADMIN
