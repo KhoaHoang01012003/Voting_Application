@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -56,28 +55,24 @@
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             label1 = new Label();
             label2 = new Label();
-            guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             Candidate_Detail = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            pictureBox2 = new PictureBox();
-            Candidate = new Panel();
             info = new Panel();
             detail = new Guna.UI2.WinForms.Guna2Button();
             vote = new Guna.UI2.WinForms.Guna2Button();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            candidate_class = new TextBox();
+            candidate_name = new TextBox();
             pictureBox3 = new PictureBox();
-            label4 = new Label();
-            label3 = new Label();
+            pictureBox2 = new PictureBox();
+            campaign_name = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             Candidate_Detail.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            Candidate.SuspendLayout();
             info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -92,9 +87,8 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(272, 1034);
+            panel1.Size = new Size(272, 1055);
             panel1.TabIndex = 1;
-            panel1.Paint += panel1_Paint;
             // 
             // guna2Button5
             // 
@@ -115,6 +109,7 @@
             guna2Button5.TabIndex = 10;
             guna2Button5.Text = "Đăng xuất";
             guna2Button5.TextAlign = HorizontalAlignment.Right;
+            guna2Button5.Click += guna2Button5_Click;
             // 
             // guna2Button3
             // 
@@ -137,7 +132,6 @@
             guna2Button3.Text = "Quy trình bỏ phiếu";
             guna2Button3.TextAlign = HorizontalAlignment.Left;
             guna2Button3.TextOffset = new Point(67, 0);
-            guna2Button3.Click += guna2Button3_Click;
             // 
             // guna2Button2
             // 
@@ -186,7 +180,6 @@
             guna2Button1.Text = "Dashboard";
             guna2Button1.TextAlign = HorizontalAlignment.Left;
             guna2Button1.TextOffset = new Point(67, 0);
-            guna2Button1.Click += guna2Button1_Click;
             // 
             // pictureBox1
             // 
@@ -207,7 +200,7 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(272, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1188, 80);
+            panel3.Size = new Size(1150, 80);
             panel3.TabIndex = 2;
             // 
             // label7
@@ -264,53 +257,33 @@
             label2.Size = new Size(333, 23);
             label2.TabIndex = 4;
             label2.Text = "Bạn chỉ có thể bỏ phiếu cho 1 ứng cử viên";
-            label2.Click += label2_Click;
             // 
             // Candidate_Detail
             // 
             Candidate_Detail.AutoScroll = true;
             Candidate_Detail.BackColor = Color.Transparent;
+            Candidate_Detail.Controls.Add(campaign_name);
+            Candidate_Detail.Controls.Add(info);
             Candidate_Detail.Controls.Add(pictureBox2);
-            Candidate_Detail.Controls.Add(Candidate);
-            Candidate_Detail.Controls.Add(label4);
-            Candidate_Detail.Controls.Add(label3);
             Candidate_Detail.FillColor = Color.White;
-            Candidate_Detail.Location = new Point(312, 242);
+            Candidate_Detail.Location = new Point(312, 220);
             Candidate_Detail.Name = "Candidate_Detail";
             Candidate_Detail.ShadowColor = Color.Black;
-            Candidate_Detail.Size = new Size(1128, 360);
-            Candidate_Detail.TabIndex = 5;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(34, 13);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(26, 27);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            // 
-            // Candidate
-            // 
-            Candidate.AutoScroll = true;
-            Candidate.Controls.Add(info);
-            Candidate.Location = new Point(7, 67);
-            Candidate.Name = "Candidate";
-            Candidate.Size = new Size(1119, 285);
-            Candidate.TabIndex = 1;
+            Candidate_Detail.Size = new Size(1089, 360);
+            Candidate_Detail.TabIndex = 7;
+            Candidate_Detail.Paint += Candidate_Detail_Paint;
             // 
             // info
             // 
             info.Controls.Add(detail);
             info.Controls.Add(vote);
-            info.Controls.Add(textBox2);
-            info.Controls.Add(textBox1);
+            info.Controls.Add(candidate_class);
+            info.Controls.Add(candidate_name);
             info.Controls.Add(pictureBox3);
-            info.Location = new Point(0, 0);
+            info.Location = new Point(1, 57);
             info.Name = "info";
             info.Size = new Size(250, 285);
-            info.TabIndex = 0;
+            info.TabIndex = 3;
             // 
             // detail
             // 
@@ -351,29 +324,29 @@
             vote.TabIndex = 3;
             vote.Text = "Bỏ phiếu";
             // 
-            // textBox2
+            // candidate_class
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox2.Location = new Point(49, 147);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(154, 27);
-            textBox2.TabIndex = 2;
-            textBox2.Text = "Class";
-            textBox2.TextAlign = HorizontalAlignment.Center;
+            candidate_class.BorderStyle = BorderStyle.None;
+            candidate_class.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            candidate_class.Location = new Point(49, 147);
+            candidate_class.Multiline = true;
+            candidate_class.Name = "candidate_class";
+            candidate_class.Size = new Size(154, 27);
+            candidate_class.TabIndex = 2;
+            candidate_class.Text = "Class";
+            candidate_class.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox1
+            // candidate_name
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.Location = new Point(49, 112);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(154, 27);
-            textBox1.TabIndex = 2;
-            textBox1.Text = "Name";
-            textBox1.TextAlign = HorizontalAlignment.Center;
+            candidate_name.BorderStyle = BorderStyle.None;
+            candidate_name.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            candidate_name.Location = new Point(49, 112);
+            candidate_name.Multiline = true;
+            candidate_name.Name = "candidate_name";
+            candidate_name.Size = new Size(154, 27);
+            candidate_name.TabIndex = 2;
+            candidate_name.Text = "Name";
+            candidate_name.TextAlign = HorizontalAlignment.Center;
             // 
             // pictureBox3
             // 
@@ -385,26 +358,27 @@
             pictureBox3.TabIndex = 1;
             pictureBox3.TabStop = false;
             // 
-            // label4
+            // pictureBox2
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(107, 10);
-            label4.Name = "label4";
-            label4.Size = new Size(85, 30);
-            label4.TabIndex = 0;
-            label4.Text = "<data>";
-            label4.Click += label4_Click;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(34, 13);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(26, 27);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
             // 
-            // label3
+            // campaign_name
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(66, 10);
-            label3.Name = "label3";
-            label3.Size = new Size(49, 30);
-            label3.TabIndex = 0;
-            label3.Text = "Bầu";
+            campaign_name.BorderStyle = BorderStyle.None;
+            campaign_name.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            campaign_name.Location = new Point(83, 13);
+            campaign_name.Multiline = true;
+            campaign_name.Name = "campaign_name";
+            campaign_name.Size = new Size(154, 27);
+            campaign_name.TabIndex = 4;
+            campaign_name.Text = "Name";
+            campaign_name.TextAlign = HorizontalAlignment.Center;
             // 
             // vote_view_candidate_details
             // 
@@ -430,11 +404,10 @@
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             Candidate_Detail.ResumeLayout(false);
             Candidate_Detail.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            Candidate.ResumeLayout(false);
             info.ResumeLayout(false);
             info.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -453,17 +426,14 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private Label label1;
         private Label label2;
-        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2ShadowPanel Candidate_Detail;
-        private Label label4;
-        private Label label3;
-        private PictureBox pictureBox2;
-        private Panel Candidate;
         private Panel info;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private PictureBox pictureBox3;
         private Guna.UI2.WinForms.Guna2Button detail;
         private Guna.UI2.WinForms.Guna2Button vote;
+        private TextBox candidate_class;
+        private TextBox candidate_name;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox2;
+        private TextBox campaign_name;
     }
 }
