@@ -38,18 +38,9 @@
         public DateTime EndTime { get; set; }
         public string Category { get; set; }
         public int[] Candidate_ID { get; set; }
-        public int Status { get; set; }
+        public int[] Class_ID { get; set; }
     }
-    public class CAMPAIGN_CLASS
-    {
-        public string Campaign_ID { get; set; }
-        public string Class_ID { get; set; }
-    }
-    public class CAMPAIGN_CANDIDATE
-    {
-        public string Campaign_ID { get; set; }
-        public string Candidate_ID { get; set; }
-    }
+
     public class VOTE
     {
         public string Student_ID { get; set; }

@@ -55,6 +55,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -72,6 +74,8 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.selectClass = new System.Windows.Forms.Label();
             this.classList = new Guna.UI2.WinForms.Guna2ComboBox();
             this.facultyList = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -91,6 +95,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -155,6 +160,7 @@
             this.guna2Button3.Text = "Ứng cử viên";
             this.guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button3.TextOffset = new System.Drawing.Point(67, 0);
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // guna2Button2
             // 
@@ -177,6 +183,7 @@
             this.guna2Button2.Text = "Hoạt động bỏ phiếu";
             this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.TextOffset = new System.Drawing.Point(67, 0);
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button1
             // 
@@ -287,6 +294,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.panel4.Controls.Add(this.guna2Button6);
+            this.panel4.Controls.Add(this.selectClass);
             this.panel4.Controls.Add(this.classList);
             this.panel4.Controls.Add(this.facultyList);
             this.panel4.Controls.Add(this.label5);
@@ -305,16 +314,45 @@
             this.panel4.Controls.Add(this.label3);
             this.panel4.Location = new System.Drawing.Point(25, 148);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1050, 1000);
+            this.panel4.Size = new System.Drawing.Size(1050, 1117);
             this.panel4.TabIndex = 7;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // guna2Button6
+            // 
+            this.guna2Button6.BorderRadius = 8;
+            this.guna2Button6.BorderThickness = 1;
+            this.guna2Button6.CustomizableEdges = customizableEdges10;
+            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.guna2Button6.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button6.Location = new System.Drawing.Point(550, 891);
+            this.guna2Button6.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button6.Name = "guna2Button6";
+            this.guna2Button6.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            this.guna2Button6.Size = new System.Drawing.Size(102, 37);
+            this.guna2Button6.TabIndex = 36;
+            this.guna2Button6.Text = "Chọn lại";
+            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
+            // 
+            // selectClass
+            // 
+            this.selectClass.Location = new System.Drawing.Point(30, 891);
+            this.selectClass.Name = "selectClass";
+            this.selectClass.Size = new System.Drawing.Size(473, 107);
+            this.selectClass.TabIndex = 35;
+            this.selectClass.Text = "Các lớp đã chọn:";
             // 
             // classList
             // 
             this.classList.BackColor = System.Drawing.Color.Transparent;
             this.classList.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
             this.classList.BorderRadius = 9;
-            this.classList.CustomizableEdges = customizableEdges10;
+            this.classList.CustomizableEdges = customizableEdges12;
             this.classList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.classList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.classList.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -324,7 +362,7 @@
             this.classList.ItemHeight = 58;
             this.classList.Location = new System.Drawing.Point(550, 786);
             this.classList.Name = "classList";
-            this.classList.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            this.classList.ShadowDecoration.CustomizableEdges = customizableEdges13;
             this.classList.Size = new System.Drawing.Size(473, 64);
             this.classList.TabIndex = 33;
             // 
@@ -333,7 +371,7 @@
             this.facultyList.BackColor = System.Drawing.Color.Transparent;
             this.facultyList.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
             this.facultyList.BorderRadius = 9;
-            this.facultyList.CustomizableEdges = customizableEdges12;
+            this.facultyList.CustomizableEdges = customizableEdges14;
             this.facultyList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.facultyList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.facultyList.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -343,7 +381,7 @@
             this.facultyList.ItemHeight = 58;
             this.facultyList.Location = new System.Drawing.Point(30, 786);
             this.facultyList.Name = "facultyList";
-            this.facultyList.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            this.facultyList.ShadowDecoration.CustomizableEdges = customizableEdges15;
             this.facultyList.Size = new System.Drawing.Size(473, 64);
             this.facultyList.TabIndex = 32;
             // 
@@ -369,7 +407,7 @@
             // 
             this.category.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
             this.category.BorderRadius = 8;
-            this.category.CustomizableEdges = customizableEdges14;
+            this.category.CustomizableEdges = customizableEdges16;
             this.category.DefaultText = "";
             this.category.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.category.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -384,7 +422,7 @@
             this.category.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
             this.category.PlaceholderText = "";
             this.category.SelectedText = "";
-            this.category.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            this.category.ShadowDecoration.CustomizableEdges = customizableEdges17;
             this.category.Size = new System.Drawing.Size(993, 64);
             this.category.TabIndex = 27;
             this.category.TextOffset = new System.Drawing.Point(15, 0);
@@ -406,7 +444,7 @@
             this.endTime.BorderRadius = 8;
             this.endTime.Checked = true;
             this.endTime.CustomFormat = "dd/MM/yyyy HH:mm";
-            this.endTime.CustomizableEdges = customizableEdges16;
+            this.endTime.CustomizableEdges = customizableEdges18;
             this.endTime.FillColor = System.Drawing.Color.White;
             this.endTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.endTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -414,7 +452,7 @@
             this.endTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.endTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.endTime.Name = "endTime";
-            this.endTime.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            this.endTime.ShadowDecoration.CustomizableEdges = customizableEdges19;
             this.endTime.ShowUpDown = true;
             this.endTime.Size = new System.Drawing.Size(473, 64);
             this.endTime.TabIndex = 25;
@@ -426,7 +464,7 @@
             this.startTime.BorderRadius = 8;
             this.startTime.Checked = true;
             this.startTime.CustomFormat = "dd/MM/yyyy HH:mm";
-            this.startTime.CustomizableEdges = customizableEdges18;
+            this.startTime.CustomizableEdges = customizableEdges20;
             this.startTime.FillColor = System.Drawing.Color.White;
             this.startTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.startTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -434,7 +472,7 @@
             this.startTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.startTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.startTime.Name = "startTime";
-            this.startTime.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            this.startTime.ShadowDecoration.CustomizableEdges = customizableEdges21;
             this.startTime.ShowUpDown = true;
             this.startTime.Size = new System.Drawing.Size(473, 64);
             this.startTime.TabIndex = 24;
@@ -470,7 +508,7 @@
             // guna2Button4
             // 
             this.guna2Button4.BorderRadius = 8;
-            this.guna2Button4.CustomizableEdges = customizableEdges20;
+            this.guna2Button4.CustomizableEdges = customizableEdges22;
             this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -478,10 +516,10 @@
             this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(452, 920);
+            this.guna2Button4.Location = new System.Drawing.Point(452, 1018);
             this.guna2Button4.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            this.guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges23;
             this.guna2Button4.Size = new System.Drawing.Size(164, 56);
             this.guna2Button4.TabIndex = 20;
             this.guna2Button4.Text = "Đăng ký";
@@ -491,7 +529,7 @@
             // 
             this.description.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
             this.description.BorderRadius = 8;
-            this.description.CustomizableEdges = customizableEdges22;
+            this.description.CustomizableEdges = customizableEdges24;
             this.description.DefaultText = "";
             this.description.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.description.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -507,7 +545,7 @@
             this.description.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
             this.description.PlaceholderText = "";
             this.description.SelectedText = "";
-            this.description.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            this.description.ShadowDecoration.CustomizableEdges = customizableEdges25;
             this.description.Size = new System.Drawing.Size(993, 149);
             this.description.TabIndex = 19;
             this.description.TextOffset = new System.Drawing.Point(15, 0);
@@ -516,7 +554,7 @@
             // 
             this.campaignName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
             this.campaignName.BorderRadius = 8;
-            this.campaignName.CustomizableEdges = customizableEdges24;
+            this.campaignName.CustomizableEdges = customizableEdges26;
             this.campaignName.DefaultText = "";
             this.campaignName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.campaignName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -531,7 +569,7 @@
             this.campaignName.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
             this.campaignName.PlaceholderText = "";
             this.campaignName.SelectedText = "";
-            this.campaignName.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            this.campaignName.ShadowDecoration.CustomizableEdges = customizableEdges27;
             this.campaignName.Size = new System.Drawing.Size(993, 64);
             this.campaignName.TabIndex = 16;
             this.campaignName.TextOffset = new System.Drawing.Point(15, 0);
@@ -584,6 +622,12 @@
             this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.guna2MessageDialog1.Text = null;
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // CreateVote1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -592,6 +636,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CreateVote1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddVote1";
@@ -647,5 +692,8 @@
         private Label label8;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
         private Guna.UI2.WinForms.Guna2ComboBox classList;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Label selectClass;
+        private Guna.UI2.WinForms.Guna2Button guna2Button6;
     }
 }

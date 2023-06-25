@@ -197,10 +197,20 @@ namespace DOANMONHOC
 
         private async void guna2Button4_Click_1(object sender, EventArgs e)
         {
+            if (Data.Candidate_ID.Length < 2)
+            {
+                MessageBox.Show("Vui lòng chọn ít nhất 2 ứng cử viên!");
+                return;
+            }
             var openForm = new CreateVote13(indexForm);
             openForm.Data = Data;
             openForm.Show();
             this.Close();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

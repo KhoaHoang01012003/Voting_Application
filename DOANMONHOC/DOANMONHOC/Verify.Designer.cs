@@ -82,7 +82,6 @@
             label3.Size = new Size(58, 25);
             label3.TabIndex = 3;
             label3.Text = "name";
-            label3.Click += label3_Click;
             // 
             // verify_button
             // 
@@ -101,6 +100,7 @@
             verify_button.Size = new Size(144, 50);
             verify_button.TabIndex = 4;
             verify_button.Text = "Xác nhận";
+            verify_button.Click += verify_button_Click;
             // 
             // guna2Button1
             // 

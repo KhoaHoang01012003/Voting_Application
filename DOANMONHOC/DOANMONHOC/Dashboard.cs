@@ -174,7 +174,7 @@ namespace DOANMONHOC
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            Form vote = new vote_view_candidate_details();
+            Form vote = new vote_view_candidate_details(indexForm);
             vote.Show();
             this.Close();
         }
