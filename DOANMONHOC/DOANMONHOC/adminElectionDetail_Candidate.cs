@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace DOANMONHOC
 {
-    public partial class adminElectionDetail_Result : Form
+    public partial class adminElectionDetail_Candidate : Form
     {
         FirebaseConfig config = new FirebaseConfig
         {
@@ -23,13 +23,13 @@ namespace DOANMONHOC
         private Index indexForm;
         public CAMPAIGN Data { get; set; }
 
-        public adminElectionDetail_Result(Index indexForm)
+        public adminElectionDetail_Candidate(Index indexForm)
         {
             InitializeComponent();
             this.indexForm = indexForm;
         }
 
-        private void CreateVote3_Load(object sender, EventArgs e)
+        private void adminElectionDetail_Candidate_Load(object sender, EventArgs e)
         {
             client = new FireSharp.FirebaseClient(config);
 
@@ -66,7 +66,7 @@ namespace DOANMONHOC
             this.Close();
         }
 
-        private void guna2Button4_Click(object sender, EventArgs e)
+        private void guna2Button6_Click(object sender, EventArgs e)
         {
             var openForm = new adminElectionDetail_Overview(indexForm);
             openForm.Data = Data;
@@ -82,9 +82,9 @@ namespace DOANMONHOC
             this.Close();
         }
 
-        private void guna2Button9_Click(object sender, EventArgs e)
+        private void guna2Button8_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionDetail_Candidate(indexForm);
+            var openForm = new adminElectionDetail_Result(indexForm);
             openForm.Data = Data;
             openForm.Show();
             this.Close();

@@ -314,6 +314,7 @@
             this.guna2Button9.Size = new System.Drawing.Size(120, 35);
             this.guna2Button9.TabIndex = 23;
             this.guna2Button9.Text = "Ứng cử viên";
+            this.guna2Button9.Click += new System.EventHandler(this.guna2Button9_Click);
             // 
             // guna2Button8
             // 

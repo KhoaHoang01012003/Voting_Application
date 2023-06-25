@@ -98,5 +98,13 @@ namespace DOANMONHOC
             open.Show();
             this.Close();
         }
+
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+            var open = new adminElectionDetail_Candidate(indexForm);
+            open.Data = Data;
+            open.Show();
+            this.Close();
+        }
     }
 }

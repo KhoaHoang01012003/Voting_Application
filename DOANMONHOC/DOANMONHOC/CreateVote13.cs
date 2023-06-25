@@ -56,6 +56,9 @@ namespace DOANMONHOC
         {
             PushResponse response = await client.PushTaskAsync("Campaigns/", Data);
             MessageBox.Show("Tạo cuộc bỏ phiếu thành công!");
+            var openForm = new adminElectionActivities(indexForm);
+            openForm.Show();
+            this.Close();
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
@@ -65,7 +68,7 @@ namespace DOANMONHOC
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            var openForm = new adminDashboard(indexForm);
+            var openForm = new adminElectionActivities(indexForm);
             openForm.Show();
             this.Close();
         }
