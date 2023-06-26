@@ -87,18 +87,11 @@ namespace DOANMONHOC
 
         private async void guna2Button1_Click(object sender, EventArgs e)
         {
-            if (IsValidEmail(guna2TextBox1.Text) && IsStrongPassword(guna2TextBox2.Text))
+            FirebaseResponse emailCheckResponse = await client.GetTaskAsync("Users/");
+            var emailCheckData = emailCheckResponse.ResultAs<Dictionary<string, USER>>();
+            bool emailExists = emailCheckData.Values.Any(u => u.Email == guna2TextBox1.Text);
+            if (IsValidEmail(guna2TextBox1.Text) && IsStrongPassword(guna2TextBox2.Text) && !emailExists)
             {
-                FirebaseResponse emailCheckResponse = await client.GetTaskAsync("Users/");
-                var emailCheckData = emailCheckResponse.ResultAs<Dictionary<string, USER>>();
-
-                bool emailExists = emailCheckData.Values.Any(u => u.Email == guna2TextBox1.Text);
-
-                if (emailExists)
-                {
-                    label4.Text = "Email đã được đăng ký. Vui lòng sử dụng email khác.";
-                    return;
-                }
 
                 var data = new USER
                 {
@@ -111,20 +104,25 @@ namespace DOANMONHOC
                     UserName = guna2TextBox1.Text
                 };
 
+                var form = new VerifyEmail(indexForm, data);
+                form.ShowDialog();
+                this.Close();
 
-                PushResponse response = await client.PushTaskAsync("Users/", data);
-                USER result = response.ResultAs<USER>();
-
-                MessageBox.Show("DK THANH CONG " + result.Email);
-                label4.Text = "";
+            }
+            else if (emailExists)
+            {
+                MessageBox.Show("Email đã được đăng ký. Vui lòng sử dụng email khác.");
+                guna2TextBox1.Focus();
             }
             else if (!IsValidEmail(guna2TextBox1.Text))
             {
-                label4.Text = "Email không đúng! Hãy dùng email trường cung cấp";
+                MessageBox.Show("Email không đúng! Hãy dùng email trường cung cấp");
+                guna2TextBox1.Focus();
             }
             else
             {
-                label4.Text += "\nMật khẩu yếu!";
+                MessageBox.Show("Mật khẩu yếu!");
+                guna2TextBox2.Focus();
             }
         }
 

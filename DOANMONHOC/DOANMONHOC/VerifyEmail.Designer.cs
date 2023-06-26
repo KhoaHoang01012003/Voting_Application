@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pictureBox1 = new PictureBox();
             textBox1 = new TextBox();
             label1 = new Label();
-            richTextBox4 = new RichTextBox();
-            richTextBox3 = new RichTextBox();
-            richTextBox2 = new RichTextBox();
-            richTextBox1 = new RichTextBox();
+            Box4 = new RichTextBox();
+            Box3 = new RichTextBox();
+            Box2 = new RichTextBox();
+            Box1 = new RichTextBox();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            label2 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -55,7 +57,7 @@
             textBox1.BackColor = SystemColors.ControlLightLight;
             textBox1.BorderStyle = BorderStyle.None;
             textBox1.Font = new Font("Segoe UI", 21F, FontStyle.Regular, GraphicsUnit.Pixel);
-            textBox1.ForeColor = Color.MidnightBlue;
+            textBox1.ForeColor = Color.FromArgb(37, 83, 140);
             textBox1.Location = new Point(850, 385);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
@@ -68,57 +70,61 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 55F, FontStyle.Bold, GraphicsUnit.Pixel);
-            label1.ForeColor = Color.MidnightBlue;
+            label1.ForeColor = Color.FromArgb(37, 83, 140);
             label1.Location = new Point(835, 308);
             label1.Name = "label1";
             label1.Size = new Size(452, 74);
             label1.TabIndex = 12;
             label1.Text = "Đã gửi tin nhắn!";
             // 
-            // richTextBox4
+            // Box4
             // 
-            richTextBox4.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            richTextBox4.Location = new Point(1147, 503);
-            richTextBox4.Name = "richTextBox4";
-            richTextBox4.Size = new Size(72, 72);
-            richTextBox4.TabIndex = 18;
-            richTextBox4.Text = "";
-            richTextBox4.KeyPress += richTextBox4_KeyPress;
+            Box4.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            Box4.Location = new Point(1147, 503);
+            Box4.Multiline = false;
+            Box4.Name = "Box4";
+            Box4.Size = new Size(72, 72);
+            Box4.TabIndex = 18;
+            Box4.Text = "";
+            Box4.KeyPress += richTextBox4_KeyPress;
             // 
-            // richTextBox3
+            // Box3
             // 
-            richTextBox3.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            richTextBox3.Location = new Point(1056, 503);
-            richTextBox3.Name = "richTextBox3";
-            richTextBox3.Size = new Size(72, 72);
-            richTextBox3.TabIndex = 16;
-            richTextBox3.Text = "";
-            richTextBox3.KeyPress += richTextBox3_KeyPress;
+            Box3.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            Box3.Location = new Point(1056, 503);
+            Box3.Multiline = false;
+            Box3.Name = "Box3";
+            Box3.Size = new Size(72, 72);
+            Box3.TabIndex = 16;
+            Box3.Text = "";
+            Box3.KeyPress += richTextBox3_KeyPress;
             // 
-            // richTextBox2
+            // Box2
             // 
-            richTextBox2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            richTextBox2.Location = new Point(957, 503);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(72, 72);
-            richTextBox2.TabIndex = 15;
-            richTextBox2.Text = "";
-            richTextBox2.KeyPress += richTextBox2_KeyPress;
+            Box2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            Box2.Location = new Point(957, 503);
+            Box2.Multiline = false;
+            Box2.Name = "Box2";
+            Box2.Size = new Size(72, 72);
+            Box2.TabIndex = 15;
+            Box2.Text = "";
+            Box2.KeyPress += richTextBox2_KeyPress;
             // 
-            // richTextBox1
+            // Box1
             // 
-            richTextBox1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            richTextBox1.Location = new Point(856, 503);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(72, 72);
-            richTextBox1.TabIndex = 14;
-            richTextBox1.Text = "";
-            richTextBox1.KeyPress += richTextBox1_KeyPress;
+            Box1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            Box1.Location = new Point(856, 503);
+            Box1.Multiline = false;
+            Box1.Name = "Box1";
+            Box1.Size = new Size(72, 72);
+            Box1.TabIndex = 14;
+            Box1.Text = "";
+            Box1.KeyPress += richTextBox1_KeyPress;
             // 
             // guna2Button1
             // 
             guna2Button1.BorderRadius = 30;
-            guna2Button1.CustomizableEdges = customizableEdges1;
+            guna2Button1.CustomizableEdges = customizableEdges3;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -129,11 +135,33 @@
             guna2Button1.Location = new Point(835, 636);
             guna2Button1.Margin = new Padding(2);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Button1.Size = new Size(422, 64);
             guna2Button1.TabIndex = 20;
             guna2Button1.Text = "Đăng ký";
             guna2Button1.Click += guna2Button1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(850, 737);
+            label2.Name = "label2";
+            label2.Size = new Size(251, 35);
+            label2.TabIndex = 21;
+            label2.Text = "Chưa nhận được mã?";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 20F, FontStyle.Underline, GraphicsUnit.Point);
+            label3.ForeColor = Color.FromArgb(37, 83, 140);
+            label3.Location = new Point(1107, 726);
+            label3.Name = "label3";
+            label3.Size = new Size(194, 46);
+            label3.TabIndex = 22;
+            label3.Text = "Gửi lại ngay";
+            label3.Click += label3_Click;
             // 
             // VerifyEmail
             // 
@@ -141,16 +169,19 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(1422, 977);
+            Controls.Add(label3);
+            Controls.Add(label2);
             Controls.Add(guna2Button1);
             Controls.Add(pictureBox1);
             Controls.Add(textBox1);
             Controls.Add(label1);
-            Controls.Add(richTextBox4);
-            Controls.Add(richTextBox3);
-            Controls.Add(richTextBox2);
-            Controls.Add(richTextBox1);
+            Controls.Add(Box4);
+            Controls.Add(Box3);
+            Controls.Add(Box2);
+            Controls.Add(Box1);
             Name = "VerifyEmail";
             Text = "VerifyEmail";
+            Load += VerifyEmail_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -161,10 +192,12 @@
         private PictureBox pictureBox1;
         private TextBox textBox1;
         private Label label1;
-        private RichTextBox richTextBox4;
-        private RichTextBox richTextBox3;
-        private RichTextBox richTextBox2;
-        private RichTextBox richTextBox1;
+        private RichTextBox Box4;
+        private RichTextBox Box3;
+        private RichTextBox Box2;
+        private RichTextBox Box1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Label label2;
+        private Label label3;
     }
 }

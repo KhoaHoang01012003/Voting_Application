@@ -18,9 +18,13 @@ namespace DOANMONHOC
 {
     public partial class init_user_info : Form
     {
-        public init_user_info()
+        private Index indexForm;
+        USER data = new USER();
+        public init_user_info(Index indexForm, USER user)
         {
             InitializeComponent();
+            this.indexForm = indexForm;
+            this.data = user;
         }
         IFirebaseConfig config = new FirebaseConfig
         {
@@ -38,13 +42,13 @@ namespace DOANMONHOC
             FirebaseResponse response1 = await client.GetTaskAsync("Classes/");
             Dictionary<string, CLASS> classes = response1.ResultAs<Dictionary<string, CLASS>>();
             int index = classes.Count() + 1;
-            foreach (var user in classes)
+            foreach (var class_d in classes)
             {
-                if (user.Value.ClassName == className)
+                if (class_d.Value.ClassName == className)
                 {
                     ClassAndFaculty result = new ClassAndFaculty();
-                    result.ClassId = user.Value.Class_ID;
-                    result.FacultyId = user.Value.Faculty_ID;
+                    result.ClassId = class_d.Value.Class_ID;
+                    result.FacultyId = class_d.Value.Faculty_ID;
                     return result;
                 }
             }
@@ -91,29 +95,24 @@ namespace DOANMONHOC
                     }
                 }
             };
-            Properties.Settings.Default.Username = "21521955@gm.uit.edu.vn";
-            Properties.Settings.Default.Save();
         }
 
         private async void guna2Button7_Click(object sender, EventArgs e)
         {
             if (nameBox.Text != "" && facultyList.Text != "" && classList.Text != "")
             {
-                FirebaseResponse response = await client.GetTaskAsync("Users/");
-                Dictionary<string, USER> users = response.ResultAs<Dictionary<string, USER>>();
                 ClassAndFaculty tmp_class = await SearchClassID(classList.Text.ToUpper());
-                foreach (var user in users)
-                {
-                    if (user.Value.UserName == Properties.Settings.Default.Username.ToString())
-                    {
-                        user.Value.Fullname = nameBox.Text;
-                        user.Value.Faculty_ID = tmp_class.FacultyId;
-                        user.Value.Class_ID = tmp_class.ClassId;
-                        var updateResponse = await client.SetTaskAsync("Users/" + user.Key, user.Value);
-                        MessageBox.Show("Update!");
-                        break;
-                    }
-                }
+               
+                data.Fullname = nameBox.Text;
+                data.Faculty_ID = tmp_class.FacultyId;
+                data.Class_ID = tmp_class.ClassId;
+                        
+                PushResponse response = await client.PushTaskAsync("Users/", data);
+                USER result = response.ResultAs<USER>();
+
+                MessageBox.Show("DK THANH CONG " + result.Email);
+                indexForm.Show();
+                this.Close();
             }
             else if (nameBox.Text == "")
             {

@@ -42,7 +42,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.label4 = new System.Windows.Forms.Label();
+            //this.label4 = new System.Windows.Forms.Label();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -109,15 +109,16 @@
             this.guna2Button1.TabIndex = 14;
             this.guna2Button1.Text = "Đăng ký";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
+            /*// 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(834, 547);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(343, 72);
+            this.label4.Size = new System.Drawing.Size(0, 0);
             this.label4.TabIndex = 11;
+            this.label4.Text = "Đây nè";*/
             // 
             // guna2TextBox2
             // 
@@ -196,7 +197,7 @@
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label4);
+            //this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -216,7 +217,7 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Label label4;
+        //private Label label4;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
