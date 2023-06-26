@@ -31,7 +31,7 @@ namespace DOANMONHOC
             this.indexForm = indexForm;
         }
 
-        private async void vote_view_candidate_details_Load(object sender, EventArgs e)
+        public async void vote_view_candidate_details_Load(object sender, EventArgs e)
         {
             client = new FireSharp.FirebaseClient(config);
 
@@ -54,9 +54,13 @@ namespace DOANMONHOC
             FirebaseResponse response_candidate = await client.GetTaskAsync("Candidates/");
             Dictionary<string, CANDIDATE> candidates = response_candidate.ResultAs<Dictionary<string, CANDIDATE>>();
             List<CANDIDATE> candidatesList = candidates.Values.ToList();
-
+            //Lấy list class
             FirebaseResponse cls = await client.GetTaskAsync("Classes/");
             Dictionary<string, CLASS> classes = cls.ResultAs<Dictionary<string, CLASS>>();
+            //Lấy list phiếu vote
+            FirebaseResponse voterespone = await client.GetTaskAsync("Votes/");
+            Dictionary<string, VOTE> votes = voterespone.ResultAs<Dictionary<string, VOTE>>();
+            List<VOTE> votesList = votes.Values.ToList();
 
             int xOffset = 312;
             int yOffset = 213;
@@ -81,7 +85,7 @@ namespace DOANMONHOC
                 name.Font = campaign_name.Font;
                 name.Location = new Point(77, 12);
                 name.Text = campaign.CampaignName;
-                MessageBox.Show(name.Text);
+
                 panel.Controls.Add(name);
 
 
@@ -138,7 +142,6 @@ namespace DOANMONHOC
                             votebutton.TabIndex = 3;
                             votebutton.Text = "Bỏ phiếu";
                             votebutton.Click += vote_Click;
-
                             void vote_Click(object sender, EventArgs e)
                             {
                                 string studentID = "";
@@ -157,15 +160,41 @@ namespace DOANMONHOC
                                     Candidate_ID = candidate.Candidate_ID.ToString(),
                                     TimeVoted = DateTime.Now.ToString()
                                 };
-                                var openForm = new Verify(newvote);
+                                var openForm = new Verify(candidate.CandidateName,newvote);
                                 openForm.ShowDialog();
+                                this.Close();
+                            }
+                            //view detail
+                            Guna2Button viewdetail = new Guna2Button();
+                            viewdetail.BorderColor = Color.FromArgb(37, 83, 140);
+                            viewdetail.BorderRadius = 10;
+                            viewdetail.BorderThickness = 1;
+                            viewdetail.DisabledState.BorderColor = Color.DarkGray;
+                            viewdetail.DisabledState.CustomBorderColor = Color.DarkGray;
+                            viewdetail.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+                            viewdetail.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+                            viewdetail.FillColor = Color.White;
+                            viewdetail.Font = new Font("Segoe UI Semibold", 7F, FontStyle.Bold, GraphicsUnit.Point);
+                            viewdetail.ForeColor = Color.Black;
+                            viewdetail.Location = new Point(136, 209);
+                            viewdetail.Size = new Size(100, 50);
+                            viewdetail.TabIndex = 3;
+                            viewdetail.Text = "Xem chi tiết";
+                            viewdetail.UseTransparentBackground = true;
+                            viewdetail.Click += detail_Click;
+                            void detail_Click(object sender, EventArgs e)
+                            {
+                                var openform = new Info_Candidate(candidate);
+                                openform.ShowDialog();
                             }
                             //add
                             panelinfo.Controls.Add(namecdd);
                             panelinfo.Controls.Add(classcdd);
                             panelinfo.Controls.Add(votebutton);
+                            panelinfo.Controls.Add(viewdetail);
+
                             panelList_candidate.Add(panelinfo);
-                            x_infopanel += 250;
+                            x_infopanel += 300;
                             break;
                         }
                     }
@@ -177,9 +206,31 @@ namespace DOANMONHOC
 
 
                 }
+                //ẩn những panel campaign vote rồi hoặc không được vote
 
-                Candidate_Detail.Parent.Controls.Add(panel);
-                yOffset += 300;
+                foreach (object classid in campaign.Class_ID)
+                {
+                    bool flag = true;
+                    if (Properties.Settings.Default.ClassID.ToString() == classid.ToString())
+                    {
+                        foreach (VOTE vote in votesList)
+                        {
+                            if (vote.Campaign_ID.ToString() == campaign.Campaint_ID.ToString() && Properties.Settings.Default.StudentID.ToString() == vote.Student_ID.ToString())
+                            {
+                                flag = false;
+                                break;
+                            }
+                        }
+                        if (flag)
+                        {
+                            Candidate_Detail.Parent.Controls.Add(panel);
+                            yOffset += 400;
+                        }
+                    }
+
+                }
+
+
             }
         }
 
@@ -189,9 +240,12 @@ namespace DOANMONHOC
             this.Close();
         }
 
-        private void Candidate_Detail_Paint(object sender, PaintEventArgs e)
-        {
 
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            var openForm = new Dashboard(indexForm);
+            openForm.Show();
+            this.Close();
         }
     }
 }

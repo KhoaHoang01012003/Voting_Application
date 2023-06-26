@@ -56,6 +56,7 @@
             label1 = new Label();
             label2 = new Label();
             Candidate_Detail = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            campaign_name = new TextBox();
             info = new Panel();
             detail = new Guna.UI2.WinForms.Guna2Button();
             vote = new Guna.UI2.WinForms.Guna2Button();
@@ -63,7 +64,6 @@
             candidate_name = new TextBox();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
-            campaign_name = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
@@ -180,6 +180,7 @@
             guna2Button1.Text = "Dashboard";
             guna2Button1.TextAlign = HorizontalAlignment.Left;
             guna2Button1.TextOffset = new Point(67, 0);
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // pictureBox1
             // 
@@ -271,7 +272,18 @@
             Candidate_Detail.ShadowColor = Color.Black;
             Candidate_Detail.Size = new Size(1089, 360);
             Candidate_Detail.TabIndex = 7;
-            Candidate_Detail.Paint += Candidate_Detail_Paint;
+            // 
+            // campaign_name
+            // 
+            campaign_name.BorderStyle = BorderStyle.None;
+            campaign_name.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            campaign_name.Location = new Point(83, 13);
+            campaign_name.Multiline = true;
+            campaign_name.Name = "campaign_name";
+            campaign_name.Size = new Size(154, 27);
+            campaign_name.TabIndex = 4;
+            campaign_name.Text = "Name";
+            campaign_name.TextAlign = HorizontalAlignment.Center;
             // 
             // info
             // 
@@ -367,18 +379,6 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
-            // 
-            // campaign_name
-            // 
-            campaign_name.BorderStyle = BorderStyle.None;
-            campaign_name.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            campaign_name.Location = new Point(83, 13);
-            campaign_name.Multiline = true;
-            campaign_name.Name = "campaign_name";
-            campaign_name.Size = new Size(154, 27);
-            campaign_name.TabIndex = 4;
-            campaign_name.Text = "Name";
-            campaign_name.TextAlign = HorizontalAlignment.Center;
             // 
             // vote_view_candidate_details
             // 

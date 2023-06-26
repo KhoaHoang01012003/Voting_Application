@@ -88,6 +88,8 @@
             Controls.Add(label1);
             Name = "Success";
             Text = "Success";
+            FormClosed += Success_FormClosed;
+            Load += Success_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -501,7 +501,7 @@
             action_name.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             action_name.Location = new Point(7, 7);
             action_name.Name = "action_name";
-            action_name.Size = new Size(225, 25);
+            action_name.Size = new Size(205, 25);
             action_name.TabIndex = 0;
             // 
             // guna2HtmlLabel4

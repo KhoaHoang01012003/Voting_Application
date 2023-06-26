@@ -135,6 +135,7 @@
             Controls.Add(label1);
             Name = "Verify";
             Text = "Verify";
+            Load += Verify_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

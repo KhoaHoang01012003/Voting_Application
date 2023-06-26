@@ -17,6 +17,8 @@ namespace DOANMONHOC.Properties {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
         internal object Username;
+        internal object ClassID;
+        internal string StudentID;
 
         public static Settings Default {
             get {
