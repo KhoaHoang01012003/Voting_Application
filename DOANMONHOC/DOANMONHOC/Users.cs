@@ -2,6 +2,7 @@
 {
     public class USER
     {
+        public string Avt {  get; set; }
         public string Student_ID { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
