@@ -21,16 +21,6 @@ namespace DOANMONHOC
             InitializeComponent();
             //this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
             isBackButtonPressed = false;
-            //tên textbox email
-            username.Text = "Username";
-            username.ForeColor = Color.FromArgb(37, 83, 140);
-            username.Enter += username_Enter;
-            username.Leave += username_Leave;
-            //tên textbox pass
-            password.Text = "Password";
-            password.ForeColor = Color.FromArgb(37, 83, 140);
-            password.Enter += password_Enter;
-            password.Leave += password_Leave;
         }
 
         void FormClosed_Exit(object sender, FormClosedEventArgs e)
@@ -44,48 +34,7 @@ namespace DOANMONHOC
         private void Sign_in_Load(object sender, EventArgs e)
         {
             client = new FireSharp.FirebaseClient(config);
-            if (client != null)
-            {
-                //MessageBox.Show("Connection is established");
-            }
-        }
-
-        private void username_Enter(object sender, EventArgs e)
-        {
-            if (username.Text == "Username")
-            {
-                username.Clear();
-                username.ForeColor = Color.FromArgb(37, 83, 140);
-            }
-        }
-
-        private void username_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(username.Text))
-            {
-                username.Text = "Username";
-                username.ForeColor = Color.FromArgb(37, 83, 140);
-            }
-        }
-
-        private void password_Enter(object sender, EventArgs e)
-        {
-            if (password.Text == "Password")
-            {
-                password.Clear();
-                password.UseSystemPasswordChar = true;
-                password.ForeColor = Color.FromArgb(37, 83, 140);
-            }
-        }
-
-        private void password_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(password.Text))
-            {
-                password.Text = "Password";
-                password.UseSystemPasswordChar = false;
-                password.ForeColor = Color.FromArgb(37, 83, 140);
-            }
+            password.UseSystemPasswordChar = true;
         }
 
         private void Sign_in_as_Admin_button_Click(object sender, EventArgs e)
@@ -141,6 +90,18 @@ namespace DOANMONHOC
             var form = new Forget_Pass();
             form.Show();
             this.Close();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                password.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                password.UseSystemPasswordChar = true;
+            }
         }
     }
 }

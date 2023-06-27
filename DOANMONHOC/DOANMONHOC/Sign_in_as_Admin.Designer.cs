@@ -97,10 +97,11 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(867, 614);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(147, 24);
+            this.checkBox1.Size = new System.Drawing.Size(127, 24);
             this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Ghi nhớ mật khẩu";
+            this.checkBox1.Text = "Hiện mật khẩu";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // button1
             // 
@@ -134,7 +135,7 @@
             this.username_admin.Name = "username_admin";
             this.username_admin.PasswordChar = '\0';
             this.username_admin.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
-            this.username_admin.PlaceholderText = "";
+            this.username_admin.PlaceholderText = "Username";
             this.username_admin.SelectedText = "";
             this.username_admin.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.username_admin.Size = new System.Drawing.Size(505, 64);
@@ -157,7 +158,8 @@
             this.password_admin.Location = new System.Drawing.Point(847, 521);
             this.password_admin.Name = "password_admin";
             this.password_admin.PasswordChar = '\0';
-            this.password_admin.PlaceholderText = "";
+            this.password_admin.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.password_admin.PlaceholderText = "Password";
             this.password_admin.SelectedText = "";
             this.password_admin.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.password_admin.Size = new System.Drawing.Size(505, 64);
@@ -217,7 +219,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Sign_in_as_Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sign_in_as_Admin";
+            this.Text = "UIT Voting Application";
             this.Load += new System.EventHandler(this.Sign_in_as_Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -31,17 +31,6 @@ namespace DOANMONHOC
         {
             InitializeComponent();
             //this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
-
-            //tên textbox email
-            username_admin.Text = "School email addess";
-            username_admin.ForeColor = Color.FromArgb(37, 83, 140);
-            username_admin.Enter += username_admin_Enter;
-            username_admin.Leave += username_admin_Leave;
-            //tên textbox pass
-            password_admin.Text = "Password";
-            password_admin.ForeColor = Color.FromArgb(37, 83, 140);
-            password_admin.Enter += password_admin_Enter;
-            password_admin.Leave += password_admin_Leave;
         }
 
         /*void FormClosed_Exit(object sender, FormClosedEventArgs e)
@@ -52,46 +41,9 @@ namespace DOANMONHOC
         private void Sign_in_as_Admin_Load(object sender, EventArgs e)
         {
             client = new FireSharp.FirebaseClient(config);
+            password_admin.UseSystemPasswordChar = true;
         }
 
-
-        private void username_admin_Enter(object sender, EventArgs e)
-        {
-            if (username_admin.Text == "School email addess")
-            {
-                username_admin.Clear();
-                username_admin.ForeColor = Color.FromArgb(37, 83, 140);
-            }
-        }
-
-        private void username_admin_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(username_admin.Text))
-            {
-                username_admin.Text = "School email addess";
-                username_admin.ForeColor = Color.FromArgb(37, 83, 140);
-            }
-        }
-
-        private void password_admin_Enter(object sender, EventArgs e)
-        {
-            if (password_admin.Text == "Password")
-            {
-                password_admin.Clear();
-                password_admin.UseSystemPasswordChar = true;
-                password_admin.ForeColor = Color.FromArgb(37, 83, 140);
-            }
-        }
-
-        private void password_admin_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(password_admin.Text))
-            {
-                password_admin.Text = "Password";
-                password_admin.UseSystemPasswordChar = false;
-                password_admin.ForeColor = Color.FromArgb(37, 83, 140);
-            }
-        }
         public static bool VerifyPassword(string password, string hashedPassword)
         {
             return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
@@ -124,10 +76,24 @@ namespace DOANMONHOC
             }
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                password_admin.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                password_admin.UseSystemPasswordChar = true;
+            }
+        }
+
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             indexForm.Show();
             this.Close();
         }
+
+        
     }
 }

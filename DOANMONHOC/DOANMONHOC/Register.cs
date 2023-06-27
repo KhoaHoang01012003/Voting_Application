@@ -50,6 +50,7 @@ namespace DOANMONHOC
         private void Register_Load(object sender, EventArgs e)
         {
             client = new FireSharp.FirebaseClient(config);
+            password.UseSystemPasswordChar = true;
         }
 
         private bool IsValidEmail(string email)
@@ -89,11 +90,6 @@ namespace DOANMONHOC
             string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password, salt);
 
             return hashedPassword;
-        }
-
-        public static bool VerifyPassword(string password, string hashedPassword)
-        {
-            return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
 
         private async void guna2Button1_Click(object sender, EventArgs e)
@@ -148,11 +144,11 @@ namespace DOANMONHOC
         {
             if (checkBox1.Checked)
             {
-                password.PasswordChar = '\0';
+                password.UseSystemPasswordChar = false;
             }
-            else 
-            { 
-                password.PasswordChar = '*'; 
+            else
+            {
+                password.UseSystemPasswordChar = true;
             }
         }
     }
