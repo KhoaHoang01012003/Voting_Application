@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerifyEmail));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pictureBox1 = new PictureBox();
             textBox1 = new TextBox();
             label1 = new Label();
-            Box4 = new RichTextBox();
-            Box3 = new RichTextBox();
-            Box2 = new RichTextBox();
-            Box1 = new RichTextBox();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             label2 = new Label();
             label3 = new Label();
+            pictureBox2 = new PictureBox();
+            otp_enter = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -77,65 +79,21 @@
             label1.TabIndex = 12;
             label1.Text = "Đã gửi tin nhắn!";
             // 
-            // Box4
-            // 
-            Box4.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            Box4.Location = new Point(1147, 503);
-            Box4.Multiline = false;
-            Box4.Name = "Box4";
-            Box4.Size = new Size(72, 72);
-            Box4.TabIndex = 18;
-            Box4.Text = "";
-            Box4.KeyPress += richTextBox4_KeyPress;
-            // 
-            // Box3
-            // 
-            Box3.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            Box3.Location = new Point(1056, 503);
-            Box3.Multiline = false;
-            Box3.Name = "Box3";
-            Box3.Size = new Size(72, 72);
-            Box3.TabIndex = 16;
-            Box3.Text = "";
-            Box3.KeyPress += richTextBox3_KeyPress;
-            // 
-            // Box2
-            // 
-            Box2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            Box2.Location = new Point(957, 503);
-            Box2.Multiline = false;
-            Box2.Name = "Box2";
-            Box2.Size = new Size(72, 72);
-            Box2.TabIndex = 15;
-            Box2.Text = "";
-            Box2.KeyPress += richTextBox2_KeyPress;
-            // 
-            // Box1
-            // 
-            Box1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            Box1.Location = new Point(856, 503);
-            Box1.Multiline = false;
-            Box1.Name = "Box1";
-            Box1.Size = new Size(72, 72);
-            Box1.TabIndex = 14;
-            Box1.Text = "";
-            Box1.KeyPress += richTextBox1_KeyPress;
-            // 
             // guna2Button1
             // 
             guna2Button1.BorderRadius = 30;
-            guna2Button1.CustomizableEdges = customizableEdges3;
+            guna2Button1.CustomizableEdges = customizableEdges1;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2Button1.FillColor = Color.FromArgb(37, 83, 140);
-            guna2Button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             guna2Button1.ForeColor = Color.White;
             guna2Button1.Location = new Point(835, 636);
             guna2Button1.Margin = new Padding(2);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button1.Size = new Size(422, 64);
             guna2Button1.TabIndex = 20;
             guna2Button1.Text = "Đăng ký";
@@ -163,26 +121,58 @@
             label3.Text = "Gửi lại ngay";
             label3.Click += label3_Click;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(55, 32);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(129, 154);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 23;
+            pictureBox2.TabStop = false;
+            // 
+            // otp_enter
+            // 
+            otp_enter.BorderColor = Color.FromArgb(37, 83, 140);
+            otp_enter.BorderRadius = 30;
+            otp_enter.CustomizableEdges = customizableEdges3;
+            otp_enter.DefaultText = "";
+            otp_enter.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            otp_enter.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            otp_enter.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            otp_enter.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            otp_enter.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            otp_enter.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            otp_enter.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            otp_enter.Location = new Point(835, 503);
+            otp_enter.Name = "otp_enter";
+            otp_enter.PasswordChar = '\0';
+            otp_enter.PlaceholderText = "";
+            otp_enter.SelectedText = "";
+            otp_enter.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            otp_enter.Size = new Size(422, 64);
+            otp_enter.TabIndex = 24;
+            // 
             // VerifyEmail
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(1422, 977);
+            Controls.Add(otp_enter);
+            Controls.Add(pictureBox2);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(guna2Button1);
             Controls.Add(pictureBox1);
             Controls.Add(textBox1);
             Controls.Add(label1);
-            Controls.Add(Box4);
-            Controls.Add(Box3);
-            Controls.Add(Box2);
-            Controls.Add(Box1);
             Name = "VerifyEmail";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "VerifyEmail";
             Load += VerifyEmail_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -192,12 +182,10 @@
         private PictureBox pictureBox1;
         private TextBox textBox1;
         private Label label1;
-        private RichTextBox Box4;
-        private RichTextBox Box3;
-        private RichTextBox Box2;
-        private RichTextBox Box1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Label label2;
         private Label label3;
+        private PictureBox pictureBox2;
+        private Guna.UI2.WinForms.Guna2TextBox otp_enter;
     }
 }
