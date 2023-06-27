@@ -104,7 +104,7 @@ namespace DOANMONHOC
                 };
 
                 var form = new VerifyEmail(data);
-                form.ShowDialog();
+                form.Show();
                 this.Close();
 
             }

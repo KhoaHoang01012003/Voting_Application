@@ -30,15 +30,6 @@ namespace DOANMONHOC
             password.Leave += password_Leave;
         }
 
-        private async Task<int> id_index()
-        {
-            for (int i = 1; ; i++)
-            {
-                FirebaseResponse response = await client.GetTaskAsync("Users/" + "User " + i.ToString());
-                if (response.Body == "null") return i;
-            }
-        }
-
         private void Sign_in_Load(object sender, EventArgs e)
         {
             client = new FireSharp.FirebaseClient(config);
@@ -104,7 +95,7 @@ namespace DOANMONHOC
             Dictionary<string, USER> users = response.ResultAs<Dictionary<string, USER>>();
             int cnt = users.Count();
             bool check = false;
-            foreach (var user in users) 
+            foreach (var user in users)
             {
                 if (user.Value.UserName == username.Text && VerifyPassword(password.Text, user.Value.Password))
                 {
@@ -129,6 +120,13 @@ namespace DOANMONHOC
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             indexForm.Show();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var form = new Forget_Pass();
+            form.Show();
             this.Close();
         }
     }
