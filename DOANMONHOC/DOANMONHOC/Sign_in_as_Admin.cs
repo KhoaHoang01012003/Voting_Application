@@ -42,16 +42,6 @@ namespace DOANMONHOC
             password_admin.Leave += password_admin_Leave;
         }
 
-        private async Task<int> id_index()
-        {
-            for (int i = 1; ; i++)
-            {
-                FirebaseResponse response = await client.GetTaskAsync("Admins/" + i.ToString());
-                if (response.Body == "null") return i;
-            }
-        }
-
-
         private void Sign_in_as_Admin_Load(object sender, EventArgs e)
         {
             client = new FireSharp.FirebaseClient(config);
@@ -97,18 +87,17 @@ namespace DOANMONHOC
         }
         public static bool VerifyPassword(string password, string hashedPassword)
         {
-            return password == hashedPassword;
-            //return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
+            return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
+
         private async void admin_sign_in_Click(object sender, EventArgs e)
         {
-            Task<int> task = id_index();
-            int limit = await task;
+            FirebaseResponse responseGet = await client.GetTaskAsync("Admins/");
+            Dictionary<string, ADMIN> admins = responseGet.ResultAs<Dictionary<string, ADMIN>>();
             bool check = false;
-            for (int i = 1; i < limit; i++)
+
+            foreach (var admin in admins.Values)
             {
-                FirebaseResponse response = await client.GetTaskAsync("Admins/" + i.ToString());
-                ADMIN admin = response.ResultAs<ADMIN>();
                 if (admin.UserName == username_admin.Text && VerifyPassword(password_admin.Text, admin.Password))
                 {
                     Properties.Settings.Default.Username = username_admin.Text;
@@ -120,7 +109,10 @@ namespace DOANMONHOC
                     check = true;
                     break;
                 }
+
+
             }
+
             if (!check)
             {
                 MessageBox.Show("Username hoặc mật khẩu không đúng, vui lòng nhập lại.");

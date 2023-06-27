@@ -40,6 +40,7 @@ namespace DOANMONHOC
             public int ClassId { get; set; }
             public int FacultyId { get; set; }
         }
+
         private async Task<ClassAndFaculty> SearchClassID(string className)
         {
             FirebaseResponse response1 = await candidate.GetTaskAsync("Classes/");
@@ -182,7 +183,7 @@ namespace DOANMONHOC
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionActivities(indexForm);
+            var openForm = new adminElectionActivities();
             openForm.Show();
             this.Close();
         }

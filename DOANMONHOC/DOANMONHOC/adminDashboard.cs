@@ -29,15 +29,6 @@ namespace DOANMONHOC
             InitializeComponent();
         }
 
-        private async Task<int> id_index()
-        {
-            for (int i = 1; ; i++)
-            {
-                FirebaseResponse response = await client.GetTaskAsync("Admins/" + i.ToString());
-                if (response.Body == "null") return i;
-            }
-        }
-
         private async void Admin_Dashboard_Load(object sender, EventArgs e)
         {
 
@@ -52,7 +43,7 @@ namespace DOANMONHOC
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionActivities(indexForm);
+            var openForm = new adminElectionActivities();
             openForm.Show();
             this.Close();
         }

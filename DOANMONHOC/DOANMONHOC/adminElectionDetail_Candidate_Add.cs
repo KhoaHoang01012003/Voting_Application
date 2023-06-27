@@ -14,49 +14,35 @@ using System.Windows.Forms;
 
 namespace DOANMONHOC
 {
-    public partial class adminElectionDetail_Candidate : Form
+    public partial class adminElectionDetail_Candidate_Add : Form
     {
+
         FirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "FoBk4yXguU4VoMkIe5M7M2ylsGymwUsld8cS2Td1",
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
-        private Index indexForm = new Index();
         public CAMPAIGN Data { get; set; }
         public Dictionary<string, CANDIDATE> candidates { get; set; }
         public Dictionary<string, CLASS> classes { get; set; }
 
-        public adminElectionDetail_Candidate()
+        public adminElectionDetail_Candidate_Add()
         {
             InitializeComponent();
+            client = new FireSharp.FirebaseClient(config);
         }
 
-        public async void loadData()
+        private void adminElectionDetail_Candidate_Add_Load(object sender, EventArgs e)
         {
             client = new FireSharp.FirebaseClient(config);
-
-            this.Invoke((MethodInvoker)delegate
-            {
-                campaignName.Text = Data.CampaignName;
-            });
-
-            var task1 = client.GetTaskAsync("Candidates/");
-            var task2 = client.GetTaskAsync("Classes/");
-
-            await Task.WhenAll(task1, task2);
-
-            FirebaseResponse response1 = task1.Result;
-            FirebaseResponse response2 = task2.Result;
-
-            candidates = response1.ResultAs<Dictionary<string, CANDIDATE>>();
-            classes = response2.ResultAs<Dictionary<string, CLASS>>();
 
             int totalCandidates = candidates.Count;
 
             int startIndex = 0;
-            int xOffset = samplePanel.Location.X;
-            int yOffset = samplePanel.Location.Y;
+
+            int xOffset = 25;
+            int yOffset = 148;
             int itemWidth = 315;
             int itemHeight = 334;
             int spacing = 52;
@@ -65,7 +51,7 @@ namespace DOANMONHOC
             for (int i = startIndex; i < totalCandidates; i++)
             {
                 CANDIDATE candidate = candidates.ElementAt(i).Value;
-                if (Data.Candidate_ID.Contains(candidate.Candidate_ID))
+                if (!Data.Candidate_ID.Contains(candidate.Candidate_ID) && Data.Class_ID.Contains(candidate.Class_ID))
                 {
                     tmp++;
 
@@ -105,6 +91,34 @@ namespace DOANMONHOC
                         }
                     }
 
+                    // Tạo Button "Add"
+                    Guna2Button add = new Guna2Button();
+                    add.BorderRadius = addButton.BorderRadius;
+                    add.Text = "Thêm";
+                    add.Location = addButton.Location;
+                    add.CustomizableEdges = addButton.CustomizableEdges;
+                    add.DisabledState.BorderColor = addButton.DisabledState.BorderColor;
+                    add.DisabledState.CustomBorderColor = addButton.DisabledState.CustomBorderColor;
+                    add.DisabledState.FillColor = addButton.DisabledState.FillColor;
+                    add.DisabledState.ForeColor = addButton.DisabledState.ForeColor;
+                    add.FillColor = addButton.FillColor;
+                    add.ForeColor = addButton.ForeColor;
+                    add.Location = addButton.Location;
+                    add.Font = addButton.Font;
+                    add.ShadowDecoration.CustomizableEdges = addButton.ShadowDecoration.CustomizableEdges;
+                    add.Size = addButton.Size;
+                    add.Click += add_Click;
+
+                    void add_Click(object sender, EventArgs e)
+                    {
+                        int[] newCandidate_ID = new int[Data.Candidate_ID.Length + 1];
+                        Array.Copy(Data.Candidate_ID, newCandidate_ID, Data.Candidate_ID.Length);
+                        newCandidate_ID[newCandidate_ID.Length - 1] = candidate.Candidate_ID;
+                        Data.Candidate_ID = newCandidate_ID;
+                        Guna2Button clickedButton = (Guna2Button)sender;
+                        clickedButton.Enabled = false;
+                    }
+
                     // Tạo Button "View"
                     Guna2Button view = new Guna2Button();
                     view.Text = "Xem chi tiết";
@@ -142,6 +156,7 @@ namespace DOANMONHOC
                     // Thêm các thành phần vào Panel
                     panel.Controls.Add(nameLabel);
                     panel.Controls.Add(classLabel);
+                    panel.Controls.Add(add);
                     panel.Controls.Add(view);
                     panel.Controls.Add(avatar);
 
@@ -155,81 +170,18 @@ namespace DOANMONHOC
                     // Nếu đã hiển thị đủ số lượng ô thông tin trên một hàng, xuống hàng tiếp theo
                     if (tmp % 3 == 0)
                     {
-                        xOffset = samplePanel.Location.X;
+                        xOffset = 25;
                         yOffset += itemHeight + 79;
-                    }
-                    if (tmp == Data.Candidate_ID.Length)
-                    {
-                        break;
                     }
                 }
             }
         }
 
-        private async void adminElectionDetail_Candidate_Load(object sender, EventArgs e)
+        private async void guna2Button4_Click(object sender, EventArgs e)
         {
-            loadData();
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            var openForm = new adminDashboard();
-            openForm.Show();
+            PushResponse response = await client.PushTaskAsync("Campaigns/", Data);
+            MessageBox.Show("Lưu thành công!");
             this.Close();
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            var openForm = new adminElectionActivities();
-            openForm.Show();
-            this.Close();
-        }
-
-        private void guna2Button3_Click(object sender, EventArgs e)
-        {
-            var openForm = new list_candidate();
-            openForm.Show();
-            this.Close();
-        }
-
-        private void guna2Button5_Click(object sender, EventArgs e)
-        {
-            indexForm.Show();
-            this.Close();
-        }
-
-        private void guna2Button6_Click(object sender, EventArgs e)
-        {
-            var openForm = new adminElectionDetail_Overview();
-            openForm.Data = Data;
-            openForm.Show();
-            this.Close();
-        }
-
-        private void guna2Button7_Click(object sender, EventArgs e)
-        {
-            var openForm = new adminElectionDetail_Setting();
-            openForm.Data = Data;
-            openForm.Show();
-            this.Close();
-        }
-
-        private void guna2Button8_Click(object sender, EventArgs e)
-        {
-            var openForm = new adminElectionDetail_Result();
-            openForm.Data = Data;
-            openForm.Show();
-            this.Close();
-        }
-
-        private void addCandidate_Click(object sender, EventArgs e)
-        {
-            var openForm = new adminElectionDetail_Candidate_Add();
-            openForm.Data = Data;
-            openForm.candidates = candidates;
-            openForm.classes = classes;
-            openForm.ShowDialog();
-            loadData();
         }
     }
 }

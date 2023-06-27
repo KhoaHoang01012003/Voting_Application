@@ -23,13 +23,12 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
-        private Index indexForm;
+        private Index indexForm = new Index();
         public CAMPAIGN Data { get; set; }
 
-        public adminElectionDetail_Setting(Index indexForm)
+        public adminElectionDetail_Setting()
         {
             InitializeComponent();
-            this.indexForm = indexForm;
         }
 
         private async void adminElectionDetail_Setting_Load(object sender, EventArgs e)
@@ -89,7 +88,7 @@ namespace DOANMONHOC
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionActivities(indexForm);
+            var openForm = new adminElectionActivities();
             openForm.Show();
             this.Close();
         }
@@ -103,7 +102,7 @@ namespace DOANMONHOC
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionDetail_Overview(indexForm);
+            var openForm = new adminElectionDetail_Overview();
             openForm.Data = Data;
             openForm.Show();
             this.Close();
@@ -111,7 +110,7 @@ namespace DOANMONHOC
 
         private void guna2Button8_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionDetail_Result(indexForm);
+            var openForm = new adminElectionDetail_Result();
             openForm.Data = Data;
             openForm.Show();
             this.Close();
@@ -157,7 +156,7 @@ namespace DOANMONHOC
             PushResponse response = await client.PushTaskAsync("Campaigns/", Data);
             MessageBox.Show("Đã lưu!");
 
-            var openForm = new adminElectionDetail_Setting(indexForm);
+            var openForm = new adminElectionDetail_Setting();
             openForm.Data = Data;
             openForm.Show();
             this.Close();
@@ -173,14 +172,14 @@ namespace DOANMONHOC
             await client.DeleteTaskAsync($"Campaigns/{keyToDelete}");
             MessageBox.Show("Xoá thành công");
 
-            var openForm = new adminElectionActivities(indexForm);
+            var openForm = new adminElectionActivities();
             openForm.Show();
             this.Close();
         }
 
         private void guna2Button9_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionDetail_Candidate(indexForm);
+            var openForm = new adminElectionDetail_Candidate();
             openForm.Data = Data;
             openForm.Show();
             this.Close();

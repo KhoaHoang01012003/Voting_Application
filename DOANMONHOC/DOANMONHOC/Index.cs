@@ -21,14 +21,14 @@ namespace DOANMONHOC
         {
             var RegisterForm = new Register();
             RegisterForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             var LoginForm = new Sign_in();
             LoginForm.Show();
-            this.Close();
+            this.Hide();
         }
 
     }

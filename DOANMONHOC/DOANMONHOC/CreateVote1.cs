@@ -15,13 +15,13 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
-        private Index indexForm;
+        private Index indexForm = new Index();
         int[] classIdArray = new int[] { };
+        bool[] ok;
 
-        public CreateVote1(Index indexForm)
+        public CreateVote1()
         {
             InitializeComponent();
-            this.indexForm = indexForm;
         }
 
         private async Task<int> id_index(string table)
@@ -36,23 +36,6 @@ namespace DOANMONHOC
         private async void Dashboard_Load(object sender, EventArgs e)
         {
             client = new FireSharp.FirebaseClient(config);
-
-            int cntAdmin = await id_index("Admins").ConfigureAwait(false);
-            StringBuilder adminPathBuilder = new StringBuilder("Admins/");
-            for (int i = 1; i < cntAdmin; i++)
-            {
-                adminPathBuilder.Clear().Append("Admins/").Append(i);
-                FirebaseResponse response = await client.GetTaskAsync(adminPathBuilder.ToString()).ConfigureAwait(false);
-                ADMIN admin = response.ResultAs<ADMIN>();
-                if (admin.UserName == Properties.Settings.Default.Username.ToString())
-                {
-                    this.Invoke((MethodInvoker)delegate
-                    {
-                        label7.Text = admin.AdminName;
-                    });
-                    break;
-                }
-            }
 
             this.Invoke((MethodInvoker)delegate
             {
@@ -100,7 +83,7 @@ namespace DOANMONHOC
                 }
             };
 
-            bool[] ok = Enumerable.Repeat(true, classes.Count).ToArray();
+            ok = Enumerable.Repeat(true, classes.Count).ToArray();
 
             classList.SelectedIndexChanged += (sender, e) =>
             {
@@ -222,13 +205,18 @@ namespace DOANMONHOC
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < ok.Length; i++)
+            {
+                ok[i] = true;
+            }
+
             selectClass.Text = "Các lớp đã chọn: ";
             classIdArray = new int[] { };
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionActivities(indexForm);
+            var openForm = new adminElectionActivities();
             openForm.Show();
             this.Close();
         }

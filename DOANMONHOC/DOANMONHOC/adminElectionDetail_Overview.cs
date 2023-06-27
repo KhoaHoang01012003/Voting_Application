@@ -23,21 +23,12 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
-        private Index indexForm;
+        private Index indexForm = new Index();
         public CAMPAIGN Data { get; set; }
 
-        public adminElectionDetail_Overview(Index indexForm)
+        public adminElectionDetail_Overview()
         {
             InitializeComponent();
-            this.indexForm = indexForm;
-        }
-        private async Task<int> id_index()
-        {
-            for (int i = 1; ; i++)
-            {
-                FirebaseResponse response = await client.GetTaskAsync("Admins/" + i.ToString());
-                if (response.Body == "null") return i;
-            }
         }
 
         private async void CreateVote2_Load(object sender, EventArgs e)
@@ -71,7 +62,7 @@ namespace DOANMONHOC
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionActivities(indexForm);
+            var openForm = new adminElectionActivities();
             openForm.Show();
             this.Close();
         }
@@ -85,7 +76,7 @@ namespace DOANMONHOC
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionDetail_Setting(indexForm);
+            var openForm = new adminElectionDetail_Setting();
             openForm.Data = Data;
             openForm.Show();
             this.Close();
@@ -93,7 +84,7 @@ namespace DOANMONHOC
 
         private void guna2Button8_Click(object sender, EventArgs e)
         {
-            var open = new adminElectionDetail_Result(indexForm);
+            var open = new adminElectionDetail_Result();
             open.Data = Data;
             open.Show();
             this.Close();
@@ -101,7 +92,7 @@ namespace DOANMONHOC
 
         private void guna2Button9_Click(object sender, EventArgs e)
         {
-            var open = new adminElectionDetail_Candidate(indexForm);
+            var open = new adminElectionDetail_Candidate();
             open.Data = Data;
             open.Show();
             this.Close();

@@ -63,8 +63,43 @@ namespace DOANMONHOC
             MessageBox.Show("ok" + result.Email);
         }
 
-        private void guna2Button3_Click(object sender, EventArgs e)
+        public static string HashPassword(string password)
         {
+            // Generate a salt with a work factor of 12 (the default)
+            string salt = BCrypt.Net.BCrypt.GenerateSalt();
+
+            // Hash the password using the salt
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password, salt);
+
+            return hashedPassword;
+        }
+
+        private async void guna2Button3_Click(object sender, EventArgs e)
+        {
+            int cnt;
+            try
+            {
+                FirebaseResponse responseGet = await client.GetTaskAsync("Admins/");
+                Dictionary<string, ADMIN> admins = responseGet.ResultAs<Dictionary<string, ADMIN>>();
+                cnt = admins.Count() + 1;
+            }
+            catch
+            {
+                cnt = 1;
+            }
+
+            var data = new ADMIN
+            {
+                AdminName = adminName.Text,
+                Admin_ID = cnt,
+                Email = email.Text,
+                Password= HashPassword("Default12345_"),
+                UserName = username.Text,
+            };
+
+            PushResponse response = await client.PushTaskAsync("Admins/", data);
+
+            MessageBox.Show("Admins added!");
         }
     }
 }

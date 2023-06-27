@@ -72,7 +72,7 @@
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
+            this.addCandidate = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.samplePanel = new Guna.UI2.WinForms.Guna2Panel();
@@ -291,23 +291,24 @@
             this.guna2Button6.Text = "Tổng quan";
             this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
             // 
-            // guna2Button10
+            // addCandidate
             // 
-            this.guna2Button10.BorderRadius = 10;
-            this.guna2Button10.CustomizableEdges = customizableEdges12;
-            this.guna2Button10.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button10.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
-            this.guna2Button10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button10.ForeColor = System.Drawing.Color.White;
-            this.guna2Button10.Location = new System.Drawing.Point(523, 1044);
-            this.guna2Button10.Name = "guna2Button10";
-            this.guna2Button10.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            this.guna2Button10.Size = new System.Drawing.Size(200, 56);
-            this.guna2Button10.TabIndex = 37;
-            this.guna2Button10.Text = "Thêm ứng cử viên";
+            this.addCandidate.BorderRadius = 10;
+            this.addCandidate.CustomizableEdges = customizableEdges12;
+            this.addCandidate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.addCandidate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.addCandidate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.addCandidate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.addCandidate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.addCandidate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addCandidate.ForeColor = System.Drawing.Color.White;
+            this.addCandidate.Location = new System.Drawing.Point(463, 1044);
+            this.addCandidate.Name = "addCandidate";
+            this.addCandidate.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            this.addCandidate.Size = new System.Drawing.Size(200, 56);
+            this.addCandidate.TabIndex = 37;
+            this.addCandidate.Text = "Thêm ứng cử viên";
+            this.addCandidate.Click += new System.EventHandler(this.addCandidate_Click);
             // 
             // panel4
             // 
@@ -315,7 +316,7 @@
             this.panel4.AutoScrollMargin = new System.Drawing.Size(0, 100);
             this.panel4.AutoScrollMinSize = new System.Drawing.Size(0, 100);
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.panel4.Controls.Add(this.guna2Button10);
+            this.panel4.Controls.Add(this.addCandidate);
             this.panel4.Controls.Add(this.panel2);
             this.panel4.Controls.Add(this.guna2Button6);
             this.panel4.Controls.Add(this.guna2Button9);
@@ -349,7 +350,7 @@
             this.samplePanel.Controls.Add(this.candidateName);
             this.samplePanel.Controls.Add(this.sampleAvatar);
             this.samplePanel.CustomizableEdges = customizableEdges17;
-            this.samplePanel.Location = new System.Drawing.Point(0, 0);
+            this.samplePanel.Location = new System.Drawing.Point(40, 0);
             this.samplePanel.Name = "samplePanel";
             this.samplePanel.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.samplePanel.Size = new System.Drawing.Size(315, 334);
@@ -581,7 +582,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button8;
         private Guna.UI2.WinForms.Guna2Button guna2Button9;
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button10;
+        private Guna.UI2.WinForms.Guna2Button addCandidate;
         private Panel panel4;
         private Panel panel2;
         private Guna.UI2.WinForms.Guna2Panel samplePanel;
