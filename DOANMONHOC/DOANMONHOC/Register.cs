@@ -101,15 +101,15 @@ namespace DOANMONHOC
             FirebaseResponse emailCheckResponse = await client.GetTaskAsync("Users/");
             var emailCheckData = emailCheckResponse.ResultAs<Dictionary<string, USER>>();
             bool emailExists = emailCheckData.Values.Any(u => u.Email == guna2TextBox1.Text);
-            if (IsValidEmail(guna2TextBox1.Text) && IsStrongPassword(guna2TextBox2.Text) && !emailExists)
+            if (IsValidEmail(guna2TextBox1.Text) && IsStrongPassword(password.Text) && !emailExists)
             {
 
                 var data = new USER
                 {
                     Email = guna2TextBox1.Text,
-                    Password = HashPassword(guna2TextBox2.Text),
+                    Password = HashPassword(password.Text),
                     Fullname = "",
-                    Student_ID = guna2TextBox1.Text.Substring(0,8),
+                    Student_ID = guna2TextBox1.Text.Substring(0, 8),
                     Faculty_ID = 0,
                     Class_ID = 0,
                     UserName = guna2TextBox1.Text
@@ -133,7 +133,7 @@ namespace DOANMONHOC
             else
             {
                 MessageBox.Show("Mật khẩu yếu!");
-                guna2TextBox2.Focus();
+                password.Focus();
             }
         }
 
@@ -142,6 +142,18 @@ namespace DOANMONHOC
             indexForm.Show();
             isBackButtonPressed = true;
             this.Close();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                password.PasswordChar = '\0';
+            }
+            else 
+            { 
+                password.PasswordChar = '*'; 
+            }
         }
     }
 }
