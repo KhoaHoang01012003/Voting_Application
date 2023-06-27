@@ -40,7 +40,6 @@ namespace DOANMONHOC
             public int ClassId { get; set; }
             public int FacultyId { get; set; }
         }
-
         private async Task<ClassAndFaculty> SearchClassID(string className)
         {
             FirebaseResponse response1 = await candidate.GetTaskAsync("Classes/");

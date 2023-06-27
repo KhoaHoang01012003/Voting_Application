@@ -38,12 +38,21 @@ namespace DOANMONHOC
             JObject campaignsJson = JObject.Parse(titleCheckResponse.Body);
             var campaigns = campaignsJson.ToObject<Dictionary<string, CAMPAIGN>>();
 
+            DateTime currentTime = DateTime.Now;
+
+            var sortedCampaigns = campaigns
+    .OrderByDescending(c => c.Value.StartTime < currentTime && c.Value.EndTime > currentTime)
+    .ThenBy(c => c.Value.StartTime < currentTime && c.Value.EndTime < currentTime)
+    .ThenBy(c => c.Value.StartTime > currentTime && c.Value.EndTime > currentTime)
+    .ThenBy(c => c.Value.EndTime)
+    .ToDictionary(c => c.Key, c => c.Value);
+
             int xOffset = sampleRow.Location.X;
             int yOffset = sampleRow.Location.Y;
 
-            for (int i = 0; i < campaigns.Count; i++)
+            for (int i = 0; i < sortedCampaigns.Count; i++)
             {
-                CAMPAIGN campaign = campaigns.ElementAt(i).Value;
+                CAMPAIGN campaign = sortedCampaigns.ElementAt(i).Value;
 
                 // Tạo Panel
                 Guna2Panel row = new Guna2Panel();
@@ -75,7 +84,19 @@ namespace DOANMONHOC
 
                 // Tạo status color
                 Guna2CirclePictureBox sampleStatus = new Guna2CirclePictureBox();
-                sampleStatus.FillColor = sampleStatusPicture.FillColor;
+                //sampleStatus.FillColor = sampleStatusPicture.FillColor;
+                if (currentTime >= campaign.StartTime && currentTime <= campaign.EndTime)
+                {
+                    sampleStatus.FillColor = Color.Green;
+                }
+                else if (currentTime < campaign.StartTime)
+                {
+                    sampleStatus.FillColor = Color.Yellow;
+                }
+                else if (currentTime > campaign.EndTime)
+                {
+                    sampleStatus.FillColor = Color.Red;
+                }
                 sampleStatus.ImageRotate = sampleStatusPicture.ImageRotate;
                 sampleStatus.Location = sampleStatusPicture.Location;
                 sampleStatus.ShadowDecoration.CustomizableEdges = sampleStatusPicture.ShadowDecoration.CustomizableEdges;

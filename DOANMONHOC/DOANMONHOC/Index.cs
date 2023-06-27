@@ -19,7 +19,7 @@ namespace DOANMONHOC
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            var RegisterForm = new Register();
+            var RegisterForm = new Register(this);
             RegisterForm.Show();
             this.Hide();
         }
@@ -30,6 +30,5 @@ namespace DOANMONHOC
             LoginForm.Show();
             this.Hide();
         }
-
     }
 }

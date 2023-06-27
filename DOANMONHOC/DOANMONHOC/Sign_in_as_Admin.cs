@@ -30,6 +30,8 @@ namespace DOANMONHOC
         public Sign_in_as_Admin()
         {
             InitializeComponent();
+            //this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+
             //tên textbox email
             username_admin.Text = "School email addess";
             username_admin.ForeColor = Color.FromArgb(37, 83, 140);
@@ -41,6 +43,11 @@ namespace DOANMONHOC
             password_admin.Enter += password_admin_Enter;
             password_admin.Leave += password_admin_Leave;
         }
+
+        /*void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        {
+            Application.ExitThread();
+        }*/
 
         private void Sign_in_as_Admin_Load(object sender, EventArgs e)
         {
@@ -109,8 +116,6 @@ namespace DOANMONHOC
                     check = true;
                     break;
                 }
-
-
             }
 
             if (!check)

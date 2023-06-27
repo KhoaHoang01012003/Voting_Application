@@ -28,11 +28,23 @@ namespace DOANMONHOC
         };
 
         IFirebaseClient client;
-        private Index indexForm = new Index();
+        private Index indexForm;
+        private bool isBackButtonPressed;
 
-        public Register()
+        public Register(Index parentForm)
         {
             InitializeComponent();
+            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            indexForm = parentForm;
+            isBackButtonPressed = false;
+        }
+
+        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        {
+            if (!isBackButtonPressed)
+            {
+                Application.ExitThread();
+            }
         }
 
         private void Register_Load(object sender, EventArgs e)
@@ -128,6 +140,7 @@ namespace DOANMONHOC
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             indexForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
     }

@@ -14,10 +14,13 @@ namespace DOANMONHOC
         };
         IFirebaseClient client;
         private Index indexForm = new Index();
+        private bool isBackButtonPressed;
 
         public Sign_in()
         {
             InitializeComponent();
+            //this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            isBackButtonPressed = false;
             //tên textbox email
             username.Text = "Username";
             username.ForeColor = Color.FromArgb(37, 83, 140);
@@ -28,6 +31,14 @@ namespace DOANMONHOC
             password.ForeColor = Color.FromArgb(37, 83, 140);
             password.Enter += password_Enter;
             password.Leave += password_Leave;
+        }
+
+        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        {
+            if (!isBackButtonPressed)
+            {
+                Application.ExitThread();
+            }
         }
 
         private void Sign_in_Load(object sender, EventArgs e)
@@ -81,6 +92,7 @@ namespace DOANMONHOC
         {
             Form AdminForm = new Sign_in_as_Admin();
             AdminForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
@@ -120,6 +132,7 @@ namespace DOANMONHOC
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             indexForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
