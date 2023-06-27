@@ -44,6 +44,16 @@ namespace DOANMONHOC
                     break;
                 }
             }
+            //avatar user
+            byte[] originalBytes_avatar = Convert.FromBase64String(Properties.Settings.Default.avt);
+            Image image_avatar;
+            using (MemoryStream ms = new MemoryStream(originalBytes_avatar))
+            {
+                image_avatar = Image.FromStream(ms);
+            }
+            Image avatarImage = image_avatar.GetThumbnailImage(100, 100, null, IntPtr.Zero);
+            Avatar.Image = avatarImage;
+
             //Lấy list campaign
             FirebaseResponse titleCheckResponse = await client.GetTaskAsync("Campaigns/");
             JObject campaignsJson = JObject.Parse(titleCheckResponse.Body);
@@ -75,7 +85,7 @@ namespace DOANMONHOC
                 Panel panel = new Panel();
                 panel.Location = new Point(xOffset, yOffset);
                 panel.Size = new Size(itemWidth, itemHeight);
-
+                panel.AutoScroll = true;
                 // Tạo nhãn tên campaign
                 Label name = new Label();
                 name.AutoSize = true;
@@ -112,9 +122,8 @@ namespace DOANMONHOC
                             namecdd.TextAlign = HorizontalAlignment.Center;
 
                             //PictureBox AVT
-                            PictureBox picture = new PictureBox();
+                            Guna2PictureBox picture = new Guna2PictureBox();
                             byte[] originalBytes = Convert.FromBase64String(candidate.AvtCandidate);
-
                             // Tạo một đối tượng Image từ chuỗi byte gốc
                             Image image;
                             using (MemoryStream ms = new MemoryStream(originalBytes))
@@ -122,15 +131,14 @@ namespace DOANMONHOC
                                 image = Image.FromStream(ms);
                             }
                             // Tạo bản thu nhỏ của ảnh
-                            Image thumbnailImage = image.GetThumbnailImage(80, 80, null, IntPtr.Zero);
+                            Image thumbnailImage = image.GetThumbnailImage(100, 100, null, IntPtr.Zero);
 
                             picture.Image = thumbnailImage;
-                            picture.Location = new Point(86, 24);
-                            picture.Name = "pictureBox3";
-                            picture.Size = new Size(80, 80);
+                            picture.BackColor = this.BackColor;
+                            picture.BorderRadius = 50;
+                            picture.Location = new Point(78, 10);
+                            picture.Size = new Size(100, 100);
                             picture.SizeMode = PictureBoxSizeMode.StretchImage;
-                            picture.TabIndex = 1;
-                            picture.TabStop = false;
 
                             //class candidate
                             TextBox classcdd = new TextBox();
@@ -181,7 +189,7 @@ namespace DOANMONHOC
                                     Candidate_ID = candidate.Candidate_ID.ToString(),
                                     TimeVoted = DateTime.Now.ToString()
                                 };
-                                var openForm = new Verify(candidate.CandidateName,newvote);
+                                var openForm = new Verify(candidate.CandidateName, newvote);
                                 openForm.ShowDialog();
                                 this.Close();
                             }

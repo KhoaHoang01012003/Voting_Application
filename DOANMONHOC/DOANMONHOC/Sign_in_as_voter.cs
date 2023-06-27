@@ -63,6 +63,7 @@ namespace DOANMONHOC
                     Properties.Settings.Default.Username = username.Text;
                     Properties.Settings.Default.StudentID = user.Value.Student_ID;
                     Properties.Settings.Default.ClassID = user.Value.Class_ID;
+                    Properties.Settings.Default.avt = user.Value.AvtUser;
                     Properties.Settings.Default.Save();
 
                     var openForm = new Dashboard();
