@@ -110,6 +110,28 @@ namespace DOANMONHOC
                             namecdd.Size = candidate_name.Size;
                             namecdd.Text = candidate.CandidateName;
                             namecdd.TextAlign = HorizontalAlignment.Center;
+
+                            //PictureBox AVT
+                            PictureBox picture = new PictureBox();
+                            byte[] originalBytes = Convert.FromBase64String(candidate.AvtCandidate);
+
+                            // Tạo một đối tượng Image từ chuỗi byte gốc
+                            Image image;
+                            using (MemoryStream ms = new MemoryStream(originalBytes))
+                            {
+                                image = Image.FromStream(ms);
+                            }
+                            // Tạo bản thu nhỏ của ảnh
+                            Image thumbnailImage = image.GetThumbnailImage(80, 80, null, IntPtr.Zero);
+
+                            picture.Image = thumbnailImage;
+                            picture.Location = new Point(86, 24);
+                            picture.Name = "pictureBox3";
+                            picture.Size = new Size(80, 80);
+                            picture.SizeMode = PictureBoxSizeMode.StretchImage;
+                            picture.TabIndex = 1;
+                            picture.TabStop = false;
+
                             //class candidate
                             TextBox classcdd = new TextBox();
                             classcdd.Location = candidate_class.Location;
@@ -188,6 +210,7 @@ namespace DOANMONHOC
                             }
                             //add
                             panelinfo.Controls.Add(namecdd);
+                            panelinfo.Controls.Add(picture);
                             panelinfo.Controls.Add(classcdd);
                             panelinfo.Controls.Add(votebutton);
                             panelinfo.Controls.Add(viewdetail);
