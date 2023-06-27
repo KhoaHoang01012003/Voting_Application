@@ -28,12 +28,11 @@ namespace DOANMONHOC
         };
 
         IFirebaseClient client;
-        private Index indexForm;
+        private Index indexForm = new Index();
 
-        public Register(Index indexForm)
+        public Register()
         {
             InitializeComponent();
-            this.indexForm = indexForm;
         }
 
         private void Register_Load(object sender, EventArgs e)
@@ -104,7 +103,7 @@ namespace DOANMONHOC
                     UserName = guna2TextBox1.Text
                 };
 
-                var form = new VerifyEmail(indexForm, data);
+                var form = new VerifyEmail(data);
                 form.ShowDialog();
                 this.Close();
 

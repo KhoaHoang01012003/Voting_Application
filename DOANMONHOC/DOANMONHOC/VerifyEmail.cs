@@ -16,15 +16,14 @@ namespace DOANMONHOC
 {
     public partial class VerifyEmail : Form
     {
-        public VerifyEmail(Index indexform, USER user)
+        public VerifyEmail(USER user)
         {
             InitializeComponent();
             this.user = user;
-            this.indexForm = indexform;
         }
         int otp;
         USER user = new USER();
-        private Index indexForm;
+        private Index indexForm = new Index();
 
 
         private void CenterTextInRichTextBox(RichTextBox richTextBox)
@@ -149,7 +148,7 @@ namespace DOANMONHOC
             if (otp_str == otp.ToString())
             {
                 MessageBox.Show("Bạn đã xác nhận thành công!\nVui lòng cập nhật thông tin ở form sau");
-                var form = new init_user_info(indexForm, user);
+                var form = new init_user_info(user);
                 form.ShowDialog();
                 this.Close();
             }

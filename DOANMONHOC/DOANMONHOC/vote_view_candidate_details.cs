@@ -24,11 +24,10 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
-        private Index indexForm;
-        public vote_view_candidate_details(Index indexForm)
+        private Index indexForm = new Index();
+        public vote_view_candidate_details()
         {
             InitializeComponent();
-            this.indexForm = indexForm;
         }
 
         public async void vote_view_candidate_details_Load(object sender, EventArgs e)
@@ -243,7 +242,7 @@ namespace DOANMONHOC
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            var openForm = new Dashboard(indexForm);
+            var openForm = new Dashboard();
             openForm.Show();
             this.Close();
         }

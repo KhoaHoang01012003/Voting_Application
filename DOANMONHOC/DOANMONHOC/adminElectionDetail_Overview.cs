@@ -58,7 +58,7 @@ namespace DOANMONHOC
 
         private async void guna2Button1_Click(object sender, EventArgs e)
         {
-            var openForm = new adminDashboard(indexForm);
+            var openForm = new adminDashboard();
             openForm.Show();
             this.Close();
         }

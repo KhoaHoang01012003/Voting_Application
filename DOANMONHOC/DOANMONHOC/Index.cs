@@ -17,29 +17,19 @@ namespace DOANMONHOC
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            var RegisterForm = new Register(this);
-            RegisterForm.Show(this);
-            this.Hide();
-
+            var RegisterForm = new Register();
+            RegisterForm.Show();
+            this.Close();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            var LoginForm = new Sign_in(this);
+            var LoginForm = new Sign_in();
             LoginForm.Show();
-            this.Hide();
+            this.Close();
         }
 
-        private void Index_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

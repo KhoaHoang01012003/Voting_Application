@@ -25,12 +25,11 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
-        private Index indexForm;
+        private Index indexForm = new Index();
 
-        public Sign_in_as_Admin(Index indexForm)
+        public Sign_in_as_Admin()
         {
             InitializeComponent();
-            this.indexForm = indexForm;
             //tên textbox email
             username_admin.Text = "School email addess";
             username_admin.ForeColor = Color.FromArgb(37, 83, 140);
@@ -115,7 +114,7 @@ namespace DOANMONHOC
                     Properties.Settings.Default.Username = username_admin.Text;
                     Properties.Settings.Default.Save();
 
-                    var openForm = new adminDashboard(indexForm);
+                    var openForm = new adminDashboard();
                     openForm.Show();
                     this.Close();
                     check = true;

@@ -25,7 +25,7 @@ namespace DOANMONHOC
         private void Success_FormClosed(object sender, FormClosedEventArgs e)
         {
             
-            Form vote = new vote_view_candidate_details(indexForm);
+            Form vote = new vote_view_candidate_details();
             vote.Show();
             this.Close();
         }

@@ -18,12 +18,11 @@ namespace DOANMONHOC
 {
     public partial class init_user_info : Form
     {
-        private Index indexForm;
+        private Index indexForm = new Index();
         USER data = new USER();
-        public init_user_info(Index indexForm, USER user)
+        public init_user_info(USER user)
         {
             InitializeComponent();
-            this.indexForm = indexForm;
             this.data = user;
         }
         IFirebaseConfig config = new FirebaseConfig
