@@ -109,6 +109,8 @@ namespace DOANMONHOC
                 if (user.Value.UserName == username.Text && VerifyPassword(password.Text, user.Value.Password))
                 {
                     Properties.Settings.Default.Username = username.Text;
+                    Properties.Settings.Default.StudentID = user.Value.Student_ID;
+                    Properties.Settings.Default.ClassID = user.Value.Class_ID;
                     Properties.Settings.Default.Save();
 
                     var openForm = new Dashboard();
