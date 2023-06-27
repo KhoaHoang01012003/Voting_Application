@@ -94,6 +94,11 @@ namespace DOANMONHOC
             this.Close();
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var form = new Forget_Pass(true);
+            form.Show();
+            this.Close();
+        }
     }
 }
