@@ -13,7 +13,7 @@
     }
     public class ADMIN
     {
-        public string Admin_ID { get; set; }
+        public int Admin_ID { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
