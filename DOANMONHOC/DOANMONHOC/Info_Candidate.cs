@@ -59,6 +59,20 @@ namespace DOANMONHOC
             string temp = await SearchClass(CANDIDATE.Class_ID);
             Label_Class.Text = temp;
 
+            byte[] originalBytes = Convert.FromBase64String(CANDIDATE.AvtCandidate);
+
+            // Tạo một đối tượng Image từ chuỗi byte gốc
+            Image image;
+            using (MemoryStream ms = new MemoryStream(originalBytes))
+            {
+                image = Image.FromStream(ms);
+            }
+            // Tạo bản thu nhỏ của ảnh
+            Image thumbnailImage = image.GetThumbnailImage(250, 250, null, IntPtr.Zero);
+
+            // Hiển thị ảnh trong một PictureBox
+            Picture.Image = thumbnailImage;
+
         }
 
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)

@@ -2,7 +2,7 @@
 {
     public class USER
     {
-        public string Avt {  get; set; }
+        public string AvtUser {  get; set; }
         public string Student_ID { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
@@ -29,6 +29,7 @@
         public int Faculty_ID { get; set; }
         public int Class_ID { get; set; }
         public string Promise { get; set; }
+        public string AvtCandidate { get; set; }
     }
     public class CAMPAIGN
     {
