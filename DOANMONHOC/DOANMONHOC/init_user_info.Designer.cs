@@ -46,7 +46,7 @@
             nameBox = new Guna.UI2.WinForms.Guna2TextBox();
             label2 = new Label();
             guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
-            guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            Picture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             label1 = new Label();
             label4 = new Label();
             guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
@@ -56,7 +56,7 @@
             label6 = new Label();
             pictureBox2 = new PictureBox();
             guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Picture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             guna2ShadowPanel1.SuspendLayout();
             SuspendLayout();
@@ -136,18 +136,19 @@
             guna2Button6.Size = new Size(100, 40);
             guna2Button6.TabIndex = 31;
             guna2Button6.Text = "Xoá ảnh";
+            guna2Button6.Click += guna2Button6_Click;
             // 
-            // guna2CirclePictureBox1
+            // Picture
             // 
-            guna2CirclePictureBox1.Image = (Image)resources.GetObject("guna2CirclePictureBox1.Image");
-            guna2CirclePictureBox1.ImageRotate = 0F;
-            guna2CirclePictureBox1.Location = new Point(61, 130);
-            guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CirclePictureBox1.Size = new Size(80, 80);
-            guna2CirclePictureBox1.TabIndex = 29;
-            guna2CirclePictureBox1.TabStop = false;
+            Picture.Image = (Image)resources.GetObject("Picture.Image");
+            Picture.ImageRotate = 0F;
+            Picture.Location = new Point(61, 130);
+            Picture.Name = "Picture";
+            Picture.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            Picture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            Picture.Size = new Size(80, 80);
+            Picture.TabIndex = 29;
+            Picture.TabStop = false;
             // 
             // label1
             // 
@@ -187,6 +188,7 @@
             guna2Button4.Size = new Size(100, 40);
             guna2Button4.TabIndex = 30;
             guna2Button4.Text = "Tải lên";
+            guna2Button4.Click += guna2Button4_Click;
             // 
             // classList
             // 
@@ -267,7 +269,7 @@
             guna2ShadowPanel1.Controls.Add(guna2Button4);
             guna2ShadowPanel1.Controls.Add(classList);
             guna2ShadowPanel1.Controls.Add(facultyList);
-            guna2ShadowPanel1.Controls.Add(guna2CirclePictureBox1);
+            guna2ShadowPanel1.Controls.Add(Picture);
             guna2ShadowPanel1.Controls.Add(guna2Button7);
             guna2ShadowPanel1.Controls.Add(label2);
             guna2ShadowPanel1.Controls.Add(nameBox);
@@ -289,7 +291,7 @@
             Name = "init_user_info";
             Text = "init_user_info";
             Load += init_user_info_Load;
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Picture).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             guna2ShadowPanel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -300,7 +302,7 @@
         private Guna.UI2.WinForms.Guna2TextBox nameBox;
         private Label label2;
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox Picture;
         private Label label1;
         private Label label4;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;

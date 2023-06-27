@@ -138,7 +138,7 @@ namespace DOANMONHOC
                     MailMessage mail = new MailMessage();
                     mail.To.Add(to);
                     mail.From = new MailAddress(from);
-                    mail.Subject = "[VOTING APPLICATION] MẬT KHẨU MỚI" + passwordBuilder.ToString();
+                    mail.Subject = "[VOTING APPLICATION] MẬT KHẨU MỚI";
                     mail.Body = content;
 
                     SmtpClient smtp = new SmtpClient("smtp.gmail.com");
