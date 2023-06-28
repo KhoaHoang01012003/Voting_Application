@@ -28,11 +28,23 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
-        private Index indexForm = new Index();
+        private Form indexForm;
+        private bool isBackButtonPressed;
 
-        public Dashboard()
+        public Dashboard(Form parentForm)
         {
             InitializeComponent();
+            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            indexForm = parentForm;
+            isBackButtonPressed = false;
+        }
+
+        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        {
+            if (!isBackButtonPressed)
+            {
+                Application.ExitThread();
+            }
         }
 
         private async void Dashboard_Load(object sender, EventArgs e)

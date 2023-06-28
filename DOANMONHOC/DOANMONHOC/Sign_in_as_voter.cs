@@ -67,8 +67,9 @@ namespace DOANMONHOC
                     Properties.Settings.Default.avt = user.Value.AvtUser;
                     Properties.Settings.Default.Save();
 
-                    var openForm = new Dashboard();
+                    var openForm = new Dashboard(indexForm);
                     openForm.Show();
+                    isBackButtonPressed = true;
                     this.Close();
                     check = true;
                     break;
