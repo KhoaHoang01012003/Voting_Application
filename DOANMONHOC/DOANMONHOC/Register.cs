@@ -34,7 +34,7 @@ namespace DOANMONHOC
         public Register(Index parentForm)
         {
             InitializeComponent();
-            //this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
             indexForm = parentForm;
             isBackButtonPressed = false;
         }

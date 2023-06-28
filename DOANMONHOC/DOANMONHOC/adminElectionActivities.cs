@@ -23,11 +23,23 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
-        private Index indexForm = new Index();
+        private Form indexForm;
+        private bool isBackButtonPressed;
 
-        public adminElectionActivities()
+        public adminElectionActivities(Form parentForm)
         {
             InitializeComponent();
+            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            indexForm = parentForm;
+            isBackButtonPressed = false;
+        }
+
+        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        {
+            if (!isBackButtonPressed)
+            {
+                Application.ExitThread();
+            }
         }
 
         private async void adminElectionActivities_Load(object sender, EventArgs e)
@@ -114,7 +126,8 @@ namespace DOANMONHOC
 
                 void add_Click(object sender, EventArgs e)
                 {
-                    var openForm = new adminElectionDetail_Overview();
+                    var openForm = new adminElectionDetail_Overview(indexForm);
+                    isBackButtonPressed = true;
                     openForm.Data = campaign;
                     openForm.Show();
                     this.Close();
@@ -135,8 +148,9 @@ namespace DOANMONHOC
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            var openForm = new CreateVote1();
+            var openForm = new CreateVote1(indexForm);
             openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
@@ -147,27 +161,31 @@ namespace DOANMONHOC
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            var openForm = new adminDashboard();
+            var openForm = new adminDashboard(indexForm);
             openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionActivities();
+            var openForm = new adminElectionActivities(indexForm);
             openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            var openForm = new list_candidate();
+            var openForm = new list_candidate(indexForm);
             openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
             indexForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 

@@ -37,143 +37,145 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            pictureBox2 = new PictureBox();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            textBox1 = new TextBox();
-            label1 = new Label();
-            username = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            SuspendLayout();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.username = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.SuspendLayout();
             // 
             // guna2PictureBox1
             // 
-            guna2PictureBox1.BackColor = Color.White;
-            guna2PictureBox1.CustomizableEdges = customizableEdges1;
-            guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
-            guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(100, 195);
-            guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2PictureBox1.Size = new Size(681, 639);
-            guna2PictureBox1.TabIndex = 0;
-            guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.White;
+            this.guna2PictureBox1.CustomizableEdges = customizableEdges1;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(100, 195);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(681, 639);
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(55, 32);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(129, 154);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 5;
-            pictureBox2.TabStop = false;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(55, 32);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(129, 154);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
             // 
             // guna2Button1
             // 
-            guna2Button1.BorderRadius = 30;
-            guna2Button1.CustomizableEdges = customizableEdges3;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.FromArgb(37, 83, 140);
-            guna2Button1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(833, 543);
-            guna2Button1.Margin = new Padding(2);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Button1.Size = new Size(505, 64);
-            guna2Button1.TabIndex = 29;
-            guna2Button1.Text = "Gửi mã";
-            guna2Button1.Click += guna2Button1_Click;
+            this.guna2Button1.BorderRadius = 30;
+            this.guna2Button1.CustomizableEdges = customizableEdges3;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(833, 543);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.guna2Button1.Size = new System.Drawing.Size(505, 64);
+            this.guna2Button1.TabIndex = 29;
+            this.guna2Button1.Text = "Gửi mã";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // textBox1
             // 
-            textBox1.BackColor = SystemColors.ControlLightLight;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 21F, FontStyle.Regular, GraphicsUnit.Pixel);
-            textBox1.ForeColor = Color.FromArgb(37, 83, 140);
-            textBox1.Location = new Point(833, 285);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(426, 69);
-            textBox1.TabIndex = 24;
-            textBox1.Text = "Nhập email đăng ký và chúng tôi sẽ gửi cho bạn mã để xác nhận để tạo mật khẩu mới.";
+            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.textBox1.Location = new System.Drawing.Point(833, 285);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(426, 69);
+            this.textBox1.TabIndex = 24;
+            this.textBox1.Text = "Nhập email đăng ký và chúng tôi sẽ gửi cho bạn mã để xác nhận để tạo mật khẩu mới" +
+    ".";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 55F, FontStyle.Bold, GraphicsUnit.Pixel);
-            label1.ForeColor = Color.FromArgb(37, 83, 140);
-            label1.Location = new Point(818, 208);
-            label1.Name = "label1";
-            label1.Size = new Size(428, 74);
-            label1.TabIndex = 23;
-            label1.Text = "Quên mật khẩu";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.label1.Location = new System.Drawing.Point(818, 208);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(428, 74);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Quên mật khẩu";
             // 
             // username
             // 
-            username.BorderColor = Color.FromArgb(37, 83, 140);
-            username.BorderRadius = 30;
-            username.CustomizableEdges = customizableEdges5;
-            username.DefaultText = "";
-            username.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            username.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            username.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            username.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            username.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            username.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            username.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            username.Location = new Point(833, 404);
-            username.Name = "username";
-            username.PasswordChar = '\0';
-            username.PlaceholderText = "";
-            username.SelectedText = "";
-            username.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            username.Size = new Size(505, 64);
-            username.TabIndex = 32;
+            this.username.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.username.BorderRadius = 30;
+            this.username.CustomizableEdges = customizableEdges5;
+            this.username.DefaultText = "";
+            this.username.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.username.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.username.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.username.Location = new System.Drawing.Point(833, 404);
+            this.username.Name = "username";
+            this.username.PasswordChar = '\0';
+            this.username.PlaceholderText = "";
+            this.username.SelectedText = "";
+            this.username.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.username.Size = new System.Drawing.Size(505, 64);
+            this.username.TabIndex = 32;
             // 
             // guna2Button2
             // 
-            guna2Button2.CustomizableEdges = customizableEdges7;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(1315, 23);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Button2.Size = new Size(85, 45);
-            guna2Button2.TabIndex = 33;
-            guna2Button2.Text = "Back";
-            guna2Button2.Click += guna2Button2_Click;
+            this.guna2Button2.CustomizableEdges = customizableEdges7;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Location = new System.Drawing.Point(1315, 23);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.guna2Button2.Size = new System.Drawing.Size(85, 45);
+            this.guna2Button2.TabIndex = 33;
+            this.guna2Button2.Text = "Back";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // Forget_Pass
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(1422, 977);
-            Controls.Add(guna2Button2);
-            Controls.Add(username);
-            Controls.Add(guna2Button1);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
-            Controls.Add(pictureBox2);
-            Controls.Add(guna2PictureBox1);
-            Name = "Forget_Pass";
-            StartPosition = FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1422, 977);
+            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.username);
+            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.guna2PictureBox1);
+            this.Name = "Forget_Pass";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

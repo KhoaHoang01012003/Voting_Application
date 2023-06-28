@@ -43,11 +43,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateVote12));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -68,11 +68,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.samplePanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.sampleAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.candidateName = new System.Windows.Forms.Label();
-            this.className = new System.Windows.Forms.Label();
-            this.addButton = new Guna.UI2.WinForms.Guna2Button();
             this.viewButton = new Guna.UI2.WinForms.Guna2Button();
+            this.addButton = new Guna.UI2.WinForms.Guna2Button();
+            this.className = new System.Windows.Forms.Label();
+            this.candidateName = new System.Windows.Forms.Label();
+            this.sampleAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -186,6 +186,7 @@
             this.guna2Button5.TabIndex = 10;
             this.guna2Button5.Text = "Đăng xuất";
             this.guna2Button5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
             // guna2Button3
             // 
@@ -256,6 +257,7 @@
             this.guna2Button1.Text = "Dashboard";
             this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.TextOffset = new System.Drawing.Point(67, 0);
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // pictureBox1
             // 
@@ -317,61 +319,6 @@
             this.samplePanel.Size = new System.Drawing.Size(315, 334);
             this.samplePanel.TabIndex = 35;
             // 
-            // sampleAvatar
-            // 
-            this.sampleAvatar.Image = ((System.Drawing.Image)(resources.GetObject("sampleAvatar.Image")));
-            this.sampleAvatar.ImageRotate = 0F;
-            this.sampleAvatar.Location = new System.Drawing.Point(118, 39);
-            this.sampleAvatar.Name = "sampleAvatar";
-            this.sampleAvatar.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            this.sampleAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.sampleAvatar.Size = new System.Drawing.Size(80, 80);
-            this.sampleAvatar.TabIndex = 0;
-            this.sampleAvatar.TabStop = false;
-            // 
-            // candidateName
-            // 
-            this.candidateName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.candidateName.AutoSize = true;
-            this.candidateName.Location = new System.Drawing.Point(81, 127);
-            this.candidateName.Name = "candidateName";
-            this.candidateName.Size = new System.Drawing.Size(121, 20);
-            this.candidateName.TabIndex = 1;
-            this.candidateName.Text = "Candidate Name";
-            // 
-            // className
-            // 
-            this.className.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.className.AutoSize = true;
-            this.className.Location = new System.Drawing.Point(83, 181);
-            this.className.Name = "className";
-            this.className.Size = new System.Drawing.Size(42, 20);
-            this.className.TabIndex = 2;
-            this.className.Text = "Class";
-            // 
-            // addButton
-            // 
-            this.addButton.BorderRadius = 10;
-            this.addButton.CustomizableEdges = customizableEdges14;
-            this.addButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.addButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.addButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.addButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.addButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
-            this.addButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addButton.ForeColor = System.Drawing.Color.White;
-            this.addButton.Location = new System.Drawing.Point(24, 246);
-            this.addButton.Name = "addButton";
-            this.addButton.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            this.addButton.Size = new System.Drawing.Size(120, 50);
-            this.addButton.TabIndex = 13;
-            this.addButton.Text = "Thêm";
-            this.addButton.Click += new System.EventHandler(this.guna2Button4_Click);
-            // 
             // viewButton
             // 
             this.viewButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
@@ -391,7 +338,60 @@
             this.viewButton.Size = new System.Drawing.Size(120, 50);
             this.viewButton.TabIndex = 14;
             this.viewButton.Text = "Xem chi tiết";
-            this.viewButton.Click += new System.EventHandler(this.guna2Button6_Click);
+            // 
+            // addButton
+            // 
+            this.addButton.BorderRadius = 10;
+            this.addButton.CustomizableEdges = customizableEdges14;
+            this.addButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.addButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.addButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.addButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.addButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.addButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addButton.ForeColor = System.Drawing.Color.White;
+            this.addButton.Location = new System.Drawing.Point(24, 246);
+            this.addButton.Name = "addButton";
+            this.addButton.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            this.addButton.Size = new System.Drawing.Size(120, 50);
+            this.addButton.TabIndex = 13;
+            this.addButton.Text = "Thêm";
+            // 
+            // className
+            // 
+            this.className.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.className.AutoSize = true;
+            this.className.Location = new System.Drawing.Point(83, 181);
+            this.className.Name = "className";
+            this.className.Size = new System.Drawing.Size(42, 20);
+            this.className.TabIndex = 2;
+            this.className.Text = "Class";
+            // 
+            // candidateName
+            // 
+            this.candidateName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.candidateName.AutoSize = true;
+            this.candidateName.Location = new System.Drawing.Point(81, 127);
+            this.candidateName.Name = "candidateName";
+            this.candidateName.Size = new System.Drawing.Size(121, 20);
+            this.candidateName.TabIndex = 1;
+            this.candidateName.Text = "Candidate Name";
+            // 
+            // sampleAvatar
+            // 
+            this.sampleAvatar.Image = ((System.Drawing.Image)(resources.GetObject("sampleAvatar.Image")));
+            this.sampleAvatar.ImageRotate = 0F;
+            this.sampleAvatar.Location = new System.Drawing.Point(118, 39);
+            this.sampleAvatar.Name = "sampleAvatar";
+            this.sampleAvatar.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            this.sampleAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.sampleAvatar.Size = new System.Drawing.Size(80, 80);
+            this.sampleAvatar.TabIndex = 0;
+            this.sampleAvatar.TabStop = false;
             // 
             // panel2
             // 

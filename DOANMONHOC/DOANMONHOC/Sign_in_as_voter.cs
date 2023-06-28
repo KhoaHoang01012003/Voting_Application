@@ -13,14 +13,15 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
-        private Index indexForm = new Index();
+        private Form indexForm;
         private bool isBackButtonPressed;
 
-        public Sign_in()
+        public Sign_in(Form parentForm)
         {
             InitializeComponent();
-            //this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
             isBackButtonPressed = false;
+            indexForm = parentForm;
         }
 
         void FormClosed_Exit(object sender, FormClosedEventArgs e)
@@ -39,7 +40,7 @@ namespace DOANMONHOC
 
         private void Sign_in_as_Admin_button_Click(object sender, EventArgs e)
         {
-            Form AdminForm = new Sign_in_as_Admin();
+            Form AdminForm = new Sign_in_as_Admin(indexForm);
             AdminForm.Show();
             isBackButtonPressed = true;
             this.Close();
@@ -88,8 +89,9 @@ namespace DOANMONHOC
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var form = new Forget_Pass();
+            var form = new Forget_Pass(indexForm);
             form.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 

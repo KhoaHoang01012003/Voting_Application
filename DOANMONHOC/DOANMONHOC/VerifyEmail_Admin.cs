@@ -19,15 +19,31 @@ namespace DOANMONHOC
 {
     public partial class VerifyEmail_Admin : Form
     {
-        public VerifyEmail_Admin(ADMIN admin)
+        private Form indexForm;
+        private bool isBackButtonPressed;
+
+        public VerifyEmail_Admin(Form parentForm, ADMIN admin)
         {
             InitializeComponent();
             client = new FireSharp.FirebaseClient(config);
+
+            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            indexForm = parentForm;
+            isBackButtonPressed = false;
+
             this.admin = admin;
             otp_enter.Text = "Nhập mã OTP";
             otp_enter.ForeColor = Color.FromArgb(37, 83, 140);
             otp_enter.Enter += OTP_Enter;
             otp_enter.Leave += OTP_Leave;
+        }
+
+        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        {
+            if (!isBackButtonPressed)
+            {
+                Application.ExitThread();
+            }
         }
 
         private void VerifyEmail_Admin_Load(object sender, EventArgs e)
@@ -64,7 +80,6 @@ namespace DOANMONHOC
         }
         int otp;
         ADMIN admin = new ADMIN();
-        private Index indexForm = new Index();
         IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "FoBk4yXguU4VoMkIe5M7M2ylsGymwUsld8cS2Td1",
@@ -168,7 +183,7 @@ namespace DOANMONHOC
             {
                 smtp.Send(mail);
                 MessageBox.Show("Bạn đã xác nhận thành công!\nĐã gửi mật khẩu mới vào email của bạn");
-                var form = new Sign_in_as_Admin();
+                var form = new Sign_in_as_Admin(indexForm);
                 form.Show();
                 this.Close();
             }

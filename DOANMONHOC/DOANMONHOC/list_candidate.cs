@@ -16,11 +16,25 @@ namespace DOANMONHOC
 {
     public partial class list_candidate : Form
     {
-        private Index indexForm;
-        public list_candidate()
+        private Form indexForm;
+        private bool isBackButtonPressed;
+
+        public list_candidate(Form parentForm)
         {
             InitializeComponent();
+            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            indexForm = parentForm;
+            isBackButtonPressed = false;
         }
+
+        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        {
+            if (!isBackButtonPressed)
+            {
+                Application.ExitThread();
+            }
+        }
+
         IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "FoBk4yXguU4VoMkIe5M7M2ylsGymwUsld8cS2Td1",
@@ -110,8 +124,9 @@ namespace DOANMONHOC
 
                 void view_Click(object sender, EventArgs e)
                 {
-                    var openForm = new add_candidate(candidate);
+                    var openForm = new add_candidate(indexForm,candidate);
                     openForm.Show();
+                    isBackButtonPressed = true;
                     this.Close();
                 }
 
@@ -162,15 +177,17 @@ namespace DOANMONHOC
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            var openForm = new add_candidate();
-            openForm.ShowDialog();
+            var openForm = new add_candidate(indexForm);
+            openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionActivities();
+            var openForm = new adminElectionActivities(indexForm);
             openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
@@ -181,8 +198,16 @@ namespace DOANMONHOC
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            var openForm = new adminDashboard();
+            var openForm = new adminDashboard(indexForm);
             openForm.Show();
+            isBackButtonPressed = true;
+            this.Close();
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            indexForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
     }

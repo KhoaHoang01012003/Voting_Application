@@ -25,18 +25,24 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
-        private Index indexForm = new Index();
+        private Form indexForm;
+        private bool isBackButtonPressed;
 
-        public Sign_in_as_Admin()
+        public Sign_in_as_Admin(Form parentForm)
         {
             InitializeComponent();
-            //this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            indexForm = parentForm;
+            isBackButtonPressed = false;
         }
 
-        /*void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        void FormClosed_Exit(object sender, FormClosedEventArgs e)
         {
-            Application.ExitThread();
-        }*/
+            if (!isBackButtonPressed)
+            {
+                Application.ExitThread();
+            }
+        }
 
         private void Sign_in_as_Admin_Load(object sender, EventArgs e)
         {
@@ -62,8 +68,9 @@ namespace DOANMONHOC
                     Properties.Settings.Default.Username = username_admin.Text;
                     Properties.Settings.Default.Save();
 
-                    var openForm = new adminDashboard();
+                    var openForm = new adminDashboard(indexForm);
                     openForm.Show();
+                    isBackButtonPressed = true;
                     this.Close();
                     check = true;
                     break;
@@ -91,13 +98,15 @@ namespace DOANMONHOC
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             indexForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var form = new Forget_Pass(true);
+            var form = new Forget_Pass(indexForm,true);
             form.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
     }

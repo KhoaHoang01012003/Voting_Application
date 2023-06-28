@@ -23,13 +23,24 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
-        private Index indexForm;
+        private Form indexForm;
+        private bool isBackButtonPressed;
         public CAMPAIGN Data { get; set; }
 
-        public CreateVote12(Index indexForm)
+        public CreateVote12(Form parentForm)
         {
             InitializeComponent();
-            this.indexForm = indexForm;
+            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            indexForm = parentForm;
+            isBackButtonPressed = false;
+        }
+
+        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        {
+            if (!isBackButtonPressed)
+            {
+                Application.ExitThread();
+            }
         }
 
         private async void CreateVote12_Load(object sender, EventArgs e)
@@ -193,19 +204,35 @@ namespace DOANMONHOC
 
         }
 
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            var openForm = new adminDashboard(indexForm);
+            openForm.Show();
+            isBackButtonPressed = true;
+            this.Close();
+        }
+
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-
+            var openForm = new adminElectionActivities(indexForm);
+            openForm.Show();
+            isBackButtonPressed = true;
+            this.Close();
         }
 
-        private void guna2Button4_Click(object sender, EventArgs e)
+        private void guna2Button3_Click(object sender, EventArgs e)
         {
-
+            var openForm = new list_candidate(indexForm);
+            openForm.Show();
+            isBackButtonPressed = true;
+            this.Close();
         }
 
-        private void guna2Button6_Click(object sender, EventArgs e)
+        private void guna2Button5_Click(object sender, EventArgs e)
         {
-
+            indexForm.Show();
+            isBackButtonPressed = true;
+            this.Close();
         }
 
         private async void guna2Button4_Click_1(object sender, EventArgs e)
@@ -218,12 +245,8 @@ namespace DOANMONHOC
             var openForm = new CreateVote13(indexForm);
             openForm.Data = Data;
             openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
-        }
-
-        private void guna2Button3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
