@@ -143,8 +143,20 @@ namespace DOANMONHOC
                         openForm.ShowDialog();
                     }
 
+                    // Hiển thị ảnh trong một PictureBox
                     Guna2CirclePictureBox avatar = new Guna2CirclePictureBox();
-                    avatar.Image = sampleAvatar.Image;
+                    byte[] originalBytes = Convert.FromBase64String(candidate.AvtCandidate);
+
+                    // Tạo một đối tượng Image từ chuỗi byte gốc
+                    Image image;
+                    using (MemoryStream ms = new MemoryStream(originalBytes))
+                    {
+                        image = Image.FromStream(ms);
+                    }
+                    // Tạo bản thu nhỏ của ảnh
+                    Image thumbnailImage = image.GetThumbnailImage(80, 80, null, IntPtr.Zero);
+
+                    avatar.Image = thumbnailImage;
                     avatar.Size = sampleAvatar.Size;
                     avatar.ImageRotate = sampleAvatar.ImageRotate;
                     avatar.Location = sampleAvatar.Location;
