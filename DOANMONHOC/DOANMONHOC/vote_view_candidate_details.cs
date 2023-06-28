@@ -273,7 +273,7 @@ namespace DOANMONHOC
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            var openForm = new Dashboard();
+            var openForm = new Dashboard(indexForm);
             openForm.Show();
             this.Close();
         }

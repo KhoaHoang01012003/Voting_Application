@@ -115,6 +115,9 @@ namespace DOANMONHOC
                 }
                 flag = true;
             }
+            else{
+                ClearnImage_Click(sender, e);
+            }
         }
 
         private async void guna2Button4_Click(object sender, EventArgs e)
