@@ -23,12 +23,24 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
-        private Index indexForm = new Index();
+        private Form indexForm;
+        private bool isBackButtonPressed;
         public CAMPAIGN Data { get; set; }
 
-        public adminElectionDetail_Setting()
+        public adminElectionDetail_Setting(Form parentForm)
         {
             InitializeComponent();
+            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            indexForm = parentForm;
+            isBackButtonPressed = false;
+        }
+
+        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        {
+            if (!isBackButtonPressed)
+            {
+                Application.ExitThread();
+            }
         }
 
         private async void adminElectionDetail_Setting_Load(object sender, EventArgs e)
@@ -81,44 +93,50 @@ namespace DOANMONHOC
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            var openForm = new adminDashboard();
+            var openForm = new adminDashboard(indexForm);
             openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionActivities();
+            var openForm = new adminElectionActivities(indexForm);
             openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            var openForm = new list_candidate();
+            var openForm = new list_candidate(indexForm);
             openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionDetail_Overview();
+            var openForm = new adminElectionDetail_Overview(indexForm);
             openForm.Data = Data;
             openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
         private void guna2Button8_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionDetail_Result();
+            var openForm = new adminElectionDetail_Result(indexForm);
             openForm.Data = Data;
             openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
             indexForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
@@ -156,9 +174,10 @@ namespace DOANMONHOC
             PushResponse response = await client.PushTaskAsync("Campaigns/", Data);
             MessageBox.Show("Đã lưu!");
 
-            var openForm = new adminElectionDetail_Setting();
+            var openForm = new adminElectionDetail_Setting(indexForm);
             openForm.Data = Data;
             openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
@@ -172,16 +191,18 @@ namespace DOANMONHOC
             await client.DeleteTaskAsync($"Campaigns/{keyToDelete}");
             MessageBox.Show("Xoá thành công");
 
-            var openForm = new adminElectionActivities();
+            var openForm = new adminElectionActivities(indexForm);
             openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
         private void guna2Button9_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionDetail_Candidate();
+            var openForm = new adminElectionDetail_Candidate(indexForm);
             openForm.Data = Data;
             openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
     }

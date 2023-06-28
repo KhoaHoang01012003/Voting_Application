@@ -150,7 +150,7 @@ namespace DOANMONHOC
                     {
                         smtp.Send(mail);
                         MessageBox.Show("Bạn đã xác nhận thành công!\nĐã gửi mật khẩu mới vào email của bạn");
-                        var form = new Sign_in();
+                        var form = new Sign_in(indexForm);
                         form.Show();
                         this.Close();
                     }

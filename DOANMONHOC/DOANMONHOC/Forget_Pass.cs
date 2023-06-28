@@ -18,12 +18,28 @@ namespace DOANMONHOC
     public partial class Forget_Pass : Form
     {
         bool isAdmin;
-        public Forget_Pass(bool isAdmin = false)
+        private Form indexForm;
+        private bool isBackButtonPressed;
+
+        public Forget_Pass(Form parentForm, bool isAdmin = false)
         {
             InitializeComponent();
             client = new FireSharp.FirebaseClient(config);
             this.isAdmin = isAdmin;
+            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            isBackButtonPressed = false;
+            indexForm = parentForm;
         }
+
+        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        {
+            if (!isBackButtonPressed)
+            {
+                Application.ExitThread();
+            }
+        }
+
+
         IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "FoBk4yXguU4VoMkIe5M7M2ylsGymwUsld8cS2Td1",
@@ -85,7 +101,7 @@ namespace DOANMONHOC
                         AdminName = ""
                     };
 
-                    var form = new VerifyEmail_Admin(data);
+                    var form = new VerifyEmail_Admin(indexForm,data);
                     form.ShowDialog();
                 }
                 else
@@ -99,7 +115,8 @@ namespace DOANMONHOC
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            var form = new Sign_in();
+            var form = new Sign_in(indexForm);
+            isBackButtonPressed = true;
             form.Show();
             this.Close();
         }

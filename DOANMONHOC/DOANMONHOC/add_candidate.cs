@@ -20,16 +20,29 @@ namespace DOANMONHOC
 {
     public partial class add_candidate : Form
     {
-        private Index indexForm;
+        private Form indexForm;
+        private bool isBackButtonPressed;
 
         CANDIDATE tempCandidate;
         bool flag = false;
         string avt = "";
-        public add_candidate(CANDIDATE u = null)
+        public add_candidate(Form parentForm, CANDIDATE u = null)
         {
             InitializeComponent();
+            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            indexForm = parentForm;
+            isBackButtonPressed = false;
             tempCandidate = u;
         }
+
+        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        {
+            if (!isBackButtonPressed)
+            {
+                Application.ExitThread();
+            }
+        }
+
         IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "FoBk4yXguU4VoMkIe5M7M2ylsGymwUsld8cS2Td1",
@@ -42,6 +55,7 @@ namespace DOANMONHOC
             public int ClassId { get; set; }
             public int FacultyId { get; set; }
         }
+
         private async Task<ClassAndFaculty> SearchClassID(string className)
         {
             FirebaseResponse response1 = await candidate.GetTaskAsync("Classes/");
@@ -165,7 +179,6 @@ namespace DOANMONHOC
                     PushResponse response_result = await candidate.PushTaskAsync("Candidates/", data);
                     USER result = response_result.ResultAs<USER>();
 
-                    MessageBox.Show("Data... inserted " + result.Email);
                 }
                 else
                 {
@@ -193,22 +206,25 @@ namespace DOANMONHOC
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            var openForm = new list_candidate();
+            var openForm = new list_candidate(indexForm);
             openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionActivities();
+            var openForm = new adminElectionActivities(indexForm);
             openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            var openForm = new adminDashboard();
+            var openForm = new adminDashboard(indexForm);
             openForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 

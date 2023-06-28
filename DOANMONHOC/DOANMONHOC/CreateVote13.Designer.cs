@@ -181,6 +181,7 @@
             this.guna2Button3.Text = "Ứng cử viên";
             this.guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button3.TextOffset = new System.Drawing.Point(67, 0);
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // guna2Button2
             // 
@@ -228,6 +229,7 @@
             this.guna2Button1.Text = "Dashboard";
             this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.TextOffset = new System.Drawing.Point(67, 0);
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // pictureBox1
             // 
@@ -316,7 +318,6 @@
             this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges21;
             this.guna2Panel1.Size = new System.Drawing.Size(1059, 556);
             this.guna2Panel1.TabIndex = 37;
-            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // guna2PictureBox3
             // 

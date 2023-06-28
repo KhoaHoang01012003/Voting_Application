@@ -52,7 +52,7 @@
             panel3 = new Panel();
             label7 = new Label();
             guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            Avatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             label1 = new Label();
             label2 = new Label();
             Candidate_Detail = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -68,7 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Avatar).BeginInit();
             Candidate_Detail.SuspendLayout();
             info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -197,7 +197,7 @@
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(label7);
             panel3.Controls.Add(guna2CirclePictureBox2);
-            panel3.Controls.Add(guna2CirclePictureBox1);
+            panel3.Controls.Add(Avatar);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(272, 0);
             panel3.Name = "panel3";
@@ -217,7 +217,6 @@
             // 
             // guna2CirclePictureBox2
             // 
-            guna2CirclePictureBox2.Image = (Image)resources.GetObject("guna2CirclePictureBox2.Image");
             guna2CirclePictureBox2.ImageRotate = 0F;
             guna2CirclePictureBox2.Location = new Point(925, 33);
             guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
@@ -227,17 +226,17 @@
             guna2CirclePictureBox2.TabIndex = 0;
             guna2CirclePictureBox2.TabStop = false;
             // 
-            // guna2CirclePictureBox1
+            // Avatar
             // 
-            guna2CirclePictureBox1.Image = Properties.Resources.admin_img__Custom___2_;
-            guna2CirclePictureBox1.ImageRotate = 0F;
-            guna2CirclePictureBox1.Location = new Point(976, 24);
-            guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CirclePictureBox1.Size = new Size(40, 40);
-            guna2CirclePictureBox1.TabIndex = 0;
-            guna2CirclePictureBox1.TabStop = false;
+            Avatar.ImageRotate = 0F;
+            Avatar.Location = new Point(976, 24);
+            Avatar.Name = "Avatar";
+            Avatar.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            Avatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            Avatar.Size = new Size(40, 40);
+            Avatar.SizeMode = PictureBoxSizeMode.StretchImage;
+            Avatar.TabIndex = 0;
+            Avatar.TabStop = false;
             // 
             // label1
             // 
@@ -401,7 +400,7 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Avatar).EndInit();
             Candidate_Detail.ResumeLayout(false);
             Candidate_Detail.PerformLayout();
             info.ResumeLayout(false);
@@ -422,7 +421,7 @@
         private PictureBox pictureBox1;
         private Panel panel3;
         private Label label7;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox Avatar;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private Label label1;
         private Label label2;
