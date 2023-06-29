@@ -21,25 +21,25 @@ namespace DOANMONHOC
     public partial class Register : Form
     {
 
-        IFirebaseConfig config = new FirebaseConfig
+        private readonly IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "FoBk4yXguU4VoMkIe5M7M2ylsGymwUsld8cS2Td1",
-            BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/",
+            BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
 
-        IFirebaseClient client;
-        private Index indexForm;
+        private IFirebaseClient client;
+        private readonly Index indexForm;
         private bool isBackButtonPressed;
+        private Dictionary<string, USER> users;
 
         public Register(Index parentForm)
         {
             InitializeComponent();
-            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            FormClosed += FormClosed_Exit;
             indexForm = parentForm;
-            isBackButtonPressed = false;
         }
 
-        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        private void FormClosed_Exit(object sender, FormClosedEventArgs e)
         {
             if (!isBackButtonPressed)
             {
@@ -47,59 +47,53 @@ namespace DOANMONHOC
             }
         }
 
-        private void Register_Load(object sender, EventArgs e)
+        private async void Register_Load(object sender, EventArgs e)
         {
             client = new FireSharp.FirebaseClient(config);
             password.UseSystemPasswordChar = true;
+            await FetchUsers();
+        }
+
+        private async Task FetchUsers()
+        {
+            FirebaseResponse response = await client.GetTaskAsync("Users/");
+            users = response.ResultAs<Dictionary<string, USER>>();
         }
 
         private bool IsValidEmail(string email)
         {
-            // Regular expression for a valid email
             string emailPattern = @"^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)*\.[A-Za-z]{2,}$";
-
-            // Check if the email matches the pattern and ends with "edu.vn"
             return Regex.IsMatch(email, emailPattern) && email.EndsWith("uit.edu.vn");
         }
 
         private bool IsStrongPassword(string password)
         {
-            // Minimum length requirement
             int minLength = 8;
-
-            // Regular expressions for uppercase letters, lowercase letters, digits, and special characters
             string upperCasePattern = @"[A-Z]+";
             string lowerCasePattern = @"[a-z]+";
             string digitPattern = @"[0-9]+";
             string specialCharPattern = @"[^a-zA-Z0-9]+";
 
-            // Check if the password meets the criteria
             return password.Length >= minLength
-                && Regex.IsMatch(password, upperCasePattern)
-                && Regex.IsMatch(password, lowerCasePattern)
-                && Regex.IsMatch(password, digitPattern)
-                && Regex.IsMatch(password, specialCharPattern);
+                    && Regex.IsMatch(password, upperCasePattern)
+                    && Regex.IsMatch(password, lowerCasePattern)
+                    && Regex.IsMatch(password, digitPattern)
+                    && Regex.IsMatch(password, specialCharPattern);
         }
 
         public static string HashPassword(string password)
         {
-            // Generate a salt with a work factor of 12 (the default)
             string salt = BCrypt.Net.BCrypt.GenerateSalt();
-
-            // Hash the password using the salt
             string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password, salt);
-
             return hashedPassword;
         }
 
-        private async void guna2Button1_Click(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-            FirebaseResponse emailCheckResponse = await client.GetTaskAsync("Users/");
-            var emailCheckData = emailCheckResponse.ResultAs<Dictionary<string, USER>>();
-            bool emailExists = emailCheckData.Values.Any(u => u.Email == guna2TextBox1.Text);
+            bool emailExists = users.Values.Any(u => u.Email == guna2TextBox1.Text);
+
             if (IsValidEmail(guna2TextBox1.Text) && IsStrongPassword(password.Text) && !emailExists)
             {
-
                 var data = new USER
                 {
                     Email = guna2TextBox1.Text,
@@ -111,12 +105,20 @@ namespace DOANMONHOC
                     UserName = guna2TextBox1.Text
                 };
 
-                var form = new VerifyEmail(data);
+                var form = new VerifyEmail(indexForm,data);
                 form.Show();
-                this.Close();
-
+                isBackButtonPressed = true;
+                Close();
             }
-            else if (emailExists)
+            else
+            {
+                HandleInvalidRegistration(emailExists);
+            }
+        }
+
+        private void HandleInvalidRegistration(bool emailExists)
+        {
+            if (emailExists)
             {
                 MessageBox.Show("Email đã được đăng ký. Vui lòng sử dụng email khác.");
                 guna2TextBox1.Focus();
@@ -137,19 +139,12 @@ namespace DOANMONHOC
         {
             indexForm.Show();
             isBackButtonPressed = true;
-            this.Close();
+            Close();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
-            {
-                password.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                password.UseSystemPasswordChar = true;
-            }
+            password.UseSystemPasswordChar = !checkBox1.Checked;
         }
     }
 }

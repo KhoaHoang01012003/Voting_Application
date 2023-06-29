@@ -18,7 +18,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace DOANMONHOC
 {
-    public partial class add_candidate : Form
+    public partial class adminAddCandidate : Form
     {
         private Form indexForm;
         private bool isBackButtonPressed;
@@ -26,7 +26,7 @@ namespace DOANMONHOC
         CANDIDATE tempCandidate;
         bool flag = false;
         string avt = "";
-        public add_candidate(Form parentForm, CANDIDATE u = null)
+        public adminAddCandidate(Form parentForm, CANDIDATE u = null)
         {
             InitializeComponent();
             this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
@@ -74,7 +74,7 @@ namespace DOANMONHOC
             return null;
         }
 
-        private async void add_candidate_Load(object sender, EventArgs e)
+        private async void adminAddCandidate_Load(object sender, EventArgs e)
         {
             candidate = new FireSharp.FirebaseClient(config);
             if (candidate != null)

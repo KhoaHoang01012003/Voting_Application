@@ -33,112 +33,112 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            label1 = new Label();
-            pictureBox1 = new PictureBox();
-            label2 = new Label();
-            label3 = new Label();
-            verify_button = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.verify_button = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(68, 54, 84);
-            label1.Location = new Point(219, 13);
-            label1.Name = "label1";
-            label1.Size = new Size(469, 62);
-            label1.TabIndex = 0;
-            label1.Text = "Xác nhận bỏ phiếu ?";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(54)))), ((int)(((byte)(84)))));
+            this.label1.Location = new System.Drawing.Point(219, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(469, 62);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Xác nhận bỏ phiếu ?";
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(318, 76);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(250, 250);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(318, 76);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 250);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(219, 344);
-            label2.Name = "label2";
-            label2.Size = new Size(329, 25);
-            label2.TabIndex = 2;
-            label2.Text = "Bạn có chắc chắn rằng sẽ bỏ phiếu cho";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(219, 344);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(329, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Bạn có chắc chắn rằng sẽ bỏ phiếu cho";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(543, 344);
-            label3.Name = "label3";
-            label3.Size = new Size(58, 25);
-            label3.TabIndex = 3;
-            label3.Text = "name";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(543, 344);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 25);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "name";
             // 
             // verify_button
             // 
-            verify_button.BorderRadius = 10;
-            verify_button.CustomizableEdges = customizableEdges1;
-            verify_button.DisabledState.BorderColor = Color.DarkGray;
-            verify_button.DisabledState.CustomBorderColor = Color.DarkGray;
-            verify_button.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            verify_button.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            verify_button.FillColor = Color.FromArgb(37, 83, 140);
-            verify_button.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            verify_button.ForeColor = Color.White;
-            verify_button.Location = new Point(276, 385);
-            verify_button.Name = "verify_button";
-            verify_button.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            verify_button.Size = new Size(144, 50);
-            verify_button.TabIndex = 4;
-            verify_button.Text = "Xác nhận";
-            verify_button.Click += verify_button_Click;
+            this.verify_button.BorderRadius = 10;
+            this.verify_button.CustomizableEdges = customizableEdges1;
+            this.verify_button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.verify_button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.verify_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.verify_button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.verify_button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.verify_button.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.verify_button.ForeColor = System.Drawing.Color.White;
+            this.verify_button.Location = new System.Drawing.Point(276, 385);
+            this.verify_button.Name = "verify_button";
+            this.verify_button.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.verify_button.Size = new System.Drawing.Size(144, 50);
+            this.verify_button.TabIndex = 4;
+            this.verify_button.Text = "Xác nhận";
             // 
             // guna2Button1
             // 
-            guna2Button1.BorderColor = Color.FromArgb(37, 83, 140);
-            guna2Button1.BorderRadius = 10;
-            guna2Button1.BorderThickness = 1;
-            guna2Button1.CustomizableEdges = customizableEdges3;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.White;
-            guna2Button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.FromArgb(68, 54, 84);
-            guna2Button1.Location = new Point(448, 385);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Button1.Size = new Size(144, 50);
-            guna2Button1.TabIndex = 4;
-            guna2Button1.Text = "Huỷ";
+            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.guna2Button1.BorderRadius = 10;
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.CustomizableEdges = customizableEdges3;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.White;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(54)))), ((int)(((byte)(84)))));
+            this.guna2Button1.Location = new System.Drawing.Point(448, 385);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.guna2Button1.Size = new System.Drawing.Size(144, 50);
+            this.guna2Button1.TabIndex = 4;
+            this.guna2Button1.Text = "Huỷ";
             // 
             // Verify
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(867, 453);
-            Controls.Add(guna2Button1);
-            Controls.Add(verify_button);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(pictureBox1);
-            Controls.Add(label1);
-            Name = "Verify";
-            Text = "Verify";
-            Load += Verify_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(867, 453);
+            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.verify_button);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label1);
+            this.Name = "Verify";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Verify";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

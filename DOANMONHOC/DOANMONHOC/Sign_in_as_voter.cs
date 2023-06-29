@@ -7,24 +7,25 @@ namespace DOANMONHOC
 {
     public partial class Sign_in : Form
     {
-        IFirebaseConfig config = new FirebaseConfig
+        private readonly IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "FoBk4yXguU4VoMkIe5M7M2ylsGymwUsld8cS2Td1",
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
-        IFirebaseClient client;
-        private Form indexForm;
+
+        private IFirebaseClient client;
+        private readonly Form indexForm;
         private bool isBackButtonPressed;
+        private Dictionary<string, USER> users;
 
         public Sign_in(Form parentForm)
         {
             InitializeComponent();
-            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
-            isBackButtonPressed = false;
+            FormClosed += FormClosed_Exit;
             indexForm = parentForm;
         }
 
-        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        private void FormClosed_Exit(object sender, FormClosedEventArgs e)
         {
             if (!isBackButtonPressed)
             {
@@ -32,10 +33,17 @@ namespace DOANMONHOC
             }
         }
 
-        private void Sign_in_Load(object sender, EventArgs e)
+        private async void Sign_in_Load(object sender, EventArgs e)
         {
             client = new FireSharp.FirebaseClient(config);
             password.UseSystemPasswordChar = true;
+            await FetchUsers();
+        }
+
+        private async Task FetchUsers()
+        {
+            FirebaseResponse response = await client.GetTaskAsync("Users/");
+            users = response.ResultAs<Dictionary<string, USER>>();
         }
 
         private void Sign_in_as_Admin_button_Click(object sender, EventArgs e)
@@ -43,19 +51,16 @@ namespace DOANMONHOC
             Form AdminForm = new Sign_in_as_Admin(indexForm);
             AdminForm.Show();
             isBackButtonPressed = true;
-            this.Close();
+            Close();
         }
 
         public static bool VerifyPassword(string password, string hashedPassword)
         {
             return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
-        private async void sign_in_button_Click(object sender, EventArgs e)
-        {
-            FirebaseResponse response = await client.GetTaskAsync("Users/");
 
-            Dictionary<string, USER> users = response.ResultAs<Dictionary<string, USER>>();
-            int cnt = users.Count();
+        private void sign_in_button_Click(object sender, EventArgs e)
+        {
             bool check = false;
             foreach (var user in users)
             {
@@ -70,7 +75,7 @@ namespace DOANMONHOC
                     var openForm = new Dashboard(indexForm);
                     openForm.Show();
                     isBackButtonPressed = true;
-                    this.Close();
+                    Close();
                     check = true;
                     break;
                 }
@@ -85,7 +90,7 @@ namespace DOANMONHOC
         {
             indexForm.Show();
             isBackButtonPressed = true;
-            this.Close();
+            Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -93,19 +98,12 @@ namespace DOANMONHOC
             var form = new Forget_Pass(indexForm);
             form.Show();
             isBackButtonPressed = true;
-            this.Close();
+            Close();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
-            {
-                password.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                password.UseSystemPasswordChar = true;
-            }
+            password.UseSystemPasswordChar = !checkBox1.Checked;
         }
     }
 }

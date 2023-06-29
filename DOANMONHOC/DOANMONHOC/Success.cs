@@ -12,21 +12,16 @@ namespace DOANMONHOC
 {
     public partial class Success : Form
     {
-        private Index indexForm;
         string Candidate_name;
+
         public Success(String Candidate_name)
         {
             InitializeComponent();
-            this.indexForm = indexForm;
             this.Candidate_name = Candidate_name;
         }
 
-
         private void Success_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
-            Form vote = new vote_view_candidate_details();
-            vote.Show();
             this.Close();
         }
 

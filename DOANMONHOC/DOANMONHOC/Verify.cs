@@ -15,7 +15,8 @@ namespace DOANMONHOC
 {
     public partial class Verify : Form
     {
-        private Index indexForm;
+        private Form indexForm;
+        private bool isBackButtonPressed;
         VOTE tempvote;
         string Candidate_name;
         FirebaseConfig config = new FirebaseConfig
@@ -24,12 +25,23 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
-        public Verify(string Candidate_name, VOTE vt = null)
+        public Verify(Form parentForm, string Candidate_name, VOTE vt = null)
         {
             InitializeComponent();
             tempvote = vt;
             client = new FireSharp.FirebaseClient(config);
             this.Candidate_name = Candidate_name;
+            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            indexForm = parentForm;
+            isBackButtonPressed = false;
+        }
+
+        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        {
+            if (!isBackButtonPressed)
+            {
+                Application.ExitThread();
+            }
         }
 
         private async void verify_button_Click(object sender, EventArgs e)
@@ -37,7 +49,8 @@ namespace DOANMONHOC
             PushResponse response = await client.PushTaskAsync("Votes/", tempvote);
             
             Form success = new Success(Candidate_name);
-            success.ShowDialog();
+            success.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 

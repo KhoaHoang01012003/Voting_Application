@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static DOANMONHOC.add_candidate;
+using static DOANMONHOC.adminAddCandidate;
 
 namespace DOANMONHOC
 {

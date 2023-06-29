@@ -24,10 +24,23 @@ namespace DOANMONHOC
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         IFirebaseClient client;
-        private Index indexForm = new Index();
-        public vote_view_candidate_details()
+        private Form indexForm;
+        private bool isBackButtonPressed;
+
+        public vote_view_candidate_details(Form parentForm)
         {
             InitializeComponent();
+            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            indexForm = parentForm;
+            isBackButtonPressed = false;
+        }
+
+        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        {
+            if (!isBackButtonPressed)
+            {
+                Application.ExitThread();
+            }
         }
 
         public async void vote_view_candidate_details_Load(object sender, EventArgs e)
@@ -96,8 +109,6 @@ namespace DOANMONHOC
                 name.Text = campaign.CampaignName;
 
                 panel.Controls.Add(name);
-
-
 
                 int x_infopanel = 1;
                 int y_infopanel = 57;
@@ -189,9 +200,9 @@ namespace DOANMONHOC
                                     Candidate_ID = candidate.Candidate_ID.ToString(),
                                     TimeVoted = DateTime.Now.ToString()
                                 };
-                                var openForm = new Verify(candidate.CandidateName, newvote);
+                                var openForm = new Verify(indexForm,candidate.CandidateName, newvote);
                                 openForm.ShowDialog();
-                                this.Close();
+                                vote_view_candidate_details_Load(sender, e);
                             }
                             //view detail
                             Guna2Button viewdetail = new Guna2Button();
@@ -257,24 +268,30 @@ namespace DOANMONHOC
                             yOffset += 400;
                         }
                     }
-
                 }
-
-
             }
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
             indexForm.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
-
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             var openForm = new Dashboard(indexForm);
             openForm.Show();
+            isBackButtonPressed = true;
+            this.Close();
+        }
+
+        private void Avatar_Click(object sender, EventArgs e)
+        {
+            Form change = new changeInfo(indexForm);
+            isBackButtonPressed = true;
+            change.Show();
             this.Close();
         }
     }

@@ -344,45 +344,29 @@ namespace DOANMONHOC
         private void guna2Button5_Click(object sender, EventArgs e)
         {
             indexForm.Show();
+            isBackButtonPressed = true;
             this.Close();
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            Form vote = new vote_view_candidate_details();
+            Form vote = new vote_view_candidate_details(indexForm);
             vote.Show();
+            isBackButtonPressed = true;
             this.Close();
         }
 
-        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        private void Avatar_Click(object sender, EventArgs e)
         {
-            Form change = new change_user_info();
-            change.ShowDialog();
+            Form change = new changeInfo(indexForm);
+            isBackButtonPressed = true;
+            change.Show();
+            this.Close();
         }
 
-        private void description_TextChanged(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void totalAction_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void chart1_Click(object sender, EventArgs e)
-        {
-
+            Dashboard_Load(sender, e);
         }
     }
 }

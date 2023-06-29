@@ -170,6 +170,7 @@
             this.Name = "VerifyEmail_Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VerifyEmail_Admin";
+            this.Load += new System.EventHandler(this.VerifyEmail_Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

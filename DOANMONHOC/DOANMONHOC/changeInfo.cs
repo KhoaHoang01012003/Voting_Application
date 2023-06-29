@@ -16,12 +16,27 @@ using System.Windows.Forms;
 
 namespace DOANMONHOC
 {
-    public partial class change_user_info : Form
+    public partial class changeInfo : Form
     {
-        public change_user_info()
+        private Form indexForm;
+        private bool isBackButtonPressed;
+
+        public changeInfo(Form parentForm)
         {
             InitializeComponent();
+            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            indexForm = parentForm;
+            isBackButtonPressed = false;
         }
+
+        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        {
+            if (!isBackButtonPressed)
+            {
+                Application.ExitThread();
+            }
+        }
+
         IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "FoBk4yXguU4VoMkIe5M7M2ylsGymwUsld8cS2Td1",
@@ -45,7 +60,7 @@ namespace DOANMONHOC
             return null;
         }
 
-        private async void change_user_info_Load(object sender, EventArgs e)
+        private async void changeInfo_Load(object sender, EventArgs e)
         {
             User = new FireSharp.FirebaseClient(config);
             FirebaseResponse response = await User.GetTaskAsync("Users/");
@@ -74,6 +89,7 @@ namespace DOANMONHOC
                 }
             }
         }
+
         public static string HashPassword(string password)
         {
             // Generate a salt with a work factor of 12 (the default)
@@ -89,6 +105,7 @@ namespace DOANMONHOC
         {
             return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
+
         private bool IsStrongPassword(string password)
         {
             // Minimum length requirement
@@ -167,7 +184,7 @@ namespace DOANMONHOC
                     }
                 }
             }
-            change_user_info_Load(sender, e);
+            changeInfo_Load(sender, e);
 
         }
 
@@ -217,6 +234,34 @@ namespace DOANMONHOC
 
             // Hiển thị ảnh trong một PictureBox
             Picture.Image = thumbnailImage;
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            var openForm = new Dashboard(indexForm);
+            openForm.Show();
+            isBackButtonPressed = true;
+            this.Close();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            Form vote = new vote_view_candidate_details(indexForm);
+            vote.Show();
+            isBackButtonPressed = true;
+            this.Close();
+        }
+
+        private void avatar_Click(object sender, EventArgs e)
+        {
+            changeInfo_Load(sender, e);
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            indexForm.Show();
+            isBackButtonPressed = true;
+            this.Close();
         }
     }
 }

@@ -101,10 +101,10 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(426, 69);
+            this.textBox1.Size = new System.Drawing.Size(470, 69);
             this.textBox1.TabIndex = 24;
-            this.textBox1.Text = "Nhập email đăng ký và chúng tôi sẽ gửi cho bạn mã để xác nhận để tạo mật khẩu mới" +
-    ".";
+            this.textBox1.Text = "Nhập email đăng ký và chúng tôi sẽ gửi cho bạn mã xác nhận để xác nhận để tạo mật" +
+    " khẩu mới.";
             // 
             // label1
             // 

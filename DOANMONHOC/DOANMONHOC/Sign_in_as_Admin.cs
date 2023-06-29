@@ -19,24 +19,25 @@ namespace DOANMONHOC
 {
     public partial class Sign_in_as_Admin : Form
     {
-        IFirebaseConfig config = new FirebaseConfig
+        private readonly IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "FoBk4yXguU4VoMkIe5M7M2ylsGymwUsld8cS2Td1",
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
-        IFirebaseClient client;
-        private Form indexForm;
+
+        private IFirebaseClient client;
+        private readonly Form indexForm;
         private bool isBackButtonPressed;
+        private Dictionary<string, ADMIN> admins;
 
         public Sign_in_as_Admin(Form parentForm)
         {
             InitializeComponent();
-            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
+            FormClosed += FormClosed_Exit;
             indexForm = parentForm;
-            isBackButtonPressed = false;
         }
 
-        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        private void FormClosed_Exit(object sender, FormClosedEventArgs e)
         {
             if (!isBackButtonPressed)
             {
@@ -44,10 +45,17 @@ namespace DOANMONHOC
             }
         }
 
-        private void Sign_in_as_Admin_Load(object sender, EventArgs e)
+        private async void Sign_in_as_Admin_Load(object sender, EventArgs e)
         {
             client = new FireSharp.FirebaseClient(config);
             password_admin.UseSystemPasswordChar = true;
+            await FetchAdmins();
+        }
+
+        private async Task FetchAdmins()
+        {
+            FirebaseResponse response = await client.GetTaskAsync("Admins/");
+            admins = response.ResultAs<Dictionary<string, ADMIN>>();
         }
 
         public static bool VerifyPassword(string password, string hashedPassword)
@@ -55,29 +63,21 @@ namespace DOANMONHOC
             return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
 
-        private async void admin_sign_in_Click(object sender, EventArgs e)
+        private void admin_sign_in_Click(object sender, EventArgs e)
         {
-            FirebaseResponse responseGet = await client.GetTaskAsync("Admins/");
-            Dictionary<string, ADMIN> admins = responseGet.ResultAs<Dictionary<string, ADMIN>>();
-            bool check = false;
+            var admin = admins.Values.FirstOrDefault(a => a.UserName == username_admin.Text && VerifyPassword(password_admin.Text, a.Password));
 
-            foreach (var admin in admins.Values)
+            if (admin != null)
             {
-                if (admin.UserName == username_admin.Text && VerifyPassword(password_admin.Text, admin.Password))
-                {
-                    Properties.Settings.Default.Username = username_admin.Text;
-                    Properties.Settings.Default.Save();
+                Properties.Settings.Default.Username = username_admin.Text;
+                Properties.Settings.Default.Save();
 
-                    var openForm = new adminDashboard(indexForm);
-                    openForm.Show();
-                    isBackButtonPressed = true;
-                    this.Close();
-                    check = true;
-                    break;
-                }
+                var openForm = new adminDashboard(indexForm);
+                openForm.Show();
+                isBackButtonPressed = true;
+                Close();
             }
-
-            if (!check)
+            else
             {
                 MessageBox.Show("Username hoặc mật khẩu không đúng, vui lòng nhập lại.");
             }
@@ -85,29 +85,22 @@ namespace DOANMONHOC
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
-            {
-                password_admin.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                password_admin.UseSystemPasswordChar = true;
-            }
+            password_admin.UseSystemPasswordChar = !checkBox1.Checked;
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             indexForm.Show();
             isBackButtonPressed = true;
-            this.Close();
+            Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var form = new Forget_Pass(indexForm,true);
+            var form = new Forget_Pass(indexForm, true);
             form.Show();
             isBackButtonPressed = true;
-            this.Close();
+            Close();
         }
     }
 }

@@ -124,7 +124,7 @@ namespace DOANMONHOC
 
                 void view_Click(object sender, EventArgs e)
                 {
-                    var openForm = new add_candidate(indexForm, candidate);
+                    var openForm = new adminAddCandidate(indexForm, candidate);
                     openForm.Show();
                     isBackButtonPressed = true;
                     this.Close();
@@ -177,7 +177,7 @@ namespace DOANMONHOC
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            var openForm = new add_candidate(indexForm);
+            var openForm = new adminAddCandidate(indexForm);
             openForm.Show();
             isBackButtonPressed = true;
             this.Close();
