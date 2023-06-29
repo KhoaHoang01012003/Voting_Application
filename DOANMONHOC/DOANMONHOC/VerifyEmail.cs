@@ -92,7 +92,11 @@ namespace DOANMONHOC
                 }
                 else if (flag == "Forget")
                 {
-                    await ResetPasswordAndSendEmail();
+                    Thread thread = new Thread(() =>
+                    {
+                        ResetPasswordAndSendEmail();
+                    });
+                    thread.Start();
                 }
             }
             else
@@ -110,16 +114,20 @@ namespace DOANMONHOC
             this.Close();
         }
 
+        // NEED FIXED TO nhanh hơn
         private async Task ResetPasswordAndSendEmail()
         {
             string newPassword = GenerateRandomPassword();
             await UpdateUserPasswordInFirebase(newPassword);
             string emailContent = "Mật khẩu mới của bạn là của bạn là: " + newPassword + "\nVui lòng đổi mật khẩu sau khi đã đăng nhập để bảo mật tài khoản";
-            SendEmail(user.Email, "[VOTING APPLICATION] MẬT KHẨU MỚI", emailContent);
-            var form = new Sign_in(indexForm);
-            form.Show();
-            isBackButtonPressed = true;
-            this.Close();
+            await SendEmail(user.Email, "[VOTING APPLICATION] MẬT KHẨU MỚI", emailContent);
+            BeginInvoke(new Action(() =>
+            {
+                var form = new Sign_in(indexForm);
+                form.Show();
+                isBackButtonPressed = true;
+                this.Close();
+            }));
         }
 
         private string GenerateRandomPassword()
@@ -166,7 +174,7 @@ namespace DOANMONHOC
             }
         }
 
-        private void SendEmail(string to, string subject, string content)
+        private async Task SendEmail(string to, string subject, string content)
         {
             string from = "doannt106.n21.antt@gmail.com";
             string pass = "ttwfdbubwvnyxbtz";
@@ -185,21 +193,19 @@ namespace DOANMONHOC
 
             try
             {
-                smtp.Send(mail);
-                MessageBox.Show("Đã gửi mật khẩu mới vào email của bạn");
+                await Task.Run(() => smtp.Send(mail));
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
             }
         }
 
-        private void VerifyEmail_Load(object sender, EventArgs e)
+        private async void VerifyEmail_Load(object sender, EventArgs e)
         {
             Random random = new Random();
             otp = random.Next(1000, 9999);
             string content = "Số xác nhận của bạn là: " + otp.ToString();
-            SendEmail(user.Email, "[VOTING APPLICATION] MÃ OTP XÁC THỰC", content);
+            await SendEmail(user.Email, "[VOTING APPLICATION] MÃ OTP XÁC THỰC", content);
         }
 
         private void label3_Click(object sender, EventArgs e)
