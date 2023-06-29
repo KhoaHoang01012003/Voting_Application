@@ -31,12 +31,29 @@ namespace DOANMONHOC
         private Form indexForm;
         private bool isBackButtonPressed;
 
+        Guna2ShadowPanel Result = new Guna2ShadowPanel();
+
         public Dashboard(Form parentForm)
         {
             InitializeComponent();
             this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
             indexForm = parentForm;
             isBackButtonPressed = false;
+
+            Result.BackColor = Color.White;
+            Result.FillColor = Color.White;
+            Result.Location = new Point(311, 1487);
+            Result.Name = "Result";
+            Result.ShadowColor = Color.Black;
+            Result.Size = new Size(1089, 378);
+            Result.AutoSize = true;
+            Result.TabIndex = 26;
+            Result.AutoScroll = true;
+            Result.ResumeLayout(false);
+            Result.PerformLayout();
+
+            this.Controls.Add(Result);
+            Result.Hide();
         }
 
         void FormClosed_Exit(object sender, FormClosedEventArgs e)
@@ -91,6 +108,21 @@ namespace DOANMONHOC
             JObject campaignsJson = JObject.Parse(titleCheckResponse.Body);
             var campaigns = campaignsJson.ToObject<Dictionary<string, CAMPAIGN>>();
             List<CAMPAIGN> campaignList = campaigns.Values.ToList();
+            List<CAMPAIGN> sortedCampaignList = campaignList.OrderBy(campaign =>
+            {
+                if (DateTime.Now >= campaign.StartTime && DateTime.Now <= campaign.EndTime)
+                {
+                    return 0;
+                }
+                else if (DateTime.Now < campaign.StartTime)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 2;
+                }
+            }).ToList();
             int count = campaignList.Count;
 
             List<Panel> panelList_action = new List<Panel>();
@@ -98,7 +130,7 @@ namespace DOANMONHOC
             action.Hide();
             int x = action.Location.X;
             int y = action.Location.Y;
-            foreach (CAMPAIGN campaign in campaignList)
+            foreach (CAMPAIGN campaign in sortedCampaignList)
             {
                 Guna2Panel panel = new Guna2Panel();
                 panel.Location = new Point(x, y);
@@ -163,6 +195,23 @@ namespace DOANMONHOC
                     description.Text = campaign.Description;
                     int cntUser = 0;
                     HashSet<int> classIds = new HashSet<int>(campaign.Class_ID);
+                    if (stt.FillColor == end.FillColor)
+                    {
+                        Result.Show();
+                        Result.Controls.Clear();
+                        Label label_Result = new Label();
+                        label_Result.AutoSize = true;
+                        label_Result.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
+                        label_Result.ForeColor = Color.FromArgb(37, 83, 140);
+                        label_Result.Location = new Point(517, 15);
+                        label_Result.Name = "label15";
+                        label_Result.Size = new Size(121, 35);
+                        label_Result.TabIndex = 21;
+                        label_Result.Text = "KẾT QUẢ";
+                        Result.Controls.Add(label_Result);
+                    }
+                    else
+                        Result.Hide();
 
                     foreach (var user in users)
                     {
@@ -197,6 +246,9 @@ namespace DOANMONHOC
                     candidateVotes.Sort((a, b) => b.Item3.CompareTo(a.Item3));
 
                     int tmp = 0;
+                    int maxVote = candidateVotes[0].Item3;
+                    int LocationY = 0;
+
                     foreach (var item in candidateVotes)
                     {
                         for (int i = 0; i < campaign.Candidate_ID.Length; i++)
@@ -243,6 +295,54 @@ namespace DOANMONHOC
 
                                 break;
                             }
+                        }
+                        if (maxVote == item.Item3)
+                        {
+                            //PictureBox AVT
+                            Guna2CirclePictureBox Avt_cdd_re = new Guna2CirclePictureBox();
+                            byte[] originalBytes = Convert.FromBase64String(item.Item1.AvtCandidate);
+                            // Tạo một đối tượng Image từ chuỗi byte gốc
+                            Image image;
+                            using (MemoryStream ms = new MemoryStream(originalBytes))
+                            {
+                                image = Image.FromStream(ms);
+                            }
+                            // Tạo bản thu nhỏ của ảnh
+                            Image thumbnailImage = image.GetThumbnailImage(150, 150, null, IntPtr.Zero);
+                            Avt_cdd_re.ImageRotate = 0F;
+                            Avt_cdd_re.Location = new Point(86, (84 + LocationY * 160));
+                            Avt_cdd_re.Name = "Avt_cdd_re";
+                            Avt_cdd_re.Size = new Size(150, 150);
+                            Avt_cdd_re.TabIndex = 22;
+                            Avt_cdd_re.TabStop = false;
+                            Avt_cdd_re.Image = thumbnailImage;
+
+                            TextBox candidate_class = new TextBox();
+                            candidate_class.BorderStyle = BorderStyle.None;
+                            candidate_class.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold, GraphicsUnit.Point);
+                            candidate_class.Location = new Point(278, (153 + LocationY * 160));
+                            candidate_class.Multiline = true;
+                            candidate_class.Name = "candidate_class";
+                            candidate_class.Size = new Size(267, 42);
+                            candidate_class.TabIndex = 23;
+                            candidate_class.Text = item.Item2.ClassName;
+                            candidate_class.TextAlign = HorizontalAlignment.Center;
+
+                            TextBox candidate_name = new TextBox();
+                            candidate_name.BorderStyle = BorderStyle.None;
+                            candidate_name.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold, GraphicsUnit.Point);
+                            candidate_name.Location = new Point(278, (84 + LocationY * 160));
+                            candidate_name.Multiline = true;
+                            candidate_name.Name = "candidate_name";
+                            candidate_name.Size = new Size(267, 42);
+                            candidate_name.TabIndex = 23;
+                            candidate_name.Text = item.Item1.CandidateName;
+                            candidate_name.TextAlign = HorizontalAlignment.Center;
+
+                            Result.Controls.Add(candidate_name);
+                            Result.Controls.Add(candidate_class);
+                            Result.Controls.Add(Avt_cdd_re);
+                            LocationY++;
                         }
                         if (tmp == campaign.Candidate_ID.Length)
                         {
@@ -368,5 +468,6 @@ namespace DOANMONHOC
         {
             Dashboard_Load(sender, e);
         }
+
     }
 }
