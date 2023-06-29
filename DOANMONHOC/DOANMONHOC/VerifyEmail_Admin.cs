@@ -53,12 +53,12 @@ namespace DOANMONHOC
             }
         }
 
-        private void VerifyEmail_Admin_Load(object sender, EventArgs e)
+        private async void VerifyEmail_Admin_Load(object sender, EventArgs e)
         {
-            GenerateAndSendOTP();
+            await GenerateAndSendOTP();
         }
 
-        private void GenerateAndSendOTP()
+        private async Task GenerateAndSendOTP()
         {
             Random random = new Random();
             otp = random.Next(1000, 9999);
@@ -81,12 +81,10 @@ namespace DOANMONHOC
 
             try
             {
-                smtp.Send(mail);
-                MessageBox.Show("Đã gửi OTP đến email");
+                await Task.Run(() => smtp.Send(mail));
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -114,8 +112,20 @@ namespace DOANMONHOC
             if (otpStr == otp.ToString())
             {
                 string newPassword = GenerateRandomPassword();
-                await UpdateAdminPasswordInFirebase(newPassword);
-                SendNewPasswordToAdminEmail(newPassword);
+                Thread thread = new Thread(() =>
+                {
+                    UpdateAdminPasswordInFirebase(newPassword).Wait();
+                    SendNewPasswordToAdminEmail(newPassword);
+
+                    BeginInvoke(new Action(() =>
+                    {
+                        var form = new Sign_in(indexForm);
+                        form.Show();
+                        isBackButtonPressed = true;
+                        this.Close();
+                    }));
+                });
+                thread.Start();
             }
             else
             {
@@ -168,12 +178,12 @@ namespace DOANMONHOC
             }
         }
 
-        private void SendNewPasswordToAdminEmail(string newPassword)
+        private async Task SendNewPasswordToAdminEmail(string newPassword)
         {
             string from = "doannt106.n21.antt@gmail.com";
             string to = admin.Email;
             string pass = "ttwfdbubwvnyxbtz";
-            string content = "Mật khẩu mới của bạn là: " + newPassword + "\nVui lòng đổi mật khẩu sau khi đã đăng nhập để bảo mật tài khoản";
+            string content = "Mật khẩu mới của bạn là: " + newPassword;
             content += "\r\n------------------------------------------------\r\nĐây là email tự động của hệ thống mail, vui lòng không trả lời email này.";
             MailMessage mail = new MailMessage();
             mail.To.Add(to);
@@ -189,12 +199,7 @@ namespace DOANMONHOC
 
             try
             {
-                smtp.Send(mail);
-                MessageBox.Show("Bạn đã xác nhận thành công!\nĐã gửi mật khẩu mới vào email của bạn");
-                var form = new Sign_in_as_Admin(indexForm);
-                form.Show();
-                isBackButtonPressed = true;
-                this.Close();
+                await smtp.SendMailAsync(mail);
             }
             catch (Exception ex)
             {
@@ -209,9 +214,9 @@ namespace DOANMONHOC
             return hashedPassword;
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private async void label3_Click(object sender, EventArgs e)
         {
-            GenerateAndSendOTP();
+            await GenerateAndSendOTP();
         }
     }
 }

@@ -116,7 +116,7 @@
             this.guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.guna2Button1.Size = new System.Drawing.Size(422, 64);
             this.guna2Button1.TabIndex = 28;
-            this.guna2Button1.Text = "Đăng ký";
+            this.guna2Button1.Text = "Xác nhận";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // pictureBox1
@@ -168,8 +168,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "VerifyEmail_Admin";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "VerifyEmail_Admin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "UIT Voting Application";
             this.Load += new System.EventHandler(this.VerifyEmail_Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
