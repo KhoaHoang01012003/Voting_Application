@@ -618,7 +618,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "adminElectionDetail_Result";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CreateVote3";
+            this.Text = "UIT Voting Application";
             this.Load += new System.EventHandler(this.CreateVote3_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

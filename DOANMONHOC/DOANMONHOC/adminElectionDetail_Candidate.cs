@@ -170,7 +170,10 @@ namespace DOANMONHOC
                     panel.Controls.Add(avatar);
 
                     // Thêm Panel vào form
-                    samplePanel.Parent.Controls.Add(panel);
+                    if (this.IsHandleCreated)
+                    {
+                        samplePanel.Parent.Controls.Add(panel);
+                    }
                     panel.BringToFront();
 
                     // Cập nhật vị trí của ô thông tin tiếp theo
