@@ -83,26 +83,6 @@ namespace DOANMONHOC
             {
                 foreach (CLASS classObj in classes.Values)
                 {
-            {
-                Invoke((MethodInvoker)delegate
-                {
-                    UpdateUIWithClassData(classes);
-                });
-            }
-        }
-
-        private void UpdateUIWithClassData(Dictionary<string, CLASS> classes)
-        {
-            campaignName.Text = Data.CampaignName;
-            campaignNameEdited.Text = Data.CampaignName;
-            description.Text = Data.Description;
-            startTime.Value = Data.StartTime;
-            endTime.Value = Data.EndTime;
-            category.Text = Data.Category;
-            foreach (var classID in Data.Class_ID)
-            {
-                foreach (CLASS classObj in classes.Values)
-                {
                     if (classID != classObj.Class_ID) continue;
                     selectClass.Text += classObj.ClassName + ", ";
                     break;
