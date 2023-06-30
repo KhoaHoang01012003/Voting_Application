@@ -41,9 +41,8 @@ namespace DOANMONHOC
             PushResponse response = await client.PushTaskAsync("Votes/", tempvote);
             
             Form success = new Success(this, Candidate_name);
-            success.Show();
+            success.ShowDialog();
             isBackButtonPressed = true;
-            this.Hide();
         }
 
         private void Verify_Load(object sender, EventArgs e)
