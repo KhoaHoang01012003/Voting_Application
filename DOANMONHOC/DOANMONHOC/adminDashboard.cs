@@ -76,5 +76,13 @@ namespace DOANMONHOC
             isBackButtonPressed = true;
             this.Close();
         }
+
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+            var form = new changeInfo_Admin(indexForm);
+            form.Show();
+            isBackButtonPressed = true;
+            this.Close();
+        }
     }
 }
