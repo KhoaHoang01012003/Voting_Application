@@ -157,8 +157,10 @@ namespace DOANMONHOC
                     if (admin.Value.UserName.ToString() == Properties.Settings.Default.Username.ToString())
                     {
                         admin.Value.AvtAdmin = avt;
+
                         Properties.Settings.Default.avt = avt;
                         Properties.Settings.Default.Save();
+
                         var updateResponse = await Admin.SetTaskAsync("Admins/" + admin.Key, admin.Value);
                         MessageBox.Show("Đã cập nhật thông tin!");
                         break;

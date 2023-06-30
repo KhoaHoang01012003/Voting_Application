@@ -142,6 +142,8 @@ namespace DOANMONHOC
                             {
                                 user.Value.Password = HashPassword(guna2TextBox3.Text);
                                 user.Value.AvtUser = avt;
+                                Properties.Settings.Default.avt = avt;
+                                Properties.Settings.Default.Save();
                                 var updateResponse = await User.SetTaskAsync("Users/" + user.Key, user.Value);
                                 MessageBox.Show("Đã cập nhật thông tin và mật khẩu!");
                                 break;
@@ -173,10 +175,11 @@ namespace DOANMONHOC
                 foreach (var user in users)
                 {
                     if (user.Value.UserName == Properties.Settings.Default.Username.ToString())
-                    {
-                        
+                    {                       
                         user.Value.AvtUser = avt;
-                       
+                        Properties.Settings.Default.avt = avt;
+                        Properties.Settings.Default.Save();
+
                         var updateResponse = await User.SetTaskAsync("Users/" + user.Key, user.Value);
                         MessageBox.Show("Đã cập nhật thông tin!");
                         break;
