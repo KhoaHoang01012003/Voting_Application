@@ -205,7 +205,7 @@ namespace DOANMONHOC
                                         Student_ID = studentID,
                                         Campaign_ID = campaign.Campaint_ID.ToString(),
                                         Candidate_ID = candidate.Candidate_ID.ToString(),
-                                        TimeVoted = DateTime.Now.ToString()
+                                        TimeVoted = DateTime.Now.ToUniversalTime().ToString()
                                     };
                                     var openForm = new Verify(indexForm, candidate.CandidateName, newvote);
                                     openForm.ShowDialog();
@@ -278,7 +278,7 @@ namespace DOANMONHOC
                                     flag = false;
                                     break;
                                 }
-                                else if (DateTime.Now > campaign.EndTime || DateTime.Now < campaign.StartTime)
+                                else if (DateTime.Now.ToUniversalTime() > campaign.EndTime || DateTime.Now.ToUniversalTime() < campaign.StartTime)
                                 {
                                     flag = false;
                                     break;
