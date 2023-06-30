@@ -20,6 +20,7 @@ namespace DOANMONHOC.Properties {
         internal object ClassID;
         internal string StudentID;
         internal string avt;
+        internal string Name;
 
         public static Settings Default {
             get {

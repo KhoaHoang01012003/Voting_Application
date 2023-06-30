@@ -47,34 +47,26 @@ namespace DOANMONHOC
         private async void changeInfo_Admin_Load(object sender, EventArgs e)
         {
             Admin = new FireSharp.FirebaseClient(config);
-            FirebaseResponse response = await Admin.GetTaskAsync("Admins/");
-            Dictionary<string, ADMIN> admins = response.ResultAs<Dictionary<string, ADMIN>>();
-            foreach (var admin in admins)
+
+            EmailText.Text = Properties.Settings.Default.Username.ToString();
+            guna2TextBox1.Text = Properties.Settings.Default.Name.ToString();
+
+            avt = Properties.Settings.Default.avt.ToString();
+            if (avt == "")
+                avt = DefaultAvt;
+            byte[] originalBytes = Convert.FromBase64String(avt);
+
+            // Tạo một đối tượng Image từ chuỗi byte gốc
+            Image image;
+            using (MemoryStream ms = new MemoryStream(originalBytes))
             {
-                if (admin.Value.UserName == Properties.Settings.Default.Username.ToString())
-                {
-                    EmailText.Text = admin.Value.Email;
-                    guna2TextBox1.Text = admin.Value.AdminName;
-
-                    avt = admin.Value.AvtAdmin;
-                    if (avt == "")
-                        avt = DefaultAvt;
-                    byte[] originalBytes = Convert.FromBase64String(avt);
-
-                    // Tạo một đối tượng Image từ chuỗi byte gốc
-                    Image image;
-                    using (MemoryStream ms = new MemoryStream(originalBytes))
-                    {
-                        image = Image.FromStream(ms);
-                    }
-
-                    avatar.Image = image.GetThumbnailImage(40, 40, null, IntPtr.Zero);
-                    Picture.Image = image.GetThumbnailImage(80, 80, null, IntPtr.Zero);
-
-                    FullName.Text = admin.Value.AdminName;
-                    break;
-                }
+                image = Image.FromStream(ms);
             }
+
+            avatar.Image = image.GetThumbnailImage(40, 40, null, IntPtr.Zero);
+            Picture.Image = image.GetThumbnailImage(80, 80, null, IntPtr.Zero);
+
+            FullName.Text = Properties.Settings.Default.Name.ToString();
         }
 
         public static string HashPassword(string password)
@@ -127,6 +119,10 @@ namespace DOANMONHOC
                             {
                                 admin.Value.Password = HashPassword(guna2TextBox3.Text);
                                 admin.Value.AvtAdmin = avt;
+
+                                Properties.Settings.Default.avt = avt;
+                                Properties.Settings.Default.Save();
+
                                 var updateResponse = await Admin.SetTaskAsync("Admins/" + admin.Key, admin.Value);
                                 MessageBox.Show("Đã cập nhật thông tin và mật khẩu!");
                                 break;
@@ -157,9 +153,12 @@ namespace DOANMONHOC
                 Dictionary<string, ADMIN> admins = response.ResultAs<Dictionary<string, ADMIN>>();
                 foreach (var admin in admins)
                 {
+                    MessageBox.Show(admin.Value.UserName + "\n" + Properties.Settings.Default.Username.ToString());
                     if (admin.Value.UserName.ToString() == Properties.Settings.Default.Username.ToString())
                     {
                         admin.Value.AvtAdmin = avt;
+                        Properties.Settings.Default.avt = avt;
+                        Properties.Settings.Default.Save();
                         var updateResponse = await Admin.SetTaskAsync("Admins/" + admin.Key, admin.Value);
                         MessageBox.Show("Đã cập nhật thông tin!");
                         break;
@@ -216,37 +215,6 @@ namespace DOANMONHOC
 
             // Hiển thị ảnh trong một PictureBox
             Picture.Image = thumbnailImage;
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            var openForm = new adminDashboard(indexForm);
-            openForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            var openForm = new adminElectionActivities(indexForm);
-            openForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
-        }
-
-        private void guna2Button3_Click(object sender, EventArgs e)
-        {
-            var openForm = new list_candidate(indexForm);
-            openForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
-        }
-
-        private void guna2Button5_Click(object sender, EventArgs e)
-        {
-            indexForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
         }
     }
 }

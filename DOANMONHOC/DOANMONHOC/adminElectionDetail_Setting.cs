@@ -17,27 +17,27 @@ namespace DOANMONHOC
 {
     public partial class adminElectionDetail_Setting : Form
     {
-        FirebaseConfig config = new FirebaseConfig
+        private readonly FirebaseConfig _config = new()
         {
             AuthSecret = "FoBk4yXguU4VoMkIe5M7M2ylsGymwUsld8cS2Td1",
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
-        IFirebaseClient client;
-        private Form indexForm;
-        private bool isBackButtonPressed;
+        private IFirebaseClient _client;
+        private readonly Form _indexForm;
+        private bool _isBackButtonPressed;
         public CAMPAIGN Data { get; set; }
 
         public adminElectionDetail_Setting(Form parentForm)
         {
             InitializeComponent();
-            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
-            indexForm = parentForm;
-            isBackButtonPressed = false;
+            FormClosed += FormClosed_Exit;
+            _indexForm = parentForm;
+            _isBackButtonPressed = false;
         }
 
-        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        private void FormClosed_Exit(object sender, FormClosedEventArgs e)
         {
-            if (!isBackButtonPressed)
+            if (!_isBackButtonPressed)
             {
                 Application.ExitThread();
             }
@@ -45,34 +45,52 @@ namespace DOANMONHOC
 
         private async void adminElectionDetail_Setting_Load(object sender, EventArgs e)
         {
-            client = new FireSharp.FirebaseClient(config);
+            _client = new FireSharp.FirebaseClient(_config);
 
-            FirebaseResponse classResponse = await client.GetTaskAsync("Classes").ConfigureAwait(false);
+            byte[] originalBytesAvt = Convert.FromBase64String(Properties.Settings.Default.avt.ToString());
+
+            // Tạo một đối tượng Image từ chuỗi byte gốc
+            Image imageAvt;
+            using (MemoryStream ms = new MemoryStream(originalBytesAvt))
+            {
+                imageAvt = Image.FromStream(ms);
+            }
+
+            avatar.Image = imageAvt.GetThumbnailImage(40, 40, null, IntPtr.Zero);
+            FullName.Text = Properties.Settings.Default.Name.ToString();
+
+            FirebaseResponse classResponse = await _client.GetTaskAsync("Classes").ConfigureAwait(false);
             Dictionary<string, CLASS> classes = classResponse.ResultAs<Dictionary<string, CLASS>>();
 
-            this.Invoke((MethodInvoker)delegate
+            if (IsHandleCreated)
             {
-                campaignName.Text = Data.CampaignName;
-                campaignNameEdited.Text = Data.CampaignName;
-                description.Text = Data.Description;
-                startTime.Value = Data.StartTime;
-                endTime.Value = Data.EndTime;
-                category.Text = Data.Category;
-                foreach (var classID in Data.Class_ID)
+                Invoke((MethodInvoker)delegate
                 {
-                    foreach (CLASS classObj in classes.Values)
-                    {
-                        if (classID == classObj.Class_ID)
-                        {
-                            selectClass.Text += classObj.ClassName + ", ";
-                            break;
-                        }
-                    }
-                }
-            });
+                    UpdateUIWithClassData(classes);
+                });
+            }
         }
 
-        public bool ValidateDateTimePickers(Guna2DateTimePicker startTime, Guna2DateTimePicker endTime)
+        private void UpdateUIWithClassData(Dictionary<string, CLASS> classes)
+        {
+            campaignName.Text = Data.CampaignName;
+            campaignNameEdited.Text = Data.CampaignName;
+            description.Text = Data.Description;
+            startTime.Value = Data.StartTime;
+            endTime.Value = Data.EndTime;
+            category.Text = Data.Category;
+            foreach (var classID in Data.Class_ID)
+            {
+                foreach (CLASS classObj in classes.Values)
+                {
+                    if (classID != classObj.Class_ID) continue;
+                    selectClass.Text += classObj.ClassName + ", ";
+                    break;
+                }
+            }
+        }
+
+        private bool ValidateDateTimePickers(Guna2DateTimePicker startTime, Guna2DateTimePicker endTime)
         {
             DateTime now = DateTime.Now;
 
@@ -91,58 +109,56 @@ namespace DOANMONHOC
             return true;
         }
 
+        private void OpenFormAndCloseCurrent(Form openForm)
+        {
+            openForm.Show();
+            _isBackButtonPressed = true;
+            Close();
+        }
+
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            var openForm = new adminDashboard(indexForm);
-            openForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
+            var openForm = new adminDashboard(_indexForm);
+            OpenFormAndCloseCurrent(openForm);
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionActivities(indexForm);
-            openForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
+            var openForm = new adminElectionActivities(_indexForm);
+            OpenFormAndCloseCurrent(openForm);
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            var openForm = new list_candidate(indexForm);
-            openForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
+            var openForm = new list_candidate(_indexForm);
+            OpenFormAndCloseCurrent(openForm);
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionDetail_Overview(indexForm);
-            openForm.Data = Data;
-            openForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
+            var openForm = new adminElectionDetail_Overview(_indexForm) { Data = Data };
+            OpenFormAndCloseCurrent(openForm);
         }
 
         private void guna2Button8_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionDetail_Result(indexForm);
-            openForm.Data = Data;
-            openForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
+            var openForm = new adminElectionDetail_Result(_indexForm) { Data = Data };
+            OpenFormAndCloseCurrent(openForm);
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-            indexForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
+            OpenFormAndCloseCurrent(_indexForm);
         }
 
         private async void updateCampaign_Click(object sender, EventArgs e)
         {
-            FirebaseResponse titleCheckResponse = await client.GetTaskAsync("Campaigns/");
+            if (!ValidateInputs() || !ValidateDateTimePickers(startTime, endTime))
+            {
+                return;
+            }
+
+            FirebaseResponse titleCheckResponse = await _client.GetTaskAsync("Campaigns/");
             JObject campaignsJson = JObject.Parse(titleCheckResponse.Body);
             var campaigns = campaignsJson.ToObject<Dictionary<string, CAMPAIGN>>();
 
@@ -153,57 +169,46 @@ namespace DOANMONHOC
                 return;
             }
 
-            bool checkValidTime = ValidateDateTimePickers(startTime, endTime);
-            if (!checkValidTime)
-            {
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(description.Text) || string.IsNullOrWhiteSpace(campaignName.Text) || string.IsNullOrWhiteSpace(category.Text))
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
-                return;
-            }
-
             Data.CampaignName = campaignName.Text;
-            Data.Description= description.Text;
+            Data.Description = description.Text;
             Data.StartTime = startTime.Value;
             Data.EndTime = endTime.Value;
-            Data.Category= category.Text;
+            Data.Category = category.Text;
 
-            PushResponse response = await client.PushTaskAsync("Campaigns/", Data);
+            await _client.PushTaskAsync("Campaigns/", Data);
             MessageBox.Show("Đã lưu!");
 
-            var openForm = new adminElectionDetail_Setting(indexForm);
-            openForm.Data = Data;
-            openForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
+            var openForm = new adminElectionDetail_Setting(_indexForm) { Data = Data };
+            OpenFormAndCloseCurrent(openForm);
+        }
+
+        private bool ValidateInputs()
+        {
+            if (!string.IsNullOrWhiteSpace(description.Text) && !string.IsNullOrWhiteSpace(campaignName.Text) && !string.IsNullOrWhiteSpace(category.Text))
+                return true;
+
+            MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+            return false;
         }
 
         private async void deleteCampaign_Click(object sender, EventArgs e)
         {
-            FirebaseResponse titleCheckResponse = await client.GetTaskAsync("Campaigns/");
+            FirebaseResponse titleCheckResponse = await _client.GetTaskAsync("Campaigns/");
             JObject campaignsJson = JObject.Parse(titleCheckResponse.Body);
             var campaigns = campaignsJson.ToObject<Dictionary<string, CAMPAIGN>>();
 
             string keyToDelete = campaigns.FirstOrDefault(c => c.Value.CampaignName == campaignName.Text).Key;
-            await client.DeleteTaskAsync($"Campaigns/{keyToDelete}");
+            await _client.DeleteTaskAsync($"Campaigns/{keyToDelete}");
             MessageBox.Show("Xoá thành công");
 
-            var openForm = new adminElectionActivities(indexForm);
-            openForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
+            var openForm = new adminElectionActivities(_indexForm);
+            OpenFormAndCloseCurrent(openForm);
         }
 
         private void guna2Button9_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionDetail_Candidate(indexForm);
-            openForm.Data = Data;
-            openForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
+            var openForm = new adminElectionDetail_Candidate(_indexForm) { Data = Data };
+            OpenFormAndCloseCurrent(openForm);
         }
     }
 }

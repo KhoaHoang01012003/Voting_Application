@@ -170,7 +170,10 @@ namespace DOANMONHOC
                     panel.Controls.Add(avatar);
 
                     // Thêm Panel vào form
-                    samplePanel.Parent.Controls.Add(panel);
+                    if (this.IsHandleCreated)
+                    {
+                        samplePanel.Parent.Controls.Add(panel);
+                    }
                     panel.BringToFront();
 
                     // Cập nhật vị trí của ô thông tin tiếp theo
@@ -192,6 +195,18 @@ namespace DOANMONHOC
 
         private async void adminElectionDetail_Candidate_Load(object sender, EventArgs e)
         {
+            byte[] originalBytesAvt = Convert.FromBase64String(Properties.Settings.Default.avt.ToString());
+
+            // Tạo một đối tượng Image từ chuỗi byte gốc
+            Image imageAvt;
+            using (MemoryStream ms = new MemoryStream(originalBytesAvt))
+            {
+                imageAvt = Image.FromStream(ms);
+            }
+
+            avatar.Image = imageAvt.GetThumbnailImage(40, 40, null, IntPtr.Zero);
+            FullName.Text = Properties.Settings.Default.Name.ToString();
+
             loadData();
         }
 
