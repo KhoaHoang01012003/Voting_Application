@@ -175,7 +175,7 @@ namespace DOANMONHOC
                 foreach (var user in users)
                 {
                     if (user.Value.UserName == Properties.Settings.Default.Username.ToString())
-                    {                       
+                    {
                         user.Value.AvtUser = avt;
                         Properties.Settings.Default.avt = avt;
                         Properties.Settings.Default.Save();

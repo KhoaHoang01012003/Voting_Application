@@ -128,7 +128,7 @@ namespace DOANMONHOC
 
             List<Panel> panelList_action = new List<Panel>();
             // Vòng lặp để tạo các panel con tương ứng với mỗi cuộc bầu cử
-            
+
             int x = action.Location.X;
             int y = action.Location.Y;
 
@@ -462,7 +462,7 @@ namespace DOANMONHOC
                     }
                 }
             });
-            
+
 
 
 
