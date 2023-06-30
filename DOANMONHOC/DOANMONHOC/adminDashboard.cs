@@ -139,7 +139,7 @@ namespace DOANMONHOC
                 timeBox.Location = action_starttime.Location;
                 timeBox.Size = action_starttime.Size;
                 timeBox.ReadOnly = true;
-                var tmp = campaign.StartTime;
+                var tmp = campaign.EndTime;
                 timeBox.Text = tmp.ToLocalTime().ToString();
                 timeBox.BorderStyle = BorderStyle.None;
                 timeBox.BackColor = action_starttime.BackColor;
