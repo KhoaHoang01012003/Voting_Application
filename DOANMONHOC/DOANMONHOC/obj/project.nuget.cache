@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Kx6Lwsl69XFafoCqlbgKgPoq1220iIAwYB/rKzTKa3ighNK0btQRbnXKyR+h6e+MBPw8wTbilePjxSoQlOc5HA==",
+  "dgSpecHash": "rlDNJKXyqTvU41myhMCigwaArBfeWOn37dohbE9OhItXYr1Zhxxd1DQzuCkabS7EFX0aAZX9PvuYQArX5KmdfQ==",
   "success": true,
-  "projectFilePath": "E:\\HocKi4\\Lap_trinh_mang_can_ban\\Project\\Voting_Application\\DOANMONHOC\\DOANMONHOC\\DOANMONHOC.csproj",
+  "projectFilePath": "D:\\LAP TRINH MANG CAN BAN\\Voting_Application\\DOANMONHOC\\DOANMONHOC\\DOANMONHOC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\firesharp\\1.1.0\\firesharp.1.1.0.nupkg.sha512",
@@ -11,7 +11,8 @@
     "C:\\Users\\ADMIN\\.nuget\\packages\\newtonsoft.json\\6.0.4\\newtonsoft.json.6.0.4.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\restsharp\\104.4.0\\restsharp.104.4.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\system.management\\6.0.0\\system.management.6.0.0.nupkg.sha512"
+    "C:\\Users\\ADMIN\\.nuget\\packages\\system.management\\6.0.0\\system.management.6.0.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\winforms.datavisualization\\1.8.0\\winforms.datavisualization.1.8.0.nupkg.sha512"
   ],
   "logs": [
     {

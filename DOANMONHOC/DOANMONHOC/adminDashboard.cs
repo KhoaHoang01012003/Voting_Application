@@ -44,8 +44,21 @@ namespace DOANMONHOC
             }
         }
 
-        private async void Admin_Dashboard_Load(object sender, EventArgs e)
+        private async void adminDashboard_Load(object sender, EventArgs e)
         {
+            byte[] originalBytesAvt = Convert.FromBase64String(Properties.Settings.Default.avt.ToString());
+
+            // Tạo một đối tượng Image từ chuỗi byte gốc
+            Image imageAvt;
+            using (MemoryStream ms = new MemoryStream(originalBytesAvt))
+            {
+                imageAvt = Image.FromStream(ms);
+            }
+
+            avatar.Image = imageAvt.GetThumbnailImage(40, 40, null, IntPtr.Zero);
+            FullName.Text = Properties.Settings.Default.Name.ToString();
+            action.Hide();
+            label1.Text += Properties.Settings.Default.Name;
             client = new FireSharp.FirebaseClient(config);
             var task1 = client.GetTaskAsync("Users/");
             var task2 = client.GetTaskAsync("Votes/");
@@ -69,11 +82,10 @@ namespace DOANMONHOC
                 if (user.Value.UserName == Properties.Settings.Default.Username.ToString())
                 {
                     label_user_name.Text = user.Value.Fullname;
-                    label8.Text = user.Value.Fullname;
                     break;
                 }
             }
-  
+
 
             // Lấy dữ liệu từ table Campaign
             FirebaseResponse titleCheckResponse = await client.GetTaskAsync("Campaigns/");
@@ -84,10 +96,25 @@ namespace DOANMONHOC
 
             List<Panel> panelList_action = new List<Panel>();
             // Vòng lặp để tạo các panel con tương ứng với mỗi cuộc bầu cử
-            action.Hide();
+
             int x = action.Location.X;
             int y = action.Location.Y;
-            foreach (CAMPAIGN campaign in campaignList)
+            List<CAMPAIGN> sortedCampaignList = campaignList.OrderBy(campaign =>
+            {
+                if (DateTime.Now >= campaign.StartTime && DateTime.Now <= campaign.EndTime)
+                {
+                    return 0;
+                }
+                else if (DateTime.Now < campaign.StartTime)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 2;
+                }
+            }).ToList();
+            foreach (CAMPAIGN campaign in sortedCampaignList)
             {
                 Guna2Panel panel = new Guna2Panel();
                 panel.Location = new Point(x, y);
@@ -363,6 +390,14 @@ namespace DOANMONHOC
         private void totalAction_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void avatar_Click(object sender, EventArgs e)
+        {
+            var form = new changeInfo_Admin(indexForm);
+            form.Show();
+            isBackButtonPressed = true;
+            this.Close();
         }
     }
 }

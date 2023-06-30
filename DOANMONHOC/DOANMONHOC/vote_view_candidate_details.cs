@@ -45,6 +45,8 @@ namespace DOANMONHOC
 
         public async void vote_view_candidate_details_Load(object sender, EventArgs e)
         {
+            Candidate_Detail.Hide();
+            info.Hide();
             client = new FireSharp.FirebaseClient(config);
 
             FirebaseResponse response = await client.GetTaskAsync("Users/");
@@ -89,187 +91,205 @@ namespace DOANMONHOC
             int itemWidth = 1089;
             int itemHeight = 360;
             int spacing = 52;
-            Candidate_Detail.Hide();
-            info.Hide();
-            /*int x_candidate_detail_panel = Candidate_Detail.Location.X;
-            int y_candidate_detail_panel = Candidate_Detail.Location.Y;*/
-            foreach (CAMPAIGN campaign in campaignList)
+
+            await Task.Run(() =>
             {
-                Panel panel = new Panel();
-                panel.Location = new Point(xOffset, yOffset);
-                panel.Size = new Size(itemWidth, itemHeight);
-                panel.AutoScroll = true;
-                // Tạo nhãn tên campaign
-                Label name = new Label();
-                name.AutoSize = true;
-                name.AutoSize = campaign_name.AutoSize;
-                name.Anchor = campaign_name.Anchor;
-                name.Font = campaign_name.Font;
-                name.Location = new Point(77, 12);
-                name.Text = campaign.CampaignName;
-
-                panel.Controls.Add(name);
-
-                int x_infopanel = 1;
-                int y_infopanel = 57;
-                List<Panel> panelList_candidate = new List<Panel>();
-                foreach (int id in campaign.Candidate_ID)
+                foreach (CAMPAIGN campaign in campaignList)
                 {
-                    foreach (CANDIDATE candidate in candidatesList)
+                    Panel panel = new Panel();
+                    panel.Location = new Point(xOffset, yOffset);
+                    panel.Size = new Size(itemWidth, itemHeight);
+                    panel.AutoScroll = true;
+                    // Tạo nhãn tên campaign
+                    Label name = new Label();
+                    name.AutoSize = true;
+                    name.AutoSize = campaign_name.AutoSize;
+                    name.Anchor = campaign_name.Anchor;
+                    name.Font = campaign_name.Font;
+                    name.Location = new Point(77, 12);
+                    name.Text = campaign.CampaignName;
+
+                    this.Invoke(new Action(() =>
                     {
-                        if (id == candidate.Candidate_ID)
+                        panel.Controls.Add(name);
+                    }));
+
+                    int x_infopanel = 1;
+                    int y_infopanel = 57;
+                    List<Panel> panelList_candidate = new List<Panel>();
+                    foreach (int id in campaign.Candidate_ID)
+                    {
+                        foreach (CANDIDATE candidate in candidatesList)
                         {
-                            Panel panelinfo = new Panel();
-                            panelinfo.Location = new Point(x_infopanel, y_infopanel);
-                            panelinfo.Size = info.Size;
-                            // tên candidate
-                            TextBox namecdd = new TextBox();
-                            namecdd.Location = candidate_name.Location;
-                            namecdd.BorderStyle = candidate_name.BorderStyle;
-                            namecdd.Font = candidate_name.Font;
-                            namecdd.Multiline = true;
-                            namecdd.Size = candidate_name.Size;
-                            namecdd.Text = candidate.CandidateName;
-                            namecdd.TextAlign = HorizontalAlignment.Center;
-
-                            //PictureBox AVT
-                            Guna2PictureBox picture = new Guna2PictureBox();
-                            byte[] originalBytes = Convert.FromBase64String(candidate.AvtCandidate);
-                            // Tạo một đối tượng Image từ chuỗi byte gốc
-                            Image image;
-                            using (MemoryStream ms = new MemoryStream(originalBytes))
+                            if (id == candidate.Candidate_ID)
                             {
-                                image = Image.FromStream(ms);
-                            }
-                            // Tạo bản thu nhỏ của ảnh
-                            Image thumbnailImage = image.GetThumbnailImage(100, 100, null, IntPtr.Zero);
+                                Panel panelinfo = new Panel();
+                                panelinfo.Location = new Point(x_infopanel, y_infopanel);
+                                panelinfo.Size = info.Size;
+                                // tên candidate
+                                TextBox namecdd = new TextBox();
+                                namecdd.Location = candidate_name.Location;
+                                namecdd.BorderStyle = candidate_name.BorderStyle;
+                                namecdd.Font = candidate_name.Font;
+                                namecdd.Multiline = true;
+                                namecdd.Size = candidate_name.Size;
+                                namecdd.Text = candidate.CandidateName;
+                                namecdd.TextAlign = HorizontalAlignment.Center;
 
-                            picture.Image = thumbnailImage;
-                            picture.BackColor = this.BackColor;
-                            picture.BorderRadius = 50;
-                            picture.Location = new Point(78, 10);
-                            picture.Size = new Size(100, 100);
-                            picture.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                            //class candidate
-                            TextBox classcdd = new TextBox();
-                            classcdd.Location = candidate_class.Location;
-                            classcdd.BorderStyle = candidate_class.BorderStyle;
-                            classcdd.Font = candidate_class.Font;
-                            classcdd.Multiline = true;
-                            classcdd.Size = candidate_class.Size;
-                            foreach (var Class in classes)
-                            {
-                                if (Class.Value.Class_ID == candidate.Class_ID)
+                                //PictureBox AVT
+                                Guna2PictureBox picture = new Guna2PictureBox();
+                                byte[] originalBytes = Convert.FromBase64String(candidate.AvtCandidate);
+                                // Tạo một đối tượng Image từ chuỗi byte gốc
+                                Image image;
+                                using (MemoryStream ms = new MemoryStream(originalBytes))
                                 {
-                                    classcdd.Text = Class.Value.ClassName;
-                                    break;
+                                    image = Image.FromStream(ms);
                                 }
-                            }
-                            classcdd.TextAlign = HorizontalAlignment.Center;
-                            //vote
-                            Guna2Button votebutton = new Guna2Button();
-                            votebutton.BorderRadius = 10;
-                            votebutton.DisabledState.BorderColor = Color.DarkGray;
-                            votebutton.DisabledState.CustomBorderColor = Color.DarkGray;
-                            votebutton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-                            votebutton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-                            votebutton.FillColor = Color.FromArgb(37, 83, 140);
-                            votebutton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-                            votebutton.ForeColor = Color.White;
-                            votebutton.Location = new Point(16, 209);
-                            votebutton.Size = new Size(100, 50);
-                            votebutton.TabIndex = 3;
-                            votebutton.Text = "Bỏ phiếu";
-                            votebutton.Click += vote_Click;
-                            void vote_Click(object sender, EventArgs e)
-                            {
-                                string studentID = "";
-                                foreach (var user in users)
+                                // Tạo bản thu nhỏ của ảnh
+                                Image thumbnailImage = image.GetThumbnailImage(100, 100, null, IntPtr.Zero);
+
+                                picture.Image = thumbnailImage;
+                                picture.BackColor = this.BackColor;
+                                picture.BorderRadius = 50;
+                                picture.Location = new Point(78, 10);
+                                picture.Size = new Size(100, 100);
+                                picture.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                                //class candidate
+                                TextBox classcdd = new TextBox();
+                                classcdd.Location = candidate_class.Location;
+                                classcdd.BorderStyle = candidate_class.BorderStyle;
+                                classcdd.Font = candidate_class.Font;
+                                classcdd.Multiline = true;
+                                classcdd.Size = candidate_class.Size;
+                                foreach (var Class in classes)
                                 {
-                                    if (user.Value.UserName == Properties.Settings.Default.Username.ToString())
+                                    if (Class.Value.Class_ID == candidate.Class_ID)
                                     {
-                                        studentID = user.Value.Student_ID;
+                                        classcdd.Text = Class.Value.ClassName;
                                         break;
                                     }
                                 }
-                                var newvote = new VOTE
+                                classcdd.TextAlign = HorizontalAlignment.Center;
+                                //vote
+                                Guna2Button votebutton = new Guna2Button();
+                                votebutton.BorderRadius = 10;
+                                votebutton.DisabledState.BorderColor = Color.DarkGray;
+                                votebutton.DisabledState.CustomBorderColor = Color.DarkGray;
+                                votebutton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+                                votebutton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+                                votebutton.FillColor = Color.FromArgb(37, 83, 140);
+                                votebutton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+                                votebutton.ForeColor = Color.White;
+                                votebutton.Location = new Point(16, 209);
+                                votebutton.Size = new Size(100, 50);
+                                votebutton.TabIndex = 3;
+                                votebutton.Text = "Bỏ phiếu";
+                                votebutton.Click += vote_Click;
+                                void vote_Click(object sender, EventArgs e)
                                 {
-                                    Student_ID = studentID,
-                                    Campaign_ID = campaign.Campaint_ID.ToString(),
-                                    Candidate_ID = candidate.Candidate_ID.ToString(),
-                                    TimeVoted = DateTime.Now.ToString()
-                                };
-                                var openForm = new Verify(indexForm,candidate.CandidateName, newvote);
-                                openForm.ShowDialog();
-                                vote_view_candidate_details_Load(sender, e);
-                            }
-                            //view detail
-                            Guna2Button viewdetail = new Guna2Button();
-                            viewdetail.BorderColor = Color.FromArgb(37, 83, 140);
-                            viewdetail.BorderRadius = 10;
-                            viewdetail.BorderThickness = 1;
-                            viewdetail.DisabledState.BorderColor = Color.DarkGray;
-                            viewdetail.DisabledState.CustomBorderColor = Color.DarkGray;
-                            viewdetail.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-                            viewdetail.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-                            viewdetail.FillColor = Color.White;
-                            viewdetail.Font = new Font("Segoe UI Semibold", 7F, FontStyle.Bold, GraphicsUnit.Point);
-                            viewdetail.ForeColor = Color.Black;
-                            viewdetail.Location = new Point(136, 209);
-                            viewdetail.Size = new Size(100, 50);
-                            viewdetail.TabIndex = 3;
-                            viewdetail.Text = "Xem chi tiết";
-                            viewdetail.UseTransparentBackground = true;
-                            viewdetail.Click += detail_Click;
-                            void detail_Click(object sender, EventArgs e)
-                            {
-                                var openform = new Info_Candidate(candidate);
-                                openform.ShowDialog();
-                            }
-                            //add
-                            panelinfo.Controls.Add(namecdd);
-                            panelinfo.Controls.Add(picture);
-                            panelinfo.Controls.Add(classcdd);
-                            panelinfo.Controls.Add(votebutton);
-                            panelinfo.Controls.Add(viewdetail);
+                                    string studentID = "";
+                                    foreach (var user in users)
+                                    {
+                                        if (user.Value.UserName == Properties.Settings.Default.Username.ToString())
+                                        {
+                                            studentID = user.Value.Student_ID;
+                                            break;
+                                        }
+                                    }
+                                    var newvote = new VOTE
+                                    {
+                                        Student_ID = studentID,
+                                        Campaign_ID = campaign.Campaint_ID.ToString(),
+                                        Candidate_ID = candidate.Candidate_ID.ToString(),
+                                        TimeVoted = DateTime.Now.ToString()
+                                    };
+                                    var openForm = new Verify(indexForm, candidate.CandidateName, newvote);
+                                    openForm.ShowDialog();
+                                    vote_view_candidate_details_Load(sender, e);
+                                }
+                                //view detail
+                                Guna2Button viewdetail = new Guna2Button();
+                                viewdetail.BorderColor = Color.FromArgb(37, 83, 140);
+                                viewdetail.BorderRadius = 10;
+                                viewdetail.BorderThickness = 1;
+                                viewdetail.DisabledState.BorderColor = Color.DarkGray;
+                                viewdetail.DisabledState.CustomBorderColor = Color.DarkGray;
+                                viewdetail.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+                                viewdetail.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+                                viewdetail.FillColor = Color.White;
+                                viewdetail.Font = new Font("Segoe UI Semibold", 7F, FontStyle.Bold, GraphicsUnit.Point);
+                                viewdetail.ForeColor = Color.Black;
+                                viewdetail.Location = new Point(136, 209);
+                                viewdetail.Size = new Size(100, 50);
+                                viewdetail.TabIndex = 3;
+                                viewdetail.Text = "Xem chi tiết";
+                                viewdetail.UseTransparentBackground = true;
+                                viewdetail.Click += detail_Click;
+                                void detail_Click(object sender, EventArgs e)
+                                {
+                                    var openform = new Info_Candidate(candidate);
+                                    openform.ShowDialog();
+                                }
+                                //add
+                                this.Invoke(new Action(() =>
+                                {
+                                    panelinfo.Controls.Add(namecdd);
+                                    panelinfo.Controls.Add(picture);
+                                    panelinfo.Controls.Add(classcdd);
+                                    panelinfo.Controls.Add(votebutton);
+                                    panelinfo.Controls.Add(viewdetail);
 
-                            panelList_candidate.Add(panelinfo);
-                            x_infopanel += 300;
-                            break;
-                        }
-                    }
-                }
-                foreach (Panel in4panel in panelList_candidate)
-                {
-                    panel.BringToFront();
-                    panel.Controls.Add(in4panel);
-
-
-                }
-                //ẩn những panel campaign vote rồi hoặc không được vote
-
-                foreach (object classid in campaign.Class_ID)
-                {
-                    bool flag = true;
-                    if (Properties.Settings.Default.ClassID.ToString() == classid.ToString())
-                    {
-                        foreach (VOTE vote in votesList)
-                        {
-                            if (vote.Campaign_ID.ToString() == campaign.Campaint_ID.ToString() && Properties.Settings.Default.StudentID.ToString() == vote.Student_ID.ToString())
-                            {
-                                flag = false;
+                                    panelList_candidate.Add(panelinfo);
+                                    x_infopanel += 300;
+                                }));
                                 break;
                             }
                         }
-                        if (flag)
+                    }
+                    foreach (Panel in4panel in panelList_candidate)
+                    {
+                        panel.BringToFront();
+                        this.Invoke(new Action(() =>
                         {
-                            Candidate_Detail.Parent.Controls.Add(panel);
-                            yOffset += 400;
+                            panel.Controls.Add(in4panel);
+                        }));
+
+
+                    }
+                    //ẩn những panel campaign vote rồi hoặc không được vote
+
+                    foreach (object classid in campaign.Class_ID)
+                    {
+                        bool flag = true;
+                        if (Properties.Settings.Default.ClassID.ToString() == classid.ToString())
+                        {
+                            foreach (VOTE vote in votesList)
+                            {
+                                if (vote.Campaign_ID.ToString() == campaign.Campaint_ID.ToString() && Properties.Settings.Default.StudentID.ToString() == vote.Student_ID.ToString())
+                                {
+                                    flag = false;
+                                    break;
+                                }
+                                else if (DateTime.Now > campaign.EndTime || DateTime.Now < campaign.StartTime)
+                                {
+                                    flag = false;
+                                    break;
+                                }
+                            }
+                            if (flag)
+                            {
+                                this.Invoke(new Action(() =>
+                                {
+                                    Candidate_Detail.Parent.Controls.Add(panel);
+                                }));
+                                yOffset += 400;
+                            }
                         }
                     }
                 }
-            }
+            });
+            
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
