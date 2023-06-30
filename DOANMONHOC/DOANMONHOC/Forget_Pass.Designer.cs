@@ -171,6 +171,7 @@
             this.Controls.Add(this.guna2PictureBox1);
             this.Name = "Forget_Pass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "UIT Voting Application";
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

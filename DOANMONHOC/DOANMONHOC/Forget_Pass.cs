@@ -50,14 +50,6 @@ namespace DOANMONHOC
             admins = adminsResponse.ResultAs<Dictionary<string, ADMIN>>();
         }
 
-        private void FormClosed_Exit(object sender, FormClosedEventArgs e)
-        {
-            if (!isBackButtonPressed)
-            {
-                Application.ExitThread();
-            }
-        }
-
         private static bool IsValidEmail(string email)
         {
             // Regular expression for a valid email
@@ -67,19 +59,19 @@ namespace DOANMONHOC
             return Regex.IsMatch(email, emailPattern) && email.EndsWith("uit.edu.vn");
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private async void guna2Button1_Click(object sender, EventArgs e)
         {
             if (!isAdmin)
             {
-                HandleUserForgetPassword();
+                await HandleUserForgetPasswordAsync();
             }
             else
             {
-                HandleAdminForgetPassword();
+                await HandleAdminForgetPassword();
             }
         }
 
-        private void HandleUserForgetPassword()
+        private async Task HandleUserForgetPasswordAsync()
         {
             bool emailExists = users.Values.Any(u => u.UserName == username.Text);
             if (IsValidEmail(username.Text) && emailExists)
@@ -96,7 +88,9 @@ namespace DOANMONHOC
                 };
 
                 var form = new VerifyEmail(indexForm, data, "Forget");
-                form.ShowDialog();
+                form.Show();
+                isBackButtonPressed = true;
+                Close();
             }
             else
             {
@@ -105,7 +99,7 @@ namespace DOANMONHOC
             }
         }
 
-        private void HandleAdminForgetPassword()
+        private async Task HandleAdminForgetPassword()
         {
             bool emailExists = admins.Values.Any(u => u.Email == username.Text);
             if (emailExists)
@@ -120,7 +114,9 @@ namespace DOANMONHOC
                 };
 
                 var form = new VerifyEmail_Admin(indexForm, data);
-                form.ShowDialog();
+                form.Show();
+                isBackButtonPressed = true;
+                Close();
             }
             else
             {
@@ -135,6 +131,14 @@ namespace DOANMONHOC
             isBackButtonPressed = true;
             form.Show();
             Close();
+        }
+
+        private void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        {
+            if (!isBackButtonPressed)
+            {
+                Application.ExitThread();
+            }
         }
     }
 }

@@ -133,7 +133,6 @@ namespace DOANMONHOC
                 Location = sampleNameLabel.Location,
                 Size = sampleNameLabel.Size
             };
-
             Label startTimeLabel = new Label
             {
                 Text = campaign.StartTime.ToString(),
@@ -161,7 +160,6 @@ namespace DOANMONHOC
         },
                 Size = sampleStatusPicture.Size
             };
-
             Label viewDetailLabel = new Label
             {
                 ForeColor = sampleViewDetailLabel.ForeColor,
