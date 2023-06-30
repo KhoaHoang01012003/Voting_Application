@@ -382,6 +382,7 @@
             guna2Button5.TabIndex = 14;
             guna2Button5.Text = "Đăng xuất";
             guna2Button5.TextAlign = HorizontalAlignment.Right;
+            guna2Button5.Click += guna2Button5_Click;
             // 
             // pictureBox1
             // 
@@ -454,6 +455,7 @@
             guna2Button3.Text = "Ứng cử viên";
             guna2Button3.TextAlign = HorizontalAlignment.Left;
             guna2Button3.TextOffset = new Point(67, 0);
+            guna2Button3.Click += guna2Button3_Click;
             // 
             // guna2Button2
             // 
@@ -476,6 +478,7 @@
             guna2Button2.Text = "Hoạt động bỏ phiếu";
             guna2Button2.TextAlign = HorizontalAlignment.Left;
             guna2Button2.TextOffset = new Point(67, 0);
+            guna2Button2.Click += guna2Button2_Click;
             // 
             // guna2Button1
             // 
@@ -500,6 +503,7 @@
             guna2Button1.Text = "Dashboard";
             guna2Button1.TextAlign = HorizontalAlignment.Left;
             guna2Button1.TextOffset = new Point(67, 0);
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // changeInfo_Admin
             // 

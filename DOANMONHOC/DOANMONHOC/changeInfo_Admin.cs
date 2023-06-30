@@ -216,5 +216,36 @@ namespace DOANMONHOC
             // Hiển thị ảnh trong một PictureBox
             Picture.Image = thumbnailImage;
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            var openForm = new adminDashboard(indexForm);
+            openForm.Show();
+            isBackButtonPressed = true;
+            this.Close();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            var openForm = new adminElectionActivities(indexForm);
+            openForm.Show();
+            isBackButtonPressed = true;
+            this.Close();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            var openForm = new list_candidate(indexForm);
+            openForm.Show();
+            isBackButtonPressed = true;
+            this.Close();
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            indexForm.Show();
+            isBackButtonPressed = true;
+            this.Close();
+        }
     }
 }

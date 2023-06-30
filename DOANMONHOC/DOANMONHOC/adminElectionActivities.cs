@@ -228,5 +228,13 @@ namespace DOANMONHOC
             _isBackButtonPressed = true;
             this.Close();
         }
+
+        private void avatar_Click(object sender, EventArgs e)
+        {
+            var form = new changeInfo_Admin(_indexForm);
+            form.Show();
+            _isBackButtonPressed = true;
+            this.Close();
+        }
     }
 }

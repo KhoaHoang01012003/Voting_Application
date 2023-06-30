@@ -192,6 +192,14 @@ namespace DOANMONHOC
         private void guna2Button4_Click(object sender, EventArgs e) => OpenNewForm(new adminElectionDetail_Overview(_indexForm) { Data = Data });
         private void guna2Button7_Click(object sender, EventArgs e) => OpenNewForm(new adminElectionDetail_Setting(_indexForm) { Data = Data });
         private void guna2Button9_Click(object sender, EventArgs e) => OpenNewForm(new adminElectionDetail_Candidate(_indexForm) { Data = Data });
+
+        private void avatar_Click(object sender, EventArgs e)
+        {
+            var form = new changeInfo_Admin(_indexForm);
+            form.Show();
+            _isBackButtonPressed = true;
+            this.Close();
+        }
     }
 
 }

@@ -38,6 +38,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminElectionDetail_Result));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -52,7 +53,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -60,6 +60,8 @@
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             pictureBox1 = new PictureBox();
             panel3 = new Panel();
+            FullName = new Label();
+            avatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panel2 = new Panel();
             guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
@@ -88,11 +90,10 @@
             campaignName = new Label();
             guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
             guna2AnimateWindow2 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
-            FullName = new Label();
-            avatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)avatar).BeginInit();
             panel2.SuspendLayout();
             guna2ShadowPanel6.SuspendLayout();
             guna2Panel3.SuspendLayout();
@@ -101,7 +102,6 @@
             guna2ShadowPanel5.SuspendLayout();
             guna2ShadowPanel2.SuspendLayout();
             guna2ShadowPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)avatar).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -233,6 +233,31 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1150, 80);
             panel3.TabIndex = 7;
+            // 
+            // FullName
+            // 
+            FullName.AutoSize = true;
+            FullName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            FullName.ForeColor = Color.Black;
+            FullName.Location = new Point(900, 30);
+            FullName.Name = "FullName";
+            FullName.Size = new Size(51, 20);
+            FullName.TabIndex = 5;
+            FullName.Text = "Name";
+            FullName.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // avatar
+            // 
+            avatar.Image = Properties.Resources.admin_img__Custom___2_;
+            avatar.ImageRotate = 0F;
+            avatar.Location = new Point(850, 20);
+            avatar.Name = "avatar";
+            avatar.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            avatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            avatar.Size = new Size(40, 40);
+            avatar.TabIndex = 4;
+            avatar.TabStop = false;
+            avatar.Click += avatar_Click;
             // 
             // guna2HtmlLabel4
             // 
@@ -584,30 +609,6 @@
             campaignName.Size = new Size(508, 48);
             campaignName.TabIndex = 5;
             // 
-            // FullName
-            // 
-            FullName.AutoSize = true;
-            FullName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            FullName.ForeColor = Color.Black;
-            FullName.Location = new Point(900, 30);
-            FullName.Name = "FullName";
-            FullName.Size = new Size(51, 20);
-            FullName.TabIndex = 5;
-            FullName.Text = "Name";
-            FullName.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // avatar
-            // 
-            avatar.Image = Properties.Resources.admin_img__Custom___2_;
-            avatar.ImageRotate = 0F;
-            avatar.Location = new Point(850, 20);
-            avatar.Name = "avatar";
-            avatar.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            avatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            avatar.Size = new Size(40, 40);
-            avatar.TabIndex = 4;
-            avatar.TabStop = false;
-            // 
             // adminElectionDetail_Result
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -626,6 +627,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)avatar).EndInit();
             panel2.ResumeLayout(false);
             guna2ShadowPanel6.ResumeLayout(false);
             guna2Panel3.ResumeLayout(false);
@@ -638,7 +640,6 @@
             guna2ShadowPanel2.PerformLayout();
             guna2ShadowPanel3.ResumeLayout(false);
             guna2ShadowPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)avatar).EndInit();
             ResumeLayout(false);
         }
 

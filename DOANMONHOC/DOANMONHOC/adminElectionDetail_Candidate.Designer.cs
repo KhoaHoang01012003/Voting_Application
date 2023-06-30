@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -55,13 +56,14 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             notifyIcon2 = new NotifyIcon(components);
             notifyIcon3 = new NotifyIcon(components);
             openFileDialog1 = new OpenFileDialog();
             openFileDialog2 = new OpenFileDialog();
             colorDialog1 = new ColorDialog();
             panel3 = new Panel();
+            FullName = new Label();
+            avatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             notifyIcon1 = new NotifyIcon(components);
             guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
@@ -85,16 +87,14 @@
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             pictureBox1 = new PictureBox();
-            FullName = new Label();
-            avatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)avatar).BeginInit();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
             samplePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)sampleAvatar).BeginInit();
             panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)avatar).BeginInit();
             SuspendLayout();
             // 
             // notifyIcon2
@@ -125,6 +125,30 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1150, 80);
             panel3.TabIndex = 38;
+            // 
+            // FullName
+            // 
+            FullName.AutoSize = true;
+            FullName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            FullName.Location = new Point(900, 30);
+            FullName.Name = "FullName";
+            FullName.Size = new Size(51, 20);
+            FullName.TabIndex = 3;
+            FullName.Text = "Name";
+            FullName.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // avatar
+            // 
+            avatar.Image = Properties.Resources.admin_img__Custom___2_;
+            avatar.ImageRotate = 0F;
+            avatar.Location = new Point(850, 20);
+            avatar.Name = "avatar";
+            avatar.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            avatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            avatar.Size = new Size(40, 40);
+            avatar.TabIndex = 2;
+            avatar.TabStop = false;
+            avatar.Click += avatar_Click;
             // 
             // guna2MessageDialog1
             // 
@@ -512,29 +536,6 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // FullName
-            // 
-            FullName.AutoSize = true;
-            FullName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            FullName.Location = new Point(900, 30);
-            FullName.Name = "FullName";
-            FullName.Size = new Size(51, 20);
-            FullName.TabIndex = 3;
-            FullName.Text = "Name";
-            FullName.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // avatar
-            // 
-            avatar.Image = Properties.Resources.admin_img__Custom___2_;
-            avatar.ImageRotate = 0F;
-            avatar.Location = new Point(850, 20);
-            avatar.Name = "avatar";
-            avatar.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            avatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            avatar.Size = new Size(40, 40);
-            avatar.TabIndex = 2;
-            avatar.TabStop = false;
-            // 
             // adminElectionDetail_Candidate
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -550,6 +551,7 @@
             Load += adminElectionDetail_Candidate_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)avatar).EndInit();
             panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
             samplePanel.ResumeLayout(false);
@@ -557,7 +559,6 @@
             ((System.ComponentModel.ISupportInitialize)sampleAvatar).EndInit();
             panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)avatar).EndInit();
             ResumeLayout(false);
         }
 

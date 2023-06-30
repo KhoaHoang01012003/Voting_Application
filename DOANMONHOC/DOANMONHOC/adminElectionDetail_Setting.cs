@@ -210,5 +210,13 @@ namespace DOANMONHOC
             var openForm = new adminElectionDetail_Candidate(_indexForm) { Data = Data };
             OpenFormAndCloseCurrent(openForm);
         }
+
+        private void avatar_Click(object sender, EventArgs e)
+        {
+            var form = new changeInfo_Admin(_indexForm);
+            form.Show();
+            _isBackButtonPressed = true;
+            this.Close();
+        }
     }
 }

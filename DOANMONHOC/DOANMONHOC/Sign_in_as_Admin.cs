@@ -70,6 +70,8 @@ namespace DOANMONHOC
             if (admin != null)
             {
                 Properties.Settings.Default.Username = username_admin.Text;
+                Properties.Settings.Default.avt = admin.AvtAdmin;
+                Properties.Settings.Default.Name = admin.AdminName;
                 Properties.Settings.Default.Save();
 
                 var openForm = new adminDashboard(indexForm);

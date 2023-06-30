@@ -56,6 +56,19 @@ namespace DOANMONHOC
         private async void list_candidate_Load(object sender, EventArgs e)
         {
             candidate = new FireSharp.FirebaseClient(config);
+
+            byte[] originalBytesAvt = Convert.FromBase64String(Properties.Settings.Default.avt.ToString());
+
+            // Tạo một đối tượng Image từ chuỗi byte gốc
+            Image imageAvt;
+            using (MemoryStream ms = new MemoryStream(originalBytesAvt))
+            {
+                imageAvt = Image.FromStream(ms);
+            }
+
+            avatar.Image = imageAvt.GetThumbnailImage(40, 40, null, IntPtr.Zero);
+            FullName.Text = Properties.Settings.Default.Name.ToString();
+
             await FetchCandidates();
             await FetchClasses();
 
@@ -82,7 +95,8 @@ namespace DOANMONHOC
 
                 if (this.IsHandleCreated)
                 {
-                    this.Invoke(new MethodInvoker(delegate {
+                    this.Invoke(new MethodInvoker(delegate
+                    {
                         samplePanel.Parent.Controls.Add(panel);
                         panel.BringToFront();
                     }));
@@ -103,27 +117,37 @@ namespace DOANMONHOC
             return panel;
         }
 
-        private Label CreateNameLabel(string name)
+        private TextBox CreateNameLabel(string name)
         {
-            Label nameLabel = new Label();
-            nameLabel.Text = name;
-            nameLabel.AutoSize = true;
-            nameLabel.Location = candidateName.Location;
-            nameLabel.Anchor = candidateName.Anchor;
-            return nameLabel;
+            TextBox namecdd = new TextBox();
+            namecdd.Location = candidateName.Location;
+            namecdd.BorderStyle = candidateName.BorderStyle;
+            namecdd.Font = candidateName.Font;
+            namecdd.Multiline = true;
+            namecdd.Size = candidateName.Size;
+            namecdd.Text = name;
+            namecdd.ReadOnly = true;
+            namecdd.BackColor = Color.White;
+            namecdd.TextAlign = HorizontalAlignment.Center;
+            return namecdd;
         }
 
-        private Label CreateClassLabel(Dictionary<string, CLASS> classes, string classId)
+        private TextBox CreateClassLabel(Dictionary<string, CLASS> classes, string classId)
         {
-            Label classLabel = new Label();
-            classLabel.AutoSize = true;
-            classLabel.Location = className.Location;
-            classLabel.Anchor = className.Anchor;
+            TextBox classcdd = new TextBox();
+            classcdd.Location = className.Location;
+            classcdd.BorderStyle = className.BorderStyle;
+            classcdd.Font = className.Font;
+            classcdd.Multiline = true;
+            classcdd.Size = className.Size;
+            classcdd.ReadOnly = true;
+            classcdd.BackColor = Color.White;
+            classcdd.TextAlign = HorizontalAlignment.Center;
             if (classes.ContainsKey(classId))
             {
-                classLabel.Text = classes[classId].ClassName;
+                classcdd.Text = classes[classId].ClassName;
             }
-            return classLabel;
+            return classcdd;
         }
 
         private Guna2Button CreateViewButton(CANDIDATE candidate)
@@ -208,6 +232,11 @@ namespace DOANMONHOC
             {
                 Application.ExitThread();
             }
+        }
+
+        private void avatar_Click(object sender, EventArgs e)
+        {
+            OpenNewForm( new changeInfo_Admin(indexForm) );
         }
     }
 }
