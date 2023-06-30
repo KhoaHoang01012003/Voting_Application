@@ -100,6 +100,7 @@
             this.verify_button.Size = new System.Drawing.Size(144, 50);
             this.verify_button.TabIndex = 4;
             this.verify_button.Text = "Xác nhận";
+            this.verify_button.Click += verify_button_Click;
             // 
             // guna2Button1
             // 
@@ -138,9 +139,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
+            this.Load += Verify_Load;
         }
 
+        
         #endregion
 
         private Label label1;

@@ -31,19 +31,11 @@ namespace DOANMONHOC
             tempvote = vt;
             client = new FireSharp.FirebaseClient(config);
             this.Candidate_name = Candidate_name;
-            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
             indexForm = parentForm;
             isBackButtonPressed = false;
         }
 
-        void FormClosed_Exit(object sender, FormClosedEventArgs e)
-        {
-            if (!isBackButtonPressed)
-            {
-                Application.ExitThread();
-            }
-        }
-
+   
         private async void verify_button_Click(object sender, EventArgs e)
         {
             PushResponse response = await client.PushTaskAsync("Votes/", tempvote);

@@ -23,6 +23,7 @@ namespace DOANMONHOC
         private void Success_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
+
         }
 
         private void Success_Load(object sender, EventArgs e)
