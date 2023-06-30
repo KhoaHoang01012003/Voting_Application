@@ -176,6 +176,88 @@ namespace DOANMONHOC
                 //Click vào, hiển thị chi tiết Candidate trong campaign
                 void panel_Click(object sender, EventArgs e)
                 {
+                    // 
+                    // sampleNumVotesLabel
+                    // 
+                    Label sampleNumVotesLabel = new Label();
+                    sampleNumVotesLabel.Location = new Point(825, 29);
+                    sampleNumVotesLabel.Name = "sampleNumVotesLabel";
+                    sampleNumVotesLabel.Size = new Size(138, 27);
+                    sampleNumVotesLabel.TabIndex = 3;
+                    // 
+                    // sampleClassLabel
+                    // 
+                    Label sampleClassLabel = new Label();
+                    sampleClassLabel.Location = new Point(387, 29);
+                    sampleClassLabel.Name = "sampleClassLabel";
+                    sampleClassLabel.Size = new Size(187, 27);
+                    sampleClassLabel.TabIndex = 2;
+                    // sampleNameLabel
+                    Label sampleNameLabel = new Label();
+                    sampleNameLabel.Location = new Point(37, 29);
+                    sampleNameLabel.Name = "sampleNameLabel";
+                    sampleNameLabel.Size = new Size(273, 24);
+                    sampleNameLabel.TabIndex = 1;
+                    //Create sampleRow
+                    Guna2Panel sampleRow = new Guna2Panel();
+                    sampleRow.AutoScroll = true;
+                    sampleRow.BorderColor = Color.Black;
+                    sampleRow.Controls.Add(sampleNumVotesLabel);
+                    sampleRow.Controls.Add(sampleClassLabel);
+                    sampleRow.Controls.Add(sampleNameLabel);
+                    sampleRow.CustomBorderColor = Color.FromArgb(189, 189, 189);
+                    sampleRow.CustomBorderThickness = new Padding(0, 0, 0, 1);
+                    sampleRow.Location = new Point(24, 92);
+                    sampleRow.Name = "sampleRow";
+                    sampleRow.Size = new Size(1012, 82);
+                    sampleRow.TabIndex = 0;
+                    // 
+                    // label9
+                    // 
+                    Label label9 = new Label();
+                    label9.AutoSize = true;
+                    label9.Location = new Point(825, 28);
+                    label9.Name = "label9";
+                    label9.Size = new Size(96, 20);
+                    label9.TabIndex = 3;
+                    label9.Text = "Số phiếu bầu";
+                    // 
+                    // label10
+                    // 
+                    Label label10 = new Label();
+                    label10.AutoSize = true;
+                    label10.Location = new Point(387, 28);
+                    label10.Name = "label10";
+                    label10.Size = new Size(34, 20);
+                    label10.TabIndex = 1;
+                    label10.Text = "Lớp";
+                    // 
+                    // label11
+                    // 
+                    Label label11 = new Label();
+                    label11.AutoSize = true;
+                    label11.Location = new Point(37, 28);
+                    label11.Name = "label11";
+                    label11.Size = new Size(88, 20);
+                    label11.TabIndex = 0;
+                    label11.Text = "Ứng cử viên";
+
+                    Guna2Panel guna2Panel2 = new Guna2Panel();
+                    guna2Panel2.BackColor = Color.FromArgb(37, 83, 140);
+                    guna2Panel2.Controls.Add(label9);
+                    guna2Panel2.Controls.Add(label10);
+                    guna2Panel2.Controls.Add(label11);
+                    guna2Panel2.ForeColor = Color.White;
+                    guna2Panel2.Location = new Point(24, 10);
+                    guna2Panel2.Name = "guna2Panel2";
+                    guna2Panel2.Size = new Size(1015, 82);
+                    guna2Panel2.TabIndex = 3;
+
+                    guna2ShadowPanel6.Controls.Clear();
+
+                    guna2ShadowPanel6.Controls.Add(sampleRow);
+                    guna2ShadowPanel6.Controls.Add(guna2Panel2);
+
                     name_of_action.Text = "Tên: " + campaign.CampaignName;
                     description.Text = campaign.Description;
                     int cntUser = 0;

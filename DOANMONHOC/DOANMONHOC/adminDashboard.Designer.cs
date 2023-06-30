@@ -37,8 +37,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminDashboard));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -47,15 +47,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -81,7 +79,6 @@
             sampleNumVotesLabel = new Label();
             sampleClassLabel = new Label();
             sampleNameLabel = new Label();
-            guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             label4 = new Label();
             label10 = new Label();
@@ -282,10 +279,10 @@
             guna2Panel1.Controls.Add(totalAction);
             guna2Panel1.Controls.Add(textBox1);
             guna2Panel1.Controls.Add(label1);
-            guna2Panel1.CustomizableEdges = customizableEdges23;
+            guna2Panel1.CustomizableEdges = customizableEdges21;
             guna2Panel1.Location = new Point(272, 80);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
             guna2Panel1.Size = new Size(1150, 897);
             guna2Panel1.TabIndex = 43;
             // 
@@ -441,7 +438,6 @@
             guna2ShadowPanel6.AutoScroll = true;
             guna2ShadowPanel6.BackColor = Color.Transparent;
             guna2ShadowPanel6.Controls.Add(sampleRow);
-            guna2ShadowPanel6.Controls.Add(guna2Panel3);
             guna2ShadowPanel6.Controls.Add(guna2Panel2);
             guna2ShadowPanel6.FillColor = Color.White;
             guna2ShadowPanel6.Location = new Point(17, 53);
@@ -461,7 +457,7 @@
             sampleRow.CustomBorderColor = Color.FromArgb(189, 189, 189);
             sampleRow.CustomBorderThickness = new Padding(0, 0, 0, 1);
             sampleRow.CustomizableEdges = customizableEdges11;
-            sampleRow.Location = new Point(24, 92);
+            sampleRow.Location = new Point(24, 98);
             sampleRow.Name = "sampleRow";
             sampleRow.ShadowDecoration.CustomizableEdges = customizableEdges12;
             sampleRow.Size = new Size(1012, 82);
@@ -488,28 +484,17 @@
             sampleNameLabel.Size = new Size(273, 24);
             sampleNameLabel.TabIndex = 1;
             // 
-            // guna2Panel3
-            // 
-            guna2Panel3.AutoScroll = true;
-            guna2Panel3.AutoScrollMinSize = new Size(0, 100);
-            guna2Panel3.CustomizableEdges = customizableEdges13;
-            guna2Panel3.Location = new Point(24, 150);
-            guna2Panel3.Name = "guna2Panel3";
-            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2Panel3.Size = new Size(1015, 154);
-            guna2Panel3.TabIndex = 4;
-            // 
             // guna2Panel2
             // 
             guna2Panel2.BackColor = Color.FromArgb(37, 83, 140);
             guna2Panel2.Controls.Add(label4);
             guna2Panel2.Controls.Add(label10);
             guna2Panel2.Controls.Add(label11);
-            guna2Panel2.CustomizableEdges = customizableEdges15;
+            guna2Panel2.CustomizableEdges = customizableEdges13;
             guna2Panel2.ForeColor = Color.White;
             guna2Panel2.Location = new Point(24, 10);
             guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2Panel2.Size = new Size(1015, 82);
             guna2Panel2.TabIndex = 3;
             // 
@@ -634,10 +619,10 @@
             action.Controls.Add(status);
             action.Controls.Add(action_starttime);
             action.Controls.Add(action_name);
-            action.CustomizableEdges = customizableEdges18;
+            action.CustomizableEdges = customizableEdges16;
             action.Location = new Point(17, 124);
             action.Name = "action";
-            action.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            action.ShadowDecoration.CustomizableEdges = customizableEdges17;
             action.Size = new Size(578, 41);
             action.TabIndex = 26;
             // 
@@ -647,7 +632,7 @@
             status.Name = "status";
             status.PolygonSkip = 1;
             status.Rotate = 0F;
-            status.RoundedEdges = customizableEdges17;
+            status.RoundedEdges = customizableEdges15;
             status.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse;
             status.Size = new Size(20, 20);
             status.TabIndex = 1;
@@ -688,7 +673,7 @@
             happening.ImageRotate = 0F;
             happening.Location = new Point(55, 85);
             happening.Name = "happening";
-            happening.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            happening.ShadowDecoration.CustomizableEdges = customizableEdges18;
             happening.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             happening.Size = new Size(25, 25);
             happening.TabIndex = 26;
@@ -710,7 +695,7 @@
             waiting.ImageRotate = 0F;
             waiting.Location = new Point(278, 85);
             waiting.Name = "waiting";
-            waiting.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            waiting.ShadowDecoration.CustomizableEdges = customizableEdges19;
             waiting.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             waiting.Size = new Size(25, 25);
             waiting.TabIndex = 24;
@@ -743,7 +728,7 @@
             end.ImageRotate = 0F;
             end.Location = new Point(467, 85);
             end.Name = "end";
-            end.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            end.ShadowDecoration.CustomizableEdges = customizableEdges20;
             end.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             end.Size = new Size(25, 25);
             end.TabIndex = 21;
@@ -790,7 +775,7 @@
             avatar.ImageRotate = 0F;
             avatar.Location = new Point(850, 20);
             avatar.Name = "avatar";
-            avatar.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            avatar.ShadowDecoration.CustomizableEdges = customizableEdges23;
             avatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             avatar.Size = new Size(40, 40);
             avatar.TabIndex = 4;
@@ -906,7 +891,6 @@
         private Label sampleNumVotesLabel;
         private Label sampleClassLabel;
         private Label sampleNameLabel;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Label label4;
         private Label label10;
