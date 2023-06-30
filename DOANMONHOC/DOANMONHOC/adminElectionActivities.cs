@@ -64,7 +64,7 @@ namespace DOANMONHOC
             // Đưa các tác vụ phức tạp vào một task để thực hiện song song
             var loadRowsTask = Task.Run(() =>
             {
-                DateTime currentTime = DateTime.Now;
+                DateTime currentTime = DateTime.Now.ToUniversalTime();
 
                 var sortedCampaigns = campaigns
                     .OrderByDescending(c => c.Value.StartTime < currentTime && c.Value.EndTime > currentTime)

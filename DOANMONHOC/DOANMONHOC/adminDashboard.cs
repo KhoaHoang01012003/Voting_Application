@@ -101,11 +101,11 @@ namespace DOANMONHOC
             int y = action.Location.Y;
             List<CAMPAIGN> sortedCampaignList = campaignList.OrderBy(campaign =>
             {
-                if (DateTime.Now >= campaign.StartTime && DateTime.Now <= campaign.EndTime)
+                if (DateTime.Now.ToUniversalTime() >= campaign.StartTime && DateTime.Now.ToUniversalTime() <= campaign.EndTime)
                 {
                     return 0;
                 }
-                else if (DateTime.Now < campaign.StartTime)
+                else if (DateTime.Now.ToUniversalTime() < campaign.StartTime)
                 {
                     return 1;
                 }
@@ -152,12 +152,12 @@ namespace DOANMONHOC
                 stt.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse;
                 stt.Size = status.Size;
                 stt.RoundedRadius = 20;
-                if (DateTime.Compare(DateTime.Now, campaign.StartTime) >= 0 && DateTime.Compare(DateTime.Now, campaign.EndTime) <= 0)
+                if (DateTime.Compare(DateTime.Now.ToUniversalTime(), campaign.StartTime) >= 0 && DateTime.Compare(DateTime.Now.ToUniversalTime(), campaign.EndTime) <= 0)
                 {
                     stt.FillColor = happening.FillColor;
                     stt.BorderColor = happening.FillColor;
                 }
-                else if (DateTime.Compare(DateTime.Now, campaign.StartTime) <= 0)
+                else if (DateTime.Compare(DateTime.Now.ToUniversalTime(), campaign.StartTime) <= 0)
                 {
                     stt.FillColor = waiting.FillColor;
                     stt.BorderColor = waiting.FillColor;
