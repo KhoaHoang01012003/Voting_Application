@@ -59,8 +59,10 @@ namespace DOANMONHOC
             FullName.Text = Properties.Settings.Default.Name.ToString();
 
             campaignName.Text = Data.CampaignName;
-            startTime.Text = Data.StartTime.ToString();
-            endTime.Text = Data.EndTime.ToString();
+            var tmp = Data.StartTime;
+            startTime.Text = tmp.ToLocalTime().ToString();
+            tmp = Data.EndTime;
+            endTime.Text = tmp.ToLocalTime().ToString();
             cntCandidates.Text = Data.Candidate_ID.Count().ToString();
             category.Text = Data.Category;
         }
