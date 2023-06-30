@@ -231,7 +231,7 @@ namespace DOANMONHOC
                                     var openform = new Info_Candidate(candidate);
                                     openform.ShowDialog();
                                 }
-                                //add
+                                //add panel
                                 this.Invoke(new Action(() =>
                                 {
                                     panelinfo.Controls.Add(namecdd);

@@ -48,7 +48,7 @@ namespace DOANMONHOC
         {
             byte[] originalBytesAvt = Convert.FromBase64String(Properties.Settings.Default.avt.ToString());
 
-            // Tạo một đối tượng Image từ chuỗi byte gốc
+            // Tạo một đối tượng Image từ chuỗi byte
             Image imageAvt;
             using (MemoryStream ms = new MemoryStream(originalBytesAvt))
             {
