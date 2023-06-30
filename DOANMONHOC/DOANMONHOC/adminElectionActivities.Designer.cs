@@ -254,6 +254,7 @@
             this.sampleRow.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.sampleRow.Size = new System.Drawing.Size(990, 82);
             this.sampleRow.TabIndex = 0;
+            this.sampleRow.Visible = false;
             // 
             // sampleStatusPicture
             // 
@@ -315,7 +316,6 @@
             this.guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.guna2Panel2.Size = new System.Drawing.Size(1015, 82);
             this.guna2Panel2.TabIndex = 1;
-            this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
             // 
             // label8
             // 
@@ -434,7 +434,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(272, 977);
             this.panel1.TabIndex = 5;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // guna2Button5
             // 
@@ -540,7 +539,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "adminElectionActivities";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "adminElectionActivities";
+            this.Text = "UIT Voting Application";
             this.Load += new System.EventHandler(this.adminElectionActivities_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();

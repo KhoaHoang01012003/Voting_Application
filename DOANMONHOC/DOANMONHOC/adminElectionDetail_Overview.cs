@@ -17,27 +17,27 @@ namespace DOANMONHOC
 {
     public partial class adminElectionDetail_Overview : Form
     {
-        FirebaseConfig config = new FirebaseConfig
+        private readonly FirebaseConfig _config = new()
         {
             AuthSecret = "FoBk4yXguU4VoMkIe5M7M2ylsGymwUsld8cS2Td1",
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
-        IFirebaseClient client;
-        private Form indexForm;
-        private bool isBackButtonPressed;
+        private IFirebaseClient _client;
+        private readonly Form _indexForm;
+        private bool _isBackButtonPressed;
         public CAMPAIGN Data { get; set; }
 
         public adminElectionDetail_Overview(Form parentForm)
         {
             InitializeComponent();
-            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
-            indexForm = parentForm;
-            isBackButtonPressed = false;
+            FormClosed += FormClosed_Exit;
+            _indexForm = parentForm;
+            _isBackButtonPressed = false;
         }
 
-        void FormClosed_Exit(object sender, FormClosedEventArgs e)
+        private void FormClosed_Exit(object sender, FormClosedEventArgs e)
         {
-            if (!isBackButtonPressed)
+            if (!_isBackButtonPressed)
             {
                 Application.ExitThread();
             }
@@ -45,7 +45,7 @@ namespace DOANMONHOC
 
         private async void CreateVote2_Load(object sender, EventArgs e)
         {
-            client = new FireSharp.FirebaseClient(config);
+            _client = new FireSharp.FirebaseClient(_config);
 
             campaignName.Text = Data.CampaignName;
             startTime.Text = Data.StartTime.ToString();
@@ -54,67 +54,55 @@ namespace DOANMONHOC
             category.Text = Data.Category;
         }
 
-        private void guna2Button4_Click(object sender, EventArgs e)
+        private void OpenFormAndCloseCurrent(Form openForm)
         {
-
+            openForm.Show();
+            _isBackButtonPressed = true;
+            Close();
         }
 
-        private async void guna2Button1_Click(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-            var openForm = new adminDashboard(indexForm);
-            openForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
+            var openForm = new adminDashboard(_indexForm);
+            OpenFormAndCloseCurrent(openForm);
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-            indexForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
+            _indexForm.Show();
+            _isBackButtonPressed = true;
+            Close();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionActivities(indexForm);
-            openForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
+            var openForm = new adminElectionActivities(_indexForm);
+            OpenFormAndCloseCurrent(openForm);
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            var openForm = new list_candidate(indexForm);
-            openForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
+            var openForm = new list_candidate(_indexForm);
+            OpenFormAndCloseCurrent(openForm);
         }
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionDetail_Setting(indexForm);
-            openForm.Data = Data;
-            openForm.Show();
-            isBackButtonPressed = true;
-            this.Close();
+            var openForm = new adminElectionDetail_Setting(_indexForm) { Data = Data };
+            OpenFormAndCloseCurrent(openForm);
         }
 
         private void guna2Button8_Click(object sender, EventArgs e)
         {
-            var open = new adminElectionDetail_Result(indexForm);
-            open.Data = Data;
-            open.Show();
-            isBackButtonPressed = true;
-            this.Close();
+            var openForm = new adminElectionDetail_Result(_indexForm) { Data = Data };
+            OpenFormAndCloseCurrent(openForm);
         }
 
         private void guna2Button9_Click(object sender, EventArgs e)
         {
-            var open = new adminElectionDetail_Candidate(indexForm);
-            open.Data = Data;
-            open.Show();
-            isBackButtonPressed = true;
-            this.Close();
+            var openForm = new adminElectionDetail_Candidate(_indexForm) { Data = Data };
+            OpenFormAndCloseCurrent(openForm);
         }
     }
+
 }

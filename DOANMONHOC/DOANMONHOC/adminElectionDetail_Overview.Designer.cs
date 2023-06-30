@@ -288,7 +288,6 @@
             this.guna2Button4.Size = new System.Drawing.Size(120, 35);
             this.guna2Button4.TabIndex = 24;
             this.guna2Button4.Text = "Tổng quan";
-            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // guna2Button9
             // 
@@ -559,7 +558,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "adminElectionDetail_Overview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CreateVote2";
+            this.Text = "UIT Voting Application";
             this.Load += new System.EventHandler(this.CreateVote2_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

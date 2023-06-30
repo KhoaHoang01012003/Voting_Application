@@ -17,26 +17,26 @@ namespace DOANMONHOC
 {
     public partial class adminElectionActivities : Form
     {
-        FirebaseConfig config = new FirebaseConfig
+        private readonly FirebaseConfig _config = new FirebaseConfig
         {
             AuthSecret = "FoBk4yXguU4VoMkIe5M7M2ylsGymwUsld8cS2Td1",
             BasePath = "https://votingapplication-2097e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
-        IFirebaseClient client;
-        private Form indexForm;
-        private bool isBackButtonPressed;
+        private IFirebaseClient _client;
+        private readonly Form _indexForm;
+        private bool _isBackButtonPressed;
 
         public adminElectionActivities(Form parentForm)
         {
             InitializeComponent();
-            this.FormClosed += new FormClosedEventHandler(FormClosed_Exit);
-            indexForm = parentForm;
-            isBackButtonPressed = false;
+            this.FormClosed += FormClosed_Exit;
+            _indexForm = parentForm;
+            _isBackButtonPressed = false;
         }
 
         void FormClosed_Exit(object sender, FormClosedEventArgs e)
         {
-            if (!isBackButtonPressed)
+            if (!_isBackButtonPressed)
             {
                 Application.ExitThread();
             }
@@ -44,156 +44,180 @@ namespace DOANMONHOC
 
         private async void adminElectionActivities_Load(object sender, EventArgs e)
         {
-            client = new FireSharp.FirebaseClient(config);
+            _client = new FireSharp.FirebaseClient(_config);
 
-            FirebaseResponse titleCheckResponse = await client.GetTaskAsync("Campaigns/");
+            FirebaseResponse titleCheckResponse = await _client.GetTaskAsync("Campaigns/");
             JObject campaignsJson = JObject.Parse(titleCheckResponse.Body);
             var campaigns = campaignsJson.ToObject<Dictionary<string, CAMPAIGN>>();
 
-            DateTime currentTime = DateTime.Now;
-
-            var sortedCampaigns = campaigns
-    .OrderByDescending(c => c.Value.StartTime < currentTime && c.Value.EndTime > currentTime)
-    .ThenBy(c => c.Value.StartTime < currentTime && c.Value.EndTime < currentTime)
-    .ThenBy(c => c.Value.StartTime > currentTime && c.Value.EndTime > currentTime)
-    .ThenBy(c => c.Value.EndTime)
-    .ToDictionary(c => c.Key, c => c.Value);
-
-            int xOffset = sampleRow.Location.X;
-            int yOffset = sampleRow.Location.Y;
-
-            for (int i = 0; i < sortedCampaigns.Count; i++)
+            // Đưa các tác vụ phức tạp vào một task để thực hiện song song
+            var loadRowsTask = Task.Run(() =>
             {
-                CAMPAIGN campaign = sortedCampaigns.ElementAt(i).Value;
+                DateTime currentTime = DateTime.Now;
 
-                // Tạo Panel
-                Guna2Panel row = new Guna2Panel();
-                row.Size = sampleRow.Size;
-                row.CustomizableEdges = sampleRow.CustomizableEdges;
-                row.Location = new Point(xOffset, yOffset);
-                row.ShadowDecoration.CustomizableEdges = sampleRow.ShadowDecoration.CustomizableEdges;
-                row.BorderColor = sampleRow.BorderColor;
-                row.CustomBorderThickness = sampleRow.CustomBorderThickness;
-                row.CustomBorderColor = sampleRow.CustomBorderColor;
+                var sortedCampaigns = campaigns
+                    .OrderByDescending(c => c.Value.StartTime < currentTime && c.Value.EndTime > currentTime)
+                    .ThenBy(c => c.Value.StartTime < currentTime && c.Value.EndTime < currentTime)
+                    .ThenBy(c => c.Value.StartTime > currentTime && c.Value.EndTime > currentTime)
+                    .ThenBy(c => c.Value.EndTime)
+                    .ToDictionary(c => c.Key, c => c.Value);
 
-                // Tạo label name
-                Label nameLabel = new Label();
-                nameLabel.Text = campaign.CampaignName;
-                nameLabel.Location = sampleNameLabel.Location;
-                nameLabel.Size = sampleNameLabel.Size;
+                int yOffset = sampleRow.Location.Y;
 
-                // Tạo label start time
-                Label startTime = new Label();
-                startTime.Text = campaign.StartTime.ToString();
-                startTime.Location = sampleStartTimeLabel.Location;
-                startTime.Size = sampleStartTimeLabel.Size;
+                List<Guna2Panel> rows = new List<Guna2Panel>();
 
-                // Tạo label end time
-                Label endTime = new Label();
-                endTime.Text = campaign.EndTime.ToString();
-                endTime.Location = sampleEndTimeLabel.Location;
-                endTime.Size = sampleEndTimeLabel.Size;
-
-                // Tạo status color
-                Guna2CirclePictureBox sampleStatus = new Guna2CirclePictureBox();
-                //sampleStatus.FillColor = sampleStatusPicture.FillColor;
-                if (currentTime >= campaign.StartTime && currentTime <= campaign.EndTime)
+                foreach (var campaignEntry in sortedCampaigns)
                 {
-                    sampleStatus.FillColor = Color.Green;
-                }
-                else if (currentTime < campaign.StartTime)
-                {
-                    sampleStatus.FillColor = Color.Yellow;
-                }
-                else if (currentTime > campaign.EndTime)
-                {
-                    sampleStatus.FillColor = Color.Red;
-                }
-                sampleStatus.ImageRotate = sampleStatusPicture.ImageRotate;
-                sampleStatus.Location = sampleStatusPicture.Location;
-                sampleStatus.ShadowDecoration.CustomizableEdges = sampleStatusPicture.ShadowDecoration.CustomizableEdges;
-                sampleStatus.ShadowDecoration.Mode = sampleStatusPicture.ShadowDecoration.Mode;
-                sampleStatus.Size = sampleStatusPicture.Size;
+                    CAMPAIGN campaign = campaignEntry.Value;
 
-                // Tạo label view details
-                Label viewDetail = new Label();
-                viewDetail.ForeColor = sampleViewDetailLabel.ForeColor;
-                viewDetail.Text = sampleViewDetailLabel.Text;
-                viewDetail.Location = sampleViewDetailLabel.Location;
-                viewDetail.Size = sampleViewDetailLabel.Size;
-                viewDetail.Cursor = sampleViewDetailLabel.Cursor;
-                viewDetail.Click += add_Click;
+                    // Tạo một row mới và cập nhật thông tin của nó
+                    Guna2Panel row = CreateNewRow(campaign, currentTime, yOffset);
+                    rows.Add(row);
 
-                void add_Click(object sender, EventArgs e)
-                {
-                    var openForm = new adminElectionDetail_Overview(indexForm);
-                    isBackButtonPressed = true;
-                    openForm.Data = campaign;
-                    openForm.Show();
-                    this.Close();
+                    yOffset += sampleRow.Height;
                 }
 
-                row.Controls.Add(nameLabel);
-                row.Controls.Add(startTime);
-                row.Controls.Add(endTime);
-                row.Controls.Add(sampleStatus); 
-                row.Controls.Add(viewDetail);
+                return rows;
+            });
 
-                sampleRow.Parent.Controls.Add(row);
-                row.BringToFront();
+            // Chờ cho tất cả các row được tạo xong
+            var rows = await loadRowsTask;
 
-                yOffset += sampleRow.Height;
+            // Cập nhật giao diện một lần sau khi đã tạo xong tất cả các row
+            if (this.IsHandleCreated)
+            {
+                this.Invoke(new MethodInvoker(delegate
+                {
+                    foreach (var row in rows)
+                    {
+                        sampleRow.Parent.Controls.Add(row);
+                        row.BringToFront();
+                    }
+                }));
             }
+        }
+
+        private Guna2Panel CreateNewRow(CAMPAIGN campaign, DateTime currentTime, int yOffset)
+        {
+            int xOffset = sampleRow.Location.X;
+
+            Guna2Panel row = new Guna2Panel
+            {
+                Size = sampleRow.Size,
+                CustomizableEdges = sampleRow.CustomizableEdges,
+                Location = new Point(xOffset, yOffset),
+                ShadowDecoration =
+        {
+            CustomizableEdges = sampleRow.ShadowDecoration.CustomizableEdges,
+            Mode = sampleRow.ShadowDecoration.Mode
+        },
+                BorderColor = sampleRow.BorderColor,
+                CustomBorderThickness = sampleRow.CustomBorderThickness,
+                CustomBorderColor = sampleRow.CustomBorderColor
+            };
+
+            Label nameLabel = new Label
+            {
+                Text = campaign.CampaignName,
+                Location = sampleNameLabel.Location,
+                Size = sampleNameLabel.Size
+            };
+
+            Label startTimeLabel = new Label
+            {
+                Text = campaign.StartTime.ToString(),
+                Location = sampleStartTimeLabel.Location,
+                Size = sampleStartTimeLabel.Size
+            };
+
+            Label endTimeLabel = new Label
+            {
+                Text = campaign.EndTime.ToString(),
+                Location = sampleEndTimeLabel.Location,
+                Size = sampleEndTimeLabel.Size
+            };
+
+            Guna2CirclePictureBox statusPicture = new Guna2CirclePictureBox
+            {
+                FillColor = currentTime >= campaign.StartTime && currentTime <= campaign.EndTime ? Color.Green :
+                    currentTime < campaign.StartTime ? Color.Yellow : Color.Red,
+                ImageRotate = sampleStatusPicture.ImageRotate,
+                Location = sampleStatusPicture.Location,
+                ShadowDecoration =
+        {
+            CustomizableEdges = sampleStatusPicture.ShadowDecoration.CustomizableEdges,
+            Mode = sampleStatusPicture.ShadowDecoration.Mode
+        },
+                Size = sampleStatusPicture.Size
+            };
+
+            Label viewDetailLabel = new Label
+            {
+                ForeColor = sampleViewDetailLabel.ForeColor,
+                Text = sampleViewDetailLabel.Text,
+                Location = sampleViewDetailLabel.Location,
+                Size = sampleViewDetailLabel.Size,
+                Cursor = sampleViewDetailLabel.Cursor
+            };
+
+            void add_Click(object sender, EventArgs e)
+            {
+                var openForm = new adminElectionDetail_Overview(_indexForm)
+                {
+                    Data = campaign
+                };
+                _isBackButtonPressed = true;
+                openForm.Show();
+                this.Close();
+            }
+
+            viewDetailLabel.Click += add_Click;
+
+            row.Controls.Add(nameLabel);
+            row.Controls.Add(startTimeLabel);
+            row.Controls.Add(endTimeLabel);
+            row.Controls.Add(statusPicture);
+            row.Controls.Add(viewDetailLabel);
+
+            return row;
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            var openForm = new CreateVote1(indexForm);
+            var openForm = new CreateVote1(_indexForm);
             openForm.Show();
-            isBackButtonPressed = true;
+            _isBackButtonPressed = true;
             this.Close();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            var openForm = new adminDashboard(indexForm);
+            var openForm = new adminDashboard(_indexForm);
             openForm.Show();
-            isBackButtonPressed = true;
+            _isBackButtonPressed = true;
             this.Close();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            var openForm = new adminElectionActivities(indexForm);
+            var openForm = new adminElectionActivities(_indexForm);
             openForm.Show();
-            isBackButtonPressed = true;
+            _isBackButtonPressed = true;
             this.Close();
         }
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            var openForm = new list_candidate(indexForm);
+            var openForm = new list_candidate(_indexForm);
             openForm.Show();
-            isBackButtonPressed = true;
+            _isBackButtonPressed = true;
             this.Close();
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-            indexForm.Show();
-            isBackButtonPressed = true;
+            _indexForm.Show();
+            _isBackButtonPressed = true;
             this.Close();
         }
-
-        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        
     }
 }

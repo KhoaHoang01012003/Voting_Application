@@ -355,6 +355,7 @@
             this.samplePanel.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.samplePanel.Size = new System.Drawing.Size(315, 334);
             this.samplePanel.TabIndex = 35;
+            this.samplePanel.Visible = false;
             // 
             // viewButton
             // 
@@ -548,7 +549,7 @@
             this.Controls.Add(this.panel3);
             this.Name = "adminElectionDetail_Candidate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "adminElectionDetail_Candidate";
+            this.Text = "UIT Voting Application";
             this.Load += new System.EventHandler(this.adminElectionDetail_Candidate_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
