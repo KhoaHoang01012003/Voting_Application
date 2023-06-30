@@ -169,7 +169,7 @@
             this.Controls.Add(this.label1);
             this.Name = "VerifyEmail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "VerifyEmail";
+            this.Text = "UIT Voting Application";
             this.Load += new System.EventHandler(this.VerifyEmail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

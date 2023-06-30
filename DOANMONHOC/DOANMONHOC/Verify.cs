@@ -40,15 +40,21 @@ namespace DOANMONHOC
         {
             PushResponse response = await client.PushTaskAsync("Votes/", tempvote);
             
-            Form success = new Success(Candidate_name);
+            Form success = new Success(this, Candidate_name);
             success.Show();
             isBackButtonPressed = true;
-            this.Close();
+            this.Hide();
         }
 
         private void Verify_Load(object sender, EventArgs e)
         {
             label3.Text = Candidate_name.ToString();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            isBackButtonPressed = true;
+            this.Close();
         }
     }
 }

@@ -109,10 +109,13 @@ namespace DOANMONHOC
                     name.Location = new Point(77, 12);
                     name.Text = campaign.CampaignName;
 
-                    this.Invoke(new Action(() =>
+                    if (this.IsHandleCreated)
                     {
-                        panel.Controls.Add(name);
-                    }));
+                        this.Invoke(new Action(() =>
+                        {
+                            panel.Controls.Add(name);
+                        }));
+                    }
 
                     int x_infopanel = 1;
                     int y_infopanel = 57;
@@ -232,17 +235,20 @@ namespace DOANMONHOC
                                     openform.ShowDialog();
                                 }
                                 //add panel
-                                this.Invoke(new Action(() =>
+                                if (this.IsHandleCreated)
                                 {
-                                    panelinfo.Controls.Add(namecdd);
-                                    panelinfo.Controls.Add(picture);
-                                    panelinfo.Controls.Add(classcdd);
-                                    panelinfo.Controls.Add(votebutton);
-                                    panelinfo.Controls.Add(viewdetail);
+                                    this.Invoke(new Action(() =>
+                                    {
+                                        panelinfo.Controls.Add(namecdd);
+                                        panelinfo.Controls.Add(picture);
+                                        panelinfo.Controls.Add(classcdd);
+                                        panelinfo.Controls.Add(votebutton);
+                                        panelinfo.Controls.Add(viewdetail);
 
-                                    panelList_candidate.Add(panelinfo);
-                                    x_infopanel += 300;
-                                }));
+                                        panelList_candidate.Add(panelinfo);
+                                        x_infopanel += 300;
+                                    }));
+                                }
                                 break;
                             }
                         }
@@ -250,12 +256,13 @@ namespace DOANMONHOC
                     foreach (Panel in4panel in panelList_candidate)
                     {
                         panel.BringToFront();
-                        this.Invoke(new Action(() =>
+                        if (this.IsHandleCreated)
                         {
-                            panel.Controls.Add(in4panel);
-                        }));
-
-
+                            this.Invoke(new Action(() =>
+                            {
+                                panel.Controls.Add(in4panel);
+                            }));
+                        }
                     }
                     //ẩn những panel campaign vote rồi hoặc không được vote
 
@@ -279,10 +286,13 @@ namespace DOANMONHOC
                             }
                             if (flag)
                             {
-                                this.Invoke(new Action(() =>
+                                if (this.IsHandleCreated)
                                 {
-                                    Candidate_Detail.Parent.Controls.Add(panel);
-                                }));
+                                    this.Invoke(new Action(() =>
+                                    {
+                                        Candidate_Detail.Parent.Controls.Add(panel);
+                                    }));
+                                }
                                 yOffset += 400;
                             }
                         }

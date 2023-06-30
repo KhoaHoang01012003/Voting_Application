@@ -88,7 +88,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Success";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Success";
+            this.Text = "UIT Voting Application";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Success_FormClosed);
             this.Load += new System.EventHandler(this.Success_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -247,7 +247,7 @@ namespace DOANMONHOC
             this.Close();
         }
 
-        private async void guna2Button4_Click_1(object sender, EventArgs e)
+        private void guna2Button4_Click(object sender, EventArgs e)
         {
             if (Data.Candidate_ID.Length < 2)
             {

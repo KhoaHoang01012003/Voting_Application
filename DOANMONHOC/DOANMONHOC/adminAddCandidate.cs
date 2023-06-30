@@ -288,5 +288,12 @@ namespace DOANMONHOC
             // Hiển thị ảnh trong một PictureBox
             Picture.Image = thumbnailImage;
         }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            indexForm.Show();
+            isBackButtonPressed = true;
+            this.Close();
+        }
     }
 }

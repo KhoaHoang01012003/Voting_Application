@@ -25,6 +25,7 @@ namespace DOANMONHOC
         private IFirebaseClient _client;
         private readonly Form _indexForm;
         private bool _isBackButtonPressed;
+        Dictionary<string, CLASS> classes;
         public CAMPAIGN Data { get; set; }
 
         public adminElectionDetail_Setting(Form parentForm)
@@ -43,9 +44,16 @@ namespace DOANMONHOC
             }
         }
 
+        private async Task FetchClasses()
+        {
+            FirebaseResponse response = await _client.GetTaskAsync("Classes/");
+            classes = response.ResultAs<Dictionary<string, CLASS>>();
+        }
+
         private async void adminElectionDetail_Setting_Load(object sender, EventArgs e)
         {
             _client = new FireSharp.FirebaseClient(_config);
+            await FetchClasses();
 
             byte[] originalBytesAvt = Convert.FromBase64String(Properties.Settings.Default.avt.ToString());
 
@@ -59,8 +67,6 @@ namespace DOANMONHOC
             avatar.Image = imageAvt.GetThumbnailImage(40, 40, null, IntPtr.Zero);
             FullName.Text = Properties.Settings.Default.Name.ToString();
 
-            FirebaseResponse classResponse = await _client.GetTaskAsync("Classes").ConfigureAwait(false);
-            Dictionary<string, CLASS> classes = classResponse.ResultAs<Dictionary<string, CLASS>>();
 
             if (IsHandleCreated)
             {
@@ -76,8 +82,8 @@ namespace DOANMONHOC
             campaignName.Text = Data.CampaignName;
             campaignNameEdited.Text = Data.CampaignName;
             description.Text = Data.Description;
-            startTime.Value = Data.StartTime;
-            endTime.Value = Data.EndTime;
+            startTime.Value = Data.StartTime.ToLocalTime();
+            endTime.Value = Data.EndTime.ToLocalTime();
             category.Text = Data.Category;
             foreach (var classID in Data.Class_ID)
             {
@@ -171,8 +177,8 @@ namespace DOANMONHOC
 
             Data.CampaignName = campaignName.Text;
             Data.Description = description.Text;
-            Data.StartTime = startTime.Value;
-            Data.EndTime = endTime.Value;
+            Data.StartTime = startTime.Value.ToUniversalTime();
+            Data.EndTime = endTime.Value.ToUniversalTime();
             Data.Category = category.Text;
 
             await _client.PushTaskAsync("Campaigns/", Data);

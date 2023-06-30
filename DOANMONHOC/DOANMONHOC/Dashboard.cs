@@ -159,7 +159,8 @@ namespace DOANMONHOC
                     timeBox.Location = action_starttime.Location;
                     timeBox.Size = action_starttime.Size;
                     timeBox.ReadOnly = true;
-                    timeBox.Text = campaign.StartTime.ToString();
+                    var tmp = campaign.StartTime;
+                    timeBox.Text = tmp.ToLocalTime().ToString();
                     timeBox.BorderStyle = BorderStyle.None;
                     timeBox.BackColor = action_starttime.BackColor;
                     timeBox.Font = action_starttime.Font;
@@ -187,13 +188,16 @@ namespace DOANMONHOC
                         stt.BorderColor = end.FillColor;
                     }
                     // Thêm TextBox vào Panel
-                    this.Invoke(new Action(() =>
+                    if (this.IsHandleCreated)
                     {
-                        panel.Controls.Add(nameBox);
-                        panel.Controls.Add(timeBox);
-                        panel.Controls.Add(stt);
-                        panel.Click += panel_Click;
-                    }));
+                        this.Invoke(new Action(() =>
+                        {
+                            panel.Controls.Add(nameBox);
+                            panel.Controls.Add(timeBox);
+                            panel.Controls.Add(stt);
+                            panel.Click += panel_Click;
+                        }));
+                    }
 
                     //Click vào, hiển thị chi tiết Candidate trong campaign
                     void panel_Click(object sender, EventArgs e)
@@ -303,7 +307,7 @@ namespace DOANMONHOC
                                     break;
                                 }
                             }
-                            if (maxVote == item.Item3)
+                            if (maxVote == item.Item3 && maxVote != 0)
                             {
                                 //PictureBox AVT
                                 Guna2CirclePictureBox Avt_cdd_re = new Guna2CirclePictureBox();
@@ -423,12 +427,15 @@ namespace DOANMONHOC
                         totalVote.Text = cntVote.ToString();
                         cdd_in_cpn.Text = campaign.Candidate_ID.Length.ToString();
 
-                        this.Invoke(new Action(() =>
+                        if (this.IsHandleCreated)
                         {
-                            chart1.Parent.Controls.Add(chart_totalUser);
-                            chart1.Parent.Controls.Add(chart_totalVote);
-                            chart1.Parent.Controls.Add(chart_cdd);
-                        }));
+                            this.Invoke(new Action(() =>
+                            {
+                                chart1.Parent.Controls.Add(chart_totalUser);
+                                chart1.Parent.Controls.Add(chart_totalVote);
+                                chart1.Parent.Controls.Add(chart_cdd);
+                            }));
+                        }
                         chart_totalUser.BringToFront();
                         chart_totalVote.BringToFront();
                         chart_cdd.BringToFront();
@@ -441,12 +448,18 @@ namespace DOANMONHOC
                     y += 60;
                 }
                 // Thêm các Panel vào Form
-                foreach (Panel panel in panelList_action)
+                if (this.IsHandleCreated)
                 {
-                    this.Invoke(new Action(() =>
+                    foreach (Panel panel in panelList_action)
                     {
-                        totalAction.Controls.Add(panel);
-                    }));
+                        if (this.IsHandleCreated)
+                        {
+                            this.Invoke(new Action(() =>
+                            {
+                                totalAction.Controls.Add(panel);
+                            }));
+                        }
+                    }
                 }
             });
             

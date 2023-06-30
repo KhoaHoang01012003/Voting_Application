@@ -28,285 +28,289 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Info_Candidate));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            Picture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            Label_name = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            textBox1 = new TextBox();
-            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            Label_Slogan = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            Label_Name_Cadidate = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            Label_Class = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            Label_Age = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Picture).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).BeginInit();
-            SuspendLayout();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Picture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.Label_name = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.Label_Slogan = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.Label_Name_Cadidate = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.Label_Class = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.Label_Age = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
+            this.SuspendLayout();
             // 
             // guna2PictureBox1
             // 
-            guna2PictureBox1.BorderRadius = 500;
-            guna2PictureBox1.CustomizableEdges = customizableEdges10;
-            guna2PictureBox1.FillColor = Color.FromArgb(133, 205, 253);
-            guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(-30, -5);
-            guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            guna2PictureBox1.Size = new Size(1440, 709);
-            guna2PictureBox1.TabIndex = 0;
-            guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.BorderRadius = 500;
+            this.guna2PictureBox1.CustomizableEdges = customizableEdges1;
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(205)))), ((int)(((byte)(253)))));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(-30, -5);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(1440, 709);
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // guna2PictureBox2
             // 
-            guna2PictureBox2.CustomizableEdges = customizableEdges12;
-            guna2PictureBox2.FillColor = Color.FromArgb(133, 205, 253);
-            guna2PictureBox2.ImageRotate = 0F;
-            guna2PictureBox2.Location = new Point(-30, -16);
-            guna2PictureBox2.Name = "guna2PictureBox2";
-            guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            guna2PictureBox2.Size = new Size(488, 376);
-            guna2PictureBox2.TabIndex = 1;
-            guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.CustomizableEdges = customizableEdges3;
+            this.guna2PictureBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(205)))), ((int)(((byte)(253)))));
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(-30, -16);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.guna2PictureBox2.Size = new System.Drawing.Size(488, 376);
+            this.guna2PictureBox2.TabIndex = 1;
+            this.guna2PictureBox2.TabStop = false;
             // 
             // guna2PictureBox3
             // 
-            guna2PictureBox3.CustomizableEdges = customizableEdges14;
-            guna2PictureBox3.FillColor = Color.FromArgb(133, 205, 253);
-            guna2PictureBox3.ImageRotate = 0F;
-            guna2PictureBox3.Location = new Point(590, -5);
-            guna2PictureBox3.Name = "guna2PictureBox3";
-            guna2PictureBox3.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            guna2PictureBox3.Size = new Size(850, 709);
-            guna2PictureBox3.TabIndex = 2;
-            guna2PictureBox3.TabStop = false;
+            this.guna2PictureBox3.CustomizableEdges = customizableEdges5;
+            this.guna2PictureBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(205)))), ((int)(((byte)(253)))));
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(590, -5);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.guna2PictureBox3.Size = new System.Drawing.Size(850, 709);
+            this.guna2PictureBox3.TabIndex = 2;
+            this.guna2PictureBox3.TabStop = false;
             // 
             // Picture
             // 
-            Picture.BackColor = Color.Transparent;
-            Picture.FillColor = SystemColors.Window;
-            Picture.Image = (Image)resources.GetObject("Picture.Image");
-            Picture.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Horizontal;
-            Picture.ImageRotate = 0F;
-            Picture.Location = new Point(95, 471);
-            Picture.Name = "Picture";
-            Picture.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            Picture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            Picture.Size = new Size(250, 250);
-            Picture.TabIndex = 3;
-            Picture.TabStop = false;
-            Picture.UseTransparentBackground = true;
+            this.Picture.BackColor = System.Drawing.Color.Transparent;
+            this.Picture.FillColor = System.Drawing.SystemColors.Window;
+            this.Picture.Image = ((System.Drawing.Image)(resources.GetObject("Picture.Image")));
+            this.Picture.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Horizontal;
+            this.Picture.ImageRotate = 0F;
+            this.Picture.Location = new System.Drawing.Point(95, 471);
+            this.Picture.Name = "Picture";
+            this.Picture.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            this.Picture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Picture.Size = new System.Drawing.Size(250, 250);
+            this.Picture.TabIndex = 3;
+            this.Picture.TabStop = false;
+            this.Picture.UseTransparentBackground = true;
             // 
             // guna2CircleButton1
             // 
-            guna2CircleButton1.BackColor = Color.Transparent;
-            guna2CircleButton1.DisabledState.BorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2CircleButton1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2CircleButton1.ForeColor = Color.White;
-            guna2CircleButton1.Location = new Point(131, 239);
-            guna2CircleButton1.Name = "guna2CircleButton1";
-            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CircleButton1.Size = new Size(70, 70);
-            guna2CircleButton1.TabIndex = 4;
-            guna2CircleButton1.Text = "BACK";
-            guna2CircleButton1.UseTransparentBackground = true;
-            guna2CircleButton1.Click += guna2CircleButton1_Click;
+            this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.Location = new System.Drawing.Point(131, 239);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(70, 70);
+            this.guna2CircleButton1.TabIndex = 4;
+            this.guna2CircleButton1.Text = "BACK";
+            this.guna2CircleButton1.UseTransparentBackground = true;
+            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
             // guna2CirclePictureBox2
             // 
-            guna2CirclePictureBox2.BackColor = Color.Transparent;
-            guna2CirclePictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
-            guna2CirclePictureBox2.Image = (Image)resources.GetObject("guna2CirclePictureBox2.Image");
-            guna2CirclePictureBox2.ImageRotate = 0F;
-            guna2CirclePictureBox2.Location = new Point(58, 12);
-            guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            guna2CirclePictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CirclePictureBox2.Size = new Size(223, 209);
-            guna2CirclePictureBox2.TabIndex = 5;
-            guna2CirclePictureBox2.TabStop = false;
-            guna2CirclePictureBox2.UseTransparentBackground = true;
+            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2CirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox2.Image")));
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(58, 12);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(223, 209);
+            this.guna2CirclePictureBox2.TabIndex = 5;
+            this.guna2CirclePictureBox2.TabStop = false;
+            this.guna2CirclePictureBox2.UseTransparentBackground = true;
             // 
             // Label_name
             // 
-            Label_name.BackColor = Color.FromArgb(133, 205, 253);
-            Label_name.Font = new Font("Segoe UI", 77F, FontStyle.Bold, GraphicsUnit.Pixel);
-            Label_name.ForeColor = Color.White;
-            Label_name.Location = new Point(575, 177);
-            Label_name.Name = "Label_name";
-            Label_name.Size = new Size(690, 104);
-            Label_name.TabIndex = 6;
-            Label_name.Text = "ĐÀO VÕ HỮU HIỆP";
+            this.Label_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(205)))), ((int)(((byte)(253)))));
+            this.Label_name.Font = new System.Drawing.Font("Segoe UI", 77F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.Label_name.ForeColor = System.Drawing.Color.White;
+            this.Label_name.Location = new System.Drawing.Point(575, 177);
+            this.Label_name.Name = "Label_name";
+            this.Label_name.Size = new System.Drawing.Size(690, 104);
+            this.Label_name.TabIndex = 6;
+            this.Label_name.Text = "ĐÀO VÕ HỮU HIỆP";
             // 
             // guna2HtmlLabel1
             // 
-            guna2HtmlLabel1.BackColor = Color.FromArgb(133, 205, 253);
-            guna2HtmlLabel1.Font = new Font("Segoe UI", 60F, FontStyle.Bold, GraphicsUnit.Pixel);
-            guna2HtmlLabel1.ForeColor = Color.White;
-            guna2HtmlLabel1.Location = new Point(532, 88);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(747, 83);
-            guna2HtmlLabel1.TabIndex = 7;
-            guna2HtmlLabel1.Text = "THÔNG TIN ỨNG CỬ VIÊN";
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(205)))), ((int)(((byte)(253)))));
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(532, 88);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(747, 83);
+            this.guna2HtmlLabel1.TabIndex = 7;
+            this.guna2HtmlLabel1.Text = "THÔNG TIN ỨNG CỬ VIÊN";
+            this.guna2HtmlLabel1.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
             // 
             // guna2HtmlLabel3
             // 
-            guna2HtmlLabel3.BackColor = Color.White;
-            guna2HtmlLabel3.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Pixel);
-            guna2HtmlLabel3.ForeColor = Color.Black;
-            guna2HtmlLabel3.Location = new Point(73, 727);
-            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(318, 50);
-            guna2HtmlLabel3.TabIndex = 10;
-            guna2HtmlLabel3.Text = "Campaign promise";
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(73, 727);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(318, 50);
+            this.guna2HtmlLabel3.TabIndex = 10;
+            this.guna2HtmlLabel3.Text = "Campaign promise";
             // 
             // textBox1
             // 
-            textBox1.BackColor = SystemColors.ControlLightLight;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 21F, FontStyle.Regular, GraphicsUnit.Pixel);
-            textBox1.ForeColor = Color.MidnightBlue;
-            textBox1.Location = new Point(73, 792);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(387, 69);
-            textBox1.TabIndex = 14;
-            textBox1.Text = "Tôi là Hiệp và tôi thích đi Vũng Tàu.\nThank you!";
+            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.textBox1.Location = new System.Drawing.Point(73, 792);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(387, 69);
+            this.textBox1.TabIndex = 14;
+            this.textBox1.Text = "Tôi là Hiệp và tôi thích đi Vũng Tàu.\nThank you!";
             // 
             // guna2HtmlLabel4
             // 
-            guna2HtmlLabel4.BackColor = Color.FromArgb(133, 205, 253);
-            guna2HtmlLabel4.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Pixel);
-            guna2HtmlLabel4.ForeColor = Color.White;
-            guna2HtmlLabel4.Location = new Point(389, 477);
-            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(48, 37);
-            guna2HtmlLabel4.TabIndex = 15;
-            guna2HtmlLabel4.Text = "Tên:";
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(205)))), ((int)(((byte)(253)))));
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(389, 477);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(48, 37);
+            this.guna2HtmlLabel4.TabIndex = 15;
+            this.guna2HtmlLabel4.Text = "Tên:";
             // 
             // guna2HtmlLabel5
             // 
-            guna2HtmlLabel5.BackColor = Color.FromArgb(133, 205, 253);
-            guna2HtmlLabel5.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Pixel);
-            guna2HtmlLabel5.ForeColor = Color.White;
-            guna2HtmlLabel5.Location = new Point(389, 534);
-            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            guna2HtmlLabel5.Size = new Size(50, 37);
-            guna2HtmlLabel5.TabIndex = 16;
-            guna2HtmlLabel5.Text = "Lớp:";
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(205)))), ((int)(((byte)(253)))));
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(389, 534);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(50, 37);
+            this.guna2HtmlLabel5.TabIndex = 16;
+            this.guna2HtmlLabel5.Text = "Lớp:";
             // 
             // guna2HtmlLabel6
             // 
-            guna2HtmlLabel6.BackColor = Color.FromArgb(133, 205, 253);
-            guna2HtmlLabel6.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Pixel);
-            guna2HtmlLabel6.ForeColor = Color.White;
-            guna2HtmlLabel6.Location = new Point(389, 590);
-            guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            guna2HtmlLabel6.Size = new Size(56, 37);
-            guna2HtmlLabel6.TabIndex = 17;
-            guna2HtmlLabel6.Text = "Tuổi:";
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(205)))), ((int)(((byte)(253)))));
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(389, 590);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(56, 37);
+            this.guna2HtmlLabel6.TabIndex = 17;
+            this.guna2HtmlLabel6.Text = "Tuổi:";
             // 
             // Label_Slogan
             // 
-            Label_Slogan.BackColor = Color.FromArgb(133, 205, 253);
-            Label_Slogan.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Pixel);
-            Label_Slogan.ForeColor = Color.White;
-            Label_Slogan.Location = new Point(389, 642);
-            Label_Slogan.Name = "Label_Slogan";
-            Label_Slogan.Size = new Size(430, 37);
-            Label_Slogan.TabIndex = 18;
-            Label_Slogan.Text = "“ Vote for me and i will be your voice ”";
+            this.Label_Slogan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(205)))), ((int)(((byte)(253)))));
+            this.Label_Slogan.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Label_Slogan.ForeColor = System.Drawing.Color.White;
+            this.Label_Slogan.Location = new System.Drawing.Point(389, 642);
+            this.Label_Slogan.Name = "Label_Slogan";
+            this.Label_Slogan.Size = new System.Drawing.Size(430, 37);
+            this.Label_Slogan.TabIndex = 18;
+            this.Label_Slogan.Text = "“ Vote for me and i will be your voice ”";
             // 
             // Label_Name_Cadidate
             // 
-            Label_Name_Cadidate.BackColor = Color.FromArgb(133, 205, 253);
-            Label_Name_Cadidate.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Pixel);
-            Label_Name_Cadidate.ForeColor = Color.White;
-            Label_Name_Cadidate.Location = new Point(451, 477);
-            Label_Name_Cadidate.Name = "Label_Name_Cadidate";
-            Label_Name_Cadidate.Size = new Size(200, 37);
-            Label_Name_Cadidate.TabIndex = 19;
-            Label_Name_Cadidate.Text = "Đào Võ Hữu Hiệp";
+            this.Label_Name_Cadidate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(205)))), ((int)(((byte)(253)))));
+            this.Label_Name_Cadidate.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Label_Name_Cadidate.ForeColor = System.Drawing.Color.White;
+            this.Label_Name_Cadidate.Location = new System.Drawing.Point(451, 477);
+            this.Label_Name_Cadidate.Name = "Label_Name_Cadidate";
+            this.Label_Name_Cadidate.Size = new System.Drawing.Size(200, 37);
+            this.Label_Name_Cadidate.TabIndex = 19;
+            this.Label_Name_Cadidate.Text = "Đào Võ Hữu Hiệp";
             // 
             // Label_Class
             // 
-            Label_Class.BackColor = Color.FromArgb(133, 205, 253);
-            Label_Class.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Pixel);
-            Label_Class.ForeColor = Color.White;
-            Label_Class.Location = new Point(451, 534);
-            Label_Class.Name = "Label_Class";
-            Label_Class.Size = new Size(97, 37);
-            Label_Class.TabIndex = 20;
-            Label_Class.Text = "ATT2021";
+            this.Label_Class.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(205)))), ((int)(((byte)(253)))));
+            this.Label_Class.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Label_Class.ForeColor = System.Drawing.Color.White;
+            this.Label_Class.Location = new System.Drawing.Point(451, 534);
+            this.Label_Class.Name = "Label_Class";
+            this.Label_Class.Size = new System.Drawing.Size(97, 37);
+            this.Label_Class.TabIndex = 20;
+            this.Label_Class.Text = "ATT2021";
             // 
             // Label_Age
             // 
-            Label_Age.AccessibleDescription = "Label_age";
-            Label_Age.BackColor = Color.FromArgb(133, 205, 253);
-            Label_Age.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Pixel);
-            Label_Age.ForeColor = Color.White;
-            Label_Age.Location = new Point(451, 590);
-            Label_Age.Name = "Label_Age";
-            Label_Age.Size = new Size(29, 37);
-            Label_Age.TabIndex = 21;
-            Label_Age.Text = "20";
+            this.Label_Age.AccessibleDescription = "Label_age";
+            this.Label_Age.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(205)))), ((int)(((byte)(253)))));
+            this.Label_Age.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Label_Age.ForeColor = System.Drawing.Color.White;
+            this.Label_Age.Location = new System.Drawing.Point(451, 590);
+            this.Label_Age.Name = "Label_Age";
+            this.Label_Age.Size = new System.Drawing.Size(29, 37);
+            this.Label_Age.TabIndex = 21;
+            this.Label_Age.Text = "20";
             // 
             // Info_Candidate
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            AutoScroll = true;
-            ClientSize = new Size(1422, 903);
-            Controls.Add(Label_Age);
-            Controls.Add(Label_Class);
-            Controls.Add(Label_Name_Cadidate);
-            Controls.Add(Label_Slogan);
-            Controls.Add(guna2HtmlLabel6);
-            Controls.Add(guna2HtmlLabel5);
-            Controls.Add(guna2HtmlLabel4);
-            Controls.Add(textBox1);
-            Controls.Add(guna2HtmlLabel3);
-            Controls.Add(guna2HtmlLabel1);
-            Controls.Add(Label_name);
-            Controls.Add(guna2CirclePictureBox2);
-            Controls.Add(guna2CircleButton1);
-            Controls.Add(Picture);
-            Controls.Add(guna2PictureBox3);
-            Controls.Add(guna2PictureBox2);
-            Controls.Add(guna2PictureBox1);
-            Name = "Info_Candidate";
-            Text = "Info_Candidate";
-            Load += Info_Candidate_Load;
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Picture).EndInit();
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.ClientSize = new System.Drawing.Size(1422, 903);
+            this.Controls.Add(this.Label_Age);
+            this.Controls.Add(this.Label_Class);
+            this.Controls.Add(this.Label_Name_Cadidate);
+            this.Controls.Add(this.Label_Slogan);
+            this.Controls.Add(this.guna2HtmlLabel6);
+            this.Controls.Add(this.guna2HtmlLabel5);
+            this.Controls.Add(this.guna2HtmlLabel4);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.guna2HtmlLabel3);
+            this.Controls.Add(this.guna2HtmlLabel1);
+            this.Controls.Add(this.Label_name);
+            this.Controls.Add(this.guna2CirclePictureBox2);
+            this.Controls.Add(this.guna2CircleButton1);
+            this.Controls.Add(this.Picture);
+            this.Controls.Add(this.guna2PictureBox3);
+            this.Controls.Add(this.guna2PictureBox2);
+            this.Controls.Add(this.guna2PictureBox1);
+            this.Name = "Info_Candidate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "UIT Voting Application";
+            this.Load += new System.EventHandler(this.Info_Candidate_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

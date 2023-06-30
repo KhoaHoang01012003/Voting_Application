@@ -100,7 +100,7 @@
             this.verify_button.Size = new System.Drawing.Size(144, 50);
             this.verify_button.TabIndex = 4;
             this.verify_button.Text = "Xác nhận";
-            this.verify_button.Click += verify_button_Click;
+            this.verify_button.Click += new System.EventHandler(this.verify_button_Click);
             // 
             // guna2Button1
             // 
@@ -121,6 +121,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(144, 50);
             this.guna2Button1.TabIndex = 4;
             this.guna2Button1.Text = "Huỷ";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // Verify
             // 
@@ -135,11 +136,12 @@
             this.Controls.Add(this.label1);
             this.Name = "Verify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Verify";
+            this.Text = "UIT Voting Application";
+            this.Load += new System.EventHandler(this.Verify_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.Load += Verify_Load;
+
         }
 
         

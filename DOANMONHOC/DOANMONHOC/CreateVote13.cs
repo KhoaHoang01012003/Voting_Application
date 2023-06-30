@@ -59,8 +59,10 @@ namespace DOANMONHOC
 
             label2.Text = "Bầu " + Data.CampaignName;
             label4.Text = "Bầu " + Data.CampaignName;
-            label6.Text = Data.StartTime.ToString();
-            label9.Text = Data.EndTime.ToString();
+            var tmpStartTime = Data.StartTime;
+            label6.Text = tmpStartTime.ToLocalTime().ToString();
+            var tmpEndTime = Data.EndTime;
+            label9.Text = tmpEndTime.ToLocalTime().ToString();
             label11.Text = Data.Category;
             label13.Text = Data.Candidate_ID.Count().ToString();
         }

@@ -87,7 +87,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(272, 1055);
+            this.panel1.Size = new System.Drawing.Size(272, 977);
             this.panel1.TabIndex = 1;
             // 
             // guna2Button5
@@ -194,6 +194,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.guna2CirclePictureBox2);
@@ -208,7 +209,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(1044, 28);
+            this.label7.Location = new System.Drawing.Point(900, 30);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 20);
             this.label7.TabIndex = 1;
@@ -229,7 +230,7 @@
             // Avatar
             // 
             this.Avatar.ImageRotate = 0F;
-            this.Avatar.Location = new System.Drawing.Point(976, 24);
+            this.Avatar.Location = new System.Drawing.Point(850, 20);
             this.Avatar.Name = "Avatar";
             this.Avatar.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.Avatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -272,6 +273,7 @@
             this.Candidate_Detail.ShadowColor = System.Drawing.Color.Black;
             this.Candidate_Detail.Size = new System.Drawing.Size(1089, 360);
             this.Candidate_Detail.TabIndex = 7;
+            this.Candidate_Detail.Visible = false;
             // 
             // campaign_name
             // 
@@ -386,8 +388,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(20, 20);
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1422, 1055);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.ClientSize = new System.Drawing.Size(1422, 977);
             this.Controls.Add(this.Candidate_Detail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -395,7 +397,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "vote_view_candidate_details";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "vote_view_candidate_details";
+            this.Text = "UIT Voting Application";
             this.Load += new System.EventHandler(this.vote_view_candidate_details_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

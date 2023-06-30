@@ -437,7 +437,7 @@
             // 
             this.FullName.AutoSize = true;
             this.FullName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FullName.Location = new System.Drawing.Point(951, 31);
+            this.FullName.Location = new System.Drawing.Point(900, 30);
             this.FullName.Name = "FullName";
             this.FullName.Size = new System.Drawing.Size(51, 20);
             this.FullName.TabIndex = 1;
@@ -448,7 +448,7 @@
             // 
             this.avatar.Image = global::DOANMONHOC.Properties.Resources.admin_img__Custom___2_;
             this.avatar.ImageRotate = 0F;
-            this.avatar.Location = new System.Drawing.Point(893, 24);
+            this.avatar.Location = new System.Drawing.Point(850, 20);
             this.avatar.Name = "avatar";
             this.avatar.ShadowDecoration.CustomizableEdges = customizableEdges24;
             this.avatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -535,7 +535,7 @@
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Name = "changeInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "change_user_info";
+            this.Text = "UIT Voting Application";
             this.Load += new System.EventHandler(this.changeInfo_Load);
             this.guna2ShadowPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

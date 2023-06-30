@@ -13,17 +13,18 @@ namespace DOANMONHOC
     public partial class Success : Form
     {
         string Candidate_name;
+        private Form indexForm;
 
-        public Success(String Candidate_name)
+        public Success(Form parentForm, String Candidate_name)
         {
             InitializeComponent();
             this.Candidate_name = Candidate_name;
+            indexForm = parentForm;
         }
 
         private void Success_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Close();
-
+            indexForm.Close();
         }
 
         private void Success_Load(object sender, EventArgs e)

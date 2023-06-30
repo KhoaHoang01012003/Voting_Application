@@ -133,16 +133,19 @@ namespace DOANMONHOC
                 Location = sampleNameLabel.Location,
                 Size = sampleNameLabel.Size
             };
+
+            var tmp = campaign.StartTime;
             Label startTimeLabel = new Label
             {
-                Text = campaign.StartTime.ToString(),
+                Text = tmp.ToLocalTime().ToString(),
                 Location = sampleStartTimeLabel.Location,
                 Size = sampleStartTimeLabel.Size
             };
 
+            tmp = campaign.EndTime;
             Label endTimeLabel = new Label
             {
-                Text = campaign.EndTime.ToString(),
+                Text = tmp.ToLocalTime().ToString(),
                 Location = sampleEndTimeLabel.Location,
                 Size = sampleEndTimeLabel.Size
             };

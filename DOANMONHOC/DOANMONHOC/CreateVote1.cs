@@ -121,18 +121,7 @@ namespace DOANMONHOC
             };
         }
 
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -200,8 +189,8 @@ namespace DOANMONHOC
                 Campaint_ID = campaigns.Count(),
                 Description = description.Text,
                 CampaignName = campaignName.Text,
-                StartTime = startTime.Value,
-                EndTime = endTime.Value,
+                StartTime = startTime.Value.ToUniversalTime(),
+                EndTime = endTime.Value.ToUniversalTime(),
                 Candidate_ID = new int[] { },
                 Class_ID = classIdArray,
                 Category = category.Text,

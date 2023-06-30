@@ -143,9 +143,13 @@ namespace DOANMONHOC
             classcdd.ReadOnly = true;
             classcdd.BackColor = Color.White;
             classcdd.TextAlign = HorizontalAlignment.Center;
-            if (classes.ContainsKey(classId))
+            foreach (var objClass in classes)
             {
-                classcdd.Text = classes[classId].ClassName;
+                if (classId == objClass.Value.Class_ID.ToString())
+                {
+                    classcdd.Text = objClass.Value.ClassName;
+                    break;
+                }
             }
             return classcdd;
         }
