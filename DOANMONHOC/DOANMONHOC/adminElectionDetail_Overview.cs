@@ -46,6 +46,17 @@ namespace DOANMONHOC
         private async void CreateVote2_Load(object sender, EventArgs e)
         {
             _client = new FireSharp.FirebaseClient(_config);
+            byte[] originalBytesAvt = Convert.FromBase64String(Properties.Settings.Default.avt.ToString());
+
+            // Tạo một đối tượng Image từ chuỗi byte gốc
+            Image imageAvt;
+            using (MemoryStream ms = new MemoryStream(originalBytesAvt))
+            {
+                imageAvt = Image.FromStream(ms);
+            }
+
+            avatar.Image = imageAvt.GetThumbnailImage(40, 40, null, IntPtr.Zero);
+            FullName.Text = Properties.Settings.Default.Name.ToString();
 
             campaignName.Text = Data.CampaignName;
             startTime.Text = Data.StartTime.ToString();

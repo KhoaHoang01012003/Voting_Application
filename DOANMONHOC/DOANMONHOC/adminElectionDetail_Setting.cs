@@ -47,10 +47,42 @@ namespace DOANMONHOC
         {
             _client = new FireSharp.FirebaseClient(_config);
 
+            byte[] originalBytesAvt = Convert.FromBase64String(Properties.Settings.Default.avt.ToString());
+
+            // Tạo một đối tượng Image từ chuỗi byte gốc
+            Image imageAvt;
+            using (MemoryStream ms = new MemoryStream(originalBytesAvt))
+            {
+                imageAvt = Image.FromStream(ms);
+            }
+
+            avatar.Image = imageAvt.GetThumbnailImage(40, 40, null, IntPtr.Zero);
+            FullName.Text = Properties.Settings.Default.Name.ToString();
+
             FirebaseResponse classResponse = await _client.GetTaskAsync("Classes").ConfigureAwait(false);
             Dictionary<string, CLASS> classes = classResponse.ResultAs<Dictionary<string, CLASS>>();
 
             if (IsHandleCreated)
+            {
+                Invoke((MethodInvoker)delegate
+                {
+                    UpdateUIWithClassData(classes);
+                });
+            }
+        }
+
+        private void UpdateUIWithClassData(Dictionary<string, CLASS> classes)
+        {
+            campaignName.Text = Data.CampaignName;
+            campaignNameEdited.Text = Data.CampaignName;
+            description.Text = Data.Description;
+            startTime.Value = Data.StartTime;
+            endTime.Value = Data.EndTime;
+            category.Text = Data.Category;
+            foreach (var classID in Data.Class_ID)
+            {
+                foreach (CLASS classObj in classes.Values)
+                {
             {
                 Invoke((MethodInvoker)delegate
                 {

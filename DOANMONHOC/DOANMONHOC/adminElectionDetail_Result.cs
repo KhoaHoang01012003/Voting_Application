@@ -46,6 +46,18 @@ namespace DOANMONHOC
         {
             _client = new FireSharp.FirebaseClient(_config);
 
+            byte[] originalBytesAvt = Convert.FromBase64String(Properties.Settings.Default.avt.ToString());
+
+            // Tạo một đối tượng Image từ chuỗi byte gốc
+            Image imageAvt;
+            using (MemoryStream ms = new MemoryStream(originalBytesAvt))
+            {
+                imageAvt = Image.FromStream(ms);
+            }
+
+            avatar.Image = imageAvt.GetThumbnailImage(40, 40, null, IntPtr.Zero);
+            FullName.Text = Properties.Settings.Default.Name.ToString();
+
             var task1 = Task.Run(() => _client.GetTaskAsync("Users/"));
             var task2 = Task.Run(() => _client.GetTaskAsync("Votes/"));
             var task3 = Task.Run(() => _client.GetTaskAsync("Candidates/"));

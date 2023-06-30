@@ -77,10 +77,19 @@ namespace DOANMONHOC
         private async void adminAddCandidate_Load(object sender, EventArgs e)
         {
             candidate = new FireSharp.FirebaseClient(config);
-            if (candidate != null)
+
+            byte[] originalBytesAvt = Convert.FromBase64String(Properties.Settings.Default.avt.ToString());
+
+            // Tạo một đối tượng Image từ chuỗi byte gốc
+            Image imageAvt;
+            using (MemoryStream ms = new MemoryStream(originalBytesAvt))
             {
-                //MessageBox.Show("Connection is established");
+                imageAvt = Image.FromStream(ms);
             }
+
+            avatar.Image = imageAvt.GetThumbnailImage(40, 40, null, IntPtr.Zero);
+            FullName.Text = Properties.Settings.Default.Name.ToString();
+
             if (tempCandidate != null)
             {
                 byte[] originalBytes = Convert.FromBase64String(tempCandidate.AvtCandidate);
@@ -115,7 +124,8 @@ namespace DOANMONHOC
                 }
                 flag = true;
             }
-            else{
+            else
+            {
                 ClearnImage_Click(sender, e);
             }
         }

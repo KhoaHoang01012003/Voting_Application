@@ -117,7 +117,7 @@
             // 
             FullName.AutoSize = true;
             FullName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            FullName.Location = new Point(907, 31);
+            FullName.Location = new Point(900, 30);
             FullName.Name = "FullName";
             FullName.Size = new Size(51, 20);
             FullName.TabIndex = 1;
@@ -128,7 +128,7 @@
             // 
             avatar.Image = Properties.Resources.admin_img__Custom___2_;
             avatar.ImageRotate = 0F;
-            avatar.Location = new Point(849, 24);
+            avatar.Location = new Point(850, 20);
             avatar.Name = "avatar";
             avatar.ShadowDecoration.CustomizableEdges = customizableEdges1;
             avatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -382,7 +382,6 @@
             guna2Button5.TabIndex = 14;
             guna2Button5.Text = "Đăng xuất";
             guna2Button5.TextAlign = HorizontalAlignment.Right;
-            guna2Button5.Click += guna2Button5_Click;
             // 
             // pictureBox1
             // 
@@ -455,7 +454,6 @@
             guna2Button3.Text = "Ứng cử viên";
             guna2Button3.TextAlign = HorizontalAlignment.Left;
             guna2Button3.TextOffset = new Point(67, 0);
-            guna2Button3.Click += guna2Button3_Click;
             // 
             // guna2Button2
             // 
@@ -478,7 +476,6 @@
             guna2Button2.Text = "Hoạt động bỏ phiếu";
             guna2Button2.TextAlign = HorizontalAlignment.Left;
             guna2Button2.TextOffset = new Point(67, 0);
-            guna2Button2.Click += guna2Button2_Click;
             // 
             // guna2Button1
             // 
@@ -503,7 +500,6 @@
             guna2Button1.Text = "Dashboard";
             guna2Button1.TextAlign = HorizontalAlignment.Left;
             guna2Button1.TextOffset = new Point(67, 0);
-            guna2Button1.Click += guna2Button1_Click;
             // 
             // changeInfo_Admin
             // 

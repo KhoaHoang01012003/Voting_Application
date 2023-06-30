@@ -47,6 +47,18 @@ namespace DOANMONHOC
         {
             client = new FireSharp.FirebaseClient(config);
 
+            byte[] originalBytesAvt = Convert.FromBase64String(Properties.Settings.Default.avt.ToString());
+
+            // Tạo một đối tượng Image từ chuỗi byte gốc
+            Image imageAvt;
+            using (MemoryStream ms = new MemoryStream(originalBytesAvt))
+            {
+                imageAvt = Image.FromStream(ms);
+            }
+
+            avatar.Image = imageAvt.GetThumbnailImage(40, 40, null, IntPtr.Zero);
+            FullName.Text = Properties.Settings.Default.Name.ToString();
+
             FirebaseResponse response = await client.GetTaskAsync("Candidates/");
             Dictionary<string, CANDIDATE> candidates = response.ResultAs<Dictionary<string, CANDIDATE>>();
 
@@ -199,7 +211,7 @@ namespace DOANMONHOC
                         break;
                     }
                 }
-                
+
             }
 
         }
