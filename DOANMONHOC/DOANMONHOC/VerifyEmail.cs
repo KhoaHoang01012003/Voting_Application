@@ -109,7 +109,8 @@ namespace DOANMONHOC
         private void ConfirmSuccessAndProceedToInitUserInfo()
         {
             MessageBox.Show("Bạn đã xác nhận thành công!\nVui lòng cập nhật thông tin ở form sau");
-            var form = new init_user_info(user);
+            var form = new init_user_info(indexForm, user);
+            isBackButtonPressed = true;
             form.Show();
             this.Close();
         }
